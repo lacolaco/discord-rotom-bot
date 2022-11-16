@@ -28,11 +28,11 @@ jobs:
           node-version-file: 'package.json'
           cache: yarn
       - run: yarn install --frozen-lockfile
-      - name: Deploy to Cloud Run (api)
+      - name: Deploy app to Cloud Run
         run: |
           gcloud run deploy ${CLOUD_RUN_SERVICE_NAME} \
           --source . \
-          --execution-environment gen1 --region us-central1 --platform managed --memory 128Mi --allow-unauthenticated \
+          --region us-central1 --platform managed --memory 128Mi --allow-unauthenticated \
           --set-env-vars APP_ID="${{ secrets.APP_ID }}" \
           --set-env-vars PUBLIC_KEY="${{ secrets.PUBLIC_KEY }}" \
           --set-env-vars DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" \
