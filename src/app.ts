@@ -24,12 +24,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) {
     return;
   }
-  console.log(interaction.commandType, interaction.commandName);
   const command = chatInputCommands[interaction.commandName];
   if (!command) {
     console.error(`No command matching ${interaction.commandName} was found.`);
     return;
   }
+  console.log(`Command: ${interaction.commandName}`);
 
   try {
     await command.execute(interaction);
