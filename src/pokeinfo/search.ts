@@ -8,7 +8,7 @@ import iconv from 'iconv-lite';
  */
 export async function searchURLByName(name: string): Promise<string | null> {
   // TODO: ポケ徹が対応したらSVに移行する
-  const pokemonDataPageURL = 'https://yakkun.com/swsh/stats_list.htm';
+  const pokemonDataPageURL = 'https://yakkun.com/swsh/stats_list.htm?mode=all';
   console.log(`Requesting ${pokemonDataPageURL}`);
   const response = await request(pokemonDataPageURL, { method: 'GET' });
   console.log(`Response status: ${response.statusCode}`);
