@@ -1,0 +1,39 @@
+name: 'Deployment'
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CLOUD_RUN_SERVICE_NAME: discord-app
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          workload_identity_provider: 'projects/272183910933/locations/global/workloadIdentityPools/github-actions-auth/providers/github-actions-auth'
+          service_account: 'github-actions-deploy@discord-rotom-bot.iam.gserviceaccount.com'
+      - uses: google-github-actions/setup-gcloud@v0
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - name: Deploy to Cloud Run (api)
+        run: |
+          gcloud run deploy ${CLOUD_RUN_SERVICE_NAME} \
+          --source . \
+          --execution-environment gen1 --region us-central1 --platform managed --memory 128Mi --allow-unauthenticated \
+          --set-env-vars APP_ID="${{ secrets.APP_ID }}" \
+          --set-env-vars PUBLIC_KEY="${{ secrets.PUBLIC_KEY }}" \
+          --set-env-vars DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" \
+          --set-env-vars GUILD_ID="${{ secrets.GUILD_ID }}"

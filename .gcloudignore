@@ -1,0 +1,9 @@
+# ignore all
+*
+
+# upload files
+!.
+!.env
+!package.json
+!yarn.lock
+!*.js
