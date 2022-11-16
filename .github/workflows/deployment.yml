@@ -37,4 +37,4 @@ jobs:
           GUILD_ID: ${{ secrets.GUILD_ID }}
       - name: Deploy app to Cloud Run
         run: |
-          gcloud app deploy
+          gcloud app deploy --promote
