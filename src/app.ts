@@ -1,6 +1,7 @@
 import 'dotenv/config';
+
+import { Client, Events, GatewayIntentBits, Routes } from 'discord.js';
 import express from 'express';
-import { Client, Events, GatewayIntentBits } from 'discord.js';
 import { chatInputCommands } from './commands';
 
 const PORT = process.env.PORT || 3000;
@@ -38,7 +39,29 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
+export async function registerGuildCommands(appId: string, guildId: string) {
+  console.log(`Installing commands...`);
+  const commands = Object.values(chatInputCommands).map((command) => command.data.toJSON());
+  await client.rest.put(Routes.applicationGuildCommands(appId, guildId), {
+    body: commands,
+  });
+}
+
 const app = express();
+
+app.get('/', async (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.get('/prepare', async (req, res) => {
+  try {
+    await registerGuildCommands(APP_ID, GUILD_ID);
+    res.send('OK');
+  } catch (e) {
+    console.error(e);
+    res.status(500).send('ERROR');
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
