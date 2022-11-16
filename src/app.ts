@@ -70,3 +70,7 @@ app.listen(PORT, () => {
 
   client.login(DISCORD_TOKEN);
 });
+
+process.on('unhandledRejection', (error) => {
+  console.error('Unhandled promise rejection:', error);
+});
