@@ -35,4 +35,4 @@ jobs:
       - name: Deploy app to Cloud Run
         run: gcloud app deploy --promote
       - name: Delete unused versions
-        run: gcloud app versions list | grep 0.00 | awk '{print $2}' | xargs gcloud app versions delete
+        run: gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" | tail -n +3 | xargs gcloud app versions delete
