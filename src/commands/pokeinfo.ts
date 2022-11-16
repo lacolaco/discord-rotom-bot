@@ -14,9 +14,9 @@ export default {
     const url = await searchURLByName(name);
     console.log(`[pokeinfo] found url: ${url}`);
     if (url) {
-      await interaction.editReply({ content: `${url}` });
+      await interaction.editReply({ content: `"${name}" の情報ロト！ ${url}` });
     } else {
-      await interaction.editReply({ content: '見つからなかったロト...' });
+      await interaction.editReply({ content: `"${name}" の情報は見つからなかったロトね...` });
     }
   },
 };
