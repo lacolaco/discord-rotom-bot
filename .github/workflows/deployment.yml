@@ -32,7 +32,7 @@ jobs:
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
-      - name: Deploy app to Cloud Run
+      - name: Deploy app
         run: gcloud app deploy --promote
       - name: Delete unused versions
         run: gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" | tail -n +3 | xargs gcloud app versions delete
