@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-import { bootstrapDiscordApp } from './discord';
+import { createDiscordApp } from './discord';
 import { startServer } from './server';
 
 const PORT = process.env.PORT || 3000;
@@ -22,11 +22,13 @@ process.on('SIGTERM', function () {
   process.exit(0);
 });
 
+const discordApp = createDiscordApp();
+
 startServer(PORT)
   .then(async () => {
-    const destroy = await bootstrapDiscordApp(DISCORD_TOKEN, APP_ID, GUILD_ID);
+    await discordApp.bootstrap(DISCORD_TOKEN, APP_ID, GUILD_ID);
     signal.addEventListener('abort', () => {
-      destroy();
+      discordApp.dispose();
     });
   })
   .catch((error) => {

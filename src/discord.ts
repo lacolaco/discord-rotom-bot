@@ -1,23 +1,26 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
 import { getChatInputCommand, registerGuildCommands } from './commands';
 
-export async function bootstrapDiscordApp(
-  token: string,
-  appID: string,
-  guildID: string,
-) {
-  const client = createClient();
-  await client.login(token);
-  await registerGuildCommands(client, appID, guildID);
-
-  return () => {
-    client.destroy();
+export function createDiscordApp() {
+  const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+  setupEventListeners(client);
+  return {
+    client,
+    bootstrap: async (
+      token: string,
+      appID: string,
+      guildID: string,
+    ): Promise<void> => {
+      await client.login(token);
+      await registerGuildCommands(client, appID, guildID);
+    },
+    dispose: () => {
+      client.destroy();
+    },
   };
 }
 
-function createClient(): Client {
-  const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
+function setupEventListeners(client: Client): void {
   client.once(Events.ClientReady, (c) => {
     console.log(`Ready! Logged in as ${c.user.tag}`);
   });
@@ -47,5 +50,4 @@ function createClient(): Client {
         .catch((error) => console.error(error));
     }
   });
-  return client;
 }

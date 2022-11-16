@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node build/app.js",
-    "dev": "ts-node src/app.ts",
+    "start": "node build/main.js",
+    "dev": "ts-node src/main.ts",
     "format": "prettier --write src"
   },
   "author": "lacolaco",

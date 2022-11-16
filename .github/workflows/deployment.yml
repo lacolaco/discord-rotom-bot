@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-env:
-  CLOUD_RUN_SERVICE_NAME: discord-app
-
 permissions:
   contents: 'read'
   id-token: 'write'
