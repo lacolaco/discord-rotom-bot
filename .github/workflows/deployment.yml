@@ -28,6 +28,7 @@ jobs:
           node-version-file: 'package.json'
           cache: yarn
       - run: yarn install --frozen-lockfile
+      - run: yarn build
       - name: Deploy app to Cloud Run
         run: |
           gcloud run deploy ${CLOUD_RUN_SERVICE_NAME} \

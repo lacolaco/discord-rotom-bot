@@ -1,3 +1,10 @@
+import {
+  ChatInputCommandInteraction,
+  Collection,
+  Interaction,
+  MessageInteraction,
+  SlashCommandBuilder,
+} from 'discord.js';
 import { capitalize, DiscordRequest } from './utils';
 
 export async function HasGuildCommands(appId: string, guildId: string, commands: any[]) {
@@ -13,7 +20,7 @@ async function HasGuildCommand(appId: string, guildId: string, command: any) {
 
   try {
     const res = await DiscordRequest(endpoint, { method: 'GET' });
-    const data = await res.json() as any[];
+    const data = (await res.json()) as any[];
 
     if (data) {
       const installedNames = data.map((c) => c['name']);
@@ -42,9 +49,18 @@ export async function InstallGuildCommand(appId: string, guildId: string, comman
   }
 }
 
-// Simple test command
-export const TEST_COMMAND = {
-  name: 'test',
-  description: 'Basic guild command',
-  type: 1,
+export type ChatInputCommand = {
+  data: SlashCommandBuilder;
+  execute: (interaction: ChatInputCommandInteraction) => Promise<void>;
+};
+
+export const ping = {
+  data: new SlashCommandBuilder().setName('ping').setDescription('Replies with Pong!'),
+  async execute(interaction: ChatInputCommandInteraction) {
+    await interaction.reply('Pong!');
+  },
+};
+
+export const chatInputCommands: Record<string, ChatInputCommand> = {
+  ping,
 };
