@@ -1,11 +1,12 @@
 import 'dotenv/config';
 import fetch from 'node-fetch';
 import { verifyKey } from 'discord-interactions';
+import { Request, Response } from 'express';
 
-export function VerifyDiscordRequest(clientKey) {
-  return function (req, res, buf, encoding) {
-    const signature = req.get('X-Signature-Ed25519');
-    const timestamp = req.get('X-Signature-Timestamp');
+export function VerifyDiscordRequest(clientKey: string) {
+  return function (req: Request, res: Response, buf: Buffer, encoding: string) {
+    const signature = req.get('X-Signature-Ed25519')!;
+    const timestamp = req.get('X-Signature-Timestamp')!;
 
     const isValidRequest = verifyKey(buf, signature, timestamp, clientKey);
     if (!isValidRequest) {
@@ -15,7 +16,7 @@ export function VerifyDiscordRequest(clientKey) {
   };
 }
 
-export async function DiscordRequest(endpoint, options) {
+export async function DiscordRequest(endpoint: string, options: any) {
   // append endpoint to root API URL
   const url = 'https://discord.com/api/v10/' + endpoint;
   // Stringify payloads
@@ -27,7 +28,7 @@ export async function DiscordRequest(endpoint, options) {
       'Content-Type': 'application/json; charset=UTF-8',
       'User-Agent': 'DiscordBot (https://github.com/discord/discord-example-app, 1.0.0)',
     },
-    ...options
+    ...options,
   });
   // throw API errors
   if (!res.ok) {
@@ -41,10 +42,10 @@ export async function DiscordRequest(endpoint, options) {
 
 // Simple method that returns a random emoji from list
 export function getRandomEmoji() {
-  const emojiList = ['😭','😄','😌','🤓','😎','😤','🤖','😶‍🌫️','🌏','📸','💿','👋','🌊','✨'];
+  const emojiList = ['😭', '😄', '😌', '🤓', '😎', '😤', '🤖', '😶‍🌫️', '🌏', '📸', '💿', '👋', '🌊', '✨'];
   return emojiList[Math.floor(Math.random() * emojiList.length)];
 }
 
-export function capitalize(str) {
+export function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }

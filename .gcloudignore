@@ -5,4 +5,4 @@
 !.
 !package.json
 !yarn.lock
-!*.js
+!build
