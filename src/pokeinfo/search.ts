@@ -13,19 +13,23 @@ export async function searchURLByName(name: string): Promise<string | null> {
   const response = await request(pokemonDataPageURL, { method: 'GET' });
   console.log(`Response status: ${response.statusCode}`);
   // yakkun.com のcharsetが EUC-JP なので UTF-8 に変換する
-  const body = await response.body.arrayBuffer().then((buf) => iconv.decode(Buffer.from(buf), 'EUC-JP'));
+  const body = await response.body
+    .arrayBuffer()
+    .then((buf) => iconv.decode(Buffer.from(buf), 'EUC-JP'));
 
   console.log(`Searching for a link for ${name}`);
   const dom = new JSDOM(body);
   const links = dom.window.document.body.querySelectorAll<HTMLAnchorElement>(
-    'table[summary=ポケモン種族値リスト] a[href]'
+    'table[summary=ポケモン種族値リスト] a[href]',
   );
-  const linkAnchor = Array.from(links).find((link) => link.textContent?.includes(name));
+  const linkAnchor = Array.from(links).find((link) =>
+    link.textContent?.includes(name),
+  );
   if (!linkAnchor || !linkAnchor.href) {
     console.warn(`Link for ${name} is not found`);
     return null;
   }
-  console.log(`Link dound: ${linkAnchor.href}`);
+  console.log(`Link found: ${linkAnchor.href}`);
   const { href } = linkAnchor;
   if (href.startsWith('https://')) {
     return href;

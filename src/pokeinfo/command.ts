@@ -1,10 +1,15 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction } from 'discord.js';
-import { searchURLByName } from '../pokeinfo/search';
+import { searchURLByName } from './search';
 
 export default {
   data: new SlashCommandBuilder()
     .setName('pokeinfo')
-    .addStringOption((option) => option.setName('name').setDescription('ポケモンの日本語名').setRequired(true))
+    .addStringOption((option) =>
+      option
+        .setName('name')
+        .setDescription('ポケモンの日本語名')
+        .setRequired(true),
+    )
     .setDescription('ポケモン徹底攻略のページを日本語名で検索します'),
   async execute(interaction: ChatInputCommandInteraction) {
     const name = interaction.options.getString('name')!;
@@ -16,7 +21,9 @@ export default {
     if (url) {
       await interaction.editReply({ content: `"${name}" の情報ロト！ ${url}` });
     } else {
-      await interaction.editReply({ content: `"${name}" の情報は見つからなかったロトね...` });
+      await interaction.editReply({
+        content: `"${name}" の情報は見つからなかったロトね...`,
+      });
     }
   },
 };
