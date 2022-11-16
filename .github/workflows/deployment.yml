@@ -29,12 +29,12 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - uses: golang-enthusiast/app-yaml-env-compiler@v1.0
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          GUILD_ID: ${{ secrets.GUILD_ID }}
       - name: Deploy app to Cloud Run
         run: |
-          gcloud run deploy ${CLOUD_RUN_SERVICE_NAME} \
-          --source . \
-          --region us-central1 --platform managed --memory 512Mi --allow-unauthenticated \
-          --set-env-vars APP_ID="${{ secrets.APP_ID }}" \
-          --set-env-vars PUBLIC_KEY="${{ secrets.PUBLIC_KEY }}" \
-          --set-env-vars DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" \
-          --set-env-vars GUILD_ID="${{ secrets.GUILD_ID }}"
+          gcloud app deploy

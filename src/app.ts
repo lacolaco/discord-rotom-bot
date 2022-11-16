@@ -55,6 +55,10 @@ app.get('/', async (req, res) => {
   res.status(200).send('OK');
 });
 
+app.get('/_ah/warmup', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.get('/prepare', async (req, res) => {
   try {
     await registerGuildCommands(APP_ID, GUILD_ID);
@@ -69,10 +73,6 @@ app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 
   client.login(DISCORD_TOKEN);
-});
-
-process.on('unhandledRejection', (error) => {
-  console.error('Unhandled promise rejection:', error);
 });
 
 process.on('SIGTERM', function () {
