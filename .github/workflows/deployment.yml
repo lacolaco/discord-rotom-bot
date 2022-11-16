@@ -33,7 +33,7 @@ jobs:
         run: |
           gcloud run deploy ${CLOUD_RUN_SERVICE_NAME} \
           --source . \
-          --region us-central1 --platform managed --memory 256Mi --allow-unauthenticated \
+          --region us-central1 --platform managed --memory 512Mi --allow-unauthenticated \
           --set-env-vars APP_ID="${{ secrets.APP_ID }}" \
           --set-env-vars PUBLIC_KEY="${{ secrets.PUBLIC_KEY }}" \
           --set-env-vars DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" \
