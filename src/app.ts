@@ -74,3 +74,9 @@ app.listen(PORT, () => {
 process.on('unhandledRejection', (error) => {
   console.error('Unhandled promise rejection:', error);
 });
+
+process.on('SIGTERM', function () {
+  console.log('gracefully shutting down');
+  client.destroy();
+  process.exit(0);
+});
