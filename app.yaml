@@ -7,3 +7,9 @@ automatic_scaling:
 
 inbound_services:
   - warmup
+
+env_variables:
+  APP_ID: $APP_ID
+  PUBLIC_KEY: $PUBLIC_KEY
+  DISCORD_TOKEN: $DISCORD_TOKEN
+  GUILD_ID: $GUILD_ID
