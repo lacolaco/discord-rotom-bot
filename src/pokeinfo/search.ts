@@ -16,12 +16,13 @@ export async function searchURLByName(name: string): Promise<string | null> {
   // yakkun.com のcharsetが EUC-JP なので UTF-8 に変換する
   const body = await response.body.arrayBuffer().then((buf) => iconv.decode(Buffer.from(buf), 'EUC-JP'));
 
-  console.log(`Searching for an URL of ${name}`);
+  console.log(`Searching for a link for ${name}`);
   const dom = new JSDOM(body);
   const linkAnchor = queryByRole<HTMLAnchorElement>(dom.window.document.body, 'link', { name });
   if (!linkAnchor || !linkAnchor.href) {
     return null;
   }
+  console.log(`Link Found: ${linkAnchor.href}`);
   const { href } = linkAnchor;
   if (href.startsWith('https://')) {
     return href;

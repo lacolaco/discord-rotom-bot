@@ -12,6 +12,7 @@ export default {
     await interaction.deferReply();
 
     const url = await searchURLByName(name);
+    console.log(`[pokeinfo] found url: ${url}`);
     if (url) {
       await interaction.editReply({ content: `${url}` });
     } else {
