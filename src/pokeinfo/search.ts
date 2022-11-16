@@ -1,5 +1,4 @@
 import { JSDOM } from 'jsdom';
-import { queryByRole } from '@testing-library/dom'; // もっと適したライブラリがあればそちらを使いたい
 import { request } from 'undici';
 import iconv from 'iconv-lite';
 
@@ -18,11 +17,15 @@ export async function searchURLByName(name: string): Promise<string | null> {
 
   console.log(`Searching for a link for ${name}`);
   const dom = new JSDOM(body);
-  const linkAnchor = queryByRole<HTMLAnchorElement>(dom.window.document.body, 'link', { name });
+  const links = dom.window.document.body.querySelectorAll<HTMLAnchorElement>(
+    'table[summary=ポケモン種族値リスト] a[href]'
+  );
+  const linkAnchor = Array.from(links).find((link) => link.textContent?.includes(name));
   if (!linkAnchor || !linkAnchor.href) {
+    console.warn(`Link for ${name} is not found`);
     return null;
   }
-  console.log(`Link Found: ${linkAnchor.href}`);
+  console.log(`Link dound: ${linkAnchor.href}`);
   const { href } = linkAnchor;
   if (href.startsWith('https://')) {
     return href;
