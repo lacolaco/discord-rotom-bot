@@ -8,6 +8,7 @@ export default {
     .setDescription('ポケモン徹底攻略のページを日本語名で検索します'),
   async execute(interaction: ChatInputCommandInteraction) {
     const name = interaction.options.getString('name')!;
+    console.log(`[pokeinfo] name: ${name}`);
     await interaction.deferReply();
 
     const url = await searchURLByName(name);

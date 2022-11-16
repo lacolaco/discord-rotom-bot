@@ -16,8 +16,6 @@ export async function searchURLByName(name: string): Promise<string | null> {
   const body = await response.body.arrayBuffer().then((buf) => iconv.decode(Buffer.from(buf), 'EUC-JP'));
 
   const dom = new JSDOM(body);
-  console.log(dom.window.document.body.innerHTML);
-
   const linkAnchor = queryByRole<HTMLAnchorElement>(dom.window.document.body, 'link', { name });
   if (!linkAnchor || !linkAnchor.href) {
     return null;
