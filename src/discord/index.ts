@@ -1,27 +1,34 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
 import { getChatInputCommand, registerGuildCommands } from './commands';
 
-export function createDiscordApp() {
+export interface DiscordApp {
+  start(): Promise<void>;
+  dispose(): Promise<void>;
+}
+
+export function createDiscordApp(
+  token: string,
+  appID: string,
+  guildID: string,
+): DiscordApp {
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
   setupEventListeners(client);
   return {
-    client,
-    bootstrap: async (
-      token: string,
-      appID: string,
-      guildID: string,
-    ): Promise<void> => {
+    start: async (): Promise<void> => {
       await client.login(token);
       await registerGuildCommands(client, appID, guildID);
     },
-    dispose: () => {
-      client.destroy();
+    dispose: async () => {
+      return new Promise((resolve) => {
+        client.once('disconnect', resolve);
+        client.destroy();
+      });
     },
   };
 }
 
 function setupEventListeners(client: Client): void {
-  client.once(Events.ClientReady, (c) => {
+  client.on(Events.ClientReady, (c) => {
     console.log(`Ready! Logged in as ${c.user.tag}`);
   });
 

@@ -22,11 +22,11 @@ process.on('SIGTERM', function () {
   process.exit(0);
 });
 
-const discordApp = createDiscordApp();
+const discordApp = createDiscordApp(DISCORD_TOKEN, APP_ID, GUILD_ID);
 
 startServer(PORT)
   .then(async () => {
-    await discordApp.bootstrap(DISCORD_TOKEN, APP_ID, GUILD_ID);
+    await discordApp.start();
     signal.addEventListener('abort', () => {
       discordApp.dispose();
     });
