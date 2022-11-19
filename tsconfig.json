@@ -6,6 +6,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "lib": ["es2018", "dom"],
     "types": ["node"],
     "strict": true,

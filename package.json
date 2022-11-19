@@ -11,7 +11,8 @@
     "build": "tsc",
     "start": "node build/main.js",
     "dev": "ts-node src/main.ts",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "update-data": "ts-node tools/update-data.ts"
   },
   "author": "lacolaco",
   "license": "MIT",

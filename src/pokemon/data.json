@@ -1,0 +1,4706 @@
+{
+  "updatedAt": "2022-11-19T13:52:35.127Z",
+  "lastUpdatedAt": "2022-11-19T13:50:36.851Z",
+  "namesMap": {
+    "ニャオハ": {
+      "dexNumber": 906,
+      "url": "https://yakkun.com/sv/zukan/n906"
+    },
+    "ニャローテ": {
+      "dexNumber": 907,
+      "url": "https://yakkun.com/sv/zukan/n907"
+    },
+    "マスカーニャ": {
+      "dexNumber": 908,
+      "url": "https://yakkun.com/sv/zukan/n908"
+    },
+    "ホゲータ": {
+      "dexNumber": 909,
+      "url": "https://yakkun.com/sv/zukan/n909"
+    },
+    "アチゲータ": {
+      "dexNumber": 910,
+      "url": "https://yakkun.com/sv/zukan/n910"
+    },
+    "ラウドボーン": {
+      "dexNumber": 911,
+      "url": "https://yakkun.com/sv/zukan/n911"
+    },
+    "クワッス": {
+      "dexNumber": 912,
+      "url": "https://yakkun.com/sv/zukan/n912"
+    },
+    "ウェルカモ": {
+      "dexNumber": 913,
+      "url": "https://yakkun.com/sv/zukan/n913"
+    },
+    "ウェーニバル": {
+      "dexNumber": 914,
+      "url": "https://yakkun.com/sv/zukan/n914"
+    },
+    "グルトン": {
+      "dexNumber": 915,
+      "url": "https://yakkun.com/sv/zukan/n915"
+    },
+    "パフュートン♂": {
+      "dexNumber": 916,
+      "url": "https://yakkun.com/sv/zukan/n916"
+    },
+    "パフュートン♀": {
+      "dexNumber": 916,
+      "url": "https://yakkun.com/sv/zukan/n916f"
+    },
+    "タマンチュラ": {
+      "dexNumber": 918,
+      "url": "https://yakkun.com/sv/zukan/n918"
+    },
+    "ワナイダー": {
+      "dexNumber": 919,
+      "url": "https://yakkun.com/sv/zukan/n919"
+    },
+    "マメバッタ": {
+      "dexNumber": 920,
+      "url": "https://yakkun.com/sv/zukan/n920"
+    },
+    "エクスレッグ": {
+      "dexNumber": 921,
+      "url": "https://yakkun.com/sv/zukan/n921"
+    },
+    "ハネッコ": {
+      "dexNumber": 187,
+      "url": "https://yakkun.com/sv/zukan/n187"
+    },
+    "ポポッコ": {
+      "dexNumber": 188,
+      "url": "https://yakkun.com/sv/zukan/n188"
+    },
+    "ワタッコ": {
+      "dexNumber": 189,
+      "url": "https://yakkun.com/sv/zukan/n189"
+    },
+    "ヤヤコマ": {
+      "dexNumber": 661,
+      "url": "https://yakkun.com/sv/zukan/n661"
+    },
+    "ヒノヤコマ": {
+      "dexNumber": 662,
+      "url": "https://yakkun.com/sv/zukan/n662"
+    },
+    "ファイアロー": {
+      "dexNumber": 663,
+      "url": "https://yakkun.com/sv/zukan/n663"
+    },
+    "パモ": {
+      "dexNumber": 954,
+      "url": "https://yakkun.com/sv/zukan/n954"
+    },
+    "パモット": {
+      "dexNumber": 955,
+      "url": "https://yakkun.com/sv/zukan/n955"
+    },
+    "パーモット": {
+      "dexNumber": 956,
+      "url": "https://yakkun.com/sv/zukan/n956"
+    },
+    "デルビル": {
+      "dexNumber": 228,
+      "url": "https://yakkun.com/sv/zukan/n228"
+    },
+    "ヘルガー": {
+      "dexNumber": 229,
+      "url": "https://yakkun.com/sv/zukan/n229"
+    },
+    "ヤングース": {
+      "dexNumber": 734,
+      "url": "https://yakkun.com/sv/zukan/n734"
+    },
+    "デカグース": {
+      "dexNumber": 735,
+      "url": "https://yakkun.com/sv/zukan/n735"
+    },
+    "ホシガリス": {
+      "dexNumber": 819,
+      "url": "https://yakkun.com/sv/zukan/n819"
+    },
+    "ヨクバリス": {
+      "dexNumber": 820,
+      "url": "https://yakkun.com/sv/zukan/n820"
+    },
+    "ヒマナッツ": {
+      "dexNumber": 191,
+      "url": "https://yakkun.com/sv/zukan/n191"
+    },
+    "キマワリ": {
+      "dexNumber": 192,
+      "url": "https://yakkun.com/sv/zukan/n192"
+    },
+    "コロボーシ": {
+      "dexNumber": 401,
+      "url": "https://yakkun.com/sv/zukan/n401"
+    },
+    "コロトック": {
+      "dexNumber": 402,
+      "url": "https://yakkun.com/sv/zukan/n402"
+    },
+    "コフキムシ": {
+      "dexNumber": 664,
+      "url": "https://yakkun.com/sv/zukan/n664"
+    },
+    "コフーライ": {
+      "dexNumber": 665,
+      "url": "https://yakkun.com/sv/zukan/n665"
+    },
+    "ビビヨン": {
+      "dexNumber": 666,
+      "url": "https://yakkun.com/sv/zukan/n666"
+    },
+    "ミツハニー": {
+      "dexNumber": 415,
+      "url": "https://yakkun.com/sv/zukan/n415"
+    },
+    "ビークイン": {
+      "dexNumber": 416,
+      "url": "https://yakkun.com/sv/zukan/n416"
+    },
+    "ココガラ": {
+      "dexNumber": 821,
+      "url": "https://yakkun.com/sv/zukan/n821"
+    },
+    "アオガラス": {
+      "dexNumber": 822,
+      "url": "https://yakkun.com/sv/zukan/n822"
+    },
+    "アーマーガア": {
+      "dexNumber": 823,
+      "url": "https://yakkun.com/sv/zukan/n823"
+    },
+    "ピンプク": {
+      "dexNumber": 440,
+      "url": "https://yakkun.com/sv/zukan/n440"
+    },
+    "ラッキー": {
+      "dexNumber": 113,
+      "url": "https://yakkun.com/sv/zukan/n113"
+    },
+    "ハピナス": {
+      "dexNumber": 242,
+      "url": "https://yakkun.com/sv/zukan/n242"
+    },
+    "ルリリ": {
+      "dexNumber": 298,
+      "url": "https://yakkun.com/sv/zukan/n298"
+    },
+    "マリル": {
+      "dexNumber": 183,
+      "url": "https://yakkun.com/sv/zukan/n183"
+    },
+    "マリルリ": {
+      "dexNumber": 184,
+      "url": "https://yakkun.com/sv/zukan/n184"
+    },
+    "アメタマ": {
+      "dexNumber": 283,
+      "url": "https://yakkun.com/sv/zukan/n283"
+    },
+    "アメモース": {
+      "dexNumber": 284,
+      "url": "https://yakkun.com/sv/zukan/n284"
+    },
+    "ブイゼル": {
+      "dexNumber": 418,
+      "url": "https://yakkun.com/sv/zukan/n418"
+    },
+    "フローゼル": {
+      "dexNumber": 419,
+      "url": "https://yakkun.com/sv/zukan/n419"
+    },
+    "ウパー": {
+      "dexNumber": 194,
+      "url": "https://yakkun.com/sv/zukan/n194"
+    },
+    "ウパー(パルデア)": {
+      "dexNumber": 194,
+      "url": "https://yakkun.com/sv/zukan/n194p"
+    },
+    "ドオー": {
+      "dexNumber": 1009,
+      "url": "https://yakkun.com/sv/zukan/n1009"
+    },
+    "コダック": {
+      "dexNumber": 54,
+      "url": "https://yakkun.com/sv/zukan/n54"
+    },
+    "ゴルダック": {
+      "dexNumber": 55,
+      "url": "https://yakkun.com/sv/zukan/n55"
+    },
+    "カムカメ": {
+      "dexNumber": 833,
+      "url": "https://yakkun.com/sv/zukan/n833"
+    },
+    "カジリガメ": {
+      "dexNumber": 834,
+      "url": "https://yakkun.com/sv/zukan/n834"
+    },
+    "ププリン": {
+      "dexNumber": 174,
+      "url": "https://yakkun.com/sv/zukan/n174"
+    },
+    "プリン": {
+      "dexNumber": 39,
+      "url": "https://yakkun.com/sv/zukan/n39"
+    },
+    "プクリン": {
+      "dexNumber": 40,
+      "url": "https://yakkun.com/sv/zukan/n40"
+    },
+    "ラルトス": {
+      "dexNumber": 280,
+      "url": "https://yakkun.com/sv/zukan/n280"
+    },
+    "キルリア": {
+      "dexNumber": 281,
+      "url": "https://yakkun.com/sv/zukan/n281"
+    },
+    "サーナイト": {
+      "dexNumber": 282,
+      "url": "https://yakkun.com/sv/zukan/n282"
+    },
+    "エルレイド": {
+      "dexNumber": 475,
+      "url": "https://yakkun.com/sv/zukan/n475"
+    },
+    "スリープ": {
+      "dexNumber": 96,
+      "url": "https://yakkun.com/sv/zukan/n96"
+    },
+    "スリーパー": {
+      "dexNumber": 97,
+      "url": "https://yakkun.com/sv/zukan/n97"
+    },
+    "ゴース": {
+      "dexNumber": 92,
+      "url": "https://yakkun.com/sv/zukan/n92"
+    },
+    "ゴースト": {
+      "dexNumber": 93,
+      "url": "https://yakkun.com/sv/zukan/n93"
+    },
+    "ゲンガー": {
+      "dexNumber": 94,
+      "url": "https://yakkun.com/sv/zukan/n94"
+    },
+    "ワッカネズミ": {
+      "dexNumber": 945,
+      "url": "https://yakkun.com/sv/zukan/n945"
+    },
+    "イッカネズミ": {
+      "dexNumber": 946,
+      "url": "https://yakkun.com/sv/zukan/n946"
+    },
+    "ピチュー": {
+      "dexNumber": 172,
+      "url": "https://yakkun.com/sv/zukan/n172"
+    },
+    "ピカチュウ": {
+      "dexNumber": 25,
+      "url": "https://yakkun.com/sv/zukan/n25"
+    },
+    "ライチュウ": {
+      "dexNumber": 26,
+      "url": "https://yakkun.com/sv/zukan/n26"
+    },
+    "ライチュウ(アローラ)": {
+      "dexNumber": 26,
+      "url": "https://yakkun.com/sv/zukan/n26a"
+    },
+    "パピモッチ": {
+      "dexNumber": 970,
+      "url": "https://yakkun.com/sv/zukan/n970"
+    },
+    "バウッツェル": {
+      "dexNumber": 971,
+      "url": "https://yakkun.com/sv/zukan/n971"
+    },
+    "ナマケロ": {
+      "dexNumber": 287,
+      "url": "https://yakkun.com/sv/zukan/n287"
+    },
+    "ヤルキモノ": {
+      "dexNumber": 288,
+      "url": "https://yakkun.com/sv/zukan/n288"
+    },
+    "ケッキング": {
+      "dexNumber": 289,
+      "url": "https://yakkun.com/sv/zukan/n289"
+    },
+    "アマカジ": {
+      "dexNumber": 761,
+      "url": "https://yakkun.com/sv/zukan/n761"
+    },
+    "アママイコ": {
+      "dexNumber": 762,
+      "url": "https://yakkun.com/sv/zukan/n762"
+    },
+    "アマージョ": {
+      "dexNumber": 763,
+      "url": "https://yakkun.com/sv/zukan/n763"
+    },
+    "ミニーブ": {
+      "dexNumber": 935,
+      "url": "https://yakkun.com/sv/zukan/n935"
+    },
+    "オリーニョ": {
+      "dexNumber": 936,
+      "url": "https://yakkun.com/sv/zukan/n936"
+    },
+    "オリーヴァ": {
+      "dexNumber": 937,
+      "url": "https://yakkun.com/sv/zukan/n937"
+    },
+    "ウソハチ": {
+      "dexNumber": 438,
+      "url": "https://yakkun.com/sv/zukan/n438"
+    },
+    "ウソッキー": {
+      "dexNumber": 185,
+      "url": "https://yakkun.com/sv/zukan/n185"
+    },
+    "イワンコ": {
+      "dexNumber": 744,
+      "url": "https://yakkun.com/sv/zukan/n744"
+    },
+    "ルガルガン(まひる)": {
+      "dexNumber": 745,
+      "url": "https://yakkun.com/sv/zukan/n745"
+    },
+    "ルガルガン(まよなか)": {
+      "dexNumber": 745,
+      "url": "https://yakkun.com/sv/zukan/n745f"
+    },
+    "ルガルガン(たそがれ)": {
+      "dexNumber": 745,
+      "url": "https://yakkun.com/sv/zukan/n745d"
+    },
+    "タンドン": {
+      "dexNumber": 837,
+      "url": "https://yakkun.com/sv/zukan/n837"
+    },
+    "トロッゴン": {
+      "dexNumber": 838,
+      "url": "https://yakkun.com/sv/zukan/n838"
+    },
+    "セキタンザン": {
+      "dexNumber": 839,
+      "url": "https://yakkun.com/sv/zukan/n839"
+    },
+    "コリンク": {
+      "dexNumber": 403,
+      "url": "https://yakkun.com/sv/zukan/n403"
+    },
+    "ルクシオ": {
+      "dexNumber": 404,
+      "url": "https://yakkun.com/sv/zukan/n404"
+    },
+    "レントラー": {
+      "dexNumber": 405,
+      "url": "https://yakkun.com/sv/zukan/n405"
+    },
+    "ムックル": {
+      "dexNumber": 396,
+      "url": "https://yakkun.com/sv/zukan/n396"
+    },
+    "ムクバード": {
+      "dexNumber": 397,
+      "url": "https://yakkun.com/sv/zukan/n397"
+    },
+    "ムクホーク": {
+      "dexNumber": 398,
+      "url": "https://yakkun.com/sv/zukan/n398"
+    },
+    "オドリドリ(めらめら)": {
+      "dexNumber": 741,
+      "url": "https://yakkun.com/sv/zukan/n741"
+    },
+    "オドリドリ(ぱちぱち)": {
+      "dexNumber": 741,
+      "url": "https://yakkun.com/sv/zukan/n741p"
+    },
+    "オドリドリ(ふらふら)": {
+      "dexNumber": 741,
+      "url": "https://yakkun.com/sv/zukan/n741f"
+    },
+    "オドリドリ(まいまい)": {
+      "dexNumber": 741,
+      "url": "https://yakkun.com/sv/zukan/n741m"
+    },
+    "メリープ": {
+      "dexNumber": 179,
+      "url": "https://yakkun.com/sv/zukan/n179"
+    },
+    "モココ": {
+      "dexNumber": 180,
+      "url": "https://yakkun.com/sv/zukan/n180"
+    },
+    "デンリュウ": {
+      "dexNumber": 181,
+      "url": "https://yakkun.com/sv/zukan/n181"
+    },
+    "チュリネ": {
+      "dexNumber": 548,
+      "url": "https://yakkun.com/sv/zukan/n548"
+    },
+    "ドレディア": {
+      "dexNumber": 549,
+      "url": "https://yakkun.com/sv/zukan/n549"
+    },
+    "ドレディア(ヒスイ)": {
+      "dexNumber": 549,
+      "url": "https://yakkun.com/sv/zukan/n549h"
+    },
+    "キノココ": {
+      "dexNumber": 285,
+      "url": "https://yakkun.com/sv/zukan/n285"
+    },
+    "キノガッサ": {
+      "dexNumber": 286,
+      "url": "https://yakkun.com/sv/zukan/n286"
+    },
+    "カジッチュ": {
+      "dexNumber": 840,
+      "url": "https://yakkun.com/sv/zukan/n840"
+    },
+    "アップリュー": {
+      "dexNumber": 841,
+      "url": "https://yakkun.com/sv/zukan/n841"
+    },
+    "タルップル": {
+      "dexNumber": 842,
+      "url": "https://yakkun.com/sv/zukan/n842"
+    },
+    "バネブー": {
+      "dexNumber": 325,
+      "url": "https://yakkun.com/sv/zukan/n325"
+    },
+    "ブーピッグ": {
+      "dexNumber": 326,
+      "url": "https://yakkun.com/sv/zukan/n326"
+    },
+    "イキリンコ": {
+      "dexNumber": 960,
+      "url": "https://yakkun.com/sv/zukan/n960"
+    },
+    "ムウマ": {
+      "dexNumber": 200,
+      "url": "https://yakkun.com/sv/zukan/n200"
+    },
+    "ムウマージ": {
+      "dexNumber": 429,
+      "url": "https://yakkun.com/sv/zukan/n429"
+    },
+    "マクノシタ": {
+      "dexNumber": 296,
+      "url": "https://yakkun.com/sv/zukan/n296"
+    },
+    "ハリテヤマ": {
+      "dexNumber": 297,
+      "url": "https://yakkun.com/sv/zukan/n297"
+    },
+    "マケンカニ": {
+      "dexNumber": 739,
+      "url": "https://yakkun.com/sv/zukan/n739"
+    },
+    "ケケンカニ": {
+      "dexNumber": 740,
+      "url": "https://yakkun.com/sv/zukan/n740"
+    },
+    "ヤトウモリ": {
+      "dexNumber": 757,
+      "url": "https://yakkun.com/sv/zukan/n757"
+    },
+    "エンニュート": {
+      "dexNumber": 758,
+      "url": "https://yakkun.com/sv/zukan/n758"
+    },
+    "ゴマゾウ": {
+      "dexNumber": 231,
+      "url": "https://yakkun.com/sv/zukan/n231"
+    },
+    "ドンファン": {
+      "dexNumber": 232,
+      "url": "https://yakkun.com/sv/zukan/n232"
+    },
+    "ゾウドウ": {
+      "dexNumber": 878,
+      "url": "https://yakkun.com/sv/zukan/n878"
+    },
+    "ダイオウドウ": {
+      "dexNumber": 879,
+      "url": "https://yakkun.com/sv/zukan/n879"
+    },
+    "フカマル": {
+      "dexNumber": 443,
+      "url": "https://yakkun.com/sv/zukan/n443"
+    },
+    "ガバイト": {
+      "dexNumber": 444,
+      "url": "https://yakkun.com/sv/zukan/n444"
+    },
+    "ガブリアス": {
+      "dexNumber": 445,
+      "url": "https://yakkun.com/sv/zukan/n445"
+    },
+    "コジオ": {
+      "dexNumber": 963,
+      "url": "https://yakkun.com/sv/zukan/n963"
+    },
+    "ジオヅム": {
+      "dexNumber": 964,
+      "url": "https://yakkun.com/sv/zukan/n964"
+    },
+    "キョジオーン": {
+      "dexNumber": 965,
+      "url": "https://yakkun.com/sv/zukan/n965"
+    },
+    "キャモメ": {
+      "dexNumber": 278,
+      "url": "https://yakkun.com/sv/zukan/n278"
+    },
+    "ペリッパー": {
+      "dexNumber": 279,
+      "url": "https://yakkun.com/sv/zukan/n279"
+    },
+    "コイキング": {
+      "dexNumber": 129,
+      "url": "https://yakkun.com/sv/zukan/n129"
+    },
+    "ギャラドス": {
+      "dexNumber": 130,
+      "url": "https://yakkun.com/sv/zukan/n130"
+    },
+    "サシカマス": {
+      "dexNumber": 846,
+      "url": "https://yakkun.com/sv/zukan/n846"
+    },
+    "カマスジョー": {
+      "dexNumber": 847,
+      "url": "https://yakkun.com/sv/zukan/n847"
+    },
+    "バスラオ(赤)": {
+      "dexNumber": 550,
+      "url": "https://yakkun.com/sv/zukan/n550"
+    },
+    "バスラオ(青)": {
+      "dexNumber": 550,
+      "url": "https://yakkun.com/sv/zukan/n550f"
+    },
+    "バスラオ(白)": {
+      "dexNumber": 550,
+      "url": "https://yakkun.com/sv/zukan/n550w"
+    },
+    "ゴクリン": {
+      "dexNumber": 316,
+      "url": "https://yakkun.com/sv/zukan/n316"
+    },
+    "マルノーム": {
+      "dexNumber": 317,
+      "url": "https://yakkun.com/sv/zukan/n317"
+    },
+    "ニャース": {
+      "dexNumber": 52,
+      "url": "https://yakkun.com/sv/zukan/n52"
+    },
+    "ニャース(アローラ)": {
+      "dexNumber": 52,
+      "url": "https://yakkun.com/sv/zukan/n52a"
+    },
+    "ニャース(ガラル)": {
+      "dexNumber": 52,
+      "url": "https://yakkun.com/sv/zukan/n52g"
+    },
+    "ペルシアン": {
+      "dexNumber": 53,
+      "url": "https://yakkun.com/sv/zukan/n53"
+    },
+    "ペルシアン(アローラ)": {
+      "dexNumber": 53,
+      "url": "https://yakkun.com/sv/zukan/n53a"
+    },
+    "フワンテ": {
+      "dexNumber": 425,
+      "url": "https://yakkun.com/sv/zukan/n425"
+    },
+    "フワライド": {
+      "dexNumber": 426,
+      "url": "https://yakkun.com/sv/zukan/n426"
+    },
+    "フラベベ": {
+      "dexNumber": 669,
+      "url": "https://yakkun.com/sv/zukan/n669"
+    },
+    "フラエッテ": {
+      "dexNumber": 670,
+      "url": "https://yakkun.com/sv/zukan/n670"
+    },
+    "フラージェス": {
+      "dexNumber": 671,
+      "url": "https://yakkun.com/sv/zukan/n671"
+    },
+    "ディグダ": {
+      "dexNumber": 50,
+      "url": "https://yakkun.com/sv/zukan/n50"
+    },
+    "ディグダ(アローラ)": {
+      "dexNumber": 50,
+      "url": "https://yakkun.com/sv/zukan/n50a"
+    },
+    "ダグトリオ": {
+      "dexNumber": 51,
+      "url": "https://yakkun.com/sv/zukan/n51"
+    },
+    "ダグトリオ(アローラ)": {
+      "dexNumber": 51,
+      "url": "https://yakkun.com/sv/zukan/n51a"
+    },
+    "コータス": {
+      "dexNumber": 324,
+      "url": "https://yakkun.com/sv/zukan/n324"
+    },
+    "ドンメル": {
+      "dexNumber": 322,
+      "url": "https://yakkun.com/sv/zukan/n322"
+    },
+    "バクーダ": {
+      "dexNumber": 323,
+      "url": "https://yakkun.com/sv/zukan/n323"
+    },
+    "ドーミラー": {
+      "dexNumber": 436,
+      "url": "https://yakkun.com/sv/zukan/n436"
+    },
+    "ドータクン": {
+      "dexNumber": 437,
+      "url": "https://yakkun.com/sv/zukan/n437"
+    },
+    "キバゴ": {
+      "dexNumber": 610,
+      "url": "https://yakkun.com/sv/zukan/n610"
+    },
+    "オノンド": {
+      "dexNumber": 611,
+      "url": "https://yakkun.com/sv/zukan/n611"
+    },
+    "オノノクス": {
+      "dexNumber": 612,
+      "url": "https://yakkun.com/sv/zukan/n612"
+    },
+    "マンキー": {
+      "dexNumber": 56,
+      "url": "https://yakkun.com/sv/zukan/n56"
+    },
+    "オコリザル": {
+      "dexNumber": 57,
+      "url": "https://yakkun.com/sv/zukan/n57"
+    },
+    "コノヨザル": {
+      "dexNumber": 1010,
+      "url": "https://yakkun.com/sv/zukan/n1010"
+    },
+    "アサナン": {
+      "dexNumber": 307,
+      "url": "https://yakkun.com/sv/zukan/n307"
+    },
+    "チャーレム": {
+      "dexNumber": 308,
+      "url": "https://yakkun.com/sv/zukan/n308"
+    },
+    "リオル": {
+      "dexNumber": 447,
+      "url": "https://yakkun.com/sv/zukan/n447"
+    },
+    "ルカリオ": {
+      "dexNumber": 448,
+      "url": "https://yakkun.com/sv/zukan/n448"
+    },
+    "カルボウ": {
+      "dexNumber": 1003,
+      "url": "https://yakkun.com/sv/zukan/n1003"
+    },
+    "グレンアルマ": {
+      "dexNumber": 1004,
+      "url": "https://yakkun.com/sv/zukan/n1004"
+    },
+    "ソウブレイズ": {
+      "dexNumber": 1005,
+      "url": "https://yakkun.com/sv/zukan/n1005"
+    },
+    "ドジョッチ": {
+      "dexNumber": 339,
+      "url": "https://yakkun.com/sv/zukan/n339"
+    },
+    "ナマズン": {
+      "dexNumber": 340,
+      "url": "https://yakkun.com/sv/zukan/n340"
+    },
+    "ズピカ": {
+      "dexNumber": 940,
+      "url": "https://yakkun.com/sv/zukan/n940"
+    },
+    "ハラバリー": {
+      "dexNumber": 941,
+      "url": "https://yakkun.com/sv/zukan/n941"
+    },
+    "ヌメラ": {
+      "dexNumber": 704,
+      "url": "https://yakkun.com/sv/zukan/n704"
+    },
+    "ヌメイル": {
+      "dexNumber": 705,
+      "url": "https://yakkun.com/sv/zukan/n705"
+    },
+    "ヌメイル(ヒスイ)": {
+      "dexNumber": 705,
+      "url": "https://yakkun.com/sv/zukan/n705h"
+    },
+    "ヌメルゴン": {
+      "dexNumber": 706,
+      "url": "https://yakkun.com/sv/zukan/n706"
+    },
+    "ヌメルゴン(ヒスイ)": {
+      "dexNumber": 706,
+      "url": "https://yakkun.com/sv/zukan/n706h"
+    },
+    "グレッグル": {
+      "dexNumber": 453,
+      "url": "https://yakkun.com/sv/zukan/n453"
+    },
+    "ドクロッグ": {
+      "dexNumber": 454,
+      "url": "https://yakkun.com/sv/zukan/n454"
+    },
+    "カイデン": {
+      "dexNumber": 957,
+      "url": "https://yakkun.com/sv/zukan/n957"
+    },
+    "タイカイデン": {
+      "dexNumber": 958,
+      "url": "https://yakkun.com/sv/zukan/n958"
+    },
+    "イーブイ": {
+      "dexNumber": 133,
+      "url": "https://yakkun.com/sv/zukan/n133"
+    },
+    "シャワーズ": {
+      "dexNumber": 134,
+      "url": "https://yakkun.com/sv/zukan/n134"
+    },
+    "サンダース": {
+      "dexNumber": 135,
+      "url": "https://yakkun.com/sv/zukan/n135"
+    },
+    "ブースター": {
+      "dexNumber": 136,
+      "url": "https://yakkun.com/sv/zukan/n136"
+    },
+    "エーフィ": {
+      "dexNumber": 196,
+      "url": "https://yakkun.com/sv/zukan/n196"
+    },
+    "ブラッキー": {
+      "dexNumber": 197,
+      "url": "https://yakkun.com/sv/zukan/n197"
+    },
+    "リーフィア": {
+      "dexNumber": 470,
+      "url": "https://yakkun.com/sv/zukan/n470"
+    },
+    "グレイシア": {
+      "dexNumber": 471,
+      "url": "https://yakkun.com/sv/zukan/n471"
+    },
+    "ニンフィア": {
+      "dexNumber": 700,
+      "url": "https://yakkun.com/sv/zukan/n700"
+    },
+    "ノコッチ": {
+      "dexNumber": 206,
+      "url": "https://yakkun.com/sv/zukan/n206"
+    },
+    "ノココッチ": {
+      "dexNumber": 917,
+      "url": "https://yakkun.com/sv/zukan/n917"
+    },
+    "シキジカ": {
+      "dexNumber": 585,
+      "url": "https://yakkun.com/sv/zukan/n585"
+    },
+    "メブキジカ": {
+      "dexNumber": 586,
+      "url": "https://yakkun.com/sv/zukan/n586"
+    },
+    "キリンリキ": {
+      "dexNumber": 203,
+      "url": "https://yakkun.com/sv/zukan/n203"
+    },
+    "リキキリン": {
+      "dexNumber": 928,
+      "url": "https://yakkun.com/sv/zukan/n928"
+    },
+    "ベトベター": {
+      "dexNumber": 88,
+      "url": "https://yakkun.com/sv/zukan/n88"
+    },
+    "ベトベター(アローラ)": {
+      "dexNumber": 88,
+      "url": "https://yakkun.com/sv/zukan/n88a"
+    },
+    "ベトベトン": {
+      "dexNumber": 89,
+      "url": "https://yakkun.com/sv/zukan/n89"
+    },
+    "ベトベトン(アローラ)": {
+      "dexNumber": 89,
+      "url": "https://yakkun.com/sv/zukan/n89a"
+    },
+    "オラチフ": {
+      "dexNumber": 972,
+      "url": "https://yakkun.com/sv/zukan/n972"
+    },
+    "マフィティフ": {
+      "dexNumber": 973,
+      "url": "https://yakkun.com/sv/zukan/n973"
+    },
+    "エレズン": {
+      "dexNumber": 848,
+      "url": "https://yakkun.com/sv/zukan/n848"
+    },
+    "ストリンダー(ハイ)": {
+      "dexNumber": 849,
+      "url": "https://yakkun.com/sv/zukan/n849"
+    },
+    "ストリンダー(ロー)": {
+      "dexNumber": 849,
+      "url": "https://yakkun.com/sv/zukan/n849f"
+    },
+    "デデンネ": {
+      "dexNumber": 702,
+      "url": "https://yakkun.com/sv/zukan/n702"
+    },
+    "パチリス": {
+      "dexNumber": 417,
+      "url": "https://yakkun.com/sv/zukan/n417"
+    },
+    "シルシュルー": {
+      "dexNumber": 968,
+      "url": "https://yakkun.com/sv/zukan/n968"
+    },
+    "タギングル": {
+      "dexNumber": 969,
+      "url": "https://yakkun.com/sv/zukan/n969"
+    },
+    "オドシシ": {
+      "dexNumber": 234,
+      "url": "https://yakkun.com/sv/zukan/n234"
+    },
+    "タマゲタケ": {
+      "dexNumber": 590,
+      "url": "https://yakkun.com/sv/zukan/n590"
+    },
+    "モロバレル": {
+      "dexNumber": 591,
+      "url": "https://yakkun.com/sv/zukan/n591"
+    },
+    "ビリリダマ": {
+      "dexNumber": 100,
+      "url": "https://yakkun.com/sv/zukan/n100"
+    },
+    "ビリリダマ(ヒスイ)": {
+      "dexNumber": 100,
+      "url": "https://yakkun.com/sv/zukan/n100h"
+    },
+    "マルマイン": {
+      "dexNumber": 101,
+      "url": "https://yakkun.com/sv/zukan/n101"
+    },
+    "マルマイン(ヒスイ)": {
+      "dexNumber": 101,
+      "url": "https://yakkun.com/sv/zukan/n101h"
+    },
+    "コイル": {
+      "dexNumber": 81,
+      "url": "https://yakkun.com/sv/zukan/n81"
+    },
+    "レアコイル": {
+      "dexNumber": 82,
+      "url": "https://yakkun.com/sv/zukan/n82"
+    },
+    "ジバコイル": {
+      "dexNumber": 462,
+      "url": "https://yakkun.com/sv/zukan/n462"
+    },
+    "メタモン": {
+      "dexNumber": 132,
+      "url": "https://yakkun.com/sv/zukan/n132"
+    },
+    "ガーディ": {
+      "dexNumber": 58,
+      "url": "https://yakkun.com/sv/zukan/n58"
+    },
+    "ガーディ(ヒスイ)": {
+      "dexNumber": 58,
+      "url": "https://yakkun.com/sv/zukan/n58h"
+    },
+    "ウインディ": {
+      "dexNumber": 59,
+      "url": "https://yakkun.com/sv/zukan/n59"
+    },
+    "ウインディ(ヒスイ)": {
+      "dexNumber": 59,
+      "url": "https://yakkun.com/sv/zukan/n59h"
+    },
+    "ヒメグマ": {
+      "dexNumber": 216,
+      "url": "https://yakkun.com/sv/zukan/n216"
+    },
+    "リングマ": {
+      "dexNumber": 217,
+      "url": "https://yakkun.com/sv/zukan/n217"
+    },
+    "ザングース": {
+      "dexNumber": 335,
+      "url": "https://yakkun.com/sv/zukan/n335"
+    },
+    "ハブネーク": {
+      "dexNumber": 336,
+      "url": "https://yakkun.com/sv/zukan/n336"
+    },
+    "チルット": {
+      "dexNumber": 333,
+      "url": "https://yakkun.com/sv/zukan/n333"
+    },
+    "チルタリス": {
+      "dexNumber": 334,
+      "url": "https://yakkun.com/sv/zukan/n334"
+    },
+    "メェークル": {
+      "dexNumber": 672,
+      "url": "https://yakkun.com/sv/zukan/n672"
+    },
+    "ゴーゴート": {
+      "dexNumber": 673,
+      "url": "https://yakkun.com/sv/zukan/n673"
+    },
+    "ケンタロス": {
+      "dexNumber": 128,
+      "url": "https://yakkun.com/sv/zukan/n128"
+    },
+    "ケンタロス(パルデア単)": {
+      "dexNumber": 128,
+      "url": "https://yakkun.com/sv/zukan/n128a"
+    },
+    "ケンタロス(パルデア炎)": {
+      "dexNumber": 128,
+      "url": "https://yakkun.com/sv/zukan/n128b"
+    },
+    "ケンタロス(パルデア水)": {
+      "dexNumber": 128,
+      "url": "https://yakkun.com/sv/zukan/n128c"
+    },
+    "シシコ": {
+      "dexNumber": 667,
+      "url": "https://yakkun.com/sv/zukan/n667"
+    },
+    "カエンジシ": {
+      "dexNumber": 668,
+      "url": "https://yakkun.com/sv/zukan/n668"
+    },
+    "スカンプー": {
+      "dexNumber": 434,
+      "url": "https://yakkun.com/sv/zukan/n434"
+    },
+    "スカタンク": {
+      "dexNumber": 435,
+      "url": "https://yakkun.com/sv/zukan/n435"
+    },
+    "ゾロア": {
+      "dexNumber": 570,
+      "url": "https://yakkun.com/sv/zukan/n570"
+    },
+    "ゾロア(ヒスイ)": {
+      "dexNumber": 570,
+      "url": "https://yakkun.com/sv/zukan/n570h"
+    },
+    "ゾロアーク": {
+      "dexNumber": 571,
+      "url": "https://yakkun.com/sv/zukan/n571"
+    },
+    "ゾロアーク(ヒスイ)": {
+      "dexNumber": 571,
+      "url": "https://yakkun.com/sv/zukan/n571h"
+    },
+    "ニューラ": {
+      "dexNumber": 215,
+      "url": "https://yakkun.com/sv/zukan/n215"
+    },
+    "ニューラ(ヒスイ)": {
+      "dexNumber": 215,
+      "url": "https://yakkun.com/sv/zukan/n215h"
+    },
+    "マニューラ": {
+      "dexNumber": 461,
+      "url": "https://yakkun.com/sv/zukan/n461"
+    },
+    "ヤミカラス": {
+      "dexNumber": 198,
+      "url": "https://yakkun.com/sv/zukan/n198"
+    },
+    "ドンカラス": {
+      "dexNumber": 430,
+      "url": "https://yakkun.com/sv/zukan/n430"
+    },
+    "ゴチム": {
+      "dexNumber": 574,
+      "url": "https://yakkun.com/sv/zukan/n574"
+    },
+    "ゴチミル": {
+      "dexNumber": 575,
+      "url": "https://yakkun.com/sv/zukan/n575"
+    },
+    "ゴチルゼル": {
+      "dexNumber": 576,
+      "url": "https://yakkun.com/sv/zukan/n576"
+    },
+    "ヤバチャ": {
+      "dexNumber": 854,
+      "url": "https://yakkun.com/sv/zukan/n854"
+    },
+    "ポットデス": {
+      "dexNumber": 855,
+      "url": "https://yakkun.com/sv/zukan/n855"
+    },
+    "ミミッキュ": {
+      "dexNumber": 778,
+      "url": "https://yakkun.com/sv/zukan/n778"
+    },
+    "クレッフィ": {
+      "dexNumber": 707,
+      "url": "https://yakkun.com/sv/zukan/n707"
+    },
+    "イエッサン♂": {
+      "dexNumber": 876,
+      "url": "https://yakkun.com/sv/zukan/n876"
+    },
+    "イエッサン♀": {
+      "dexNumber": 876,
+      "url": "https://yakkun.com/sv/zukan/n876f"
+    },
+    "アノクサ": {
+      "dexNumber": 974,
+      "url": "https://yakkun.com/sv/zukan/n974"
+    },
+    "アノホラグサ": {
+      "dexNumber": 975,
+      "url": "https://yakkun.com/sv/zukan/n975"
+    },
+    "ノノクラゲ": {
+      "dexNumber": 1006,
+      "url": "https://yakkun.com/sv/zukan/n1006"
+    },
+    "リククラゲ": {
+      "dexNumber": 1007,
+      "url": "https://yakkun.com/sv/zukan/n1007"
+    },
+    "トロピウス": {
+      "dexNumber": 357,
+      "url": "https://yakkun.com/sv/zukan/n357"
+    },
+    "カリキリ": {
+      "dexNumber": 753,
+      "url": "https://yakkun.com/sv/zukan/n753"
+    },
+    "ラランテス": {
+      "dexNumber": 754,
+      "url": "https://yakkun.com/sv/zukan/n754"
+    },
+    "ガケガニ": {
+      "dexNumber": 962,
+      "url": "https://yakkun.com/sv/zukan/n962"
+    },
+    "カプサイジ": {
+      "dexNumber": 938,
+      "url": "https://yakkun.com/sv/zukan/n938"
+    },
+    "スコヴィラン": {
+      "dexNumber": 939,
+      "url": "https://yakkun.com/sv/zukan/n939"
+    },
+    "サボネア": {
+      "dexNumber": 331,
+      "url": "https://yakkun.com/sv/zukan/n331"
+    },
+    "ノクタス": {
+      "dexNumber": 332,
+      "url": "https://yakkun.com/sv/zukan/n332"
+    },
+    "シガロコ": {
+      "dexNumber": 922,
+      "url": "https://yakkun.com/sv/zukan/n922"
+    },
+    "ベラカス": {
+      "dexNumber": 923,
+      "url": "https://yakkun.com/sv/zukan/n923"
+    },
+    "コンパン": {
+      "dexNumber": 48,
+      "url": "https://yakkun.com/sv/zukan/n48"
+    },
+    "モルフォン": {
+      "dexNumber": 49,
+      "url": "https://yakkun.com/sv/zukan/n49"
+    },
+    "クヌギダマ": {
+      "dexNumber": 204,
+      "url": "https://yakkun.com/sv/zukan/n204"
+    },
+    "フォレトス": {
+      "dexNumber": 205,
+      "url": "https://yakkun.com/sv/zukan/n205"
+    },
+    "ストライク": {
+      "dexNumber": 123,
+      "url": "https://yakkun.com/sv/zukan/n123"
+    },
+    "ハッサム": {
+      "dexNumber": 212,
+      "url": "https://yakkun.com/sv/zukan/n212"
+    },
+    "ヘラクロス": {
+      "dexNumber": 214,
+      "url": "https://yakkun.com/sv/zukan/n214"
+    },
+    "ヒラヒナ": {
+      "dexNumber": 926,
+      "url": "https://yakkun.com/sv/zukan/n926"
+    },
+    "クエスパトラ": {
+      "dexNumber": 927,
+      "url": "https://yakkun.com/sv/zukan/n927"
+    },
+    "ヒポポタス": {
+      "dexNumber": 449,
+      "url": "https://yakkun.com/sv/zukan/n449"
+    },
+    "カバルドン": {
+      "dexNumber": 450,
+      "url": "https://yakkun.com/sv/zukan/n450"
+    },
+    "メグロコ": {
+      "dexNumber": 551,
+      "url": "https://yakkun.com/sv/zukan/n551"
+    },
+    "ワルビル": {
+      "dexNumber": 552,
+      "url": "https://yakkun.com/sv/zukan/n552"
+    },
+    "ワルビアル": {
+      "dexNumber": 553,
+      "url": "https://yakkun.com/sv/zukan/n553"
+    },
+    "スナヘビ": {
+      "dexNumber": 843,
+      "url": "https://yakkun.com/sv/zukan/n843"
+    },
+    "サダイジャ": {
+      "dexNumber": 844,
+      "url": "https://yakkun.com/sv/zukan/n844"
+    },
+    "ドロバンコ": {
+      "dexNumber": 749,
+      "url": "https://yakkun.com/sv/zukan/n749"
+    },
+    "バンバドロ": {
+      "dexNumber": 750,
+      "url": "https://yakkun.com/sv/zukan/n750"
+    },
+    "メラルバ": {
+      "dexNumber": 636,
+      "url": "https://yakkun.com/sv/zukan/n636"
+    },
+    "ウルガモス": {
+      "dexNumber": 637,
+      "url": "https://yakkun.com/sv/zukan/n637"
+    },
+    "タツベイ": {
+      "dexNumber": 371,
+      "url": "https://yakkun.com/sv/zukan/n371"
+    },
+    "コモルー": {
+      "dexNumber": 372,
+      "url": "https://yakkun.com/sv/zukan/n372"
+    },
+    "ボーマンダ": {
+      "dexNumber": 373,
+      "url": "https://yakkun.com/sv/zukan/n373"
+    },
+    "カヌチャン": {
+      "dexNumber": 1000,
+      "url": "https://yakkun.com/sv/zukan/n1000"
+    },
+    "ナカヌチャン": {
+      "dexNumber": 1001,
+      "url": "https://yakkun.com/sv/zukan/n1001"
+    },
+    "デカヌチャン": {
+      "dexNumber": 1002,
+      "url": "https://yakkun.com/sv/zukan/n1002"
+    },
+    "ミブリム": {
+      "dexNumber": 856,
+      "url": "https://yakkun.com/sv/zukan/n856"
+    },
+    "テブリム": {
+      "dexNumber": 857,
+      "url": "https://yakkun.com/sv/zukan/n857"
+    },
+    "ブリムオン": {
+      "dexNumber": 858,
+      "url": "https://yakkun.com/sv/zukan/n858"
+    },
+    "ベロバー": {
+      "dexNumber": 859,
+      "url": "https://yakkun.com/sv/zukan/n859"
+    },
+    "ギモー": {
+      "dexNumber": 860,
+      "url": "https://yakkun.com/sv/zukan/n860"
+    },
+    "オーロンゲ": {
+      "dexNumber": 861,
+      "url": "https://yakkun.com/sv/zukan/n861"
+    },
+    "ウミディグダ": {
+      "dexNumber": 929,
+      "url": "https://yakkun.com/sv/zukan/n929"
+    },
+    "ウミトリオ": {
+      "dexNumber": 930,
+      "url": "https://yakkun.com/sv/zukan/n930"
+    },
+    "オトシドリ": {
+      "dexNumber": 959,
+      "url": "https://yakkun.com/sv/zukan/n959"
+    },
+    "ナミイルカ": {
+      "dexNumber": 933,
+      "url": "https://yakkun.com/sv/zukan/n933"
+    },
+    "イルカマン(ナイーブ)": {
+      "dexNumber": 934,
+      "url": "https://yakkun.com/sv/zukan/n934"
+    },
+    "イルカマン(マイティ)": {
+      "dexNumber": 934,
+      "url": "https://yakkun.com/sv/zukan/n934f"
+    },
+    "ブロロン": {
+      "dexNumber": 942,
+      "url": "https://yakkun.com/sv/zukan/n942"
+    },
+    "ブロロローム": {
+      "dexNumber": 943,
+      "url": "https://yakkun.com/sv/zukan/n943"
+    },
+    "モトトカゲ": {
+      "dexNumber": 953,
+      "url": "https://yakkun.com/sv/zukan/n953"
+    },
+    "ミミズズ": {
+      "dexNumber": 944,
+      "url": "https://yakkun.com/sv/zukan/n944"
+    },
+    "ヤミラミ": {
+      "dexNumber": 302,
+      "url": "https://yakkun.com/sv/zukan/n302"
+    },
+    "カゲボウズ": {
+      "dexNumber": 353,
+      "url": "https://yakkun.com/sv/zukan/n353"
+    },
+    "ジュペッタ": {
+      "dexNumber": 354,
+      "url": "https://yakkun.com/sv/zukan/n354"
+    },
+    "タイレーツ": {
+      "dexNumber": 870,
+      "url": "https://yakkun.com/sv/zukan/n870"
+    },
+    "ルチャブル": {
+      "dexNumber": 701,
+      "url": "https://yakkun.com/sv/zukan/n701"
+    },
+    "ミカルゲ": {
+      "dexNumber": 442,
+      "url": "https://yakkun.com/sv/zukan/n442"
+    },
+    "オンバット": {
+      "dexNumber": 714,
+      "url": "https://yakkun.com/sv/zukan/n714"
+    },
+    "オンバーン": {
+      "dexNumber": 715,
+      "url": "https://yakkun.com/sv/zukan/n715"
+    },
+    "ドラメシヤ": {
+      "dexNumber": 885,
+      "url": "https://yakkun.com/sv/zukan/n885"
+    },
+    "ドロンチ": {
+      "dexNumber": 886,
+      "url": "https://yakkun.com/sv/zukan/n886"
+    },
+    "ドラパルト": {
+      "dexNumber": 887,
+      "url": "https://yakkun.com/sv/zukan/n887"
+    },
+    "キラーメ": {
+      "dexNumber": 966,
+      "url": "https://yakkun.com/sv/zukan/n966"
+    },
+    "キラフロル": {
+      "dexNumber": 967,
+      "url": "https://yakkun.com/sv/zukan/n967"
+    },
+    "ロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479"
+    },
+    "ヒートロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479h"
+    },
+    "ウォッシュロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479w"
+    },
+    "フロストロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479f"
+    },
+    "スピンロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479s"
+    },
+    "カットロトム": {
+      "dexNumber": 479,
+      "url": "https://yakkun.com/sv/zukan/n479c"
+    },
+    "ボチ": {
+      "dexNumber": 924,
+      "url": "https://yakkun.com/sv/zukan/n924"
+    },
+    "ハカドッグ": {
+      "dexNumber": 925,
+      "url": "https://yakkun.com/sv/zukan/n925"
+    },
+    "ヤレユータン": {
+      "dexNumber": 765,
+      "url": "https://yakkun.com/sv/zukan/n765"
+    },
+    "ナゲツケサル": {
+      "dexNumber": 766,
+      "url": "https://yakkun.com/sv/zukan/n766"
+    },
+    "ネッコアラ": {
+      "dexNumber": 775,
+      "url": "https://yakkun.com/sv/zukan/n775"
+    },
+    "ヨーギラス": {
+      "dexNumber": 246,
+      "url": "https://yakkun.com/sv/zukan/n246"
+    },
+    "サナギラス": {
+      "dexNumber": 247,
+      "url": "https://yakkun.com/sv/zukan/n247"
+    },
+    "バンギラス": {
+      "dexNumber": 248,
+      "url": "https://yakkun.com/sv/zukan/n248"
+    },
+    "イシヘンジン": {
+      "dexNumber": 874,
+      "url": "https://yakkun.com/sv/zukan/n874"
+    },
+    "コオリッポ(アイス)": {
+      "dexNumber": 875,
+      "url": "https://yakkun.com/sv/zukan/n875"
+    },
+    "コオリッポ(ナイス)": {
+      "dexNumber": 875,
+      "url": "https://yakkun.com/sv/zukan/n875f"
+    },
+    "バチンウニ": {
+      "dexNumber": 871,
+      "url": "https://yakkun.com/sv/zukan/n871"
+    },
+    "スナバァ": {
+      "dexNumber": 769,
+      "url": "https://yakkun.com/sv/zukan/n769"
+    },
+    "シロデスナ": {
+      "dexNumber": 770,
+      "url": "https://yakkun.com/sv/zukan/n770"
+    },
+    "ヤドン": {
+      "dexNumber": 79,
+      "url": "https://yakkun.com/sv/zukan/n79"
+    },
+    "ヤドン(ガラル)": {
+      "dexNumber": 79,
+      "url": "https://yakkun.com/sv/zukan/n79g"
+    },
+    "ヤドラン": {
+      "dexNumber": 80,
+      "url": "https://yakkun.com/sv/zukan/n80"
+    },
+    "ヤドラン(ガラル)": {
+      "dexNumber": 80,
+      "url": "https://yakkun.com/sv/zukan/n80g"
+    },
+    "ヤドキング": {
+      "dexNumber": 199,
+      "url": "https://yakkun.com/sv/zukan/n199"
+    },
+    "ヤドキング(ガラル)": {
+      "dexNumber": 199,
+      "url": "https://yakkun.com/sv/zukan/n199g"
+    },
+    "カラナクシ": {
+      "dexNumber": 422,
+      "url": "https://yakkun.com/sv/zukan/n422"
+    },
+    "トリトドン": {
+      "dexNumber": 423,
+      "url": "https://yakkun.com/sv/zukan/n423"
+    },
+    "シェルダー": {
+      "dexNumber": 90,
+      "url": "https://yakkun.com/sv/zukan/n90"
+    },
+    "パルシェン": {
+      "dexNumber": 91,
+      "url": "https://yakkun.com/sv/zukan/n91"
+    },
+    "ハリーセン": {
+      "dexNumber": 211,
+      "url": "https://yakkun.com/sv/zukan/n211"
+    },
+    "ハリーセン(ヒスイ)": {
+      "dexNumber": 211,
+      "url": "https://yakkun.com/sv/zukan/n211h"
+    },
+    "ラブカス": {
+      "dexNumber": 370,
+      "url": "https://yakkun.com/sv/zukan/n370"
+    },
+    "ケイコウオ": {
+      "dexNumber": 456,
+      "url": "https://yakkun.com/sv/zukan/n456"
+    },
+    "ネオラント": {
+      "dexNumber": 457,
+      "url": "https://yakkun.com/sv/zukan/n457"
+    },
+    "ハギギシリ": {
+      "dexNumber": 779,
+      "url": "https://yakkun.com/sv/zukan/n779"
+    },
+    "ママンボウ": {
+      "dexNumber": 594,
+      "url": "https://yakkun.com/sv/zukan/n594"
+    },
+    "クズモー": {
+      "dexNumber": 690,
+      "url": "https://yakkun.com/sv/zukan/n690"
+    },
+    "ドラミドロ": {
+      "dexNumber": 691,
+      "url": "https://yakkun.com/sv/zukan/n691"
+    },
+    "ウデッポウ": {
+      "dexNumber": 692,
+      "url": "https://yakkun.com/sv/zukan/n692"
+    },
+    "ブロスター": {
+      "dexNumber": 693,
+      "url": "https://yakkun.com/sv/zukan/n693"
+    },
+    "シビシラス": {
+      "dexNumber": 602,
+      "url": "https://yakkun.com/sv/zukan/n602"
+    },
+    "シビビール": {
+      "dexNumber": 603,
+      "url": "https://yakkun.com/sv/zukan/n603"
+    },
+    "シビルドン": {
+      "dexNumber": 604,
+      "url": "https://yakkun.com/sv/zukan/n604"
+    },
+    "ヒドイデ": {
+      "dexNumber": 747,
+      "url": "https://yakkun.com/sv/zukan/n747"
+    },
+    "ドヒドイデ": {
+      "dexNumber": 748,
+      "url": "https://yakkun.com/sv/zukan/n748"
+    },
+    "カラミンゴ": {
+      "dexNumber": 961,
+      "url": "https://yakkun.com/sv/zukan/n961"
+    },
+    "ミニリュウ": {
+      "dexNumber": 147,
+      "url": "https://yakkun.com/sv/zukan/n147"
+    },
+    "ハクリュー": {
+      "dexNumber": 148,
+      "url": "https://yakkun.com/sv/zukan/n148"
+    },
+    "カイリュー": {
+      "dexNumber": 149,
+      "url": "https://yakkun.com/sv/zukan/n149"
+    },
+    "ユキハミ": {
+      "dexNumber": 872,
+      "url": "https://yakkun.com/sv/zukan/n872"
+    },
+    "モスノウ": {
+      "dexNumber": 873,
+      "url": "https://yakkun.com/sv/zukan/n873"
+    },
+    "ユキカブリ": {
+      "dexNumber": 459,
+      "url": "https://yakkun.com/sv/zukan/n459"
+    },
+    "ユキノオー": {
+      "dexNumber": 460,
+      "url": "https://yakkun.com/sv/zukan/n460"
+    },
+    "デリバード": {
+      "dexNumber": 225,
+      "url": "https://yakkun.com/sv/zukan/n225"
+    },
+    "クマシュン": {
+      "dexNumber": 613,
+      "url": "https://yakkun.com/sv/zukan/n613"
+    },
+    "ツンベアー": {
+      "dexNumber": 614,
+      "url": "https://yakkun.com/sv/zukan/n614"
+    },
+    "ユキワラシ": {
+      "dexNumber": 361,
+      "url": "https://yakkun.com/sv/zukan/n361"
+    },
+    "オニゴーリ": {
+      "dexNumber": 362,
+      "url": "https://yakkun.com/sv/zukan/n362"
+    },
+    "ユキメノコ": {
+      "dexNumber": 478,
+      "url": "https://yakkun.com/sv/zukan/n478"
+    },
+    "フリージオ": {
+      "dexNumber": 615,
+      "url": "https://yakkun.com/sv/zukan/n615"
+    },
+    "アルクジラ": {
+      "dexNumber": 947,
+      "url": "https://yakkun.com/sv/zukan/n947"
+    },
+    "ハルクジラ": {
+      "dexNumber": 948,
+      "url": "https://yakkun.com/sv/zukan/n948"
+    },
+    "カチコール": {
+      "dexNumber": 712,
+      "url": "https://yakkun.com/sv/zukan/n712"
+    },
+    "クレベース": {
+      "dexNumber": 713,
+      "url": "https://yakkun.com/sv/zukan/n713"
+    },
+    "クレベース(ヒスイ)": {
+      "dexNumber": 713,
+      "url": "https://yakkun.com/sv/zukan/n713h"
+    },
+    "ワシボン": {
+      "dexNumber": 627,
+      "url": "https://yakkun.com/sv/zukan/n627"
+    },
+    "ウォーグル": {
+      "dexNumber": 628,
+      "url": "https://yakkun.com/sv/zukan/n628"
+    },
+    "ウォーグル(ヒスイ)": {
+      "dexNumber": 628,
+      "url": "https://yakkun.com/sv/zukan/n628h"
+    },
+    "コマタナ": {
+      "dexNumber": 624,
+      "url": "https://yakkun.com/sv/zukan/n624"
+    },
+    "キリキザン": {
+      "dexNumber": 625,
+      "url": "https://yakkun.com/sv/zukan/n625"
+    },
+    "ドドゲザン": {
+      "dexNumber": 1008,
+      "url": "https://yakkun.com/sv/zukan/n1008"
+    },
+    "モノズ": {
+      "dexNumber": 633,
+      "url": "https://yakkun.com/sv/zukan/n633"
+    },
+    "ジヘッド": {
+      "dexNumber": 634,
+      "url": "https://yakkun.com/sv/zukan/n634"
+    },
+    "サザンドラ": {
+      "dexNumber": 635,
+      "url": "https://yakkun.com/sv/zukan/n635"
+    },
+    "ミガルーサ": {
+      "dexNumber": 932,
+      "url": "https://yakkun.com/sv/zukan/n932"
+    },
+    "ヘイラッシャ": {
+      "dexNumber": 931,
+      "url": "https://yakkun.com/sv/zukan/n931"
+    },
+    "シャリタツ": {
+      "dexNumber": 952,
+      "url": "https://yakkun.com/sv/zukan/n952"
+    },
+    "イダイナキバ": {
+      "dexNumber": 978,
+      "url": "https://yakkun.com/sv/zukan/n978"
+    },
+    "サケブシッポ": {
+      "dexNumber": 982,
+      "url": "https://yakkun.com/sv/zukan/n982"
+    },
+    "アラブルタケ": {
+      "dexNumber": 979,
+      "url": "https://yakkun.com/sv/zukan/n979"
+    },
+    "ハバタクカミ": {
+      "dexNumber": 983,
+      "url": "https://yakkun.com/sv/zukan/n983"
+    },
+    "チヲハウハネ": {
+      "dexNumber": 984,
+      "url": "https://yakkun.com/sv/zukan/n984"
+    },
+    "スナノケガワ": {
+      "dexNumber": 981,
+      "url": "https://yakkun.com/sv/zukan/n981"
+    },
+    "テツノワダチ": {
+      "dexNumber": 986,
+      "url": "https://yakkun.com/sv/zukan/n986"
+    },
+    "テツノツツミ": {
+      "dexNumber": 992,
+      "url": "https://yakkun.com/sv/zukan/n992"
+    },
+    "テツノカイナ": {
+      "dexNumber": 989,
+      "url": "https://yakkun.com/sv/zukan/n989"
+    },
+    "テツノコウベ": {
+      "dexNumber": 990,
+      "url": "https://yakkun.com/sv/zukan/n990"
+    },
+    "テツノドクガ": {
+      "dexNumber": 988,
+      "url": "https://yakkun.com/sv/zukan/n988"
+    },
+    "テツノイバラ": {
+      "dexNumber": 991,
+      "url": "https://yakkun.com/sv/zukan/n991"
+    },
+    "セビエ": {
+      "dexNumber": 949,
+      "url": "https://yakkun.com/sv/zukan/n949"
+    },
+    "セゴール": {
+      "dexNumber": 950,
+      "url": "https://yakkun.com/sv/zukan/n950"
+    },
+    "セグレイブ": {
+      "dexNumber": 951,
+      "url": "https://yakkun.com/sv/zukan/n951"
+    },
+    "コレクレー(はこ)": {
+      "dexNumber": 976,
+      "url": "https://yakkun.com/sv/zukan/n976"
+    },
+    "サーフゴー": {
+      "dexNumber": 977,
+      "url": "https://yakkun.com/sv/zukan/n977"
+    },
+    "チオンジェン": {
+      "dexNumber": 996,
+      "url": "https://yakkun.com/sv/zukan/n996"
+    },
+    "パオジアン": {
+      "dexNumber": 995,
+      "url": "https://yakkun.com/sv/zukan/n995"
+    },
+    "ディンルー": {
+      "dexNumber": 994,
+      "url": "https://yakkun.com/sv/zukan/n994"
+    },
+    "イーユイ": {
+      "dexNumber": 997,
+      "url": "https://yakkun.com/sv/zukan/n997"
+    },
+    "トドロクツキ": {
+      "dexNumber": 985,
+      "url": "https://yakkun.com/sv/zukan/n985"
+    },
+    "テツノブジン": {
+      "dexNumber": 993,
+      "url": "https://yakkun.com/sv/zukan/n993"
+    },
+    "コライドン": {
+      "dexNumber": 998,
+      "url": "https://yakkun.com/sv/zukan/n998"
+    },
+    "ミライドン": {
+      "dexNumber": 999,
+      "url": "https://yakkun.com/sv/zukan/n999"
+    },
+    "ヒトカゲ": {
+      "dexNumber": 4,
+      "url": "https://yakkun.com/sv/zukan/n4"
+    },
+    "リザード": {
+      "dexNumber": 5,
+      "url": "https://yakkun.com/sv/zukan/n5"
+    },
+    "リザードン": {
+      "dexNumber": 6,
+      "url": "https://yakkun.com/sv/zukan/n6"
+    },
+    "フリーザー": {
+      "dexNumber": 144,
+      "url": "https://yakkun.com/sv/zukan/n144"
+    },
+    "フリーザー(ガラル)": {
+      "dexNumber": 144,
+      "url": "https://yakkun.com/sv/zukan/n144g"
+    },
+    "サンダー": {
+      "dexNumber": 145,
+      "url": "https://yakkun.com/sv/zukan/n145"
+    },
+    "サンダー(ガラル)": {
+      "dexNumber": 145,
+      "url": "https://yakkun.com/sv/zukan/n145g"
+    },
+    "ファイヤー": {
+      "dexNumber": 146,
+      "url": "https://yakkun.com/sv/zukan/n146"
+    },
+    "ファイヤー(ガラル)": {
+      "dexNumber": 146,
+      "url": "https://yakkun.com/sv/zukan/n146g"
+    },
+    "ミュウツー": {
+      "dexNumber": 150,
+      "url": "https://yakkun.com/sv/zukan/n150"
+    },
+    "ミュウ": {
+      "dexNumber": 151,
+      "url": "https://yakkun.com/sv/zukan/n151"
+    },
+    "ヒノアラシ": {
+      "dexNumber": 155,
+      "url": "https://yakkun.com/sv/zukan/n155"
+    },
+    "マグマラシ": {
+      "dexNumber": 156,
+      "url": "https://yakkun.com/sv/zukan/n156"
+    },
+    "バクフーン": {
+      "dexNumber": 157,
+      "url": "https://yakkun.com/sv/zukan/n157"
+    },
+    "バクフーン(ヒスイ)": {
+      "dexNumber": 157,
+      "url": "https://yakkun.com/sv/zukan/n157h"
+    },
+    "ヌオー": {
+      "dexNumber": 195,
+      "url": "https://yakkun.com/sv/zukan/n195"
+    },
+    "カイオーガ": {
+      "dexNumber": 382,
+      "url": "https://yakkun.com/sv/zukan/n382"
+    },
+    "グラードン": {
+      "dexNumber": 383,
+      "url": "https://yakkun.com/sv/zukan/n383"
+    },
+    "レックウザ": {
+      "dexNumber": 384,
+      "url": "https://yakkun.com/sv/zukan/n384"
+    },
+    "ユクシー": {
+      "dexNumber": 480,
+      "url": "https://yakkun.com/sv/zukan/n480"
+    },
+    "エムリット": {
+      "dexNumber": 481,
+      "url": "https://yakkun.com/sv/zukan/n481"
+    },
+    "アグノム": {
+      "dexNumber": 482,
+      "url": "https://yakkun.com/sv/zukan/n482"
+    },
+    "ディアルガ": {
+      "dexNumber": 483,
+      "url": "https://yakkun.com/sv/zukan/n483"
+    },
+    "ディアルガ(オリジン)": {
+      "dexNumber": 483,
+      "url": "https://yakkun.com/sv/zukan/n483o"
+    },
+    "パルキア": {
+      "dexNumber": 484,
+      "url": "https://yakkun.com/sv/zukan/n484"
+    },
+    "パルキア(オリジン)": {
+      "dexNumber": 484,
+      "url": "https://yakkun.com/sv/zukan/n484o"
+    },
+    "ヒードラン": {
+      "dexNumber": 485,
+      "url": "https://yakkun.com/sv/zukan/n485"
+    },
+    "ギラティナ(アナザー)": {
+      "dexNumber": 487,
+      "url": "https://yakkun.com/sv/zukan/n487"
+    },
+    "ギラティナ(オリジン)": {
+      "dexNumber": 487,
+      "url": "https://yakkun.com/sv/zukan/n487o"
+    },
+    "クレセリア": {
+      "dexNumber": 488,
+      "url": "https://yakkun.com/sv/zukan/n488"
+    },
+    "アルセウス": {
+      "dexNumber": 493,
+      "url": "https://yakkun.com/sv/zukan/n493"
+    },
+    "ミジュマル": {
+      "dexNumber": 501,
+      "url": "https://yakkun.com/sv/zukan/n501"
+    },
+    "フタチマル": {
+      "dexNumber": 502,
+      "url": "https://yakkun.com/sv/zukan/n502"
+    },
+    "ダイケンキ": {
+      "dexNumber": 503,
+      "url": "https://yakkun.com/sv/zukan/n503"
+    },
+    "ダイケンキ(ヒスイ)": {
+      "dexNumber": 503,
+      "url": "https://yakkun.com/sv/zukan/n503h"
+    },
+    "トルネロス(化身)": {
+      "dexNumber": 641,
+      "url": "https://yakkun.com/sv/zukan/n641"
+    },
+    "トルネロス(霊獣)": {
+      "dexNumber": 641,
+      "url": "https://yakkun.com/sv/zukan/n641a"
+    },
+    "ボルトロス(化身)": {
+      "dexNumber": 642,
+      "url": "https://yakkun.com/sv/zukan/n642"
+    },
+    "ボルトロス(霊獣)": {
+      "dexNumber": 642,
+      "url": "https://yakkun.com/sv/zukan/n642a"
+    },
+    "ランドロス(化身)": {
+      "dexNumber": 645,
+      "url": "https://yakkun.com/sv/zukan/n645"
+    },
+    "ランドロス(霊獣)": {
+      "dexNumber": 645,
+      "url": "https://yakkun.com/sv/zukan/n645a"
+    },
+    "メロエッタ(ボイス)": {
+      "dexNumber": 648,
+      "url": "https://yakkun.com/sv/zukan/n648"
+    },
+    "メロエッタ(ステップ)": {
+      "dexNumber": 648,
+      "url": "https://yakkun.com/sv/zukan/n648f"
+    },
+    "ハリマロン": {
+      "dexNumber": 650,
+      "url": "https://yakkun.com/sv/zukan/n650"
+    },
+    "ハリボーグ": {
+      "dexNumber": 651,
+      "url": "https://yakkun.com/sv/zukan/n651"
+    },
+    "ブリガロン": {
+      "dexNumber": 652,
+      "url": "https://yakkun.com/sv/zukan/n652"
+    },
+    "フォッコ": {
+      "dexNumber": 653,
+      "url": "https://yakkun.com/sv/zukan/n653"
+    },
+    "テールナー": {
+      "dexNumber": 654,
+      "url": "https://yakkun.com/sv/zukan/n654"
+    },
+    "マフォクシー": {
+      "dexNumber": 655,
+      "url": "https://yakkun.com/sv/zukan/n655"
+    },
+    "ケロマツ": {
+      "dexNumber": 656,
+      "url": "https://yakkun.com/sv/zukan/n656"
+    },
+    "ゲコガシラ": {
+      "dexNumber": 657,
+      "url": "https://yakkun.com/sv/zukan/n657"
+    },
+    "ゲッコウガ": {
+      "dexNumber": 658,
+      "url": "https://yakkun.com/sv/zukan/n658"
+    },
+    "メレシー": {
+      "dexNumber": 703,
+      "url": "https://yakkun.com/sv/zukan/n703"
+    },
+    "ディアンシー": {
+      "dexNumber": 719,
+      "url": "https://yakkun.com/sv/zukan/n719"
+    },
+    "フーパ(いましめ)": {
+      "dexNumber": 720,
+      "url": "https://yakkun.com/sv/zukan/n720"
+    },
+    "フーパ(ときはな)": {
+      "dexNumber": 720,
+      "url": "https://yakkun.com/sv/zukan/n720u"
+    },
+    "ボルケニオン": {
+      "dexNumber": 721,
+      "url": "https://yakkun.com/sv/zukan/n721"
+    },
+    "モクロー": {
+      "dexNumber": 722,
+      "url": "https://yakkun.com/sv/zukan/n722"
+    },
+    "フクスロー": {
+      "dexNumber": 723,
+      "url": "https://yakkun.com/sv/zukan/n723"
+    },
+    "ジュナイパー": {
+      "dexNumber": 724,
+      "url": "https://yakkun.com/sv/zukan/n724"
+    },
+    "ジュナイパー(ヒスイ)": {
+      "dexNumber": 724,
+      "url": "https://yakkun.com/sv/zukan/n724h"
+    },
+    "マギアナ": {
+      "dexNumber": 801,
+      "url": "https://yakkun.com/sv/zukan/n801"
+    },
+    "サルノリ": {
+      "dexNumber": 810,
+      "url": "https://yakkun.com/sv/zukan/n810"
+    },
+    "バチンキー": {
+      "dexNumber": 811,
+      "url": "https://yakkun.com/sv/zukan/n811"
+    },
+    "ゴリランダー": {
+      "dexNumber": 812,
+      "url": "https://yakkun.com/sv/zukan/n812"
+    },
+    "ヒバニー": {
+      "dexNumber": 813,
+      "url": "https://yakkun.com/sv/zukan/n813"
+    },
+    "ラビフット": {
+      "dexNumber": 814,
+      "url": "https://yakkun.com/sv/zukan/n814"
+    },
+    "エースバーン": {
+      "dexNumber": 815,
+      "url": "https://yakkun.com/sv/zukan/n815"
+    },
+    "メッソン": {
+      "dexNumber": 816,
+      "url": "https://yakkun.com/sv/zukan/n816"
+    },
+    "ジメレオン": {
+      "dexNumber": 817,
+      "url": "https://yakkun.com/sv/zukan/n817"
+    },
+    "インテレオン": {
+      "dexNumber": 818,
+      "url": "https://yakkun.com/sv/zukan/n818"
+    },
+    "ニャイキング": {
+      "dexNumber": 863,
+      "url": "https://yakkun.com/sv/zukan/n863"
+    },
+    "ザシアン": {
+      "dexNumber": 888,
+      "url": "https://yakkun.com/sv/zukan/n888"
+    },
+    "ザシアン(王)": {
+      "dexNumber": 888,
+      "url": "https://yakkun.com/sv/zukan/n888f"
+    },
+    "ザマゼンタ": {
+      "dexNumber": 889,
+      "url": "https://yakkun.com/sv/zukan/n889"
+    },
+    "ザマゼンタ(王)": {
+      "dexNumber": 889,
+      "url": "https://yakkun.com/sv/zukan/n889f"
+    },
+    "ムゲンダイナ": {
+      "dexNumber": 890,
+      "url": "https://yakkun.com/sv/zukan/n890"
+    },
+    "ダクマ": {
+      "dexNumber": 891,
+      "url": "https://yakkun.com/sv/zukan/n891"
+    },
+    "ウーラオス(いちげき)": {
+      "dexNumber": 892,
+      "url": "https://yakkun.com/sv/zukan/n892"
+    },
+    "ウーラオス(れんげき)": {
+      "dexNumber": 892,
+      "url": "https://yakkun.com/sv/zukan/n892r"
+    },
+    "ザルード": {
+      "dexNumber": 893,
+      "url": "https://yakkun.com/sv/zukan/n893"
+    },
+    "レジエレキ": {
+      "dexNumber": 894,
+      "url": "https://yakkun.com/sv/zukan/n894"
+    },
+    "レジドラゴ": {
+      "dexNumber": 895,
+      "url": "https://yakkun.com/sv/zukan/n895"
+    },
+    "ブリザポス": {
+      "dexNumber": 896,
+      "url": "https://yakkun.com/sv/zukan/n896"
+    },
+    "レイスポス": {
+      "dexNumber": 897,
+      "url": "https://yakkun.com/sv/zukan/n897"
+    },
+    "バドレックス": {
+      "dexNumber": 898,
+      "url": "https://yakkun.com/sv/zukan/n898"
+    },
+    "バドレックス(はくば)": {
+      "dexNumber": 898,
+      "url": "https://yakkun.com/sv/zukan/n898w"
+    },
+    "バドレックス(こくば)": {
+      "dexNumber": 898,
+      "url": "https://yakkun.com/sv/zukan/n898b"
+    },
+    "アヤシシ": {
+      "dexNumber": 899,
+      "url": "https://yakkun.com/sv/zukan/n899"
+    },
+    "バサギリ": {
+      "dexNumber": 900,
+      "url": "https://yakkun.com/sv/zukan/n900"
+    },
+    "ガチグマ": {
+      "dexNumber": 901,
+      "url": "https://yakkun.com/sv/zukan/n901"
+    },
+    "イダイトウ♂": {
+      "dexNumber": 902,
+      "url": "https://yakkun.com/sv/zukan/n902"
+    },
+    "イダイトウ♀": {
+      "dexNumber": 902,
+      "url": "https://yakkun.com/sv/zukan/n902f"
+    },
+    "オオニューラ": {
+      "dexNumber": 903,
+      "url": "https://yakkun.com/sv/zukan/n903"
+    },
+    "ハリーマン": {
+      "dexNumber": 904,
+      "url": "https://yakkun.com/sv/zukan/n904"
+    },
+    "ラブトロス(化身)": {
+      "dexNumber": 905,
+      "url": "https://yakkun.com/sv/zukan/n905"
+    },
+    "ラブトロス(霊獣)": {
+      "dexNumber": 905,
+      "url": "https://yakkun.com/sv/zukan/n905a"
+    },
+    "フシギダネ": {
+      "dexNumber": 1,
+      "url": "https://yakkun.com/sv/zukan/n1"
+    },
+    "フシギソウ": {
+      "dexNumber": 2,
+      "url": "https://yakkun.com/sv/zukan/n2"
+    },
+    "フシギバナ": {
+      "dexNumber": 3,
+      "url": "https://yakkun.com/sv/zukan/n3"
+    },
+    "メガフシギバナ": {
+      "dexNumber": 3,
+      "url": "https://yakkun.com/sv/zukan/n3m"
+    },
+    "メガリザードンX": {
+      "dexNumber": 6,
+      "url": "https://yakkun.com/sv/zukan/n6x"
+    },
+    "メガリザードンY": {
+      "dexNumber": 6,
+      "url": "https://yakkun.com/sv/zukan/n6y"
+    },
+    "ゼニガメ": {
+      "dexNumber": 7,
+      "url": "https://yakkun.com/sv/zukan/n7"
+    },
+    "カメール": {
+      "dexNumber": 8,
+      "url": "https://yakkun.com/sv/zukan/n8"
+    },
+    "カメックス": {
+      "dexNumber": 9,
+      "url": "https://yakkun.com/sv/zukan/n9"
+    },
+    "メガカメックス": {
+      "dexNumber": 9,
+      "url": "https://yakkun.com/sv/zukan/n9m"
+    },
+    "キャタピー": {
+      "dexNumber": 10,
+      "url": "https://yakkun.com/sv/zukan/n10"
+    },
+    "トランセル": {
+      "dexNumber": 11,
+      "url": "https://yakkun.com/sv/zukan/n11"
+    },
+    "バタフリー": {
+      "dexNumber": 12,
+      "url": "https://yakkun.com/sv/zukan/n12"
+    },
+    "ビードル": {
+      "dexNumber": 13,
+      "url": "https://yakkun.com/sv/zukan/n13"
+    },
+    "コクーン": {
+      "dexNumber": 14,
+      "url": "https://yakkun.com/sv/zukan/n14"
+    },
+    "スピアー": {
+      "dexNumber": 15,
+      "url": "https://yakkun.com/sv/zukan/n15"
+    },
+    "メガスピアー": {
+      "dexNumber": 15,
+      "url": "https://yakkun.com/sv/zukan/n15m"
+    },
+    "ポッポ": {
+      "dexNumber": 16,
+      "url": "https://yakkun.com/sv/zukan/n16"
+    },
+    "ピジョン": {
+      "dexNumber": 17,
+      "url": "https://yakkun.com/sv/zukan/n17"
+    },
+    "ピジョット": {
+      "dexNumber": 18,
+      "url": "https://yakkun.com/sv/zukan/n18"
+    },
+    "メガピジョット": {
+      "dexNumber": 18,
+      "url": "https://yakkun.com/sv/zukan/n18m"
+    },
+    "コラッタ": {
+      "dexNumber": 19,
+      "url": "https://yakkun.com/sv/zukan/n19"
+    },
+    "コラッタ(アローラ)": {
+      "dexNumber": 19,
+      "url": "https://yakkun.com/sv/zukan/n19a"
+    },
+    "ラッタ": {
+      "dexNumber": 20,
+      "url": "https://yakkun.com/sv/zukan/n20"
+    },
+    "ラッタ(アローラ)": {
+      "dexNumber": 20,
+      "url": "https://yakkun.com/sv/zukan/n20a"
+    },
+    "オニスズメ": {
+      "dexNumber": 21,
+      "url": "https://yakkun.com/sv/zukan/n21"
+    },
+    "オニドリル": {
+      "dexNumber": 22,
+      "url": "https://yakkun.com/sv/zukan/n22"
+    },
+    "アーボ": {
+      "dexNumber": 23,
+      "url": "https://yakkun.com/sv/zukan/n23"
+    },
+    "アーボック": {
+      "dexNumber": 24,
+      "url": "https://yakkun.com/sv/zukan/n24"
+    },
+    "サンド": {
+      "dexNumber": 27,
+      "url": "https://yakkun.com/sv/zukan/n27"
+    },
+    "サンド(アローラ)": {
+      "dexNumber": 27,
+      "url": "https://yakkun.com/sv/zukan/n27a"
+    },
+    "サンドパン": {
+      "dexNumber": 28,
+      "url": "https://yakkun.com/sv/zukan/n28"
+    },
+    "サンドパン(アローラ)": {
+      "dexNumber": 28,
+      "url": "https://yakkun.com/sv/zukan/n28a"
+    },
+    "ニドラン♀": {
+      "dexNumber": 29,
+      "url": "https://yakkun.com/sv/zukan/n29"
+    },
+    "ニドリーナ": {
+      "dexNumber": 30,
+      "url": "https://yakkun.com/sv/zukan/n30"
+    },
+    "ニドクイン": {
+      "dexNumber": 31,
+      "url": "https://yakkun.com/sv/zukan/n31"
+    },
+    "ニドラン♂": {
+      "dexNumber": 32,
+      "url": "https://yakkun.com/sv/zukan/n32"
+    },
+    "ニドリーノ": {
+      "dexNumber": 33,
+      "url": "https://yakkun.com/sv/zukan/n33"
+    },
+    "ニドキング": {
+      "dexNumber": 34,
+      "url": "https://yakkun.com/sv/zukan/n34"
+    },
+    "ピッピ": {
+      "dexNumber": 35,
+      "url": "https://yakkun.com/sv/zukan/n35"
+    },
+    "ピクシー": {
+      "dexNumber": 36,
+      "url": "https://yakkun.com/sv/zukan/n36"
+    },
+    "ロコン": {
+      "dexNumber": 37,
+      "url": "https://yakkun.com/sv/zukan/n37"
+    },
+    "ロコン(アローラ)": {
+      "dexNumber": 37,
+      "url": "https://yakkun.com/sv/zukan/n37a"
+    },
+    "キュウコン": {
+      "dexNumber": 38,
+      "url": "https://yakkun.com/sv/zukan/n38"
+    },
+    "キュウコン(アローラ)": {
+      "dexNumber": 38,
+      "url": "https://yakkun.com/sv/zukan/n38a"
+    },
+    "ズバット": {
+      "dexNumber": 41,
+      "url": "https://yakkun.com/sv/zukan/n41"
+    },
+    "ゴルバット": {
+      "dexNumber": 42,
+      "url": "https://yakkun.com/sv/zukan/n42"
+    },
+    "ナゾノクサ": {
+      "dexNumber": 43,
+      "url": "https://yakkun.com/sv/zukan/n43"
+    },
+    "クサイハナ": {
+      "dexNumber": 44,
+      "url": "https://yakkun.com/sv/zukan/n44"
+    },
+    "ラフレシア": {
+      "dexNumber": 45,
+      "url": "https://yakkun.com/sv/zukan/n45"
+    },
+    "パラス": {
+      "dexNumber": 46,
+      "url": "https://yakkun.com/sv/zukan/n46"
+    },
+    "パラセクト": {
+      "dexNumber": 47,
+      "url": "https://yakkun.com/sv/zukan/n47"
+    },
+    "ニョロモ": {
+      "dexNumber": 60,
+      "url": "https://yakkun.com/sv/zukan/n60"
+    },
+    "ニョロゾ": {
+      "dexNumber": 61,
+      "url": "https://yakkun.com/sv/zukan/n61"
+    },
+    "ニョロボン": {
+      "dexNumber": 62,
+      "url": "https://yakkun.com/sv/zukan/n62"
+    },
+    "ケーシィ": {
+      "dexNumber": 63,
+      "url": "https://yakkun.com/sv/zukan/n63"
+    },
+    "ユンゲラー": {
+      "dexNumber": 64,
+      "url": "https://yakkun.com/sv/zukan/n64"
+    },
+    "フーディン": {
+      "dexNumber": 65,
+      "url": "https://yakkun.com/sv/zukan/n65"
+    },
+    "メガフーディン": {
+      "dexNumber": 65,
+      "url": "https://yakkun.com/sv/zukan/n65m"
+    },
+    "ワンリキー": {
+      "dexNumber": 66,
+      "url": "https://yakkun.com/sv/zukan/n66"
+    },
+    "ゴーリキー": {
+      "dexNumber": 67,
+      "url": "https://yakkun.com/sv/zukan/n67"
+    },
+    "カイリキー": {
+      "dexNumber": 68,
+      "url": "https://yakkun.com/sv/zukan/n68"
+    },
+    "マダツボミ": {
+      "dexNumber": 69,
+      "url": "https://yakkun.com/sv/zukan/n69"
+    },
+    "ウツドン": {
+      "dexNumber": 70,
+      "url": "https://yakkun.com/sv/zukan/n70"
+    },
+    "ウツボット": {
+      "dexNumber": 71,
+      "url": "https://yakkun.com/sv/zukan/n71"
+    },
+    "メノクラゲ": {
+      "dexNumber": 72,
+      "url": "https://yakkun.com/sv/zukan/n72"
+    },
+    "ドククラゲ": {
+      "dexNumber": 73,
+      "url": "https://yakkun.com/sv/zukan/n73"
+    },
+    "イシツブテ": {
+      "dexNumber": 74,
+      "url": "https://yakkun.com/sv/zukan/n74"
+    },
+    "イシツブテ(アローラ)": {
+      "dexNumber": 74,
+      "url": "https://yakkun.com/sv/zukan/n74a"
+    },
+    "ゴローン": {
+      "dexNumber": 75,
+      "url": "https://yakkun.com/sv/zukan/n75"
+    },
+    "ゴローン(アローラ)": {
+      "dexNumber": 75,
+      "url": "https://yakkun.com/sv/zukan/n75a"
+    },
+    "ゴローニャ": {
+      "dexNumber": 76,
+      "url": "https://yakkun.com/sv/zukan/n76"
+    },
+    "ゴローニャ(アローラ)": {
+      "dexNumber": 76,
+      "url": "https://yakkun.com/sv/zukan/n76a"
+    },
+    "ポニータ": {
+      "dexNumber": 77,
+      "url": "https://yakkun.com/sv/zukan/n77"
+    },
+    "ポニータ(ガラル)": {
+      "dexNumber": 77,
+      "url": "https://yakkun.com/sv/zukan/n77g"
+    },
+    "ギャロップ": {
+      "dexNumber": 78,
+      "url": "https://yakkun.com/sv/zukan/n78"
+    },
+    "ギャロップ(ガラル)": {
+      "dexNumber": 78,
+      "url": "https://yakkun.com/sv/zukan/n78g"
+    },
+    "メガヤドラン": {
+      "dexNumber": 80,
+      "url": "https://yakkun.com/sv/zukan/n80m"
+    },
+    "カモネギ": {
+      "dexNumber": 83,
+      "url": "https://yakkun.com/sv/zukan/n83"
+    },
+    "カモネギ(ガラル)": {
+      "dexNumber": 83,
+      "url": "https://yakkun.com/sv/zukan/n83g"
+    },
+    "ドードー": {
+      "dexNumber": 84,
+      "url": "https://yakkun.com/sv/zukan/n84"
+    },
+    "ドードリオ": {
+      "dexNumber": 85,
+      "url": "https://yakkun.com/sv/zukan/n85"
+    },
+    "パウワウ": {
+      "dexNumber": 86,
+      "url": "https://yakkun.com/sv/zukan/n86"
+    },
+    "ジュゴン": {
+      "dexNumber": 87,
+      "url": "https://yakkun.com/sv/zukan/n87"
+    },
+    "メガゲンガー": {
+      "dexNumber": 94,
+      "url": "https://yakkun.com/sv/zukan/n94m"
+    },
+    "イワーク": {
+      "dexNumber": 95,
+      "url": "https://yakkun.com/sv/zukan/n95"
+    },
+    "クラブ": {
+      "dexNumber": 98,
+      "url": "https://yakkun.com/sv/zukan/n98"
+    },
+    "キングラー": {
+      "dexNumber": 99,
+      "url": "https://yakkun.com/sv/zukan/n99"
+    },
+    "タマタマ": {
+      "dexNumber": 102,
+      "url": "https://yakkun.com/sv/zukan/n102"
+    },
+    "ナッシー": {
+      "dexNumber": 103,
+      "url": "https://yakkun.com/sv/zukan/n103"
+    },
+    "ナッシー(アローラ)": {
+      "dexNumber": 103,
+      "url": "https://yakkun.com/sv/zukan/n103a"
+    },
+    "カラカラ": {
+      "dexNumber": 104,
+      "url": "https://yakkun.com/sv/zukan/n104"
+    },
+    "ガラガラ": {
+      "dexNumber": 105,
+      "url": "https://yakkun.com/sv/zukan/n105"
+    },
+    "ガラガラ(アローラ)": {
+      "dexNumber": 105,
+      "url": "https://yakkun.com/sv/zukan/n105a"
+    },
+    "サワムラー": {
+      "dexNumber": 106,
+      "url": "https://yakkun.com/sv/zukan/n106"
+    },
+    "エビワラー": {
+      "dexNumber": 107,
+      "url": "https://yakkun.com/sv/zukan/n107"
+    },
+    "ベロリンガ": {
+      "dexNumber": 108,
+      "url": "https://yakkun.com/sv/zukan/n108"
+    },
+    "ドガース": {
+      "dexNumber": 109,
+      "url": "https://yakkun.com/sv/zukan/n109"
+    },
+    "マタドガス": {
+      "dexNumber": 110,
+      "url": "https://yakkun.com/sv/zukan/n110"
+    },
+    "マタドガス(ガラル)": {
+      "dexNumber": 110,
+      "url": "https://yakkun.com/sv/zukan/n110g"
+    },
+    "サイホーン": {
+      "dexNumber": 111,
+      "url": "https://yakkun.com/sv/zukan/n111"
+    },
+    "サイドン": {
+      "dexNumber": 112,
+      "url": "https://yakkun.com/sv/zukan/n112"
+    },
+    "モンジャラ": {
+      "dexNumber": 114,
+      "url": "https://yakkun.com/sv/zukan/n114"
+    },
+    "ガルーラ": {
+      "dexNumber": 115,
+      "url": "https://yakkun.com/sv/zukan/n115"
+    },
+    "メガガルーラ": {
+      "dexNumber": 115,
+      "url": "https://yakkun.com/sv/zukan/n115m"
+    },
+    "タッツー": {
+      "dexNumber": 116,
+      "url": "https://yakkun.com/sv/zukan/n116"
+    },
+    "シードラ": {
+      "dexNumber": 117,
+      "url": "https://yakkun.com/sv/zukan/n117"
+    },
+    "トサキント": {
+      "dexNumber": 118,
+      "url": "https://yakkun.com/sv/zukan/n118"
+    },
+    "アズマオウ": {
+      "dexNumber": 119,
+      "url": "https://yakkun.com/sv/zukan/n119"
+    },
+    "ヒトデマン": {
+      "dexNumber": 120,
+      "url": "https://yakkun.com/sv/zukan/n120"
+    },
+    "スターミー": {
+      "dexNumber": 121,
+      "url": "https://yakkun.com/sv/zukan/n121"
+    },
+    "バリヤード": {
+      "dexNumber": 122,
+      "url": "https://yakkun.com/sv/zukan/n122"
+    },
+    "バリヤード(ガラル)": {
+      "dexNumber": 122,
+      "url": "https://yakkun.com/sv/zukan/n122g"
+    },
+    "ルージュラ": {
+      "dexNumber": 124,
+      "url": "https://yakkun.com/sv/zukan/n124"
+    },
+    "エレブー": {
+      "dexNumber": 125,
+      "url": "https://yakkun.com/sv/zukan/n125"
+    },
+    "ブーバー": {
+      "dexNumber": 126,
+      "url": "https://yakkun.com/sv/zukan/n126"
+    },
+    "カイロス": {
+      "dexNumber": 127,
+      "url": "https://yakkun.com/sv/zukan/n127"
+    },
+    "メガカイロス": {
+      "dexNumber": 127,
+      "url": "https://yakkun.com/sv/zukan/n127m"
+    },
+    "メガギャラドス": {
+      "dexNumber": 130,
+      "url": "https://yakkun.com/sv/zukan/n130m"
+    },
+    "ラプラス": {
+      "dexNumber": 131,
+      "url": "https://yakkun.com/sv/zukan/n131"
+    },
+    "ポリゴン": {
+      "dexNumber": 137,
+      "url": "https://yakkun.com/sv/zukan/n137"
+    },
+    "オムナイト": {
+      "dexNumber": 138,
+      "url": "https://yakkun.com/sv/zukan/n138"
+    },
+    "オムスター": {
+      "dexNumber": 139,
+      "url": "https://yakkun.com/sv/zukan/n139"
+    },
+    "カブト": {
+      "dexNumber": 140,
+      "url": "https://yakkun.com/sv/zukan/n140"
+    },
+    "カブトプス": {
+      "dexNumber": 141,
+      "url": "https://yakkun.com/sv/zukan/n141"
+    },
+    "プテラ": {
+      "dexNumber": 142,
+      "url": "https://yakkun.com/sv/zukan/n142"
+    },
+    "メガプテラ": {
+      "dexNumber": 142,
+      "url": "https://yakkun.com/sv/zukan/n142m"
+    },
+    "カビゴン": {
+      "dexNumber": 143,
+      "url": "https://yakkun.com/sv/zukan/n143"
+    },
+    "メガミュウツーX": {
+      "dexNumber": 150,
+      "url": "https://yakkun.com/sv/zukan/n150x"
+    },
+    "メガミュウツーY": {
+      "dexNumber": 150,
+      "url": "https://yakkun.com/sv/zukan/n150y"
+    },
+    "チコリータ": {
+      "dexNumber": 152,
+      "url": "https://yakkun.com/sv/zukan/n152"
+    },
+    "ベイリーフ": {
+      "dexNumber": 153,
+      "url": "https://yakkun.com/sv/zukan/n153"
+    },
+    "メガニウム": {
+      "dexNumber": 154,
+      "url": "https://yakkun.com/sv/zukan/n154"
+    },
+    "ワニノコ": {
+      "dexNumber": 158,
+      "url": "https://yakkun.com/sv/zukan/n158"
+    },
+    "アリゲイツ": {
+      "dexNumber": 159,
+      "url": "https://yakkun.com/sv/zukan/n159"
+    },
+    "オーダイル": {
+      "dexNumber": 160,
+      "url": "https://yakkun.com/sv/zukan/n160"
+    },
+    "オタチ": {
+      "dexNumber": 161,
+      "url": "https://yakkun.com/sv/zukan/n161"
+    },
+    "オオタチ": {
+      "dexNumber": 162,
+      "url": "https://yakkun.com/sv/zukan/n162"
+    },
+    "ホーホー": {
+      "dexNumber": 163,
+      "url": "https://yakkun.com/sv/zukan/n163"
+    },
+    "ヨルノズク": {
+      "dexNumber": 164,
+      "url": "https://yakkun.com/sv/zukan/n164"
+    },
+    "レディバ": {
+      "dexNumber": 165,
+      "url": "https://yakkun.com/sv/zukan/n165"
+    },
+    "レディアン": {
+      "dexNumber": 166,
+      "url": "https://yakkun.com/sv/zukan/n166"
+    },
+    "イトマル": {
+      "dexNumber": 167,
+      "url": "https://yakkun.com/sv/zukan/n167"
+    },
+    "アリアドス": {
+      "dexNumber": 168,
+      "url": "https://yakkun.com/sv/zukan/n168"
+    },
+    "クロバット": {
+      "dexNumber": 169,
+      "url": "https://yakkun.com/sv/zukan/n169"
+    },
+    "チョンチー": {
+      "dexNumber": 170,
+      "url": "https://yakkun.com/sv/zukan/n170"
+    },
+    "ランターン": {
+      "dexNumber": 171,
+      "url": "https://yakkun.com/sv/zukan/n171"
+    },
+    "ピィ": {
+      "dexNumber": 173,
+      "url": "https://yakkun.com/sv/zukan/n173"
+    },
+    "トゲピー": {
+      "dexNumber": 175,
+      "url": "https://yakkun.com/sv/zukan/n175"
+    },
+    "トゲチック": {
+      "dexNumber": 176,
+      "url": "https://yakkun.com/sv/zukan/n176"
+    },
+    "ネイティ": {
+      "dexNumber": 177,
+      "url": "https://yakkun.com/sv/zukan/n177"
+    },
+    "ネイティオ": {
+      "dexNumber": 178,
+      "url": "https://yakkun.com/sv/zukan/n178"
+    },
+    "メガデンリュウ": {
+      "dexNumber": 181,
+      "url": "https://yakkun.com/sv/zukan/n181m"
+    },
+    "キレイハナ": {
+      "dexNumber": 182,
+      "url": "https://yakkun.com/sv/zukan/n182"
+    },
+    "ニョロトノ": {
+      "dexNumber": 186,
+      "url": "https://yakkun.com/sv/zukan/n186"
+    },
+    "エイパム": {
+      "dexNumber": 190,
+      "url": "https://yakkun.com/sv/zukan/n190"
+    },
+    "ヤンヤンマ": {
+      "dexNumber": 193,
+      "url": "https://yakkun.com/sv/zukan/n193"
+    },
+    "アンノーン": {
+      "dexNumber": 201,
+      "url": "https://yakkun.com/sv/zukan/n201"
+    },
+    "ソーナンス": {
+      "dexNumber": 202,
+      "url": "https://yakkun.com/sv/zukan/n202"
+    },
+    "グライガー": {
+      "dexNumber": 207,
+      "url": "https://yakkun.com/sv/zukan/n207"
+    },
+    "ハガネール": {
+      "dexNumber": 208,
+      "url": "https://yakkun.com/sv/zukan/n208"
+    },
+    "メガハガネール": {
+      "dexNumber": 208,
+      "url": "https://yakkun.com/sv/zukan/n208m"
+    },
+    "ブルー": {
+      "dexNumber": 209,
+      "url": "https://yakkun.com/sv/zukan/n209"
+    },
+    "グランブル": {
+      "dexNumber": 210,
+      "url": "https://yakkun.com/sv/zukan/n210"
+    },
+    "メガハッサム": {
+      "dexNumber": 212,
+      "url": "https://yakkun.com/sv/zukan/n212m"
+    },
+    "ツボツボ": {
+      "dexNumber": 213,
+      "url": "https://yakkun.com/sv/zukan/n213"
+    },
+    "メガヘラクロス": {
+      "dexNumber": 214,
+      "url": "https://yakkun.com/sv/zukan/n214m"
+    },
+    "マグマッグ": {
+      "dexNumber": 218,
+      "url": "https://yakkun.com/sv/zukan/n218"
+    },
+    "マグカルゴ": {
+      "dexNumber": 219,
+      "url": "https://yakkun.com/sv/zukan/n219"
+    },
+    "ウリムー": {
+      "dexNumber": 220,
+      "url": "https://yakkun.com/sv/zukan/n220"
+    },
+    "イノムー": {
+      "dexNumber": 221,
+      "url": "https://yakkun.com/sv/zukan/n221"
+    },
+    "サニーゴ": {
+      "dexNumber": 222,
+      "url": "https://yakkun.com/sv/zukan/n222"
+    },
+    "サニーゴ(ガラル)": {
+      "dexNumber": 222,
+      "url": "https://yakkun.com/sv/zukan/n222g"
+    },
+    "テッポウオ": {
+      "dexNumber": 223,
+      "url": "https://yakkun.com/sv/zukan/n223"
+    },
+    "オクタン": {
+      "dexNumber": 224,
+      "url": "https://yakkun.com/sv/zukan/n224"
+    },
+    "マンタイン": {
+      "dexNumber": 226,
+      "url": "https://yakkun.com/sv/zukan/n226"
+    },
+    "エアームド": {
+      "dexNumber": 227,
+      "url": "https://yakkun.com/sv/zukan/n227"
+    },
+    "メガヘルガー": {
+      "dexNumber": 229,
+      "url": "https://yakkun.com/sv/zukan/n229m"
+    },
+    "キングドラ": {
+      "dexNumber": 230,
+      "url": "https://yakkun.com/sv/zukan/n230"
+    },
+    "ポリゴン2": {
+      "dexNumber": 233,
+      "url": "https://yakkun.com/sv/zukan/n233"
+    },
+    "ドーブル": {
+      "dexNumber": 235,
+      "url": "https://yakkun.com/sv/zukan/n235"
+    },
+    "バルキー": {
+      "dexNumber": 236,
+      "url": "https://yakkun.com/sv/zukan/n236"
+    },
+    "カポエラー": {
+      "dexNumber": 237,
+      "url": "https://yakkun.com/sv/zukan/n237"
+    },
+    "ムチュール": {
+      "dexNumber": 238,
+      "url": "https://yakkun.com/sv/zukan/n238"
+    },
+    "エレキッド": {
+      "dexNumber": 239,
+      "url": "https://yakkun.com/sv/zukan/n239"
+    },
+    "ブビィ": {
+      "dexNumber": 240,
+      "url": "https://yakkun.com/sv/zukan/n240"
+    },
+    "ミルタンク": {
+      "dexNumber": 241,
+      "url": "https://yakkun.com/sv/zukan/n241"
+    },
+    "ライコウ": {
+      "dexNumber": 243,
+      "url": "https://yakkun.com/sv/zukan/n243"
+    },
+    "エンテイ": {
+      "dexNumber": 244,
+      "url": "https://yakkun.com/sv/zukan/n244"
+    },
+    "スイクン": {
+      "dexNumber": 245,
+      "url": "https://yakkun.com/sv/zukan/n245"
+    },
+    "メガバンギラス": {
+      "dexNumber": 248,
+      "url": "https://yakkun.com/sv/zukan/n248m"
+    },
+    "ルギア": {
+      "dexNumber": 249,
+      "url": "https://yakkun.com/sv/zukan/n249"
+    },
+    "ホウオウ": {
+      "dexNumber": 250,
+      "url": "https://yakkun.com/sv/zukan/n250"
+    },
+    "セレビィ": {
+      "dexNumber": 251,
+      "url": "https://yakkun.com/sv/zukan/n251"
+    },
+    "キモリ": {
+      "dexNumber": 252,
+      "url": "https://yakkun.com/sv/zukan/n252"
+    },
+    "ジュプトル": {
+      "dexNumber": 253,
+      "url": "https://yakkun.com/sv/zukan/n253"
+    },
+    "ジュカイン": {
+      "dexNumber": 254,
+      "url": "https://yakkun.com/sv/zukan/n254"
+    },
+    "メガジュカイン": {
+      "dexNumber": 254,
+      "url": "https://yakkun.com/sv/zukan/n254m"
+    },
+    "アチャモ": {
+      "dexNumber": 255,
+      "url": "https://yakkun.com/sv/zukan/n255"
+    },
+    "ワカシャモ": {
+      "dexNumber": 256,
+      "url": "https://yakkun.com/sv/zukan/n256"
+    },
+    "バシャーモ": {
+      "dexNumber": 257,
+      "url": "https://yakkun.com/sv/zukan/n257"
+    },
+    "メガバシャーモ": {
+      "dexNumber": 257,
+      "url": "https://yakkun.com/sv/zukan/n257m"
+    },
+    "ミズゴロウ": {
+      "dexNumber": 258,
+      "url": "https://yakkun.com/sv/zukan/n258"
+    },
+    "ヌマクロー": {
+      "dexNumber": 259,
+      "url": "https://yakkun.com/sv/zukan/n259"
+    },
+    "ラグラージ": {
+      "dexNumber": 260,
+      "url": "https://yakkun.com/sv/zukan/n260"
+    },
+    "メガラグラージ": {
+      "dexNumber": 260,
+      "url": "https://yakkun.com/sv/zukan/n260m"
+    },
+    "ポチエナ": {
+      "dexNumber": 261,
+      "url": "https://yakkun.com/sv/zukan/n261"
+    },
+    "グラエナ": {
+      "dexNumber": 262,
+      "url": "https://yakkun.com/sv/zukan/n262"
+    },
+    "ジグザグマ": {
+      "dexNumber": 263,
+      "url": "https://yakkun.com/sv/zukan/n263"
+    },
+    "ジグザグマ(ガラル)": {
+      "dexNumber": 263,
+      "url": "https://yakkun.com/sv/zukan/n263g"
+    },
+    "マッスグマ": {
+      "dexNumber": 264,
+      "url": "https://yakkun.com/sv/zukan/n264"
+    },
+    "マッスグマ(ガラル)": {
+      "dexNumber": 264,
+      "url": "https://yakkun.com/sv/zukan/n264g"
+    },
+    "ケムッソ": {
+      "dexNumber": 265,
+      "url": "https://yakkun.com/sv/zukan/n265"
+    },
+    "カラサリス": {
+      "dexNumber": 266,
+      "url": "https://yakkun.com/sv/zukan/n266"
+    },
+    "アゲハント": {
+      "dexNumber": 267,
+      "url": "https://yakkun.com/sv/zukan/n267"
+    },
+    "マユルド": {
+      "dexNumber": 268,
+      "url": "https://yakkun.com/sv/zukan/n268"
+    },
+    "ドクケイル": {
+      "dexNumber": 269,
+      "url": "https://yakkun.com/sv/zukan/n269"
+    },
+    "ハスボー": {
+      "dexNumber": 270,
+      "url": "https://yakkun.com/sv/zukan/n270"
+    },
+    "ハスブレロ": {
+      "dexNumber": 271,
+      "url": "https://yakkun.com/sv/zukan/n271"
+    },
+    "ルンパッパ": {
+      "dexNumber": 272,
+      "url": "https://yakkun.com/sv/zukan/n272"
+    },
+    "タネボー": {
+      "dexNumber": 273,
+      "url": "https://yakkun.com/sv/zukan/n273"
+    },
+    "コノハナ": {
+      "dexNumber": 274,
+      "url": "https://yakkun.com/sv/zukan/n274"
+    },
+    "ダーテング": {
+      "dexNumber": 275,
+      "url": "https://yakkun.com/sv/zukan/n275"
+    },
+    "スバメ": {
+      "dexNumber": 276,
+      "url": "https://yakkun.com/sv/zukan/n276"
+    },
+    "オオスバメ": {
+      "dexNumber": 277,
+      "url": "https://yakkun.com/sv/zukan/n277"
+    },
+    "メガサーナイト": {
+      "dexNumber": 282,
+      "url": "https://yakkun.com/sv/zukan/n282m"
+    },
+    "ツチニン": {
+      "dexNumber": 290,
+      "url": "https://yakkun.com/sv/zukan/n290"
+    },
+    "テッカニン": {
+      "dexNumber": 291,
+      "url": "https://yakkun.com/sv/zukan/n291"
+    },
+    "ヌケニン": {
+      "dexNumber": 292,
+      "url": "https://yakkun.com/sv/zukan/n292"
+    },
+    "ゴニョニョ": {
+      "dexNumber": 293,
+      "url": "https://yakkun.com/sv/zukan/n293"
+    },
+    "ドゴーム": {
+      "dexNumber": 294,
+      "url": "https://yakkun.com/sv/zukan/n294"
+    },
+    "バクオング": {
+      "dexNumber": 295,
+      "url": "https://yakkun.com/sv/zukan/n295"
+    },
+    "ノズパス": {
+      "dexNumber": 299,
+      "url": "https://yakkun.com/sv/zukan/n299"
+    },
+    "エネコ": {
+      "dexNumber": 300,
+      "url": "https://yakkun.com/sv/zukan/n300"
+    },
+    "エネコロロ": {
+      "dexNumber": 301,
+      "url": "https://yakkun.com/sv/zukan/n301"
+    },
+    "メガヤミラミ": {
+      "dexNumber": 302,
+      "url": "https://yakkun.com/sv/zukan/n302m"
+    },
+    "クチート": {
+      "dexNumber": 303,
+      "url": "https://yakkun.com/sv/zukan/n303"
+    },
+    "メガクチート": {
+      "dexNumber": 303,
+      "url": "https://yakkun.com/sv/zukan/n303m"
+    },
+    "ココドラ": {
+      "dexNumber": 304,
+      "url": "https://yakkun.com/sv/zukan/n304"
+    },
+    "コドラ": {
+      "dexNumber": 305,
+      "url": "https://yakkun.com/sv/zukan/n305"
+    },
+    "ボスゴドラ": {
+      "dexNumber": 306,
+      "url": "https://yakkun.com/sv/zukan/n306"
+    },
+    "メガボスゴドラ": {
+      "dexNumber": 306,
+      "url": "https://yakkun.com/sv/zukan/n306m"
+    },
+    "メガチャーレム": {
+      "dexNumber": 308,
+      "url": "https://yakkun.com/sv/zukan/n308m"
+    },
+    "ラクライ": {
+      "dexNumber": 309,
+      "url": "https://yakkun.com/sv/zukan/n309"
+    },
+    "ライボルト": {
+      "dexNumber": 310,
+      "url": "https://yakkun.com/sv/zukan/n310"
+    },
+    "メガライボルト": {
+      "dexNumber": 310,
+      "url": "https://yakkun.com/sv/zukan/n310m"
+    },
+    "プラスル": {
+      "dexNumber": 311,
+      "url": "https://yakkun.com/sv/zukan/n311"
+    },
+    "マイナン": {
+      "dexNumber": 312,
+      "url": "https://yakkun.com/sv/zukan/n312"
+    },
+    "バルビート": {
+      "dexNumber": 313,
+      "url": "https://yakkun.com/sv/zukan/n313"
+    },
+    "イルミーゼ": {
+      "dexNumber": 314,
+      "url": "https://yakkun.com/sv/zukan/n314"
+    },
+    "ロゼリア": {
+      "dexNumber": 315,
+      "url": "https://yakkun.com/sv/zukan/n315"
+    },
+    "キバニア": {
+      "dexNumber": 318,
+      "url": "https://yakkun.com/sv/zukan/n318"
+    },
+    "サメハダー": {
+      "dexNumber": 319,
+      "url": "https://yakkun.com/sv/zukan/n319"
+    },
+    "メガサメハダー": {
+      "dexNumber": 319,
+      "url": "https://yakkun.com/sv/zukan/n319m"
+    },
+    "ホエルコ": {
+      "dexNumber": 320,
+      "url": "https://yakkun.com/sv/zukan/n320"
+    },
+    "ホエルオー": {
+      "dexNumber": 321,
+      "url": "https://yakkun.com/sv/zukan/n321"
+    },
+    "メガバクーダ": {
+      "dexNumber": 323,
+      "url": "https://yakkun.com/sv/zukan/n323m"
+    },
+    "パッチール": {
+      "dexNumber": 327,
+      "url": "https://yakkun.com/sv/zukan/n327"
+    },
+    "ナックラー": {
+      "dexNumber": 328,
+      "url": "https://yakkun.com/sv/zukan/n328"
+    },
+    "ビブラーバ": {
+      "dexNumber": 329,
+      "url": "https://yakkun.com/sv/zukan/n329"
+    },
+    "フライゴン": {
+      "dexNumber": 330,
+      "url": "https://yakkun.com/sv/zukan/n330"
+    },
+    "メガチルタリス": {
+      "dexNumber": 334,
+      "url": "https://yakkun.com/sv/zukan/n334m"
+    },
+    "ルナトーン": {
+      "dexNumber": 337,
+      "url": "https://yakkun.com/sv/zukan/n337"
+    },
+    "ソルロック": {
+      "dexNumber": 338,
+      "url": "https://yakkun.com/sv/zukan/n338"
+    },
+    "ヘイガニ": {
+      "dexNumber": 341,
+      "url": "https://yakkun.com/sv/zukan/n341"
+    },
+    "シザリガー": {
+      "dexNumber": 342,
+      "url": "https://yakkun.com/sv/zukan/n342"
+    },
+    "ヤジロン": {
+      "dexNumber": 343,
+      "url": "https://yakkun.com/sv/zukan/n343"
+    },
+    "ネンドール": {
+      "dexNumber": 344,
+      "url": "https://yakkun.com/sv/zukan/n344"
+    },
+    "リリーラ": {
+      "dexNumber": 345,
+      "url": "https://yakkun.com/sv/zukan/n345"
+    },
+    "ユレイドル": {
+      "dexNumber": 346,
+      "url": "https://yakkun.com/sv/zukan/n346"
+    },
+    "アノプス": {
+      "dexNumber": 347,
+      "url": "https://yakkun.com/sv/zukan/n347"
+    },
+    "アーマルド": {
+      "dexNumber": 348,
+      "url": "https://yakkun.com/sv/zukan/n348"
+    },
+    "ヒンバス": {
+      "dexNumber": 349,
+      "url": "https://yakkun.com/sv/zukan/n349"
+    },
+    "ミロカロス": {
+      "dexNumber": 350,
+      "url": "https://yakkun.com/sv/zukan/n350"
+    },
+    "ポワルン(雪雲)": {
+      "dexNumber": 351,
+      "url": "https://yakkun.com/sv/zukan/n351"
+    },
+    "カクレオン": {
+      "dexNumber": 352,
+      "url": "https://yakkun.com/sv/zukan/n352"
+    },
+    "メガジュペッタ": {
+      "dexNumber": 354,
+      "url": "https://yakkun.com/sv/zukan/n354m"
+    },
+    "ヨマワル": {
+      "dexNumber": 355,
+      "url": "https://yakkun.com/sv/zukan/n355"
+    },
+    "サマヨール": {
+      "dexNumber": 356,
+      "url": "https://yakkun.com/sv/zukan/n356"
+    },
+    "チリーン": {
+      "dexNumber": 358,
+      "url": "https://yakkun.com/sv/zukan/n358"
+    },
+    "アブソル": {
+      "dexNumber": 359,
+      "url": "https://yakkun.com/sv/zukan/n359"
+    },
+    "メガアブソル": {
+      "dexNumber": 359,
+      "url": "https://yakkun.com/sv/zukan/n359m"
+    },
+    "ソーナノ": {
+      "dexNumber": 360,
+      "url": "https://yakkun.com/sv/zukan/n360"
+    },
+    "メガオニゴーリ": {
+      "dexNumber": 362,
+      "url": "https://yakkun.com/sv/zukan/n362m"
+    },
+    "タマザラシ": {
+      "dexNumber": 363,
+      "url": "https://yakkun.com/sv/zukan/n363"
+    },
+    "トドグラー": {
+      "dexNumber": 364,
+      "url": "https://yakkun.com/sv/zukan/n364"
+    },
+    "トドゼルガ": {
+      "dexNumber": 365,
+      "url": "https://yakkun.com/sv/zukan/n365"
+    },
+    "パールル": {
+      "dexNumber": 366,
+      "url": "https://yakkun.com/sv/zukan/n366"
+    },
+    "ハンテール": {
+      "dexNumber": 367,
+      "url": "https://yakkun.com/sv/zukan/n367"
+    },
+    "サクラビス": {
+      "dexNumber": 368,
+      "url": "https://yakkun.com/sv/zukan/n368"
+    },
+    "ジーランス": {
+      "dexNumber": 369,
+      "url": "https://yakkun.com/sv/zukan/n369"
+    },
+    "メガボーマンダ": {
+      "dexNumber": 373,
+      "url": "https://yakkun.com/sv/zukan/n373m"
+    },
+    "ダンバル": {
+      "dexNumber": 374,
+      "url": "https://yakkun.com/sv/zukan/n374"
+    },
+    "メタング": {
+      "dexNumber": 375,
+      "url": "https://yakkun.com/sv/zukan/n375"
+    },
+    "メタグロス": {
+      "dexNumber": 376,
+      "url": "https://yakkun.com/sv/zukan/n376"
+    },
+    "メガメタグロス": {
+      "dexNumber": 376,
+      "url": "https://yakkun.com/sv/zukan/n376m"
+    },
+    "レジロック": {
+      "dexNumber": 377,
+      "url": "https://yakkun.com/sv/zukan/n377"
+    },
+    "レジアイス": {
+      "dexNumber": 378,
+      "url": "https://yakkun.com/sv/zukan/n378"
+    },
+    "レジスチル": {
+      "dexNumber": 379,
+      "url": "https://yakkun.com/sv/zukan/n379"
+    },
+    "ラティアス": {
+      "dexNumber": 380,
+      "url": "https://yakkun.com/sv/zukan/n380"
+    },
+    "メガラティアス": {
+      "dexNumber": 380,
+      "url": "https://yakkun.com/sv/zukan/n380m"
+    },
+    "ラティオス": {
+      "dexNumber": 381,
+      "url": "https://yakkun.com/sv/zukan/n381"
+    },
+    "メガラティオス": {
+      "dexNumber": 381,
+      "url": "https://yakkun.com/sv/zukan/n381m"
+    },
+    "ゲンシカイオーガ": {
+      "dexNumber": 382,
+      "url": "https://yakkun.com/sv/zukan/n382p"
+    },
+    "ゲンシグラードン": {
+      "dexNumber": 383,
+      "url": "https://yakkun.com/sv/zukan/n383p"
+    },
+    "メガレックウザ": {
+      "dexNumber": 384,
+      "url": "https://yakkun.com/sv/zukan/n384m"
+    },
+    "ジラーチ": {
+      "dexNumber": 385,
+      "url": "https://yakkun.com/sv/zukan/n385"
+    },
+    "デオキシス(ノーマル)": {
+      "dexNumber": 386,
+      "url": "https://yakkun.com/sv/zukan/n386"
+    },
+    "デオキシス(アタック)": {
+      "dexNumber": 386,
+      "url": "https://yakkun.com/sv/zukan/n386a"
+    },
+    "デオキシス(ディフェンス)": {
+      "dexNumber": 386,
+      "url": "https://yakkun.com/sv/zukan/n386d"
+    },
+    "デオキシス(スピード)": {
+      "dexNumber": 386,
+      "url": "https://yakkun.com/sv/zukan/n386s"
+    },
+    "ナエトル": {
+      "dexNumber": 387,
+      "url": "https://yakkun.com/sv/zukan/n387"
+    },
+    "ハヤシガメ": {
+      "dexNumber": 388,
+      "url": "https://yakkun.com/sv/zukan/n388"
+    },
+    "ドダイトス": {
+      "dexNumber": 389,
+      "url": "https://yakkun.com/sv/zukan/n389"
+    },
+    "ヒコザル": {
+      "dexNumber": 390,
+      "url": "https://yakkun.com/sv/zukan/n390"
+    },
+    "モウカザル": {
+      "dexNumber": 391,
+      "url": "https://yakkun.com/sv/zukan/n391"
+    },
+    "ゴウカザル": {
+      "dexNumber": 392,
+      "url": "https://yakkun.com/sv/zukan/n392"
+    },
+    "ポッチャマ": {
+      "dexNumber": 393,
+      "url": "https://yakkun.com/sv/zukan/n393"
+    },
+    "ポッタイシ": {
+      "dexNumber": 394,
+      "url": "https://yakkun.com/sv/zukan/n394"
+    },
+    "エンペルト": {
+      "dexNumber": 395,
+      "url": "https://yakkun.com/sv/zukan/n395"
+    },
+    "ビッパ": {
+      "dexNumber": 399,
+      "url": "https://yakkun.com/sv/zukan/n399"
+    },
+    "ビーダル": {
+      "dexNumber": 400,
+      "url": "https://yakkun.com/sv/zukan/n400"
+    },
+    "スボミー": {
+      "dexNumber": 406,
+      "url": "https://yakkun.com/sv/zukan/n406"
+    },
+    "ロズレイド": {
+      "dexNumber": 407,
+      "url": "https://yakkun.com/sv/zukan/n407"
+    },
+    "ズガイドス": {
+      "dexNumber": 408,
+      "url": "https://yakkun.com/sv/zukan/n408"
+    },
+    "ラムパルド": {
+      "dexNumber": 409,
+      "url": "https://yakkun.com/sv/zukan/n409"
+    },
+    "タテトプス": {
+      "dexNumber": 410,
+      "url": "https://yakkun.com/sv/zukan/n410"
+    },
+    "トリデプス": {
+      "dexNumber": 411,
+      "url": "https://yakkun.com/sv/zukan/n411"
+    },
+    "ミノムッチ": {
+      "dexNumber": 412,
+      "url": "https://yakkun.com/sv/zukan/n412"
+    },
+    "ミノマダム(くさき)": {
+      "dexNumber": 413,
+      "url": "https://yakkun.com/sv/zukan/n413"
+    },
+    "ミノマダム(すなち)": {
+      "dexNumber": 413,
+      "url": "https://yakkun.com/sv/zukan/n413s"
+    },
+    "ミノマダム(ゴミ)": {
+      "dexNumber": 413,
+      "url": "https://yakkun.com/sv/zukan/n413d"
+    },
+    "ガーメイル": {
+      "dexNumber": 414,
+      "url": "https://yakkun.com/sv/zukan/n414"
+    },
+    "チェリンボ": {
+      "dexNumber": 420,
+      "url": "https://yakkun.com/sv/zukan/n420"
+    },
+    "チェリム": {
+      "dexNumber": 421,
+      "url": "https://yakkun.com/sv/zukan/n421"
+    },
+    "エテボース": {
+      "dexNumber": 424,
+      "url": "https://yakkun.com/sv/zukan/n424"
+    },
+    "ミミロル": {
+      "dexNumber": 427,
+      "url": "https://yakkun.com/sv/zukan/n427"
+    },
+    "ミミロップ": {
+      "dexNumber": 428,
+      "url": "https://yakkun.com/sv/zukan/n428"
+    },
+    "メガミミロップ": {
+      "dexNumber": 428,
+      "url": "https://yakkun.com/sv/zukan/n428m"
+    },
+    "ニャルマー": {
+      "dexNumber": 431,
+      "url": "https://yakkun.com/sv/zukan/n431"
+    },
+    "ブニャット": {
+      "dexNumber": 432,
+      "url": "https://yakkun.com/sv/zukan/n432"
+    },
+    "リーシャン": {
+      "dexNumber": 433,
+      "url": "https://yakkun.com/sv/zukan/n433"
+    },
+    "マネネ": {
+      "dexNumber": 439,
+      "url": "https://yakkun.com/sv/zukan/n439"
+    },
+    "ペラップ": {
+      "dexNumber": 441,
+      "url": "https://yakkun.com/sv/zukan/n441"
+    },
+    "メガガブリアス": {
+      "dexNumber": 445,
+      "url": "https://yakkun.com/sv/zukan/n445m"
+    },
+    "ゴンベ": {
+      "dexNumber": 446,
+      "url": "https://yakkun.com/sv/zukan/n446"
+    },
+    "メガルカリオ": {
+      "dexNumber": 448,
+      "url": "https://yakkun.com/sv/zukan/n448m"
+    },
+    "スコルピ": {
+      "dexNumber": 451,
+      "url": "https://yakkun.com/sv/zukan/n451"
+    },
+    "ドラピオン": {
+      "dexNumber": 452,
+      "url": "https://yakkun.com/sv/zukan/n452"
+    },
+    "マスキッパ": {
+      "dexNumber": 455,
+      "url": "https://yakkun.com/sv/zukan/n455"
+    },
+    "タマンタ": {
+      "dexNumber": 458,
+      "url": "https://yakkun.com/sv/zukan/n458"
+    },
+    "メガユキノオー": {
+      "dexNumber": 460,
+      "url": "https://yakkun.com/sv/zukan/n460m"
+    },
+    "ベロベルト": {
+      "dexNumber": 463,
+      "url": "https://yakkun.com/sv/zukan/n463"
+    },
+    "ドサイドン": {
+      "dexNumber": 464,
+      "url": "https://yakkun.com/sv/zukan/n464"
+    },
+    "モジャンボ": {
+      "dexNumber": 465,
+      "url": "https://yakkun.com/sv/zukan/n465"
+    },
+    "エレキブル": {
+      "dexNumber": 466,
+      "url": "https://yakkun.com/sv/zukan/n466"
+    },
+    "ブーバーン": {
+      "dexNumber": 467,
+      "url": "https://yakkun.com/sv/zukan/n467"
+    },
+    "トゲキッス": {
+      "dexNumber": 468,
+      "url": "https://yakkun.com/sv/zukan/n468"
+    },
+    "メガヤンマ": {
+      "dexNumber": 469,
+      "url": "https://yakkun.com/sv/zukan/n469"
+    },
+    "グライオン": {
+      "dexNumber": 472,
+      "url": "https://yakkun.com/sv/zukan/n472"
+    },
+    "マンムー": {
+      "dexNumber": 473,
+      "url": "https://yakkun.com/sv/zukan/n473"
+    },
+    "ポリゴンZ": {
+      "dexNumber": 474,
+      "url": "https://yakkun.com/sv/zukan/n474"
+    },
+    "メガエルレイド": {
+      "dexNumber": 475,
+      "url": "https://yakkun.com/sv/zukan/n475m"
+    },
+    "ダイノーズ": {
+      "dexNumber": 476,
+      "url": "https://yakkun.com/sv/zukan/n476"
+    },
+    "ヨノワール": {
+      "dexNumber": 477,
+      "url": "https://yakkun.com/sv/zukan/n477"
+    },
+    "レジギガス": {
+      "dexNumber": 486,
+      "url": "https://yakkun.com/sv/zukan/n486"
+    },
+    "フィオネ": {
+      "dexNumber": 489,
+      "url": "https://yakkun.com/sv/zukan/n489"
+    },
+    "マナフィ": {
+      "dexNumber": 490,
+      "url": "https://yakkun.com/sv/zukan/n490"
+    },
+    "ダークライ": {
+      "dexNumber": 491,
+      "url": "https://yakkun.com/sv/zukan/n491"
+    },
+    "シェイミ(ランド)": {
+      "dexNumber": 492,
+      "url": "https://yakkun.com/sv/zukan/n492"
+    },
+    "シェイミ(スカイ)": {
+      "dexNumber": 492,
+      "url": "https://yakkun.com/sv/zukan/n492s"
+    },
+    "ビクティニ": {
+      "dexNumber": 494,
+      "url": "https://yakkun.com/sv/zukan/n494"
+    },
+    "ツタージャ": {
+      "dexNumber": 495,
+      "url": "https://yakkun.com/sv/zukan/n495"
+    },
+    "ジャノビー": {
+      "dexNumber": 496,
+      "url": "https://yakkun.com/sv/zukan/n496"
+    },
+    "ジャローダ": {
+      "dexNumber": 497,
+      "url": "https://yakkun.com/sv/zukan/n497"
+    },
+    "ポカブ": {
+      "dexNumber": 498,
+      "url": "https://yakkun.com/sv/zukan/n498"
+    },
+    "チャオブー": {
+      "dexNumber": 499,
+      "url": "https://yakkun.com/sv/zukan/n499"
+    },
+    "エンブオー": {
+      "dexNumber": 500,
+      "url": "https://yakkun.com/sv/zukan/n500"
+    },
+    "ミネズミ": {
+      "dexNumber": 504,
+      "url": "https://yakkun.com/sv/zukan/n504"
+    },
+    "ミルホッグ": {
+      "dexNumber": 505,
+      "url": "https://yakkun.com/sv/zukan/n505"
+    },
+    "ヨーテリー": {
+      "dexNumber": 506,
+      "url": "https://yakkun.com/sv/zukan/n506"
+    },
+    "ハーデリア": {
+      "dexNumber": 507,
+      "url": "https://yakkun.com/sv/zukan/n507"
+    },
+    "ムーランド": {
+      "dexNumber": 508,
+      "url": "https://yakkun.com/sv/zukan/n508"
+    },
+    "チョロネコ": {
+      "dexNumber": 509,
+      "url": "https://yakkun.com/sv/zukan/n509"
+    },
+    "レパルダス": {
+      "dexNumber": 510,
+      "url": "https://yakkun.com/sv/zukan/n510"
+    },
+    "ヤナップ": {
+      "dexNumber": 511,
+      "url": "https://yakkun.com/sv/zukan/n511"
+    },
+    "ヤナッキー": {
+      "dexNumber": 512,
+      "url": "https://yakkun.com/sv/zukan/n512"
+    },
+    "バオップ": {
+      "dexNumber": 513,
+      "url": "https://yakkun.com/sv/zukan/n513"
+    },
+    "バオッキー": {
+      "dexNumber": 514,
+      "url": "https://yakkun.com/sv/zukan/n514"
+    },
+    "ヒヤップ": {
+      "dexNumber": 515,
+      "url": "https://yakkun.com/sv/zukan/n515"
+    },
+    "ヒヤッキー": {
+      "dexNumber": 516,
+      "url": "https://yakkun.com/sv/zukan/n516"
+    },
+    "ムンナ": {
+      "dexNumber": 517,
+      "url": "https://yakkun.com/sv/zukan/n517"
+    },
+    "ムシャーナ": {
+      "dexNumber": 518,
+      "url": "https://yakkun.com/sv/zukan/n518"
+    },
+    "マメパト": {
+      "dexNumber": 519,
+      "url": "https://yakkun.com/sv/zukan/n519"
+    },
+    "ハトーボー": {
+      "dexNumber": 520,
+      "url": "https://yakkun.com/sv/zukan/n520"
+    },
+    "ケンホロウ": {
+      "dexNumber": 521,
+      "url": "https://yakkun.com/sv/zukan/n521"
+    },
+    "シママ": {
+      "dexNumber": 522,
+      "url": "https://yakkun.com/sv/zukan/n522"
+    },
+    "ゼブライカ": {
+      "dexNumber": 523,
+      "url": "https://yakkun.com/sv/zukan/n523"
+    },
+    "ダンゴロ": {
+      "dexNumber": 524,
+      "url": "https://yakkun.com/sv/zukan/n524"
+    },
+    "ガントル": {
+      "dexNumber": 525,
+      "url": "https://yakkun.com/sv/zukan/n525"
+    },
+    "ギガイアス": {
+      "dexNumber": 526,
+      "url": "https://yakkun.com/sv/zukan/n526"
+    },
+    "コロモリ": {
+      "dexNumber": 527,
+      "url": "https://yakkun.com/sv/zukan/n527"
+    },
+    "ココロモリ": {
+      "dexNumber": 528,
+      "url": "https://yakkun.com/sv/zukan/n528"
+    },
+    "モグリュー": {
+      "dexNumber": 529,
+      "url": "https://yakkun.com/sv/zukan/n529"
+    },
+    "ドリュウズ": {
+      "dexNumber": 530,
+      "url": "https://yakkun.com/sv/zukan/n530"
+    },
+    "タブンネ": {
+      "dexNumber": 531,
+      "url": "https://yakkun.com/sv/zukan/n531"
+    },
+    "メガタブンネ": {
+      "dexNumber": 531,
+      "url": "https://yakkun.com/sv/zukan/n531m"
+    },
+    "ドッコラー": {
+      "dexNumber": 532,
+      "url": "https://yakkun.com/sv/zukan/n532"
+    },
+    "ドテッコツ": {
+      "dexNumber": 533,
+      "url": "https://yakkun.com/sv/zukan/n533"
+    },
+    "ローブシン": {
+      "dexNumber": 534,
+      "url": "https://yakkun.com/sv/zukan/n534"
+    },
+    "オタマロ": {
+      "dexNumber": 535,
+      "url": "https://yakkun.com/sv/zukan/n535"
+    },
+    "ガマガル": {
+      "dexNumber": 536,
+      "url": "https://yakkun.com/sv/zukan/n536"
+    },
+    "ガマゲロゲ": {
+      "dexNumber": 537,
+      "url": "https://yakkun.com/sv/zukan/n537"
+    },
+    "ナゲキ": {
+      "dexNumber": 538,
+      "url": "https://yakkun.com/sv/zukan/n538"
+    },
+    "ダゲキ": {
+      "dexNumber": 539,
+      "url": "https://yakkun.com/sv/zukan/n539"
+    },
+    "クルミル": {
+      "dexNumber": 540,
+      "url": "https://yakkun.com/sv/zukan/n540"
+    },
+    "クルマユ": {
+      "dexNumber": 541,
+      "url": "https://yakkun.com/sv/zukan/n541"
+    },
+    "ハハコモリ": {
+      "dexNumber": 542,
+      "url": "https://yakkun.com/sv/zukan/n542"
+    },
+    "フシデ": {
+      "dexNumber": 543,
+      "url": "https://yakkun.com/sv/zukan/n543"
+    },
+    "ホイーガ": {
+      "dexNumber": 544,
+      "url": "https://yakkun.com/sv/zukan/n544"
+    },
+    "ペンドラー": {
+      "dexNumber": 545,
+      "url": "https://yakkun.com/sv/zukan/n545"
+    },
+    "モンメン": {
+      "dexNumber": 546,
+      "url": "https://yakkun.com/sv/zukan/n546"
+    },
+    "エルフーン": {
+      "dexNumber": 547,
+      "url": "https://yakkun.com/sv/zukan/n547"
+    },
+    "ダルマッカ": {
+      "dexNumber": 554,
+      "url": "https://yakkun.com/sv/zukan/n554"
+    },
+    "ダルマッカ(ガラル)": {
+      "dexNumber": 554,
+      "url": "https://yakkun.com/sv/zukan/n554g"
+    },
+    "ヒヒダルマ": {
+      "dexNumber": 555,
+      "url": "https://yakkun.com/sv/zukan/n555"
+    },
+    "ヒヒダルマ(ダルマ)": {
+      "dexNumber": 555,
+      "url": "https://yakkun.com/sv/zukan/n555f"
+    },
+    "ヒヒダルマ(ガラル)": {
+      "dexNumber": 555,
+      "url": "https://yakkun.com/sv/zukan/n555g"
+    },
+    "ヒヒダルマ(ダルマ・ガラル)": {
+      "dexNumber": 555,
+      "url": "https://yakkun.com/sv/zukan/n555h"
+    },
+    "マラカッチ": {
+      "dexNumber": 556,
+      "url": "https://yakkun.com/sv/zukan/n556"
+    },
+    "イシズマイ": {
+      "dexNumber": 557,
+      "url": "https://yakkun.com/sv/zukan/n557"
+    },
+    "イワパレス": {
+      "dexNumber": 558,
+      "url": "https://yakkun.com/sv/zukan/n558"
+    },
+    "ズルッグ": {
+      "dexNumber": 559,
+      "url": "https://yakkun.com/sv/zukan/n559"
+    },
+    "ズルズキン": {
+      "dexNumber": 560,
+      "url": "https://yakkun.com/sv/zukan/n560"
+    },
+    "シンボラー": {
+      "dexNumber": 561,
+      "url": "https://yakkun.com/sv/zukan/n561"
+    },
+    "デスマス": {
+      "dexNumber": 562,
+      "url": "https://yakkun.com/sv/zukan/n562"
+    },
+    "デスマス(ガラル)": {
+      "dexNumber": 562,
+      "url": "https://yakkun.com/sv/zukan/n562g"
+    },
+    "デスカーン": {
+      "dexNumber": 563,
+      "url": "https://yakkun.com/sv/zukan/n563"
+    },
+    "プロトーガ": {
+      "dexNumber": 564,
+      "url": "https://yakkun.com/sv/zukan/n564"
+    },
+    "アバゴーラ": {
+      "dexNumber": 565,
+      "url": "https://yakkun.com/sv/zukan/n565"
+    },
+    "アーケン": {
+      "dexNumber": 566,
+      "url": "https://yakkun.com/sv/zukan/n566"
+    },
+    "アーケオス": {
+      "dexNumber": 567,
+      "url": "https://yakkun.com/sv/zukan/n567"
+    },
+    "ヤブクロン": {
+      "dexNumber": 568,
+      "url": "https://yakkun.com/sv/zukan/n568"
+    },
+    "ダストダス": {
+      "dexNumber": 569,
+      "url": "https://yakkun.com/sv/zukan/n569"
+    },
+    "チラーミィ": {
+      "dexNumber": 572,
+      "url": "https://yakkun.com/sv/zukan/n572"
+    },
+    "チラチーノ": {
+      "dexNumber": 573,
+      "url": "https://yakkun.com/sv/zukan/n573"
+    },
+    "ユニラン": {
+      "dexNumber": 577,
+      "url": "https://yakkun.com/sv/zukan/n577"
+    },
+    "ダブラン": {
+      "dexNumber": 578,
+      "url": "https://yakkun.com/sv/zukan/n578"
+    },
+    "ランクルス": {
+      "dexNumber": 579,
+      "url": "https://yakkun.com/sv/zukan/n579"
+    },
+    "コアルヒー": {
+      "dexNumber": 580,
+      "url": "https://yakkun.com/sv/zukan/n580"
+    },
+    "スワンナ": {
+      "dexNumber": 581,
+      "url": "https://yakkun.com/sv/zukan/n581"
+    },
+    "バニプッチ": {
+      "dexNumber": 582,
+      "url": "https://yakkun.com/sv/zukan/n582"
+    },
+    "バニリッチ": {
+      "dexNumber": 583,
+      "url": "https://yakkun.com/sv/zukan/n583"
+    },
+    "バイバニラ": {
+      "dexNumber": 584,
+      "url": "https://yakkun.com/sv/zukan/n584"
+    },
+    "エモンガ": {
+      "dexNumber": 587,
+      "url": "https://yakkun.com/sv/zukan/n587"
+    },
+    "カブルモ": {
+      "dexNumber": 588,
+      "url": "https://yakkun.com/sv/zukan/n588"
+    },
+    "シュバルゴ": {
+      "dexNumber": 589,
+      "url": "https://yakkun.com/sv/zukan/n589"
+    },
+    "プルリル": {
+      "dexNumber": 592,
+      "url": "https://yakkun.com/sv/zukan/n592"
+    },
+    "ブルンゲル": {
+      "dexNumber": 593,
+      "url": "https://yakkun.com/sv/zukan/n593"
+    },
+    "バチュル": {
+      "dexNumber": 595,
+      "url": "https://yakkun.com/sv/zukan/n595"
+    },
+    "デンチュラ": {
+      "dexNumber": 596,
+      "url": "https://yakkun.com/sv/zukan/n596"
+    },
+    "テッシード": {
+      "dexNumber": 597,
+      "url": "https://yakkun.com/sv/zukan/n597"
+    },
+    "ナットレイ": {
+      "dexNumber": 598,
+      "url": "https://yakkun.com/sv/zukan/n598"
+    },
+    "ギアル": {
+      "dexNumber": 599,
+      "url": "https://yakkun.com/sv/zukan/n599"
+    },
+    "ギギアル": {
+      "dexNumber": 600,
+      "url": "https://yakkun.com/sv/zukan/n600"
+    },
+    "ギギギアル": {
+      "dexNumber": 601,
+      "url": "https://yakkun.com/sv/zukan/n601"
+    },
+    "リグレー": {
+      "dexNumber": 605,
+      "url": "https://yakkun.com/sv/zukan/n605"
+    },
+    "オーベム": {
+      "dexNumber": 606,
+      "url": "https://yakkun.com/sv/zukan/n606"
+    },
+    "ヒトモシ": {
+      "dexNumber": 607,
+      "url": "https://yakkun.com/sv/zukan/n607"
+    },
+    "ランプラー": {
+      "dexNumber": 608,
+      "url": "https://yakkun.com/sv/zukan/n608"
+    },
+    "シャンデラ": {
+      "dexNumber": 609,
+      "url": "https://yakkun.com/sv/zukan/n609"
+    },
+    "チョボマキ": {
+      "dexNumber": 616,
+      "url": "https://yakkun.com/sv/zukan/n616"
+    },
+    "アギルダー": {
+      "dexNumber": 617,
+      "url": "https://yakkun.com/sv/zukan/n617"
+    },
+    "マッギョ": {
+      "dexNumber": 618,
+      "url": "https://yakkun.com/sv/zukan/n618"
+    },
+    "マッギョ(ガラル)": {
+      "dexNumber": 618,
+      "url": "https://yakkun.com/sv/zukan/n618g"
+    },
+    "コジョフー": {
+      "dexNumber": 619,
+      "url": "https://yakkun.com/sv/zukan/n619"
+    },
+    "コジョンド": {
+      "dexNumber": 620,
+      "url": "https://yakkun.com/sv/zukan/n620"
+    },
+    "クリムガン": {
+      "dexNumber": 621,
+      "url": "https://yakkun.com/sv/zukan/n621"
+    },
+    "ゴビット": {
+      "dexNumber": 622,
+      "url": "https://yakkun.com/sv/zukan/n622"
+    },
+    "ゴルーグ": {
+      "dexNumber": 623,
+      "url": "https://yakkun.com/sv/zukan/n623"
+    },
+    "バッフロン": {
+      "dexNumber": 626,
+      "url": "https://yakkun.com/sv/zukan/n626"
+    },
+    "バルチャイ": {
+      "dexNumber": 629,
+      "url": "https://yakkun.com/sv/zukan/n629"
+    },
+    "バルジーナ": {
+      "dexNumber": 630,
+      "url": "https://yakkun.com/sv/zukan/n630"
+    },
+    "クイタラン": {
+      "dexNumber": 631,
+      "url": "https://yakkun.com/sv/zukan/n631"
+    },
+    "アイアント": {
+      "dexNumber": 632,
+      "url": "https://yakkun.com/sv/zukan/n632"
+    },
+    "コバルオン": {
+      "dexNumber": 638,
+      "url": "https://yakkun.com/sv/zukan/n638"
+    },
+    "テラキオン": {
+      "dexNumber": 639,
+      "url": "https://yakkun.com/sv/zukan/n639"
+    },
+    "ビリジオン": {
+      "dexNumber": 640,
+      "url": "https://yakkun.com/sv/zukan/n640"
+    },
+    "レシラム": {
+      "dexNumber": 643,
+      "url": "https://yakkun.com/sv/zukan/n643"
+    },
+    "ゼクロム": {
+      "dexNumber": 644,
+      "url": "https://yakkun.com/sv/zukan/n644"
+    },
+    "キュレム": {
+      "dexNumber": 646,
+      "url": "https://yakkun.com/sv/zukan/n646"
+    },
+    "ホワイトキュレム": {
+      "dexNumber": 646,
+      "url": "https://yakkun.com/sv/zukan/n646w"
+    },
+    "ブラックキュレム": {
+      "dexNumber": 646,
+      "url": "https://yakkun.com/sv/zukan/n646b"
+    },
+    "ケルディオ(いつも)": {
+      "dexNumber": 647,
+      "url": "https://yakkun.com/sv/zukan/n647"
+    },
+    "ケルディオ(覚悟)": {
+      "dexNumber": 647,
+      "url": "https://yakkun.com/sv/zukan/n647k"
+    },
+    "ゲノセクト": {
+      "dexNumber": 649,
+      "url": "https://yakkun.com/sv/zukan/n649"
+    },
+    "サトシゲッコウガ": {
+      "dexNumber": 658,
+      "url": "https://yakkun.com/sv/zukan/n658f"
+    },
+    "ホルビー": {
+      "dexNumber": 659,
+      "url": "https://yakkun.com/sv/zukan/n659"
+    },
+    "ホルード": {
+      "dexNumber": 660,
+      "url": "https://yakkun.com/sv/zukan/n660"
+    },
+    "ヤンチャム": {
+      "dexNumber": 674,
+      "url": "https://yakkun.com/sv/zukan/n674"
+    },
+    "ゴロンダ": {
+      "dexNumber": 675,
+      "url": "https://yakkun.com/sv/zukan/n675"
+    },
+    "トリミアン": {
+      "dexNumber": 676,
+      "url": "https://yakkun.com/sv/zukan/n676"
+    },
+    "ニャスパー": {
+      "dexNumber": 677,
+      "url": "https://yakkun.com/sv/zukan/n677"
+    },
+    "ニャオニクス♂": {
+      "dexNumber": 678,
+      "url": "https://yakkun.com/sv/zukan/n678"
+    },
+    "ニャオニクス♀": {
+      "dexNumber": 678,
+      "url": "https://yakkun.com/sv/zukan/n678f"
+    },
+    "ヒトツキ": {
+      "dexNumber": 679,
+      "url": "https://yakkun.com/sv/zukan/n679"
+    },
+    "ニダンギル": {
+      "dexNumber": 680,
+      "url": "https://yakkun.com/sv/zukan/n680"
+    },
+    "ギルガルド(シールド)": {
+      "dexNumber": 681,
+      "url": "https://yakkun.com/sv/zukan/n681"
+    },
+    "ギルガルド(ブレード)": {
+      "dexNumber": 681,
+      "url": "https://yakkun.com/sv/zukan/n681b"
+    },
+    "シュシュプ": {
+      "dexNumber": 682,
+      "url": "https://yakkun.com/sv/zukan/n682"
+    },
+    "フレフワン": {
+      "dexNumber": 683,
+      "url": "https://yakkun.com/sv/zukan/n683"
+    },
+    "ペロッパフ": {
+      "dexNumber": 684,
+      "url": "https://yakkun.com/sv/zukan/n684"
+    },
+    "ペロリーム": {
+      "dexNumber": 685,
+      "url": "https://yakkun.com/sv/zukan/n685"
+    },
+    "マーイーカ": {
+      "dexNumber": 686,
+      "url": "https://yakkun.com/sv/zukan/n686"
+    },
+    "カラマネロ": {
+      "dexNumber": 687,
+      "url": "https://yakkun.com/sv/zukan/n687"
+    },
+    "カメテテ": {
+      "dexNumber": 688,
+      "url": "https://yakkun.com/sv/zukan/n688"
+    },
+    "ガメノデス": {
+      "dexNumber": 689,
+      "url": "https://yakkun.com/sv/zukan/n689"
+    },
+    "エリキテル": {
+      "dexNumber": 694,
+      "url": "https://yakkun.com/sv/zukan/n694"
+    },
+    "エレザード": {
+      "dexNumber": 695,
+      "url": "https://yakkun.com/sv/zukan/n695"
+    },
+    "チゴラス": {
+      "dexNumber": 696,
+      "url": "https://yakkun.com/sv/zukan/n696"
+    },
+    "ガチゴラス": {
+      "dexNumber": 697,
+      "url": "https://yakkun.com/sv/zukan/n697"
+    },
+    "アマルス": {
+      "dexNumber": 698,
+      "url": "https://yakkun.com/sv/zukan/n698"
+    },
+    "アマルルガ": {
+      "dexNumber": 699,
+      "url": "https://yakkun.com/sv/zukan/n699"
+    },
+    "ボクレー": {
+      "dexNumber": 708,
+      "url": "https://yakkun.com/sv/zukan/n708"
+    },
+    "オーロット": {
+      "dexNumber": 709,
+      "url": "https://yakkun.com/sv/zukan/n709"
+    },
+    "バケッチャ(普通)": {
+      "dexNumber": 710,
+      "url": "https://yakkun.com/sv/zukan/n710"
+    },
+    "バケッチャ(小)": {
+      "dexNumber": 710,
+      "url": "https://yakkun.com/sv/zukan/n710s"
+    },
+    "バケッチャ(大)": {
+      "dexNumber": 710,
+      "url": "https://yakkun.com/sv/zukan/n710l"
+    },
+    "バケッチャ(特大)": {
+      "dexNumber": 710,
+      "url": "https://yakkun.com/sv/zukan/n710k"
+    },
+    "パンプジン(普通)": {
+      "dexNumber": 711,
+      "url": "https://yakkun.com/sv/zukan/n711"
+    },
+    "パンプジン(小)": {
+      "dexNumber": 711,
+      "url": "https://yakkun.com/sv/zukan/n711s"
+    },
+    "パンプジン(大)": {
+      "dexNumber": 711,
+      "url": "https://yakkun.com/sv/zukan/n711l"
+    },
+    "パンプジン(特大)": {
+      "dexNumber": 711,
+      "url": "https://yakkun.com/sv/zukan/n711k"
+    },
+    "ゼルネアス": {
+      "dexNumber": 716,
+      "url": "https://yakkun.com/sv/zukan/n716"
+    },
+    "イベルタル": {
+      "dexNumber": 717,
+      "url": "https://yakkun.com/sv/zukan/n717"
+    },
+    "ジガルデ(50%)": {
+      "dexNumber": 718,
+      "url": "https://yakkun.com/sv/zukan/n718"
+    },
+    "ジガルデ(10%)": {
+      "dexNumber": 718,
+      "url": "https://yakkun.com/sv/zukan/n718t"
+    },
+    "ジガルデ(パーフェクト)": {
+      "dexNumber": 718,
+      "url": "https://yakkun.com/sv/zukan/n718c"
+    },
+    "メガディアンシー": {
+      "dexNumber": 719,
+      "url": "https://yakkun.com/sv/zukan/n719m"
+    },
+    "ニャビー": {
+      "dexNumber": 725,
+      "url": "https://yakkun.com/sv/zukan/n725"
+    },
+    "ニャヒート": {
+      "dexNumber": 726,
+      "url": "https://yakkun.com/sv/zukan/n726"
+    },
+    "ガオガエン": {
+      "dexNumber": 727,
+      "url": "https://yakkun.com/sv/zukan/n727"
+    },
+    "アシマリ": {
+      "dexNumber": 728,
+      "url": "https://yakkun.com/sv/zukan/n728"
+    },
+    "オシャマリ": {
+      "dexNumber": 729,
+      "url": "https://yakkun.com/sv/zukan/n729"
+    },
+    "アシレーヌ": {
+      "dexNumber": 730,
+      "url": "https://yakkun.com/sv/zukan/n730"
+    },
+    "ツツケラ": {
+      "dexNumber": 731,
+      "url": "https://yakkun.com/sv/zukan/n731"
+    },
+    "ケララッパ": {
+      "dexNumber": 732,
+      "url": "https://yakkun.com/sv/zukan/n732"
+    },
+    "ドデカバシ": {
+      "dexNumber": 733,
+      "url": "https://yakkun.com/sv/zukan/n733"
+    },
+    "アゴジムシ": {
+      "dexNumber": 736,
+      "url": "https://yakkun.com/sv/zukan/n736"
+    },
+    "デンヂムシ": {
+      "dexNumber": 737,
+      "url": "https://yakkun.com/sv/zukan/n737"
+    },
+    "クワガノン": {
+      "dexNumber": 738,
+      "url": "https://yakkun.com/sv/zukan/n738"
+    },
+    "アブリー": {
+      "dexNumber": 742,
+      "url": "https://yakkun.com/sv/zukan/n742"
+    },
+    "アブリボン": {
+      "dexNumber": 743,
+      "url": "https://yakkun.com/sv/zukan/n743"
+    },
+    "ヨワシ(単独)": {
+      "dexNumber": 746,
+      "url": "https://yakkun.com/sv/zukan/n746"
+    },
+    "ヨワシ(群れ)": {
+      "dexNumber": 746,
+      "url": "https://yakkun.com/sv/zukan/n746f"
+    },
+    "シズクモ": {
+      "dexNumber": 751,
+      "url": "https://yakkun.com/sv/zukan/n751"
+    },
+    "オニシズクモ": {
+      "dexNumber": 752,
+      "url": "https://yakkun.com/sv/zukan/n752"
+    },
+    "ネマシュ": {
+      "dexNumber": 755,
+      "url": "https://yakkun.com/sv/zukan/n755"
+    },
+    "マシェード": {
+      "dexNumber": 756,
+      "url": "https://yakkun.com/sv/zukan/n756"
+    },
+    "ヌイコグマ": {
+      "dexNumber": 759,
+      "url": "https://yakkun.com/sv/zukan/n759"
+    },
+    "キテルグマ": {
+      "dexNumber": 760,
+      "url": "https://yakkun.com/sv/zukan/n760"
+    },
+    "キュワワー": {
+      "dexNumber": 764,
+      "url": "https://yakkun.com/sv/zukan/n764"
+    },
+    "コソクムシ": {
+      "dexNumber": 767,
+      "url": "https://yakkun.com/sv/zukan/n767"
+    },
+    "グソクムシャ": {
+      "dexNumber": 768,
+      "url": "https://yakkun.com/sv/zukan/n768"
+    },
+    "ナマコブシ": {
+      "dexNumber": 771,
+      "url": "https://yakkun.com/sv/zukan/n771"
+    },
+    "タイプ：ヌル": {
+      "dexNumber": 772,
+      "url": "https://yakkun.com/sv/zukan/n772"
+    },
+    "シルヴァディ": {
+      "dexNumber": 773,
+      "url": "https://yakkun.com/sv/zukan/n773"
+    },
+    "メテノ(流星)": {
+      "dexNumber": 774,
+      "url": "https://yakkun.com/sv/zukan/n774"
+    },
+    "メテノ(コア)": {
+      "dexNumber": 774,
+      "url": "https://yakkun.com/sv/zukan/n774f"
+    },
+    "バクガメス": {
+      "dexNumber": 776,
+      "url": "https://yakkun.com/sv/zukan/n776"
+    },
+    "トゲデマル": {
+      "dexNumber": 777,
+      "url": "https://yakkun.com/sv/zukan/n777"
+    },
+    "ジジーロン": {
+      "dexNumber": 780,
+      "url": "https://yakkun.com/sv/zukan/n780"
+    },
+    "ダダリン": {
+      "dexNumber": 781,
+      "url": "https://yakkun.com/sv/zukan/n781"
+    },
+    "ジャラコ": {
+      "dexNumber": 782,
+      "url": "https://yakkun.com/sv/zukan/n782"
+    },
+    "ジャランゴ": {
+      "dexNumber": 783,
+      "url": "https://yakkun.com/sv/zukan/n783"
+    },
+    "ジャラランガ": {
+      "dexNumber": 784,
+      "url": "https://yakkun.com/sv/zukan/n784"
+    },
+    "カプ・コケコ": {
+      "dexNumber": 785,
+      "url": "https://yakkun.com/sv/zukan/n785"
+    },
+    "カプ・テテフ": {
+      "dexNumber": 786,
+      "url": "https://yakkun.com/sv/zukan/n786"
+    },
+    "カプ・ブルル": {
+      "dexNumber": 787,
+      "url": "https://yakkun.com/sv/zukan/n787"
+    },
+    "カプ・レヒレ": {
+      "dexNumber": 788,
+      "url": "https://yakkun.com/sv/zukan/n788"
+    },
+    "コスモッグ": {
+      "dexNumber": 789,
+      "url": "https://yakkun.com/sv/zukan/n789"
+    },
+    "コスモウム": {
+      "dexNumber": 790,
+      "url": "https://yakkun.com/sv/zukan/n790"
+    },
+    "ソルガレオ": {
+      "dexNumber": 791,
+      "url": "https://yakkun.com/sv/zukan/n791"
+    },
+    "ルナアーラ": {
+      "dexNumber": 792,
+      "url": "https://yakkun.com/sv/zukan/n792"
+    },
+    "ウツロイド": {
+      "dexNumber": 793,
+      "url": "https://yakkun.com/sv/zukan/n793"
+    },
+    "マッシブーン": {
+      "dexNumber": 794,
+      "url": "https://yakkun.com/sv/zukan/n794"
+    },
+    "フェローチェ": {
+      "dexNumber": 795,
+      "url": "https://yakkun.com/sv/zukan/n795"
+    },
+    "デンジュモク": {
+      "dexNumber": 796,
+      "url": "https://yakkun.com/sv/zukan/n796"
+    },
+    "テッカグヤ": {
+      "dexNumber": 797,
+      "url": "https://yakkun.com/sv/zukan/n797"
+    },
+    "カミツルギ": {
+      "dexNumber": 798,
+      "url": "https://yakkun.com/sv/zukan/n798"
+    },
+    "アクジキング": {
+      "dexNumber": 799,
+      "url": "https://yakkun.com/sv/zukan/n799"
+    },
+    "ネクロズマ": {
+      "dexNumber": 800,
+      "url": "https://yakkun.com/sv/zukan/n800"
+    },
+    "ネクロズマ(日食)": {
+      "dexNumber": 800,
+      "url": "https://yakkun.com/sv/zukan/n800s"
+    },
+    "ネクロズマ(月食)": {
+      "dexNumber": 800,
+      "url": "https://yakkun.com/sv/zukan/n800m"
+    },
+    "ウルトラネクロズマ": {
+      "dexNumber": 800,
+      "url": "https://yakkun.com/sv/zukan/n800u"
+    },
+    "マーシャドー": {
+      "dexNumber": 802,
+      "url": "https://yakkun.com/sv/zukan/n802"
+    },
+    "ベベノム": {
+      "dexNumber": 803,
+      "url": "https://yakkun.com/sv/zukan/n803"
+    },
+    "アーゴヨン": {
+      "dexNumber": 804,
+      "url": "https://yakkun.com/sv/zukan/n804"
+    },
+    "ツンデツンデ": {
+      "dexNumber": 805,
+      "url": "https://yakkun.com/sv/zukan/n805"
+    },
+    "ズガドーン": {
+      "dexNumber": 806,
+      "url": "https://yakkun.com/sv/zukan/n806"
+    },
+    "ゼラオラ": {
+      "dexNumber": 807,
+      "url": "https://yakkun.com/sv/zukan/n807"
+    },
+    "メルタン": {
+      "dexNumber": 808,
+      "url": "https://yakkun.com/sv/zukan/n808"
+    },
+    "メルメタル": {
+      "dexNumber": 809,
+      "url": "https://yakkun.com/sv/zukan/n809"
+    },
+    "サッチムシ": {
+      "dexNumber": 824,
+      "url": "https://yakkun.com/sv/zukan/n824"
+    },
+    "レドームシ": {
+      "dexNumber": 825,
+      "url": "https://yakkun.com/sv/zukan/n825"
+    },
+    "イオルブ": {
+      "dexNumber": 826,
+      "url": "https://yakkun.com/sv/zukan/n826"
+    },
+    "クスネ": {
+      "dexNumber": 827,
+      "url": "https://yakkun.com/sv/zukan/n827"
+    },
+    "フォクスライ": {
+      "dexNumber": 828,
+      "url": "https://yakkun.com/sv/zukan/n828"
+    },
+    "ヒメンカ": {
+      "dexNumber": 829,
+      "url": "https://yakkun.com/sv/zukan/n829"
+    },
+    "ワタシラガ": {
+      "dexNumber": 830,
+      "url": "https://yakkun.com/sv/zukan/n830"
+    },
+    "ウールー": {
+      "dexNumber": 831,
+      "url": "https://yakkun.com/sv/zukan/n831"
+    },
+    "バイウールー": {
+      "dexNumber": 832,
+      "url": "https://yakkun.com/sv/zukan/n832"
+    },
+    "ワンパチ": {
+      "dexNumber": 835,
+      "url": "https://yakkun.com/sv/zukan/n835"
+    },
+    "パルスワン": {
+      "dexNumber": 836,
+      "url": "https://yakkun.com/sv/zukan/n836"
+    },
+    "ウッウ": {
+      "dexNumber": 845,
+      "url": "https://yakkun.com/sv/zukan/n845"
+    },
+    "ヤクデ": {
+      "dexNumber": 850,
+      "url": "https://yakkun.com/sv/zukan/n850"
+    },
+    "マルヤクデ": {
+      "dexNumber": 851,
+      "url": "https://yakkun.com/sv/zukan/n851"
+    },
+    "タタッコ": {
+      "dexNumber": 852,
+      "url": "https://yakkun.com/sv/zukan/n852"
+    },
+    "オトスパス": {
+      "dexNumber": 853,
+      "url": "https://yakkun.com/sv/zukan/n853"
+    },
+    "タチフサグマ": {
+      "dexNumber": 862,
+      "url": "https://yakkun.com/sv/zukan/n862"
+    },
+    "サニゴーン": {
+      "dexNumber": 864,
+      "url": "https://yakkun.com/sv/zukan/n864"
+    },
+    "ネギガナイト": {
+      "dexNumber": 865,
+      "url": "https://yakkun.com/sv/zukan/n865"
+    },
+    "バリコオル": {
+      "dexNumber": 866,
+      "url": "https://yakkun.com/sv/zukan/n866"
+    },
+    "デスバーン": {
+      "dexNumber": 867,
+      "url": "https://yakkun.com/sv/zukan/n867"
+    },
+    "マホミル": {
+      "dexNumber": 868,
+      "url": "https://yakkun.com/sv/zukan/n868"
+    },
+    "マホイップ": {
+      "dexNumber": 869,
+      "url": "https://yakkun.com/sv/zukan/n869"
+    },
+    "モルペコ": {
+      "dexNumber": 877,
+      "url": "https://yakkun.com/sv/zukan/n877"
+    },
+    "パッチラゴン": {
+      "dexNumber": 880,
+      "url": "https://yakkun.com/sv/zukan/n880"
+    },
+    "パッチルドン": {
+      "dexNumber": 881,
+      "url": "https://yakkun.com/sv/zukan/n881"
+    },
+    "ウオノラゴン": {
+      "dexNumber": 882,
+      "url": "https://yakkun.com/sv/zukan/n882"
+    },
+    "ウオチルドン": {
+      "dexNumber": 883,
+      "url": "https://yakkun.com/sv/zukan/n883"
+    },
+    "ジュラルドン": {
+      "dexNumber": 884,
+      "url": "https://yakkun.com/sv/zukan/n884"
+    },
+    "ムゲンダイナ(ムゲン)": {
+      "dexNumber": 890,
+      "url": "https://yakkun.com/sv/zukan/n890f"
+    }
+  }
+}
