@@ -7,8 +7,9 @@ import iconv from 'iconv-lite';
  * @param name ポケモンの日本語名
  */
 export async function searchURLByName(name: string): Promise<string | null> {
-  // TODO: ポケ徹が対応したらSVに移行する
-  const pokemonDataPageURL = 'https://yakkun.com/swsh/stats_list.htm?mode=all';
+  // TODO: オンザフライではなく、事前に取得しておく
+  const pokemonDataPageURL =
+    'https://yakkun.com/sv/zukan/#sort=paldea,filter=0';
   console.log(`Requesting ${pokemonDataPageURL}`);
   const response = await request(pokemonDataPageURL, { method: 'GET' });
   console.log(`Response status: ${response.statusCode}`);
@@ -20,7 +21,7 @@ export async function searchURLByName(name: string): Promise<string | null> {
   console.log(`Searching for a link for ${name}`);
   const dom = new JSDOM(body);
   const links = dom.window.document.body.querySelectorAll<HTMLAnchorElement>(
-    'table[summary=ポケモン種族値リスト] a[href]',
+    'ul[class=pokemon_list] a[href]',
   );
   const linkAnchor = Array.from(links).find((link) =>
     link.textContent?.includes(name),
