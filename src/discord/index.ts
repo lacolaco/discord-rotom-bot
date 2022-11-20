@@ -53,6 +53,7 @@ function setupEventListeners(client: Client): void {
           return;
         }
         console.log(`Command: ${command.data.name}`);
+        await command.autocomplete(interaction);
       }
     } catch (error) {
       console.error(error);
