@@ -25,7 +25,8 @@ export default {
   ) {
     if (interaction.isAutocomplete()) {
       const focusedValue = interaction.options.getFocused();
-      if (focusedValue.length === 0) {
+      if (focusedValue.length < 1) {
+        await interaction.respond([]);
         return;
       }
       const choices = await getAllPokemonNames({ prefix: focusedValue });
