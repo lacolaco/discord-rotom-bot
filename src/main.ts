@@ -13,23 +13,11 @@ if (!APP_ID || !PUBLIC_KEY || !GUILD_ID || !DISCORD_TOKEN) {
   throw new Error('Missing environment variables');
 }
 
-const controller = new AbortController();
-const signal = controller.signal;
-
-process.on('SIGTERM', function () {
-  console.log('gracefully shutting down');
-  controller.abort();
-  process.exit(0);
-});
-
 const discordApp = createDiscordApp(DISCORD_TOKEN, APP_ID, GUILD_ID);
 
 startServer(PORT)
   .then(async () => {
     await discordApp.start();
-    signal.addEventListener('abort', () => {
-      discordApp.dispose();
-    });
   })
   .catch((error) => {
     console.error(error);
