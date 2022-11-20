@@ -14,3 +14,14 @@ export async function searchURLByName(name: string): Promise<string | null> {
   }
   return pokemon.url;
 }
+
+export async function getAllPokemonNames(params: {
+  prefix?: string;
+}): Promise<string[]> {
+  return Object.keys(data.namesMap).filter((name) => {
+    if (params.prefix) {
+      return name.startsWith(params.prefix);
+    }
+    return true;
+  });
+}

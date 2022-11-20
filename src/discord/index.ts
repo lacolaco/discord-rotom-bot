@@ -1,5 +1,5 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { getChatInputCommand, registerGuildCommands } from './commands';
+import { getCommand, registerGuildCommands } from './commands';
 
 export interface DiscordApp {
   start(): Promise<void>;
@@ -33,11 +33,11 @@ function setupEventListeners(client: Client): void {
   });
 
   client.on(Events.InteractionCreate, async (interaction) => {
-    if (!interaction.isChatInputCommand()) {
+    if (!interaction.isCommand()) {
       return;
     }
-    const command = getChatInputCommand(interaction.commandName);
-    if (!command) {
+    const command = getCommand(interaction.commandName);
+    if (!command || !command.accept(interaction)) {
       console.error(
         `No command matching ${interaction.commandName} was found.`,
       );

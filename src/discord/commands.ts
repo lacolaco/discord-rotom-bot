@@ -1,9 +1,9 @@
 import { Client, Routes } from 'discord.js';
 import ping from './ping/command';
 import pokeinfo from './pokeinfo/command';
-import { ChatInputCommand } from './types';
+import { CommandHandler } from './types';
 
-export const chatInputCommands: Record<string, ChatInputCommand> = {
+export const commandHandlers: Record<string, CommandHandler<any>> = {
   [ping.data.name]: ping,
   [pokeinfo.data.name]: pokeinfo,
 };
@@ -14,7 +14,7 @@ export async function registerGuildCommands(
   guildId: string,
 ) {
   console.log(`Installing commands...`);
-  const commands = Object.values(chatInputCommands).map((command) =>
+  const commands = Object.values(commandHandlers).map((command) =>
     command.data.toJSON(),
   );
   await client.rest.put(Routes.applicationGuildCommands(appId, guildId), {
@@ -22,6 +22,6 @@ export async function registerGuildCommands(
   });
 }
 
-export function getChatInputCommand(name: string): ChatInputCommand | null {
-  return chatInputCommands[name] ?? null;
+export function getCommand(name: string): CommandHandler<any> | null {
+  return commandHandlers[name] ?? null;
 }
