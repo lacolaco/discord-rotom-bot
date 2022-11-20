@@ -2,8 +2,9 @@ import {
   SlashCommandBuilder,
   ChatInputCommandInteraction,
   AutocompleteInteraction,
+  bold,
 } from 'discord.js';
-import { getAllPokemonNames, searchURLByName } from './search';
+import { getAllPokemonNames, searchPokemonByName } from './search';
 
 export default {
   data: new SlashCommandBuilder()
@@ -22,11 +23,15 @@ export default {
       console.log(`[pokeinfo] name: ${name}`);
       await interaction.deferReply();
 
-      const url = await searchURLByName(name);
-      console.log(`[pokeinfo] found url: ${url}`);
-      if (url) {
+      const data = await searchPokemonByName(name);
+      if (data) {
+        console.log(`[pokeinfo] found pokemon: ${data.url}`);
         await interaction.editReply({
-          content: `"${name}" の情報ロト！ ${url}`,
+          content: [
+            `${bold(name)} の情報ロト！`,
+            `${data.types.join('・')} ${data.baseStats.join('-')}`,
+            `${data.url}`,
+          ].join('\n'),
         });
       } else {
         await interaction.editReply({

@@ -1,5 +1,5 @@
 import express from 'express';
-import { searchURLByName } from './discord/pokeinfo/search';
+import { searchPokemonByName } from './discord/pokeinfo/search';
 
 export async function startServer(port: string | number) {
   const app = express();
@@ -14,9 +14,9 @@ export async function startServer(port: string | number) {
       res.status(400).send('Bad Request');
       return;
     }
-    const url = await searchURLByName(name as string);
-    if (url) {
-      res.status(200).send(`<a href="${url}">${name}</a>`);
+    const data = await searchPokemonByName(name as string);
+    if (data) {
+      res.status(200).send(data);
     } else {
       res.status(404).send('Not Found');
     }
