@@ -1,7 +1,6 @@
 import {
   SlashCommandBuilder,
   ChatInputCommandInteraction,
-  Interaction,
   AutocompleteInteraction,
 } from 'discord.js';
 import { getAllPokemonNames, searchURLByName } from './search';
@@ -17,25 +16,8 @@ export default {
         .setAutocomplete(true),
     )
     .setDescription('ポケモン徹底攻略のページを日本語名で検索します'),
-  accept(interaction: Interaction) {
-    return interaction.isChatInputCommand() || interaction.isAutocomplete();
-  },
-  async execute(
-    interaction: ChatInputCommandInteraction | AutocompleteInteraction,
-  ) {
-    if (interaction.isAutocomplete()) {
-      const focusedValue = interaction.options.getFocused();
-      console.log(`[pokeinfo] autocomplete: ${focusedValue}`);
-      if (focusedValue.length < 1) {
-        return;
-      }
-      const choices = await getAllPokemonNames({ prefix: focusedValue });
-      console.log(`[pokeinfo] autocomplete choices: ${choices.length}`);
-      await interaction.respond(
-        choices.map((choice) => ({ name: choice, value: choice })),
-      );
-      return;
-    } else if (interaction.isChatInputCommand()) {
+  async execute(interaction: ChatInputCommandInteraction) {
+    if (interaction.isChatInputCommand()) {
       const name = interaction.options.getString('name')!;
       console.log(`[pokeinfo] name: ${name}`);
       await interaction.deferReply();
@@ -52,5 +34,17 @@ export default {
         });
       }
     }
+  },
+  async autocomplete(interaction: AutocompleteInteraction) {
+    const focusedValue = interaction.options.getFocused();
+    console.log(`[pokeinfo] autocomplete: ${focusedValue}`);
+    if (focusedValue.length < 1) {
+      return;
+    }
+    const choices = await getAllPokemonNames({ prefix: focusedValue });
+    console.log(`[pokeinfo] autocomplete choices: ${choices.length}`);
+    await interaction.respond(
+      choices.map((choice) => ({ name: choice, value: choice })),
+    );
   },
 };

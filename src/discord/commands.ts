@@ -3,7 +3,7 @@ import ping from './ping/command';
 import pokeinfo from './pokeinfo/command';
 import { CommandHandler } from './types';
 
-export const commandHandlers: Record<string, CommandHandler<any>> = {
+export const commandHandlers: Record<string, CommandHandler> = {
   [ping.data.name]: ping,
   [pokeinfo.data.name]: pokeinfo,
 };
@@ -22,6 +22,6 @@ export async function registerGuildCommands(
   });
 }
 
-export function getCommand(name: string): CommandHandler<any> | null {
+export function getCommand(name: string): CommandHandler | null {
   return commandHandlers[name] ?? null;
 }

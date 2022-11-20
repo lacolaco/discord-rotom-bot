@@ -33,28 +33,29 @@ function setupEventListeners(client: Client): void {
   });
 
   client.on(Events.InteractionCreate, async (interaction) => {
-    if (!interaction.isCommand()) {
-      return;
-    }
-    const command = getCommand(interaction.commandName);
-    if (!command || !command.accept(interaction)) {
-      console.error(
-        `No command matching ${interaction.commandName} was found.`,
-      );
-      return;
-    }
-    console.log(`Command: ${interaction.commandName}`);
-
     try {
-      await command.execute(interaction);
+      if (interaction.isChatInputCommand()) {
+        const command = getCommand(interaction.commandName);
+        if (!command) {
+          console.error(
+            `No command matching ${interaction.toString()} was found.`,
+          );
+          return;
+        }
+        console.log(`Command: ${command.data.name}`);
+        await command.execute(interaction);
+      } else if (interaction.isAutocomplete()) {
+        const command = getCommand(interaction.commandName);
+        if (!command) {
+          console.error(
+            `No autocomplete matching ${interaction.commandName} was found.`,
+          );
+          return;
+        }
+        console.log(`Command: ${command.data.name}`);
+      }
     } catch (error) {
       console.error(error);
-      interaction
-        .reply({
-          content: 'There was an error while executing this command!',
-          ephemeral: true,
-        })
-        .catch((error) => console.error(error));
     }
   });
 }
