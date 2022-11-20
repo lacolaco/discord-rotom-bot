@@ -25,14 +25,17 @@ export default {
   ) {
     if (interaction.isAutocomplete()) {
       const focusedValue = interaction.options.getFocused();
+      console.log(`[pokeinfo] autocomplete: ${focusedValue}`);
       if (focusedValue.length < 1) {
         await interaction.respond([]);
         return;
       }
       const choices = await getAllPokemonNames({ prefix: focusedValue });
+      console.log(`[pokeinfo] autocomplete choices: ${choices.length}`);
       await interaction.respond(
         choices.map((choice) => ({ name: choice, value: choice })),
       );
+      return;
     } else if (interaction.isChatInputCommand()) {
       const name = interaction.options.getString('name')!;
       console.log(`[pokeinfo] name: ${name}`);
