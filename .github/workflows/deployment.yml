@@ -32,6 +32,7 @@ jobs:
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
+          NEWS_SUBSCRIBER_ROLE_ID: ${{ secrets.NEWS_SUBSCRIBER_ROLE_ID }}
       - name: Deploy app
         run: gcloud app deploy --promote
       - name: Delete unused versions
