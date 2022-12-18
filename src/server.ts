@@ -4,8 +4,9 @@ import { searchPokemonByName } from './discord/pokeinfo/search';
 import { getNewsNotification } from './news/check-news';
 
 export async function startServer(
-  port: string | number,
   discordApp: DiscordApp,
+  port: string | number,
+  newsSubscriberRoleId: string,
 ) {
   const app = express();
   app.use(express.json());
@@ -35,7 +36,7 @@ export async function startServer(
       return;
     }
     try {
-      const notification = await getNewsNotification();
+      const notification = await getNewsNotification(newsSubscriberRoleId);
       if (notification) {
         await discordApp.sendMessage(channelId, notification);
         res.status(200).send(notification);

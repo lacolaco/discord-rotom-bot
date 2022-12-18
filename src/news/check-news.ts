@@ -1,4 +1,4 @@
-import { MessageCreateOptions } from 'discord.js';
+import { MessageCreateOptions, roleMention } from 'discord.js';
 import { fetch } from 'undici';
 import { firestore } from '../firestore';
 import { NewsItemJSON, NewsJSON } from './types';
@@ -6,7 +6,9 @@ import { NewsItemJSON, NewsJSON } from './types';
 const newsBaseUrl = 'https://sv-news.pokemon.co.jp/ja/';
 const newsJSONUrl = `${newsBaseUrl}json/list.json`;
 
-export async function getNewsNotification(): Promise<MessageCreateOptions | null> {
+export async function getNewsNotification(
+  newsSubscriberRoleId: string,
+): Promise<MessageCreateOptions | null> {
   const response = await fetch(newsJSONUrl);
   const json = (await response.json()) as NewsJSON;
   const news = json.data;
@@ -30,7 +32,7 @@ export async function getNewsNotification(): Promise<MessageCreateOptions | null
   if (newsToNotify.length === 0) {
     return null;
   }
-  return buildNotificationMessage(newsToNotify);
+  return buildNotificationMessage(newsToNotify, newsSubscriberRoleId);
 }
 
 /**
@@ -56,9 +58,12 @@ async function saveToCache(item: NewsItemJSON) {
   await firestore.collection(collectionName).doc(item.id).set(item);
 }
 
-function buildNotificationMessage(items: NewsItemJSON[]): MessageCreateOptions {
+function buildNotificationMessage(
+  items: NewsItemJSON[],
+  newsSubscriberRoleId: string,
+): MessageCreateOptions {
   return {
-    content: `新着情報ロト！`,
+    content: `新着情報ロト！ ${roleMention(newsSubscriberRoleId)}`,
     embeds: items.map((item) => ({
       title: `[${item.kindTxt}] ${item.title}`,
       image: {
