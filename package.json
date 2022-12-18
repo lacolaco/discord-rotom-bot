@@ -10,13 +10,15 @@
   "scripts": {
     "build": "tsc",
     "start": "node build/main.js",
-    "dev": "ts-node src/main.ts",
+    "dev": "FIRESTORE_EMULATOR_HOST=localhost:6000 ts-node src/main.ts",
     "format": "prettier --write src",
-    "update-data": "ts-node tools/update-data.ts"
+    "update-data": "ts-node tools/update-data.ts",
+    "firestore:emulator": "gcloud emulators firestore start --host-port=localhost:6000"
   },
   "author": "lacolaco",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/firestore": "^6.4.1",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",

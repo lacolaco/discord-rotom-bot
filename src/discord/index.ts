@@ -1,9 +1,10 @@
-import { Client, Events, GatewayIntentBits } from 'discord.js';
+import { Client, Events, GatewayIntentBits, Routes } from 'discord.js';
 import { getCommand, registerGuildCommands } from './commands';
 
 export interface DiscordApp {
   start(): Promise<void>;
   dispose(): Promise<void>;
+  sendMessage(channelId: string, message: string): Promise<void>;
 }
 
 export function createDiscordApp(
@@ -23,6 +24,12 @@ export function createDiscordApp(
         client.once('disconnect', resolve);
         client.destroy();
       });
+    },
+    sendMessage: async (channelId: string, message: string) => {
+      const channel = await client.channels.fetch(channelId);
+      if (channel && channel.isTextBased()) {
+        await channel.send(message);
+      }
     },
   };
 }

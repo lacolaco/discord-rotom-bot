@@ -1,7 +1,12 @@
 import express from 'express';
+import { DiscordApp } from './discord';
 import { searchPokemonByName } from './discord/pokeinfo/search';
+import { getNewsNotification } from './news/check-news';
 
-export async function startServer(port: string | number) {
+export async function startServer(
+  port: string | number,
+  discordApp: DiscordApp,
+) {
   const app = express();
 
   app.get('/', async (req, res) => {
@@ -19,6 +24,21 @@ export async function startServer(port: string | number) {
       res.status(200).send(data);
     } else {
       res.status(404).send('Not Found');
+    }
+  });
+
+  app.get('/check-news', async (req, res) => {
+    const { channelId } = req.query;
+    if (!channelId || typeof channelId !== 'string') {
+      res.status(400).send('Bad Request');
+      return;
+    }
+    const notification = await getNewsNotification();
+    if (notification) {
+      await discordApp.sendMessage(channelId, notification);
+      res.status(200).send(notification);
+    } else {
+      res.status(500);
     }
   });
 

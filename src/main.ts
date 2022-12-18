@@ -15,7 +15,7 @@ if (!APP_ID || !PUBLIC_KEY || !GUILD_ID || !DISCORD_TOKEN) {
 
 const discordApp = createDiscordApp(DISCORD_TOKEN, APP_ID, GUILD_ID);
 
-startServer(PORT)
+startServer(PORT, discordApp)
   .then(async () => {
     await discordApp.start();
   })
