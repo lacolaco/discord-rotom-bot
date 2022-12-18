@@ -8,6 +8,7 @@ export async function startServer(
   discordApp: DiscordApp,
 ) {
   const app = express();
+  app.use(express.json());
 
   app.get('/', async (req, res) => {
     res.status(200).send('OK');
@@ -27,17 +28,22 @@ export async function startServer(
     }
   });
 
-  app.get('/check-news', async (req, res) => {
-    const { channelId } = req.query;
+  app.post('/check-news', async (req, res) => {
+    const { channelId } = req.body;
     if (!channelId || typeof channelId !== 'string') {
       res.status(400).send('Bad Request');
       return;
     }
-    const notification = await getNewsNotification();
-    if (notification) {
-      await discordApp.sendMessage(channelId, notification);
-      res.status(200).send(notification);
-    } else {
+    try {
+      const notification = await getNewsNotification();
+      if (notification) {
+        await discordApp.sendMessage(channelId, notification);
+        res.status(200).send(notification);
+      } else {
+        res.status(200).send('No new news');
+      }
+    } catch (e) {
+      console.error(e);
       res.status(500);
     }
   });

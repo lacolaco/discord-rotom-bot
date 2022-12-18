@@ -1,3 +1,4 @@
+import { MessageCreateOptions } from 'discord.js';
 import { fetch } from 'undici';
 import { firestore } from '../firestore';
 import { NewsItemJSON, NewsJSON } from './types';
@@ -5,7 +6,7 @@ import { NewsItemJSON, NewsJSON } from './types';
 const newsBaseUrl = 'https://sv-news.pokemon.co.jp/ja/';
 const newsJSONUrl = `${newsBaseUrl}json/list.json`;
 
-export async function getNewsNotification(): Promise<string | null> {
+export async function getNewsNotification(): Promise<MessageCreateOptions | null> {
   const response = await fetch(newsJSONUrl);
   const json = (await response.json()) as NewsJSON;
   const news = json.data;
@@ -55,11 +56,16 @@ async function saveToCache(item: NewsItemJSON) {
   await firestore.collection(collectionName).doc(item.id).set(item);
 }
 
-function buildNotificationMessage(items: NewsItemJSON[]): string {
-  return [
-    `新着情報ロト！`,
-    ...items.map((item) => {
-      return `${newsBaseUrl}${item.link}`;
-    }),
-  ].join('\n');
+function buildNotificationMessage(items: NewsItemJSON[]): MessageCreateOptions {
+  return {
+    content: `新着情報ロト！`,
+    embeds: items.map((item) => ({
+      title: `[${item.kindTxt}] ${item.title}`,
+      image: {
+        url: `${newsBaseUrl}${item.banner}`,
+      },
+      timestamp: new Date(parseInt(item.stAt, 10) * 1000).toISOString(),
+      url: `${newsBaseUrl}${item.link}`,
+    })),
+  };
 }
