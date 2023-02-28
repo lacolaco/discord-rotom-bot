@@ -25,12 +25,12 @@ export default {
 
       const data = await searchPokemonByName(name);
       if (data) {
-        console.log(`[pokeinfo] found pokemon: ${data.url}`);
+        console.log(`[pokeinfo] found pokemon: ${data.meta.url}`);
         await interaction.editReply({
           content: [
             `${bold(name)} の情報ロト！`,
-            `${data.types.join('・')} ${data.baseStats.join('-')}`,
-            `${data.url}`,
+            `${data.types.join('・')} ${formatBaseStats(data.baseStats)}`,
+            `${data.meta.url}`,
           ].join('\n'),
         });
       } else {
@@ -53,3 +53,15 @@ export default {
     );
   },
 };
+
+function formatBaseStats(baseStats: {
+  H: number;
+  A: number;
+  B: number;
+  C: number;
+  D: number;
+  S: number;
+}) {
+  // join stats as H-A-B-C-D-S
+  return `${baseStats.H}-${baseStats.A}-${baseStats.B}-${baseStats.C}-${baseStats.D}-${baseStats.S}`;
+}
