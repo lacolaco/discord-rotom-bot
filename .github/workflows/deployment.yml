@@ -24,7 +24,11 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: yarn
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: yarn install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn build
       - uses: golang-enthusiast/app-yaml-env-compiler@v1.0
         env:
