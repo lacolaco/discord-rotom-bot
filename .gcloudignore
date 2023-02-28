@@ -3,6 +3,7 @@
 
 # upload files
 !.
+!.npmrc
 !package.json
 !yarn.lock
 !build/
