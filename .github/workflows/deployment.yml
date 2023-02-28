@@ -6,8 +6,8 @@ on:
       - main
 
 permissions:
-  contents: 'read'
-  id-token: 'write'
+  contents: read
+  id-token: write
 
 jobs:
   deploy-app:
@@ -26,6 +26,7 @@ jobs:
           cache: yarn
           registry-url: 'https://npm.pkg.github.com'
           scope: '@lacolaco'
+          always-auth: true
       - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
