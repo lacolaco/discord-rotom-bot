@@ -97,10 +97,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@lacolaco/pokemon-data@^1.3.0":
-  version "1.3.0"
-  resolved "https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.3.0/0cbcacacb99eca3aec19e7ae98269c7b16cd5f7d#0cbcacacb99eca3aec19e7ae98269c7b16cd5f7d"
-  integrity sha512-UERY84Jvcm50IS1jl2A6+LHSmvVF3ZWhonfaeIVyWCpC2c9d4iImPXuaYPtVoUImwhei5zhiafVnxHXGIWH3LQ==
+"@lacolaco/pokemon-data@^1.4.0":
+  version "1.4.0"
+  resolved "https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.4.0/90b621e9648806eb92cb7393f4d31962752a42b9#90b621e9648806eb92cb7393f4d31962752a42b9"
+  integrity sha512-e6MiTSQG/7FcYwO3dGMDQc0PWs3m2mkO5Ou1kh0cIFYof3FYk7cxfls2Nxd9Qykf+KrlIxr4mEA20iAyHmmpww==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
