@@ -1,4 +1,4 @@
-runtime: nodejs16
+runtime: nodejs18
 
 instance_class: F1
 
@@ -13,4 +13,3 @@ env_variables:
   PUBLIC_KEY: $PUBLIC_KEY
   DISCORD_TOKEN: $DISCORD_TOKEN
   GUILD_ID: $GUILD_ID
-  NEWS_SUBSCRIBER_ROLE_ID: $NEWS_SUBSCRIBER_ROLE_ID
