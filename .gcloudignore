@@ -5,5 +5,5 @@
 !.
 !.npmrc
 !package.json
-!yarn.lock
+!pnpm-lock.yaml
 !build/
