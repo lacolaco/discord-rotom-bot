@@ -11,7 +11,7 @@ permissions:
   packages: read
 
 jobs:
-  deploy-app:
+  deploy-app-engine:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,14 +24,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: 'package.json'
-          cache: yarn
           registry-url: 'https://npm.pkg.github.com'
           scope: '@lacolaco'
           always-auth: true
-      - run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2
+      - run: pnpm install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn build
+      - run: pnpm run build
       - uses: golang-enthusiast/app-yaml-env-compiler@v1.0
         env:
           APP_ID: ${{ secrets.APP_ID }}
@@ -48,3 +48,22 @@ jobs:
         run: gcloud app deploy --promote
       - name: Delete unused versions
         run: gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" | tail -n +3 | xargs gcloud app versions delete
+
+  deploy-cf-workers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
+          always-auth: true
+      - uses: pnpm/action-setup@v2
+      - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}

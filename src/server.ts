@@ -38,7 +38,7 @@ export async function startServer(
     try {
       const notification = await getNewsNotification(newsSubscriberRoleId);
       if (notification) {
-        await discordApp.sendMessage(channelId, notification);
+        // await discordApp.sendMessage(channelId, notification);
         res.status(200).send(notification);
       } else {
         res.status(200).send('No new news');

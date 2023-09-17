@@ -11,29 +11,31 @@
     "build": "tsc",
     "start": "node build/main.js",
     "dev": "FIRESTORE_EMULATOR_HOST=localhost:6000 ts-node src/main.ts",
-    "format": "prettier --write src",
-    "update-data": "ts-node tools/update-data.ts",
-    "firestore:emulator": "gcloud emulators firestore start --host-port=localhost:6000"
+    "format": "prettier --cache --write src",
+    "firestore:emulator": "gcloud emulators firestore start --host-port=localhost:6000",
+    "deploy": "wrangler deploy"
   },
   "author": "lacolaco",
   "license": "MIT",
   "dependencies": {
     "@google-cloud/firestore": "^6.4.1",
     "@lacolaco/pokemon-data": "^1.4.0",
+    "discord-interactions": "^3.4.0",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "iconv-lite": "^0.6.3",
-    "jsdom": "^20.0.2",
-    "undici": "^5.12.0"
+    "hono": "^3.6.3",
+    "jsdom": "^20.0.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230914.0",
     "@types/express": "^4.17.14",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
     "nodemon": "^2.0.15",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "wrangler": "^3.8.0"
   }
 }
