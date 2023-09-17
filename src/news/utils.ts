@@ -5,7 +5,7 @@ import { NewsItemJSON } from './types';
  * @param item
  * @returns
  */
-export function isAvailableNews(item: NewsItemJSON) {
+export function isOngoingNews(item: NewsItemJSON) {
   const now = Date.now();
   const startAt = parseInt(item.stAt, 10) * 1000; // convert to milliseconds
   const endAt = startAt + parseInt(item.newAt, 10) * 1000; // convert to milliseconds

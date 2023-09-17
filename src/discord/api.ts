@@ -1,7 +1,7 @@
 import type { MessageCreateOptions } from 'discord.js';
 
 /**
- * @see https://discord.com/developers/docs/resources/channel#create-message
+ * @see https://discord.com/developers/docs/resources/webhook#execute-webhook-jsonform-params
  * @param channelID
  */
 export async function sendMessageByWebhook(

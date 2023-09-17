@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { fetchNewsJSON } from './news/fetch';
-import { isAvailableNews } from './news/utils';
+import { isOngoingNews } from './news/utils';
 import { createNotificationMessage } from './news/notification';
 import { sendMessageByWebhook } from './discord/api';
 import { initSentry } from './observability/sentry';
@@ -26,8 +26,8 @@ async function runCronJob(
   const newsToNotify = [];
   for (const item of news) {
     // check a news item is available
-    if (!isAvailableNews(item)) {
-      console.log(`News item ${item.id} is not available`);
+    if (!isOngoingNews(item)) {
+      console.log(`News item ${item.id} is not ongoing`);
       continue;
     }
     // check a news item is not in the database
