@@ -11,15 +11,13 @@
   "scripts": {
     "build": "tsc",
     "start": "node build/main.js",
-    "dev": "FIRESTORE_EMULATOR_HOST=localhost:6000 ts-node src/main.ts",
+    "dev": "ts-node src/main.ts",
     "format": "prettier --cache --write src",
-    "firestore:emulator": "gcloud emulators firestore start --host-port=localhost:6000",
     "deploy": "wrangler deploy"
   },
   "author": "lacolaco",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/firestore": "^6.4.1",
     "@lacolaco/pokemon-data": "^1.4.0",
     "discord-interactions": "^3.4.0",
     "discord.js": "^14.6.0",
