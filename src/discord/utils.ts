@@ -1,5 +1,5 @@
 /**
- * @see https://v13.discordjs.guide/miscellaneous/parsing-mention-arguments.html#how-discord-mentions-work
+ * @see https://discord.com/developers/docs/reference#message-formatting
  * @param roleID
  * @returns
  */
