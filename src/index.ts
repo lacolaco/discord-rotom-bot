@@ -3,8 +3,10 @@ import { fetchNewsJSON } from './news/fetch';
 import { isAvailableNews } from './news/utils';
 import { createNotificationMessage } from './news/notification';
 import { sendMessageByWebhook } from './discord/api';
+import { initSentry } from './observability/sentry';
 
 type Env = {
+  SENTRY_DSN: string;
   NEWS_KV: KVNamespace;
   DIRCORD_NEWS_NOTIFICATION_WEBHOOK_URL: string;
   NEWS_SUBSCRIBER_ROLE_ID: string;
@@ -60,9 +62,16 @@ async function runCronJob(
 
 export default {
   fetch(request: Request, env: Env, ctx: ExecutionContext) {
+    initSentry(env.SENTRY_DSN, ctx, request);
     return app.fetch(request, env, ctx);
   },
   scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(runCronJob(event, env, ctx));
+    const sentry = initSentry(env.SENTRY_DSN, ctx);
+    sentry.setContext('event', event);
+    ctx.waitUntil(
+      runCronJob(event, env, ctx).catch((e) => {
+        sentry.captureException(e);
+      }),
+    );
   },
 };
