@@ -14,7 +14,8 @@
     "start": "node build/main.js",
     "dev": "ts-node src/main.ts",
     "format": "prettier --cache --write src",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "gcp-build": ""
   },
   "author": "lacolaco",
   "license": "MIT",
