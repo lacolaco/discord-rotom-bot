@@ -1,0 +1,13 @@
+compatibility_date = "2023-09-17"
+main = "src/index.ts"
+name = "discord-rotom-bot"
+
+kv_namespaces = [
+  {binding = "NEWS_KV", id = "696d3e3efb594ffcb9edd17c44a82566"},
+]
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+SENTRY_DSN = "https://4b26dd1cc3406cbcb327064a3e2a0f90@o4505734726549504.ingest.sentry.io/4505896349270016"
