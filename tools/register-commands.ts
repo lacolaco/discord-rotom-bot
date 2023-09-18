@@ -1,12 +1,5 @@
-import { RESTPostAPIChatInputApplicationCommandsJSONBody } from 'discord-api-types/v10';
-import ping from '../src/commands/ping';
-import pokeinfo from '../src/commands/pokeinfo';
+import { commands } from '../src/commands';
 import DiscordClient from '../src/discord/api';
-
-const commands: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [
-  ping,
-  pokeinfo,
-];
 
 async function main() {
   const discodeToken = process.env.DISCORD_TOKEN;
@@ -17,9 +10,15 @@ async function main() {
     throw new Error('Missing environment variables');
   }
 
-  console.log(`Installing commands: ${commands.map((c) => c.name).join(', ')}`);
+  console.log(
+    `Installing commands: ${commands.map((c) => c.default.name).join(', ')}`,
+  );
   const discord = new DiscordClient(discodeToken);
-  await discord.putGuildApplicationCommands(applicationId, guildId, commands);
+  await discord.putGuildApplicationCommands(
+    applicationId,
+    guildId,
+    commands.map((c) => c.default),
+  );
   console.log(`Done`);
 }
 

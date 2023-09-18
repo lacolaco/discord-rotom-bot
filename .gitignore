@@ -1,5 +1,5 @@
 node_modules
-.env
+.envrc
 build
 .wrangler
 .dev.vars

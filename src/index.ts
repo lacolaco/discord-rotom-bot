@@ -2,7 +2,7 @@ import { Hono, MiddlewareHandler } from 'hono';
 import DiscordClient from './discord/api';
 import {
   Interaction,
-  onInteractionRequest,
+  handleInteractionRequest,
   verifyKey,
 } from './discord/interactions';
 import { notifyNews } from './news';
@@ -42,7 +42,7 @@ const verifyKeyMiddleware =
  */
 app.post('/api/interactions', verifyKeyMiddleware(), async (c) => {
   const interaction = await c.req.json<Interaction>();
-  const response = await onInteractionRequest(interaction);
+  const response = await handleInteractionRequest(interaction);
   if (response) {
     return c.json(response);
   } else {
