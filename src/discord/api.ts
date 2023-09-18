@@ -1,4 +1,8 @@
-import type { MessageCreateOptions } from 'discord.js';
+import {
+  APIInteractionResponse,
+  RESTPostAPIChannelMessageJSONBody,
+  RESTPostAPIWebhookWithTokenJSONBody,
+} from 'discord-api-types/v10';
 
 /**
  * @see https://discord.com/developers/docs/reference#api-versioning
@@ -17,9 +21,36 @@ export default class DiscordClient {
    * @param message
    * @returns
    */
-  async createChannelMessage(channelId: string, message: MessageCreateOptions) {
+  async createChannelMessage(
+    channelId: string,
+    message: RESTPostAPIChannelMessageJSONBody,
+  ) {
     const url = `${baseUrl}/channels/${channelId}/messages`;
     return await this.#request(url, 'POST', message);
+  }
+
+  async createInteractionResponse(
+    interactionId: string,
+    interactionToken: string,
+    response: APIInteractionResponse,
+  ) {
+    const url = `${baseUrl}/interactions/${interactionId}/${interactionToken}/callback`;
+    return await this.#request(url, 'POST', response);
+  }
+
+  /**
+   * @see https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response
+   * @param interactionToken
+   * @param response
+   * @returns
+   */
+  async editOriginalInteractionResponse(
+    applicationId: string,
+    interactionToken: string,
+    data: RESTPostAPIWebhookWithTokenJSONBody,
+  ) {
+    const url = `${baseUrl}/webhooks/${applicationId}/${interactionToken}/messages/@original`;
+    return await this.#request(url, 'PATCH', data);
   }
 
   async #request<T>(
@@ -27,7 +58,7 @@ export default class DiscordClient {
     method: string,
     body: unknown,
     headers = {},
-  ): Promise<T> {
+  ): Promise<Response> {
     const response = await fetch(url, {
       method,
       headers: {
@@ -38,10 +69,12 @@ export default class DiscordClient {
       body: JSON.stringify(body),
     });
     if (!response.ok) {
+      const text = await response.text();
+      console.error(text);
       throw new Error(
         `Failed to request ${url}: ${response.status} ${response.statusText}`,
       );
     }
-    return response.json();
+    return response;
   }
 }

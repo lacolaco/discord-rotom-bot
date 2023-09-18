@@ -21,7 +21,3 @@ export async function registerGuildCommands(
     body: commands,
   });
 }
-
-export function getCommand(name: string): CommandHandler | null {
-  return commandHandlers[name] ?? null;
-}

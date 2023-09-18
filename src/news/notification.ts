@@ -1,4 +1,4 @@
-import type { MessageCreateOptions } from 'discord.js';
+import { RESTPostAPIChannelMessageJSONBody } from 'discord-api-types/v10';
 import { NewsItemJSON } from './types';
 import { roleMention } from '../discord/utils';
 import { newsBaseUrl } from './fetch';
@@ -6,7 +6,7 @@ import { newsBaseUrl } from './fetch';
 export function createNotificationMessage(
   items: NewsItemJSON[],
   newsSubscriberRoleId: string,
-): MessageCreateOptions {
+): RESTPostAPIChannelMessageJSONBody {
   return {
     content: `新着情報ロト！ ${roleMention(newsSubscriberRoleId)}`,
     embeds: items.map((item) => ({

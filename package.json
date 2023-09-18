@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node build/main.js",
-    "dev": "ts-node src/main.ts",
+    "dev": "wrangler dev",
+    "ngrok": "ngrok http 8787",
     "format": "prettier --cache --write src",
     "deploy": "wrangler deploy",
     "gcp-build": ""
@@ -34,8 +35,10 @@
     "@types/express": "^4.17.14",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
+    "discord-api-types": "^0.37.56",
+    "ngrok": "5.0.0-beta.2",
     "nodemon": "^2.0.15",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3",
     "wrangler": "^3.8.0"

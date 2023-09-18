@@ -3,6 +3,10 @@
  * @param roleID
  * @returns
  */
-export function roleMention(roleID: string) {
+export function roleMention<T extends string>(roleID: T): `<@&${T}>` {
   return `<@&${roleID}>`;
+}
+
+export function bold<T extends string>(text: T): `**${T}**` {
+  return `**${text}**`;
 }
