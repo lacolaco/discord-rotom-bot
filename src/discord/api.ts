@@ -2,6 +2,7 @@ import {
   APIInteractionResponse,
   RESTPostAPIChannelMessageJSONBody,
   RESTPostAPIWebhookWithTokenJSONBody,
+  RESTPutAPIApplicationGuildCommandsJSONBody,
 } from 'discord-api-types/v10';
 
 /**
@@ -51,6 +52,19 @@ export default class DiscordClient {
   ) {
     const url = `${baseUrl}/webhooks/${applicationId}/${interactionToken}/messages/@original`;
     return await this.#request(url, 'PATCH', data);
+  }
+
+  /**
+   * Bulk Overwrite Guild Application Commands
+   * @see https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-guild-application-commands
+   */
+  async putGuildApplicationCommands(
+    applicationId: string,
+    guildId: string,
+    commands: RESTPutAPIApplicationGuildCommandsJSONBody,
+  ) {
+    const url = `${baseUrl}/applications/${applicationId}/guilds/${guildId}/commands`;
+    return await this.#request(url, 'PUT', commands);
   }
 
   async #request<T>(

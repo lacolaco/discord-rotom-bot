@@ -11,44 +11,6 @@ permissions:
   packages: read
 
 jobs:
-  deploy-app-engine:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - id: 'auth'
-        uses: 'google-github-actions/auth@v0'
-        with:
-          workload_identity_provider: 'projects/272183910933/locations/global/workloadIdentityPools/github-actions-auth/providers/github-actions-auth'
-          service_account: 'github-actions-deploy@discord-rotom-bot.iam.gserviceaccount.com'
-      - uses: google-github-actions/setup-gcloud@v0
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: 'package.json'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@lacolaco'
-          always-auth: true
-      - uses: pnpm/action-setup@v2
-      - run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: pnpm run build
-      - uses: golang-enthusiast/app-yaml-env-compiler@v1.0
-        env:
-          APP_ID: ${{ secrets.APP_ID }}
-          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          GUILD_ID: ${{ secrets.GUILD_ID }}
-          NEWS_SUBSCRIBER_ROLE_ID: ${{ secrets.NEWS_SUBSCRIBER_ROLE_ID }}
-      - name: insert npm auth token to local .npmrc file
-        run: |
-          echo -e "\\n//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy app
-        run: gcloud app deploy --promote
-      - name: Delete unused versions
-        run: gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" | tail -n +3 | xargs gcloud app versions delete
-
   deploy-cf-workers:
     runs-on: ubuntu-latest
     steps:
@@ -67,3 +29,23 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+  register-commands:
+    needs: [deploy-cf-workers]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
+          always-auth: true
+      - uses: pnpm/action-setup@v2
+      - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run register-commands
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_APPLICATION_ID: ${{ vars.DISCORD_APPLICATION_ID }}
+          DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}

@@ -10,36 +10,25 @@
   },
   "packageManager": "pnpm@8.7.5",
   "scripts": {
-    "build": "tsc",
-    "start": "node build/main.js",
+    "start": "wrangler dev",
     "dev": "wrangler dev",
-    "ngrok": "ngrok http 8787",
     "format": "prettier --cache --write src",
     "deploy": "wrangler deploy",
-    "gcp-build": ""
+    "register-commands": "tsx tools/register-commands.ts"
   },
   "author": "lacolaco",
   "license": "MIT",
   "dependencies": {
     "@lacolaco/pokemon-data": "^1.4.0",
     "discord-interactions": "^3.4.0",
-    "discord.js": "^14.6.0",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
     "hono": "^3.6.3",
-    "jsdom": "^20.0.2",
     "toucan-js": "^3.2.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230914.0",
-    "@types/express": "^4.17.14",
-    "@types/jsdom": "^20.0.1",
-    "@types/node": "^18.11.9",
     "discord-api-types": "^0.37.56",
-    "ngrok": "5.0.0-beta.2",
-    "nodemon": "^2.0.15",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1",
+    "tsx": "^3.12.10",
     "typescript": "^4.9.3",
     "wrangler": "^3.8.0"
   }

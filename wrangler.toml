@@ -1,5 +1,4 @@
 compatibility_date = "2023-09-17"
-compatibility_flags = ["nodejs_compat"]
 main = "src/index.ts"
 name = "discord-rotom-bot"
 
@@ -11,4 +10,5 @@ kv_namespaces = [
 crons = ["*/5 * * * *"]
 
 [vars]
+DISCORD_APPLICATION_ID = "1042274716624367636"
 SENTRY_DSN = "https://4b26dd1cc3406cbcb327064a3e2a0f90@o4505734726549504.ingest.sentry.io/4505896349270016"

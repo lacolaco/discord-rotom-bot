@@ -1,9 +1,0 @@
-# ignore all
-*
-
-# upload files
-!.
-!.npmrc
-!package.json
-!pnpm-lock.yaml
-!build/
