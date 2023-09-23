@@ -6,7 +6,7 @@ import {
   verifyKey,
 } from './discord/interactions';
 import { notifyNews } from './news';
-import { initSentry } from './observability/sentry';
+import { Sentry, initSentry } from './observability/sentry';
 
 type Env = {
   SENTRY_DSN: string;
@@ -17,7 +17,26 @@ type Env = {
   NEWS_SUBSCRIBER_ROLE_ID: string;
 };
 
-const app = new Hono<{ Bindings: Env }>();
+type Variables = {
+  sentry: Sentry;
+};
+
+const app = new Hono<{ Bindings: Env; Variables: Variables }>();
+
+app.use('*', async (c, next) => {
+  const sentry = initSentry(c.env.SENTRY_DSN, c.executionCtx, c.req.raw);
+  c.set('sentry', sentry);
+  await next();
+});
+
+app.onError(async (error, c) => {
+  console.error(error);
+  const sentry = c.var.sentry;
+  if (sentry) {
+    sentry.captureException(error);
+  }
+  return c.text('Internal server error', 500);
+});
 
 app.get('/', (c) => c.text('Hello!'));
 
@@ -65,15 +84,7 @@ async function runCronJob(
 }
 
 export default {
-  async fetch(request: Request, env: Env, ctx: ExecutionContext) {
-    const sentry = initSentry(env.SENTRY_DSN, ctx, request);
-    try {
-      return await app.fetch(request, env, ctx);
-    } catch (e) {
-      sentry.captureException(e);
-      throw e;
-    }
-  },
+  fetch: app.fetch,
   scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
     const sentry = initSentry(env.SENTRY_DSN, ctx);
     sentry.setContext('event', event);
