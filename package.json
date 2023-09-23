@@ -19,9 +19,9 @@
   "author": "lacolaco",
   "license": "MIT",
   "dependencies": {
-    "@lacolaco/pokemon-data": "^1.4.0",
+    "@lacolaco/pokemon-data": "^1.5.1",
     "discord-interactions": "^3.4.0",
-    "hono": "^3.6.3",
+    "hono": "^3.7.1",
     "toucan-js": "^3.2.3"
   },
   "devDependencies": {
@@ -30,6 +30,6 @@
     "prettier": "^3.0.3",
     "tsx": "^3.12.10",
     "typescript": "^5.0.0",
-    "wrangler": "^3.8.0"
+    "wrangler": "^3.9.0"
   }
 }
