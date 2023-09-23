@@ -6,10 +6,28 @@ import {
   InteractionResponseType,
   InteractionType,
 } from 'discord-api-types/v10';
-import { getCommandByName } from 'src/commands';
+import { verifyKey } from 'discord-interactions';
+import { MiddlewareHandler } from 'hono';
+import { getCommandByName } from '../commands';
+import { HonoAppContext } from '../context';
 
 export type Interaction = APIInteraction;
-export { verifyKey } from 'discord-interactions';
+
+export const verifyKeyMiddleware =
+  (): MiddlewareHandler<HonoAppContext> => async (c, next) => {
+    const signature = c.req.header('X-Signature-Ed25519');
+    const timestamp = c.req.header('X-Signature-Timestamp');
+    const body = await c.req.raw.clone().text();
+    const isValidRequest =
+      signature &&
+      timestamp &&
+      verifyKey(body, signature, timestamp, c.env.DISCORD_PUBLIC_KEY);
+    if (!isValidRequest) {
+      console.log('Invalid request signature');
+      return c.text('Bad request signature', 401);
+    }
+    return await next();
+  };
 
 // https://discord.com/developers/docs/interactions/receiving-and-responding#interactions
 export async function handleInteractionRequest(

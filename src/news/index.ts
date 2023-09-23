@@ -1,11 +1,11 @@
-import DiscordClient from '../discord/api';
+import DiscordApi from '../discord/api';
 import { fetchNewsJSON } from './fetch';
 import { createNotificationMessage } from './notification';
 import { isOngoingNews } from './utils';
 
 export async function notifyNews(
   newsKV: KVNamespace,
-  discord: DiscordClient,
+  discord: DiscordApi,
   newsSubscriberRoleID: string,
   newsNotificationChannelID: string,
 ) {

@@ -1,33 +1,17 @@
-import { Hono, MiddlewareHandler } from 'hono';
-import DiscordClient from './discord/api';
+import { Hono } from 'hono';
+import { Env, HonoAppContext } from './context';
+import DiscordApi from './discord/api';
 import {
   Interaction,
   handleInteractionRequest,
-  verifyKey,
+  verifyKeyMiddleware,
 } from './discord/interactions';
 import { notifyNews } from './news';
-import { Sentry, initSentry } from './observability/sentry';
+import { initSentry, sentryMiddleware } from './observability/sentry';
 
-type Env = {
-  SENTRY_DSN: string;
-  NEWS_KV: KVNamespace;
-  DISCORD_TOKEN: string;
-  DISCORD_PUBLIC_KEY: string;
-  NEWS_NOTIFICATION_CHANNEL_ID: string;
-  NEWS_SUBSCRIBER_ROLE_ID: string;
-};
+const app = new Hono<HonoAppContext>();
 
-type Variables = {
-  sentry: Sentry;
-};
-
-const app = new Hono<{ Bindings: Env; Variables: Variables }>();
-
-app.use('*', async (c, next) => {
-  const sentry = initSentry(c.env.SENTRY_DSN, c.executionCtx, c.req.raw);
-  c.set('sentry', sentry);
-  await next();
-});
+app.use('*', sentryMiddleware());
 
 app.onError(async (error, c) => {
   console.error(error);
@@ -39,22 +23,6 @@ app.onError(async (error, c) => {
 });
 
 app.get('/', (c) => c.text('Hello!'));
-
-const verifyKeyMiddleware =
-  (): MiddlewareHandler<{ Bindings: Env }> => async (c, next) => {
-    const signature = c.req.header('X-Signature-Ed25519');
-    const timestamp = c.req.header('X-Signature-Timestamp');
-    const body = await c.req.raw.clone().text();
-    const isValidRequest =
-      signature &&
-      timestamp &&
-      verifyKey(body, signature, timestamp, c.env.DISCORD_PUBLIC_KEY);
-    if (!isValidRequest) {
-      console.log('Invalid request signature');
-      return c.text('Bad request signature', 401);
-    }
-    return await next();
-  };
 
 /**
  * @see https://discord.com/developers/docs/interactions/receiving-and-responding#interactions
@@ -74,7 +42,7 @@ async function runCronJob(
   env: Env,
   ctx: ExecutionContext,
 ) {
-  const discord = new DiscordClient(env.DISCORD_TOKEN);
+  const discord = new DiscordApi(env.DISCORD_TOKEN);
   await notifyNews(
     env.NEWS_KV,
     discord,

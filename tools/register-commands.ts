@@ -1,5 +1,5 @@
 import { commands } from '../src/commands';
-import DiscordClient from '../src/discord/api';
+import DiscordApi from '../src/discord/api';
 
 async function main() {
   const discodeToken = process.env.DISCORD_TOKEN;
@@ -13,7 +13,7 @@ async function main() {
   console.log(
     `Installing commands: ${commands.map((c) => c.default.name).join(', ')}`,
   );
-  const discord = new DiscordClient(discodeToken);
+  const discord = new DiscordApi(discodeToken);
   await discord.putGuildApplicationCommands(
     applicationId,
     guildId,

@@ -1,7 +1,5 @@
 import {
-  APIInteractionResponse,
   RESTPostAPIChannelMessageJSONBody,
-  RESTPostAPIWebhookWithTokenJSONBody,
   RESTPutAPIApplicationGuildCommandsJSONBody,
 } from 'discord-api-types/v10';
 
@@ -10,7 +8,7 @@ import {
  */
 const baseUrl = 'https://discord.com/api/v10';
 
-export default class DiscordClient {
+export default class DiscordApi {
   #token: string;
   constructor(token: string) {
     this.#token = token;
@@ -28,30 +26,6 @@ export default class DiscordClient {
   ) {
     const url = `${baseUrl}/channels/${channelId}/messages`;
     return await this.#request(url, 'POST', message);
-  }
-
-  async createInteractionResponse(
-    interactionId: string,
-    interactionToken: string,
-    response: APIInteractionResponse,
-  ) {
-    const url = `${baseUrl}/interactions/${interactionId}/${interactionToken}/callback`;
-    return await this.#request(url, 'POST', response);
-  }
-
-  /**
-   * @see https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response
-   * @param interactionToken
-   * @param response
-   * @returns
-   */
-  async editOriginalInteractionResponse(
-    applicationId: string,
-    interactionToken: string,
-    data: RESTPostAPIWebhookWithTokenJSONBody,
-  ) {
-    const url = `${baseUrl}/webhooks/${applicationId}/${interactionToken}/messages/@original`;
-    return await this.#request(url, 'PATCH', data);
   }
 
   /**
