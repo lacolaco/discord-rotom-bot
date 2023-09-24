@@ -57,7 +57,7 @@ export default {
     const sentry = initSentry(env.SENTRY_DSN, ctx);
     sentry.setContext('event', event);
     const checkInId = sentry.captureCheckIn({
-      monitorSlug: 'scheduled',
+      monitorSlug: 'scheduled-discord-rotom-bot',
       status: 'in_progress',
     });
     ctx.waitUntil(
@@ -65,7 +65,7 @@ export default {
         .then(() => {
           sentry.captureCheckIn({
             checkInId,
-            monitorSlug: 'scheduled',
+            monitorSlug: 'scheduled-discord-rotom-bot',
             status: 'ok',
           });
         })
@@ -73,7 +73,7 @@ export default {
           sentry.captureException(e);
           sentry.captureCheckIn({
             checkInId,
-            monitorSlug: 'scheduled',
+            monitorSlug: 'scheduled-discord-rotom-bot',
             status: 'error',
           });
         }),
