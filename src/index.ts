@@ -56,10 +56,27 @@ export default {
   scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
     const sentry = initSentry(env.SENTRY_DSN, ctx);
     sentry.setContext('event', event);
+    const checkInId = sentry.captureCheckIn({
+      monitorSlug: 'scheduled',
+      status: 'in_progress',
+    });
     ctx.waitUntil(
-      runCronJob(event, env, ctx).catch((e) => {
-        sentry.captureException(e);
-      }),
+      runCronJob(event, env, ctx)
+        .then(() => {
+          sentry.captureCheckIn({
+            checkInId,
+            monitorSlug: 'scheduled',
+            status: 'ok',
+          });
+        })
+        .catch((e) => {
+          sentry.captureException(e);
+          sentry.captureCheckIn({
+            checkInId,
+            monitorSlug: 'scheduled',
+            status: 'error',
+          });
+        }),
     );
   },
 };
