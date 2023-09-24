@@ -60,7 +60,7 @@ export default {
       monitorSlug: 'scheduled-discord-rotom-bot',
       status: 'in_progress',
     });
-    const marker = performance.mark('duration');
+    const now = Date.now();
     ctx.waitUntil(
       runCronJob(event, env, ctx)
         .then(() => {
@@ -68,7 +68,7 @@ export default {
             checkInId,
             monitorSlug: 'scheduled-discord-rotom-bot',
             status: 'ok',
-            duration: performance.measure('duration', marker).duration,
+            duration: Date.now() - now,
           });
         })
         .catch((e) => {
@@ -77,7 +77,7 @@ export default {
             checkInId,
             monitorSlug: 'scheduled-discord-rotom-bot',
             status: 'error',
-            duration: performance.measure('duration', marker).duration,
+            duration: Date.now() - now,
           });
         }),
     );
