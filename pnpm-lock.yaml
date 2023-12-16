@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@lacolaco/pokemon-data':
-    specifier: ^1.5.1
-    version: 1.5.1
+    specifier: ^1.6.0
+    version: 1.6.0
   discord-interactions:
     specifier: ^3.4.0
     version: 3.4.0
@@ -509,8 +509,8 @@ packages:
     dev: true
     optional: true
 
-  /@lacolaco/pokemon-data@1.5.1:
-    resolution: {integrity: sha512-vuhXFOjz0ThGHkjq8Du/LfP+ftd1kdLgYKrcHF6Vbs85taVByTEY/qmnCdVoHE1oyjJ1zvijjCl+4x+ZIiveig==, tarball: https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.5.1/8b3b7f0ef1f693a636abc802ef21a7e80c67dc80}
+  /@lacolaco/pokemon-data@1.6.0:
+    resolution: {integrity: sha512-8senf11lHxQi7sP7AZWMsODQYhBEQF5KlQn5mueFiN3nGD1Cw5NpH64OW1XNg5Lvt4iNm/hKArV+FCPPC0CGNA==, tarball: https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.6.0/1b9c66521c9be2d41073d65143314d4cf032abed}
     dependencies:
       tslib: 2.6.2
     dev: false
@@ -620,7 +620,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /cookie@0.5.0:
@@ -735,14 +735,6 @@ packages:
     dependencies:
       to-regex-range: 5.0.1
     dev: true
-
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -1053,7 +1045,7 @@ packages:
       source-map-support: 0.5.21
       xxhash-wasm: 1.0.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
