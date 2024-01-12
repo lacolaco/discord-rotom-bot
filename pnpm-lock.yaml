@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@lacolaco/pokemon-data':
-    specifier: ^1.6.0
-    version: 1.6.0
+    specifier: ^1.6.1
+    version: 1.6.1
   discord-interactions:
     specifier: ^3.4.0
     version: 3.4.0
@@ -509,8 +509,8 @@ packages:
     dev: true
     optional: true
 
-  /@lacolaco/pokemon-data@1.6.0:
-    resolution: {integrity: sha512-8senf11lHxQi7sP7AZWMsODQYhBEQF5KlQn5mueFiN3nGD1Cw5NpH64OW1XNg5Lvt4iNm/hKArV+FCPPC0CGNA==, tarball: https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.6.0/1b9c66521c9be2d41073d65143314d4cf032abed}
+  /@lacolaco/pokemon-data@1.6.1:
+    resolution: {integrity: sha512-s7WgiDKkwHiKTX8l1YqI5V+TN2jQFv6lTGFKQCJYVjfioFymEJMOiKK0T8mjivFmi168h7DRvcxrY/YNZ31N4A==, tarball: https://npm.pkg.github.com/download/@lacolaco/pokemon-data/1.6.1/48a3b11091f0c89662635e0f7f344f895249524f}
     dependencies:
       tslib: 2.6.2
     dev: false
