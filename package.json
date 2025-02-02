@@ -8,7 +8,7 @@
     "node": ">=16.17.0",
     "pnpm": ">=8.7.5"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@9.15.5",
   "scripts": {
     "start": "wrangler dev",
     "dev": "wrangler dev",
