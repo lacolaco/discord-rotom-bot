@@ -6,6 +6,10 @@ kv_namespaces = [
   {binding = "NEWS_KV", id = "696d3e3efb594ffcb9edd17c44a82566"},
 ]
 
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
+
 [triggers]
 crons = ["*/5 * * * *"]
 
