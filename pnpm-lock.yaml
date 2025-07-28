@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.4.0
     version: 3.4.0
   hono:
-    specifier: ^3.7.1
-    version: 3.7.1
+    specifier: ^4.0.0
+    version: 4.2.7
   toucan-js:
     specifier: ^3.3.0
     version: 3.3.0
@@ -780,8 +780,8 @@ packages:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
     dev: true
 
-  /hono@3.7.1:
-    resolution: {integrity: sha512-S6XiX1wr2mj6zo1HNkmAJ3vVkHTsMMQuAN9W3gDj7vKCf3Kc8/zfdrUHJKkzIz9fknibznfgPWDOKkt5Ae+3EQ==}
+  /hono@4.2.7:
+    resolution: {integrity: sha512-k1xHi86tJnRIVvqhFMBDGFKJ8r5O+bEsT4P59ZK59r0F300Xd910/r237inVfuT/VmE86RQQffX4OYNda6dLXw==}
     engines: {node: '>=16.0.0'}
     dev: false
 
