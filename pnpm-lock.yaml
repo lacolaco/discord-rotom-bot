@@ -24,7 +24,7 @@ devDependencies:
     version: 4.20250430.0
   discord-api-types:
     specifier: ^0.38.0
-    version: 0.38.17
+    version: 0.38.43
   prettier:
     specifier: ^3.0.3
     version: 3.5.3
@@ -116,8 +116,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@emnapi/runtime@1.4.5:
-    resolution: {integrity: sha512-++LApOtY0pEEz1zrd9vy1/zXVaVJJ/EbAF3u0fXIzPJEDtnITsBGbbK0EkM72amhl/R5b+5xx0Y/QhcVOpuulg==}
+  /@emnapi/runtime@1.9.2:
+    resolution: {integrity: sha512-3U4+MIWHImeyu1wnmVygh5WlgfYDtyf0k8AbLhMFxOipihf6nrWC4syIm/SwEeec0mNSafiiNnMJwbza/Is6Lw==}
     requiresBuild: true
     dependencies:
       tslib: 2.8.1
@@ -732,7 +732,7 @@ packages:
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@emnapi/runtime': 1.4.5
+      '@emnapi/runtime': 1.9.2
     dev: true
     optional: true
 
@@ -893,8 +893,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /discord-api-types@0.38.17:
-    resolution: {integrity: sha512-/fCx5jdUoR2hBFcj77Qx7Tmx1Ub8V/QpyS6uorjFvxRLcJJ348QxMFml9QW/eXh3i46eO4Ve8qGVepStpInEPg==}
+  /discord-api-types@0.38.43:
+    resolution: {integrity: sha512-sSoBf/nK6m7BGtw65mi+QBuvEWaHE8MMziFLqWL+gT6ME/BLg34dRSVKS3Husx40uU06bvxUc3/X+D9Y6/zAbw==}
     dev: true
 
   /discord-interactions@3.4.0:
