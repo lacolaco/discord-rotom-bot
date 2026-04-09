@@ -16,7 +16,7 @@ yakkun URL の形式: `https://yakkun.com/{zukanKey}/zukan/{pokemonKey}`
 - `pokemonKey` は yakkun 独自 ID で、全国図鑑番号とは一致しない
 
 zukanKey の優先順（新しい方が優先、掲載がなければ次にフォールバック）:
-1. `cn` (ポケチャン)
+1. `ch` (ポケチャン)
 2. `za` (Legends Z-A)
 3. `sv` (Scarlet/Violet)
 4. `swsh` (Sword/Shield)
@@ -53,7 +53,7 @@ for name in nulls:
 ```python
 import subprocess, re
 
-ZUKANKEY_PRIORITY = ['cn', 'za', 'sv', 'swsh', 'legends_arceus', 'bdsp', 'sm']
+ZUKANKEY_PRIORITY = ['ch', 'za', 'sv', 'swsh', 'legends_arceus', 'bdsp', 'sm']
 
 def search_yakkun(nat_num):
     """全国図鑑番号で yakkun を検索し、見つかったURL一覧を返す"""
