@@ -40,7 +40,7 @@ app.post('/api/interactions', verifyKeyMiddleware(), async (c) => {
 async function runCronJob(
   event: ScheduledEvent,
   env: Env,
-  ctx: ExecutionContext,
+  _ctx: ExecutionContext,
 ) {
   const discord = new DiscordApi(env.DISCORD_TOKEN);
   await notifyNews(

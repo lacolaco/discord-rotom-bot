@@ -1,26 +1,178 @@
 name: CI
 
+# PR検証・レビュー・自動マージの統合ワークフロー
+#
+# フロー:
+#   ├─ CI jobs (format, lint, typecheck, test)
+#   ├─ renovate-review (author == renovate[bot])
+#   ├─ code-review (author != renovate[bot])
+#   ↓
+#   ok (alls-green gate, 唯一のrequired check)
+#   ↓
+#   auto-merge (renovate-review成功時のみ)
+#
+# code-review失敗時（ワークフロー変更PR等）:
+#   ok fail → 人間がレビューして手動マージ
+
 on:
   pull_request:
-    branches:
-      - main
+    types: [opened, synchronize, reopened, edited]
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   packages: read
+  issues: read
+  id-token: write
 
 jobs:
-  check:
+  format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: 'package.json'
+          cache: 'pnpm'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@lacolaco'
+      - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run format:check
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
+      - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: pnpm install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run typecheck
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
+      - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run test
+
+  renovate-review:
+    if: github.event.pull_request.user.login == 'renovate[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: koki-develop/claude-renovate-review@e3b6fc8f6ce1460c17b70ad0e106ba774d4efc62 # v1.0.8
+        with:
+          claude-code-oauth-token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed-tools: |
+            WebSearch
+            WebFetch(domain:github.com)
+            WebFetch(domain:npm.pkg.github.com)
+            WebFetch(domain:raw.githubusercontent.com)
+            WebFetch(domain:www.npmjs.com)
+            WebFetch(domain:nodejs.org)
+            WebFetch(domain:hono.dev)
+            WebFetch(domain:developers.cloudflare.com)
+            WebFetch(domain:discord.com)
+            WebFetch(domain:discord.js.org)
+
+  code-review:
+    if: github.event.pull_request.user.login != 'renovate[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+      - name: Run Claude Code Review
+        id: claude-review
+        uses: anthropics/claude-code-action@58dbe8ed6879f0d3b02ac295b20d5fdfe7733e0c # v1.0.85
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed_bots: "*"
+          use_sticky_comment: true
+          prompt: |
+            Review PR #${{ github.event.pull_request.number }} in ${{ github.repository }}.
+
+            Review ALL changed files regardless of type (code, config, markdown, yaml, etc.):
+            - Code: correctness, security, performance, best practices
+            - Config/CI: validity, security implications, unintended side effects
+            - Documentation: accuracy, consistency with codebase, completeness
+
+            Use the repository's CLAUDE.md for style and conventions.
+
+            Use `gh pr comment` for top-level feedback.
+            Use `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`) for inline issues.
+            Only post GitHub comments - don't submit review text as messages.
+
+            After review, you MUST run exactly one of these commands:
+            - `gh pr review ${{ github.event.pull_request.number }} --approve -b "LGTM"` (no blocking issues)
+            - `gh pr review ${{ github.event.pull_request.number }} --request-changes -b "<summary>"` (blocking issues found)
+            Skipping this step will break the CI pipeline. Base your verdict solely on your own analysis.
+          claude_args: >-
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr review:*)"
+
+  ok:
+    if: always()
+    needs:
+      - format
+      - lint
+      - typecheck
+      - test
+      - renovate-review
+      - code-review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
+          allowed-skips: renovate-review,code-review
+
+  auto-merge:
+    if: >-
+      always()
+      && needs.ok.result == 'success'
+      && needs.renovate-review.result == 'success'
+    needs:
+      - ok
+      - renovate-review
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ github.token }}
