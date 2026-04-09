@@ -35,7 +35,11 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run format:check
 
   lint:
@@ -47,7 +51,11 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run lint
 
   typecheck:
@@ -59,7 +67,11 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run typecheck
 
   test:
@@ -71,7 +83,11 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@lacolaco'
       - run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run test
 
   renovate-review:
