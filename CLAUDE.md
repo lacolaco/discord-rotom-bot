@@ -38,6 +38,15 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 
 コマンドの型定義は`src/commands/index.ts`の`Command`型を参照。
 
+### ニュース通知の仕組み
+
+- ソース: `src/news/fetch.ts`の`newsBaseUrl`で定義されたURLから`/json/list.json`を取得
+- スキーマ: `src/news/types.ts`の`NewsItemJSON`。ソース変更時はAPIレスポンスとの整合性を確認すること
+- フィルタリング: `isOngoingNews()`で`stAt`〜`endAt`の期間内のニュースのみ対象
+- 重複排除: KVにニュースIDを保存し、通知済みをスキップ
+- Discord投稿形式: `新着情報ロト！ @ロール` + embed（`[kindTxt] title` / バナー画像 / タイムスタンプ / 記事リンク）
+- URL構築: バナー画像=`{newsBaseUrl}/{banner}`、記事=`{newsBaseUrl}/{link}`
+
 ### 環境変数・シークレット
 
 - `wrangler.toml`に定義: `DISCORD_APPLICATION_ID`, `SENTRY_DSN`（公開値）

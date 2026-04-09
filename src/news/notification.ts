@@ -14,7 +14,7 @@ export function createNotificationMessage(
       image: {
         url: `${newsBaseUrl}/${item.banner}`,
       },
-      timestamp: new Date(parseInt(item.stAt, 10) * 1000).toISOString(),
+      timestamp: new Date(item.stAt * 1000).toISOString(),
       url: `${newsBaseUrl}/${item.link}`,
     })),
   };

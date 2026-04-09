@@ -5,13 +5,16 @@ export type NewsJSON = {
 
 export type NewsItemJSON = {
   id: string;
-  reg: string;
+  reg: number;
   title: string;
-  kind: string;
+  infoTab: number;
+  infoKind: number;
   kindTxt: string;
   banner: string;
-  isImportant: string;
-  stAt: string;
-  newAt: string;
+  isImportant: number;
+  stAt: number;
+  endAt: string;
   link: string;
+  pubAt: number;
+  linkRom: unknown[];
 };
