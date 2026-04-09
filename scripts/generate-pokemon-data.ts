@@ -89,6 +89,12 @@ const COSMETIC_ONLY_BASE_NAMES = [
 /** フォーム名に含まれていたら除外するサフィックスパターン */
 const EXCLUDED_FORM_SUFFIXES = [
   'キョダイマックス', // 種族値同一、個別ページなし
+  'ダルマモード',     // バトル中一時変身
+];
+
+/** 特定のフォームを個別に除外（displayName完全一致） */
+const EXCLUDED_FORMS = [
+  'ゲッコウガ(サトシゲッコウガ)', // アニメ限定、通常入手不可
 ];
 
 /**
@@ -133,19 +139,35 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
   const baseEntryId = `${natNum}_00000000_0_000_0`;
   for (const [entryId, entry] of Object.entries(entries)) {
     const jpnName = entry.name.jpn;
-    const formName = entry.forms.jpn || null;
+    let formName: string | null = entry.forms.jpn || null;
     // メガ進化: "フシギバナ(メガフシギバナ)" → "メガフシギバナ"
     // ゲンシカイキ: "カイオーガ(ゲンシカイオーガ)" → "ゲンシカイオーガ"
     // 基本形冗長: "カイオーガ(カイオーガのすがた)" → "カイオーガ"
+    // 唯一形態: "コライドン(かんぜんけいたい)" → "コライドン"
+    const REDUNDANT_FORMS: Record<string, string> = {
+      'コライドン': 'かんぜんけいたい',
+      'ミライドン': 'コンプリートモード',
+    };
+    // "ヒヒダルマ(ノーマルモード)" → "ヒヒダルマ"
+    // "ヒヒダルマ(ガラルのすがた ノーマルモード)" → "ヒヒダルマ(ガラルのすがた)"
+    if (formName?.endsWith(' ノーマルモード')) {
+      formName = formName.replace(' ノーマルモード', '');
+    } else if (formName === 'ノーマルモード') {
+      formName = null;
+    }
     const displayName =
       formName?.startsWith('メガ') || formName?.startsWith('ゲンシ')
         ? formName
-        : formName === `${jpnName}のすがた`
+        : formName === `${jpnName}のすがた` || formName === REDUNDANT_FORMS[jpnName]
           ? jpnName
           : formName
             ? `${jpnName}(${formName})`
             : jpnName;
 
+    // 個別フォーム除外
+    if (EXCLUDED_FORMS.includes(displayName)) {
+      continue;
+    }
     // upstream未対応フォームの除外
     if (UPSTREAM_MISSING_FORMS.includes(displayName)) {
       continue;

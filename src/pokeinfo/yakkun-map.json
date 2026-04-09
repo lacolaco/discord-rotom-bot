@@ -668,10 +668,8 @@
   "ワルビアル": "https://yakkun.com/za/zukan/n553",
   "ダルマッカ": "https://yakkun.com/swsh/zukan/n554",
   "ダルマッカ(ガラルのすがた)": "https://yakkun.com/swsh/zukan/n554g",
-  "ヒヒダルマ(ガラルのすがた ダルマモード)": "https://yakkun.com/swsh/zukan/n555h",
-  "ヒヒダルマ(ガラルのすがた ノーマルモード)": "https://yakkun.com/swsh/zukan/n555g",
-  "ヒヒダルマ(ダルマモード)": "https://yakkun.com/swsh/zukan/n555f",
-  "ヒヒダルマ(ノーマルモード)": "https://yakkun.com/swsh/zukan/n555",
+  "ヒヒダルマ": "https://yakkun.com/swsh/zukan/n555",
+  "ヒヒダルマ(ガラルのすがた)": "https://yakkun.com/swsh/zukan/n555g",
   "マラカッチ": "https://yakkun.com/swsh/zukan/n556",
   "イシズマイ": "https://yakkun.com/swsh/zukan/n557",
   "イワパレス": "https://yakkun.com/swsh/zukan/n558",
@@ -789,7 +787,6 @@
   "ケロマツ": "https://yakkun.com/za/zukan/n656",
   "ゲコガシラ": "https://yakkun.com/za/zukan/n657",
   "ゲッコウガ": "https://yakkun.com/za/zukan/n658",
-  "ゲッコウガ(サトシゲッコウガ)": "https://yakkun.com/sm/zukan/n658f",
   "メガゲッコウガ": "https://yakkun.com/za/zukan/n658m",
   "ホルビー": "https://yakkun.com/za/zukan/n659",
   "ホルード": "https://yakkun.com/za/zukan/n660",
@@ -1169,8 +1166,6 @@
   "イーユイ": "https://yakkun.com/sv/zukan/n997",
   "トドロクツキ": "https://yakkun.com/sv/zukan/n985",
   "テツノブジン": "https://yakkun.com/sv/zukan/n993",
-  "コライドン(かんぜんけいたい)": "https://yakkun.com/sv/zukan/n998",
-  "ミライドン(コンプリートモード)": "https://yakkun.com/sv/zukan/n999",
   "ウネルミナモ": "https://yakkun.com/sv/zukan/n980",
   "テツノイサハ": "https://yakkun.com/sv/zukan/n987",
   "カミッチュ": "https://yakkun.com/sv/zukan/n1012",
@@ -1190,5 +1185,7 @@
   "テラパゴス(ステラフォルム)": "https://yakkun.com/sv/zukan/n1021s",
   "テラパゴス(テラスタルフォルム)": "https://yakkun.com/sv/zukan/n1021t",
   "テラパゴス(ノーマルフォルム)": "https://yakkun.com/sv/zukan/n1021",
-  "モモワロウ": "https://yakkun.com/sv/zukan/n1022"
+  "モモワロウ": "https://yakkun.com/sv/zukan/n1022",
+  "コライドン": "https://yakkun.com/sv/zukan/n998",
+  "ミライドン": "https://yakkun.com/sv/zukan/n999"
 }

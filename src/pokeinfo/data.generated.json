@@ -17542,86 +17542,7 @@
       "key": "n554g"
     }
   },
-  "ヒヒダルマ(ガラルのすがた ダルマモード)": {
-    "index": 555,
-    "types": [
-      "ほのお",
-      "こおり"
-    ],
-    "abilities": [
-      "ごりむちゅう",
-      "ダルマモード"
-    ],
-    "baseStats": {
-      "H": 105,
-      "A": 160,
-      "B": 55,
-      "C": 30,
-      "D": 55,
-      "S": 135
-    },
-    "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
-    },
-    "yakkun": {
-      "url": "https://yakkun.com/swsh/zukan/n555h",
-      "key": "n555h"
-    }
-  },
-  "ヒヒダルマ(ガラルのすがた ノーマルモード)": {
-    "index": 555,
-    "types": [
-      "こおり"
-    ],
-    "abilities": [
-      "ごりむちゅう",
-      "ダルマモード"
-    ],
-    "baseStats": {
-      "H": 105,
-      "A": 140,
-      "B": 55,
-      "C": 30,
-      "D": 55,
-      "S": 95
-    },
-    "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
-    },
-    "yakkun": {
-      "url": "https://yakkun.com/swsh/zukan/n555g",
-      "key": "n555g"
-    }
-  },
-  "ヒヒダルマ(ダルマモード)": {
-    "index": 555,
-    "types": [
-      "ほのお"
-    ],
-    "abilities": [
-      "ちからずく",
-      "ダルマモード"
-    ],
-    "baseStats": {
-      "H": 105,
-      "A": 30,
-      "B": 105,
-      "C": 140,
-      "D": 105,
-      "S": 55
-    },
-    "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
-    },
-    "yakkun": {
-      "url": "https://yakkun.com/swsh/zukan/n555f",
-      "key": "n555f"
-    }
-  },
-  "ヒヒダルマ(ノーマルモード)": {
+  "ヒヒダルマ": {
     "index": 555,
     "types": [
       "ほのお"
@@ -17645,6 +17566,32 @@
     "yakkun": {
       "url": "https://yakkun.com/swsh/zukan/n555",
       "key": "n555"
+    }
+  },
+  "ヒヒダルマ(ガラルのすがた)": {
+    "index": 555,
+    "types": [
+      "こおり"
+    ],
+    "abilities": [
+      "ごりむちゅう",
+      "ダルマモード"
+    ],
+    "baseStats": {
+      "H": 105,
+      "A": 140,
+      "B": 55,
+      "C": 30,
+      "D": 55,
+      "S": 95
+    },
+    "source": {
+      "game": "Sword_Shield",
+      "pokedex": "ガラル図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/swsh/zukan/n555g",
+      "key": "n555g"
     }
   },
   "マラカッチ": {
@@ -30413,7 +30360,7 @@
       "key": "n993"
     }
   },
-  "コライドン(かんぜんけいたい)": {
+  "コライドン": {
     "index": 1007,
     "types": [
       "かくとう",
@@ -30439,7 +30386,7 @@
       "key": "n998"
     }
   },
-  "ミライドン(コンプリートモード)": {
+  "ミライドン": {
     "index": 1008,
     "types": [
       "でんき",
