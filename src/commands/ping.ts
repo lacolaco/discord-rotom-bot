@@ -11,7 +11,7 @@ export default {
 } satisfies RESTPostAPIChatInputApplicationCommandsJSONBody;
 
 export async function createResponse(
-  interaction: APIApplicationCommandInteraction,
+  _interaction: APIApplicationCommandInteraction,
 ): Promise<APIInteractionResponse> {
   return {
     type: InteractionResponseType.ChannelMessageWithSource,

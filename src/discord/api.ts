@@ -41,7 +41,7 @@ export default class DiscordApi {
     return await this.#request(url, 'PUT', commands);
   }
 
-  async #request<T>(
+  async #request(
     url: string,
     method: string,
     body: unknown,

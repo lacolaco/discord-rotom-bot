@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build",
-    "target": "es2020",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "lib": ["es2018", "dom"],
