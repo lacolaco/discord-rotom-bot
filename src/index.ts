@@ -55,7 +55,7 @@ export default {
   fetch: app.fetch,
   scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
     const sentry = initSentry(env.SENTRY_DSN, ctx);
-    sentry.setContext('event', event);
+    sentry.setContext('event', { ...event });
     const checkInId = sentry.captureCheckIn({
       monitorSlug: 'scheduled-discord-rotom-bot',
       status: 'in_progress',
