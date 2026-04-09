@@ -1,23 +1,27 @@
-import {
-  findPokemonByName,
-  getPokemons,
-  Pokemon,
-} from '@lacolaco/pokemon-data';
+import pokemonData from './data.generated.json';
 
-const pokemonNames = Object.keys(getPokemons());
+export type Pokemon = {
+  index: number;
+  types: string[];
+  abilities: string[];
+  baseStats: {
+    H: number;
+    A: number;
+    B: number;
+    C: number;
+    D: number;
+    S: number;
+  };
+  source: { game: string; pokedex: string };
+  yakkun?: { url: string; key: string };
+};
 
-/**
- * 名前を受け取って対応するポケモンのページのデータを返す
- * @param name ポケモンの日本語名
- */
+const pokemonNames = Object.keys(pokemonData);
+
 export async function searchPokemonByName(
   name: string,
 ): Promise<Pokemon | null> {
-  const pokemon = findPokemonByName(name);
-  if (!pokemon) {
-    return null;
-  }
-  return pokemon;
+  return (pokemonData as Record<string, Pokemon>)[name] ?? null;
 }
 
 export async function getAllPokemonNames(params: {

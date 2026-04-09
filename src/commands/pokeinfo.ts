@@ -18,7 +18,7 @@ import {
 
 export default {
   name: 'pokeinfo',
-  description: 'ポケモン徹底攻略のページを日本語名で検索します',
+  description: 'ポケモンの情報を日本語名で検索します',
   options: [
     {
       name: 'name',
@@ -48,15 +48,18 @@ export async function createResponse(
   // Search pokemon by name
   const data = await searchPokemonByName(name);
   if (data) {
-    console.log(`[pokeinfo] found pokemon: ${data.meta.url}`);
+    console.log(`[pokeinfo] found pokemon: ${data.yakkun?.url ?? name}`);
+    const lines = [
+      `${bold(name)} の情報ロト！`,
+      `${data.types.join('・')} ${formatBaseStats(data.baseStats)}`,
+    ];
+    if (data.yakkun?.url) {
+      lines.push(data.yakkun.url);
+    }
     return {
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: [
-          `${bold(name)} の情報ロト！`,
-          `${data.types.join('・')} ${formatBaseStats(data.baseStats)}`,
-          `${data.meta.url}`,
-        ].join('\n'),
+        content: lines.join('\n'),
       },
     };
   } else {

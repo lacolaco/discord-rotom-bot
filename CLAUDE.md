@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Cloudflare Workers上で動作するDiscordボット。ポケモン情報の検索（スラッシュコマンド）とポケモンニュースの定期通知を提供する。
 
-**技術スタック**: TypeScript (ESM) / Hono / Cloudflare Workers + KV / discord-interactions / @lacolaco/pokemon-data / Sentry (toucan-js)
+**技術スタック**: TypeScript (ESM) / Hono / Cloudflare Workers + KV / discord-interactions / towakey/pokedex (submodule) / Sentry (toucan-js)
 
 **パッケージマネージャ**: pnpm
 
@@ -56,6 +56,15 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 - 重複排除: KVにニュースIDを保存し、通知済みをスキップ
 - Discord投稿形式: `新着情報ロト！ @ロール` + embed（`[kindTxt] title` / バナー画像 / タイムスタンプ / 記事リンク）
 - URL構築: バナー画像=`{newsBaseUrl}/{banner}`、記事=`{newsBaseUrl}/{link}`
+
+### ポケモンデータ
+
+- **データソース**: `vendor/pokedex` (git submodule, towakey/pokedex)
+- **生成スクリプト**: `npx tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
+- **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
+- **除外パターン**: `generate-pokemon-data.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES` / `UPSTREAM_MISSING_FORMS`
+- **定期更新**: `update-pokemon-data.yml` が週次でpokedex submoduleを更新しPR作成
+- `*.generated.*` ファイルは eslint / prettier の対象外
 
 ### 環境変数・シークレット
 

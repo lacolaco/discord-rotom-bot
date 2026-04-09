@@ -1,13 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>lacolaco/renovate-config", "schedule:weekly"],
-  "hostRules": [
-    {
-      "matchHost": "https://npm.pkg.github.com/",
-      "token": "{{ secrets.GITHUB_TOKEN }}"
-    }
-  ],
-  "npmrc": "@lacolaco:registry=https://npm.pkg.github.com/",
   "packageRules": [
     {
       "groupName": "devDependencies (non-major)",
