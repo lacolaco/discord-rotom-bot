@@ -1,5 +1,5 @@
 import { MiddlewareHandler } from 'hono';
-import { Toucan, Transaction } from 'toucan-js';
+import { Toucan } from 'toucan-js';
 import { HonoAppContext } from '../context';
 
 export function initSentry(
@@ -12,7 +12,6 @@ export function initSentry(
     context,
     request,
     environment: 'production',
-    integrations: [new Transaction()],
   });
   return sentry;
 }
