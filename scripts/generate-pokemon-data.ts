@@ -48,9 +48,9 @@ interface OutputEntry {
 
 /**
  * コスチューム違いのみのフォーム（ステータス・タイプ・特性が同一で見た目だけ異なる）を除外する。
- * ポケモン名のプレフィックスで指定。該当するフォームは全て除外され、base formのみ残る。
+ * base nameの完全一致で判定。該当するポケモンのフォーム違いは全て除外され、base formのみ残る。
  */
-const COSMETIC_ONLY_PREFIXES = [
+const COSMETIC_ONLY_BASE_NAMES = [
   'アンノーン',       // 文字フォーム
   'ビビヨン',         // 模様
   'フラベベ',         // 花の色
@@ -151,7 +151,7 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
       continue;
     }
     // コスチューム違いフォームの除外: base formのみ残す
-    if (formName && COSMETIC_ONLY_PREFIXES.some((p) => jpnName === p)) {
+    if (formName && COSMETIC_ONLY_BASE_NAMES.includes(jpnName)) {
       continue;
     }
     // 特定サフィックスを含むフォームの除外
