@@ -49,6 +49,15 @@ export function formatBaseStats(baseStats: {
   return `${baseStats.H}-${baseStats.A}-${baseStats.B}-${baseStats.C}-${baseStats.D}-${baseStats.S}`;
 }
 
+export function formatSpeedLines(baseS: number): string {
+  const calc = (ev: number, nature: number) =>
+    Math.floor(
+      (Math.floor(((2 * baseS + 31 + Math.floor(ev / 4)) * 50) / 100) + 5) *
+        nature,
+    );
+  return `S実数値: 最遅${calc(0, 0.9)} / 無振り${calc(0, 1.0)} / 準速${calc(252, 1.0)} / 最速${calc(252, 1.1)}`;
+}
+
 /**
  * カタカナをひらがなに変換する
  */

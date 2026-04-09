@@ -12,6 +12,7 @@ import {
 import { bold } from '../discord/utils';
 import {
   formatBaseStats,
+  formatSpeedLines,
   getAllPokemonNames,
   searchPokemonByName,
 } from '../pokeinfo';
@@ -53,6 +54,7 @@ export async function createResponse(
       `${bold(name)} の情報ロト！`,
       `${data.types.join('・')} ${formatBaseStats(data.baseStats)}`,
       `特性: ${data.abilities.join(' / ')}`,
+      formatSpeedLines(data.baseStats.S),
     ];
     if (data.yakkun?.url) {
       lines.push(data.yakkun.url);
