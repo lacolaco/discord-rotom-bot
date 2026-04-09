@@ -52,6 +52,7 @@ export async function createResponse(
     const lines = [
       `${bold(name)} の情報ロト！`,
       `${data.types.join('・')} ${formatBaseStats(data.baseStats)}`,
+      `特性: ${data.abilities.join(' / ')}`,
     ];
     if (data.yakkun?.url) {
       lines.push(data.yakkun.url);
