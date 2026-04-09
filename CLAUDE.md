@@ -62,7 +62,7 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 - **データソース**: `vendor/pokedex` (git submodule, towakey/pokedex)
 - **生成スクリプト**: `npx tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
-- **除外パターン**: `generate-pokemon-data.ts` の `COSMETIC_ONLY_PREFIXES` / `EXCLUDED_FORM_SUFFIXES` / `UPSTREAM_MISSING_FORMS`
+- **除外パターン**: `generate-pokemon-data.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES` / `UPSTREAM_MISSING_FORMS`
 - **定期更新**: `update-pokemon-data.yml` が週次でpokedex submoduleを更新しPR作成
 - `*.generated.*` ファイルは eslint / prettier の対象外
 

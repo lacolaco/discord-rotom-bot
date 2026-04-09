@@ -122,7 +122,7 @@ with open('src/pokeinfo/yakkun-map.json', 'w') as f:
 ### 4. pokemonKey 重複バリデーション
 
 更新後、yakkun-map.json 内で pokemonKey（URLの末尾パス）が重複していないか必ず検証する。重複は異常であり、以下のいずれかを意味する:
-- コスチューム違いフォームが除外されていない → `generate-pokemon-data.ts` の `COSMETIC_ONLY_PREFIXES` に追加
+- コスチューム違いフォームが除外されていない → `generate-pokemon-data.ts` の `COSMETIC_ONLY_BASE_NAMES` に追加
 - 本来別URLがあるのに同じURLが割り当てられている → 正しいURLに修正
 
 ```python
