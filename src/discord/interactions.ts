@@ -21,7 +21,7 @@ export const verifyKeyMiddleware =
     const isValidRequest =
       signature &&
       timestamp &&
-      verifyKey(body, signature, timestamp, c.env.DISCORD_PUBLIC_KEY);
+      (await verifyKey(body, signature, timestamp, c.env.DISCORD_PUBLIC_KEY));
     if (!isValidRequest) {
       console.log('Invalid request signature');
       return c.text('Bad request signature', 401);
