@@ -24,7 +24,7 @@ devDependencies:
     version: 4.20260402.1
   discord-api-types:
     specifier: ^0.38.0
-    version: 0.38.17
+    version: 0.38.43
   prettier:
     specifier: ^3.0.3
     version: 3.8.1
@@ -919,8 +919,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /discord-api-types@0.38.17:
-    resolution: {integrity: sha512-/fCx5jdUoR2hBFcj77Qx7Tmx1Ub8V/QpyS6uorjFvxRLcJJ348QxMFml9QW/eXh3i46eO4Ve8qGVepStpInEPg==}
+  /discord-api-types@0.38.43:
+    resolution: {integrity: sha512-sSoBf/nK6m7BGtw65mi+QBuvEWaHE8MMziFLqWL+gT6ME/BLg34dRSVKS3Husx40uU06bvxUc3/X+D9Y6/zAbw==}
     dev: true
 
   /discord-interactions@3.4.0:
