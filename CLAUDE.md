@@ -4,91 +4,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Discord bot built with TypeScript that runs on Cloudflare Workers. The bot provides Pokémon-related information and news notifications through Discord slash commands.
+Cloudflare Workers上で動作するDiscordボット。ポケモン情報の検索（スラッシュコマンド）とポケモンニュースの定期通知を提供する。
 
-### Key Technologies
-- **Runtime**: Cloudflare Workers (serverless)
-- **Framework**: Hono (web framework for Workers)
-- **Language**: TypeScript with CommonJS modules
-- **Package Manager**: pnpm
-- **Discord Integration**: discord-interactions and discord-api-types
-- **Observability**: Sentry with toucan-js
-- **Data Source**: @lacolaco/pokemon-data package
+**技術スタック**: TypeScript (CommonJS) / Hono / Cloudflare Workers + KV / discord-interactions / @lacolaco/pokemon-data / Sentry (toucan-js)
 
-## Architecture
-
-### Core Components
-
-- **src/index.ts**: Main application entry point with Hono server and scheduled job handler
-- **src/context.ts**: TypeScript context definitions for Hono app and Cloudflare Workers environment
-- **src/discord/**: Discord API integration layer
-  - `api.ts`: Discord REST API client
-  - `interactions.ts`: Interaction handling and verification middleware
-  - `utils.ts`: Discord-related utilities
-- **src/commands/**: Slash command implementations
-  - `index.ts`: Command registry and lookup
-  - `ping.ts`: Simple ping command
-  - `pokeinfo.ts`: Pokémon information command with autocomplete
-- **src/news/**: News notification system
-  - Fetches Pokémon news and sends notifications via Discord
-  - Uses Cloudflare KV for state persistence
-- **src/pokeinfo/**: Pokémon data handling utilities
-- **src/observability/**: Sentry integration for error tracking and monitoring
-
-### Deployment Architecture
-
-- **Cloudflare Workers**: Serverless execution environment
-- **Cloudflare KV**: Used for storing news notification state
-- **Scheduled Jobs**: Cron job runs every 5 minutes for news notifications
-- **Environment Variables**: Configuration stored in wrangler.toml and secrets
+**パッケージマネージャ**: pnpm
 
 ## Development Commands
 
-### Core Development
 ```bash
-pnpm dev          # Start development server with wrangler
-pnpm start        # Alias for dev
-pnpm deploy       # Deploy to Cloudflare Workers
-pnpm format       # Format code with Prettier
+pnpm dev                  # wrangler devでローカル開発サーバー起動
+pnpm deploy               # Cloudflare Workersへデプロイ
+pnpm format               # Prettierでコード整形
+pnpm register-commands    # Discordスラッシュコマンドを登録（環境変数DISCORD_TOKEN, DISCORD_APPLICATION_ID, DISCORD_GUILD_IDが必要）
 ```
 
-### Discord Command Management
-```bash
-pnpm register-commands    # Register slash commands with Discord API
-```
+テストフレームワークは未導入。ビルドコマンドも不要（wranglerがデプロイ時にTypeScriptをコンパイルする）。
 
-**Environment variables required for command registration:**
-- `DISCORD_TOKEN`: Bot token
-- `DISCORD_APPLICATION_ID`: Discord application ID  
-- `DISCORD_GUILD_ID`: Target Discord server ID
+## Architecture
 
-### Building and Type Checking
-- No explicit build command - uses tsx for development execution
-- TypeScript compilation handled by wrangler for deployment
-- Configuration in tsconfig.json with strict mode enabled
+### 2つのエントリーポイント (`src/index.ts`)
 
-## Key Development Patterns
+1. **HTTP handler** (`fetch`): Honoアプリ。`POST /api/interactions`でDiscordからのインタラクションを受け付ける。リクエスト署名検証 → コマンドルックアップ → レスポンス返却の流れ。
+2. **Scheduled handler** (`scheduled`): 5分間隔のcronジョブ。ポケモンニュースを取得し、未通知のものをDiscordチャンネルに投稿する。KVで通知済みニュースIDを管理。
 
-### Command Structure
-Commands follow a consistent pattern:
-- Export a `default` object with `name` and `description`
-- Implement `createResponse()` for handling interactions
-- Optional `createAutocompleteResponse()` for autocomplete support
-- Commands are automatically registered in `src/commands/index.ts`
+### コマンドの追加方法
 
-### Environment Handling
-- Development: Uses wrangler.toml for configuration
-- Secrets: Managed through Cloudflare Workers secrets (not in wrangler.toml)
-- Type safety: Environment variables typed in `src/context.ts`
+1. `src/commands/`に新ファイルを作成
+2. `default`オブジェクト（`name`, `description`）をエクスポート
+3. `createResponse(interaction)`関数をエクスポート（autocompleteが必要なら`createAutocompleteResponse`も）
+4. `src/commands/index.ts`のimportと`commands`配列に追加
+5. `pnpm register-commands`でDiscord APIに登録
 
-### Error Handling
-- Global error handler in main app with Sentry integration
-- Structured logging with console.error
-- Cron job monitoring with Sentry check-ins
+コマンドの型定義は`src/commands/index.ts`の`Command`型を参照。
 
-### Data Flow
-1. Discord sends interaction to `/api/interactions` endpoint
-2. Request verified using Discord's verification middleware
-3. Command lookup and execution via command registry
-4. Response sent back to Discord API
-5. Scheduled news checks run independently via cron trigger
+### 環境変数・シークレット
+
+- `wrangler.toml`に定義: `DISCORD_APPLICATION_ID`, `SENTRY_DSN`（公開値）
+- `wrangler secret put`で設定: `DISCORD_TOKEN`, `DISCORD_PUBLIC_KEY`, `NEWS_NOTIFICATION_CHANNEL_ID`, `NEWS_SUBSCRIBER_ROLE_ID`（シークレット）
+- KVバインディング: `NEWS_KV`（ニュース通知状態の永続化）
+- 全環境変数の型定義: `src/context.ts`の`Env`型
