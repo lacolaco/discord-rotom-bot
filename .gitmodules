@@ -1,0 +1,3 @@
+[submodule "vendor/pokedex"]
+	path = vendor/pokedex
+	url = https://github.com/towakey/pokedex.git
