@@ -13,6 +13,7 @@
     "start": "wrangler dev",
     "dev": "wrangler dev",
     "format": "prettier --cache --write src",
+    "typecheck": "tsc --noEmit",
     "deploy": "wrangler deploy",
     "register-commands": "tsx tools/register-commands.ts"
   },

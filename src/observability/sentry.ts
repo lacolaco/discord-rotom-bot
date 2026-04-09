@@ -11,7 +11,7 @@ export function initSentry(
     dsn,
     context,
     request,
-    environment: process.env.NODE_ENV ?? 'production',
+    environment: 'production',
     integrations: [new Transaction()],
   });
   return sentry;

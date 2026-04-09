@@ -1,17 +1,16 @@
-name: 'Deployment'
+name: CI
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 permissions:
   contents: read
-  id-token: write
   packages: read
 
 jobs:
-  deploy-cf-workers:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -25,12 +24,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run typecheck
-      - run: pnpm run deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-      - run: pnpm run register-commands
-        env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          DISCORD_APPLICATION_ID: ${{ vars.DISCORD_APPLICATION_ID }}
-          DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}
