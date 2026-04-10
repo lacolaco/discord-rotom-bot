@@ -40,33 +40,6 @@ export async function getAllPokemonNames(params: {
 }
 
 // ---------------------------------------------------------------------------
-// Display width utility (for header alignment)
-// ---------------------------------------------------------------------------
-
-function displayWidth(str: string): number {
-  let width = 0;
-  for (const ch of str) {
-    const code = ch.codePointAt(0)!;
-    width += isFullWidth(code) ? 2 : 1;
-  }
-  return width;
-}
-
-function isFullWidth(code: number): boolean {
-  return (
-    (code >= 0x1100 && code <= 0x115f) ||
-    (code >= 0x2e80 && code <= 0x303e) ||
-    (code >= 0x3040 && code <= 0x309f) ||
-    (code >= 0x30a0 && code <= 0x30ff) ||
-    (code >= 0x3400 && code <= 0x4dbf) ||
-    (code >= 0x4e00 && code <= 0x9fff) ||
-    (code >= 0xf900 && code <= 0xfaff) ||
-    (code >= 0xff01 && code <= 0xff60) ||
-    (code >= 0xffe0 && code <= 0xffe6)
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Pokemon info box
 // ---------------------------------------------------------------------------
 
@@ -110,13 +83,16 @@ export function formatPokemonInfoBox(params: {
   const typeStr = types.join('・');
   const abilityLine = `特性 ${abilities.join(' / ')}`;
 
-  // Build body table (stats + abilities)
-  const bodyTable = new Table({
+  const table = new Table({
     chars: TABLE_CHARS,
     style: { head: [], border: [] },
     colAligns: ['left', 'right', 'right', 'right', 'right'],
   });
 
+  // Header: name + type (single colSpan cell to avoid column width interference)
+  table.push([{ colSpan: 5, content: `${name}  ${typeStr}` }]);
+
+  // Stat rows: bar + 4 actual values
   for (const key of STAT_KEYS) {
     const base = baseStats[key];
     const barLen = Math.round((base / MAX_STAT) * BAR_WIDTH);
@@ -127,23 +103,13 @@ export function formatPokemonInfoBox(params: {
       key === 'H'
         ? ['', String(actuals[1]), String(actuals[2]), '']
         : actuals.map(String);
-    bodyTable.push([barStr, ...cells]);
+    table.push([barStr, ...cells]);
   }
 
-  bodyTable.push([{ colSpan: 5, content: abilityLine }]);
+  // Abilities
+  table.push([{ colSpan: 5, content: abilityLine }]);
 
-  const bodyStr = bodyTable.toString();
-
-  // Build header: name (left) + type (right), width matching body
-  const totalWidth = bodyStr.split('\n')[0]!.length;
-  const innerWidth = totalWidth - 2; // minus '|' borders
-  const padLen = innerWidth - displayWidth(name) - displayWidth(typeStr) - 2; // -2 for cell padding
-  const headerContent =
-    ' ' + name + ' '.repeat(Math.max(1, padLen)) + typeStr + ' ';
-  const headerBorder = '+' + '-'.repeat(innerWidth) + '+';
-  const headerLine = '|' + headerContent + '|';
-
-  return '```\n' + headerBorder + '\n' + headerLine + '\n' + bodyStr + '\n```';
+  return '```\n' + table.toString() + '\n```';
 }
 
 /**
