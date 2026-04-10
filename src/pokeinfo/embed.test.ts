@@ -39,7 +39,7 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "56-80-114-124-60-136 (合計 570)",
+            "value": "56-80-114-124-60-136 (570)",
           },
           {
             "inline": true,
@@ -107,7 +107,7 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "70-45-48-60-65-35 (合計 323)",
+            "value": "70-45-48-60-65-35 (323)",
           },
           {
             "inline": true,
@@ -175,7 +175,7 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "78-130-111-130-85-100 (合計 634)",
+            "value": "78-130-111-130-85-100 (634)",
           },
           {
             "inline": true,

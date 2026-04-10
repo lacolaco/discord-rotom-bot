@@ -33,7 +33,7 @@ function buildBaseStatsField(data: PokemonViewModel): APIEmbedField {
   const values = data.stats.map((s) => s.base).join('-');
   return {
     name: '種族値',
-    value: `${values} (合計 ${data.bst})`,
+    value: `${values} (${data.bst})`,
     inline: false,
   };
 }
