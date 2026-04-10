@@ -10,11 +10,7 @@ export function calcHP(base: number, ev: number): number {
 }
 
 /** HP以外の実数値: ((2*base + IV + EV/4) * Lv/100 + 5) * nature */
-export function calcStat(
-  base: number,
-  ev: number,
-  nature: number,
-): number {
+export function calcStat(base: number, ev: number, nature: number): number {
   return Math.floor(
     (Math.floor(((2 * base + 31 + Math.floor(ev / 4)) * 50) / 100) + 5) *
       nature,
