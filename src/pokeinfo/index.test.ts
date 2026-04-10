@@ -1,9 +1,18 @@
 import { describe, expect, test } from 'vitest';
-import {
-  formatPokemonInfoBox,
-  getAllPokemonNames,
-  searchPokemonByName,
-} from './index';
+import { buildPokemonViewModel } from './view-model';
+import { formatPokemonEmbed } from './embed';
+import { getAllPokemonNames, searchPokemonByName } from './index';
+import type { Pokemon } from './index';
+
+const fakePokemon = (
+  overrides: Partial<Pokemon> & { baseStats: Pokemon['baseStats'] },
+): Pokemon => ({
+  index: 0,
+  types: ['ノーマル'],
+  abilities: ['テスト'],
+  source: { game: 'test', pokedex: 'test' },
+  ...overrides,
+});
 
 describe('searchPokemonByName', () => {
   test('returns pokemon data for a valid name', async () => {
@@ -58,86 +67,181 @@ describe('searchPokemonByName', () => {
   });
 });
 
-describe('formatPokemonInfoBox', () => {
-  test('single ability pokemon with URL', () => {
-    const box = formatPokemonInfoBox({
-      name: 'テツノツツミ',
+describe('buildPokemonViewModel', () => {
+  test('computes stats and BST correctly', () => {
+    const pokemon = fakePokemon({
       types: ['こおり', 'みず'],
-      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
       abilities: ['クォークチャージ'],
+      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
+      yakkun: { url: 'https://yakkun.com/ch/zukan/n991', key: 'n991' },
     });
-    const message = box + '\nhttps://yakkun.com/ch/zukan/n991';
-    expect(message).toMatchInlineSnapshot(`
-      "**テツノツツミ** の情報ロト！
-      こおり・みず | 特性: クォークチャージ
+    const vm = buildPokemonViewModel('テツノツツミ', pokemon);
+    expect(vm.bst).toBe(570);
+    expect(vm.stats).toMatchInlineSnapshot(`
+      [
+        {
+          "base": 56,
+          "key": "H",
+          "max": 163,
+          "min": 131,
+        },
+        {
+          "base": 80,
+          "key": "A",
+          "max": 145,
+          "min": 90,
+        },
+        {
+          "base": 114,
+          "key": "B",
+          "max": 182,
+          "min": 120,
+        },
+        {
+          "base": 124,
+          "key": "C",
+          "max": 193,
+          "min": 129,
+        },
+        {
+          "base": 60,
+          "key": "D",
+          "max": 123,
+          "min": 72,
+        },
+        {
+          "base": 136,
+          "key": "S",
+          "max": 206,
+          "min": 140,
+        },
+      ]
+    `);
+  });
+
+  test('HP range uses no-nature values (Min=0EV, Max=252EV)', () => {
+    const pokemon = fakePokemon({
+      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
+    });
+    const vm = buildPokemonViewModel('テスト', pokemon);
+    // HP: calcHP(56, 0)=131, calcHP(56, 252)=163
+    expect(vm.stats[0]).toEqual({ key: 'H', base: 56, min: 131, max: 163 });
+    // A: calcStat(80, 0, 0.9)=90, calcStat(80, 252, 1.1)=145
+    expect(vm.stats[1]).toEqual({ key: 'A', base: 80, min: 90, max: 145 });
+  });
+
+  test('extracts yakkunUrl from pokemon data', () => {
+    const withYakkun = fakePokemon({
+      baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
+      yakkun: { url: 'https://example.com', key: 'test' },
+    });
+    expect(buildPokemonViewModel('テスト', withYakkun).yakkunUrl).toBe(
+      'https://example.com',
+    );
+
+    const withoutYakkun = fakePokemon({
+      baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
+    });
+    expect(
+      buildPokemonViewModel('テスト', withoutYakkun).yakkunUrl,
+    ).toBeUndefined();
+  });
+});
+
+describe('formatPokemonEmbed', () => {
+  test('single ability pokemon with URL', () => {
+    const pokemon = fakePokemon({
+      types: ['こおり', 'みず'],
+      abilities: ['クォークチャージ'],
+      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
+      yakkun: { url: 'https://yakkun.com/ch/zukan/n991', key: 'n991' },
+    });
+    const vm = buildPokemonViewModel('テツノツツミ', pokemon);
+    expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
+      {
+        "color": 10016984,
+        "description": "タイプ: こおり・みず
+      特性: クォークチャージ
+
       \`\`\`
-      +----------------------+------+-----+-----+------+
-      |                      | Max+ | Max | Min | Min- |
-      +----------------------+------+-----+-----+------+
-      | H ###             56 |      | 163 | 131 |      |
-      | A ####            80 |  145 | 132 | 100 |   90 |
-      | B ######         114 |  182 | 166 | 134 |  120 |
-      | C #######        124 |  193 | 176 | 144 |  129 |
-      | D ###             60 |  123 | 112 |  80 |   72 |
-      | S #######        136 |  206 | 188 | 156 |  140 |
-      +----------------------+------+-----+-----+------+
-      \`\`\`
-      https://yakkun.com/ch/zukan/n991"
+      H  56 | 131 ~ 163
+      A  80 |  90 ~ 145
+      B 114 | 120 ~ 182
+      C 124 | 129 ~ 193
+      D  60 |  72 ~ 123
+      S 136 | 140 ~ 206
+      合計 570
+      \`\`\`",
+        "title": "テツノツツミ の情報ロト！",
+        "url": "https://yakkun.com/ch/zukan/n991",
+      }
     `);
   });
 
   test('multiple abilities pokemon with URL', () => {
-    const box = formatPokemonInfoBox({
-      name: 'ピッピ',
+    const pokemon = fakePokemon({
       types: ['フェアリー'],
-      baseStats: { H: 70, A: 45, B: 48, C: 60, D: 65, S: 35 },
       abilities: ['メロメロボディ', 'マジックガード', 'フレンドガード'],
+      baseStats: { H: 70, A: 45, B: 48, C: 60, D: 65, S: 35 },
+      yakkun: { url: 'https://yakkun.com/ch/zukan/n35', key: 'n35' },
     });
-    const message = box + '\nhttps://yakkun.com/ch/zukan/n35';
-    expect(message).toMatchInlineSnapshot(`
-      "**ピッピ** の情報ロト！
-      フェアリー | 特性: メロメロボディ / マジックガード / フレンドガード
+    const vm = buildPokemonViewModel('ピッピ', pokemon);
+    expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
+      {
+        "color": 15636908,
+        "description": "タイプ: フェアリー
+      特性: メロメロボディ / マジックガード / フレンドガード
+
       \`\`\`
-      +----------------------+------+-----+-----+------+
-      |                      | Max+ | Max | Min | Min- |
-      +----------------------+------+-----+-----+------+
-      | H ####            70 |      | 177 | 145 |      |
-      | A ##              45 |  106 |  97 |  65 |   58 |
-      | B ###             48 |  110 | 100 |  68 |   61 |
-      | C ###             60 |  123 | 112 |  80 |   72 |
-      | D ####            65 |  128 | 117 |  85 |   76 |
-      | S ##              35 |   95 |  87 |  55 |   49 |
-      +----------------------+------+-----+-----+------+
-      \`\`\`
-      https://yakkun.com/ch/zukan/n35"
+      H  70 | 145 ~ 177
+      A  45 |  58 ~ 106
+      B  48 |  61 ~ 110
+      C  60 |  72 ~ 123
+      D  65 |  76 ~ 128
+      S  35 |  49 ~ 95
+      合計 323
+      \`\`\`",
+        "title": "ピッピ の情報ロト！",
+        "url": "https://yakkun.com/ch/zukan/n35",
+      }
     `);
   });
 
   test('long pokemon name with URL', () => {
-    const box = formatPokemonInfoBox({
-      name: 'メガリザードンＸ',
+    const pokemon = fakePokemon({
       types: ['ほのお', 'ドラゴン'],
-      baseStats: { H: 78, A: 130, B: 111, C: 130, D: 85, S: 100 },
       abilities: ['かたいツメ'],
+      baseStats: { H: 78, A: 130, B: 111, C: 130, D: 85, S: 100 },
+      yakkun: { url: 'https://yakkun.com/ch/zukan/n6x', key: 'n6x' },
     });
-    const message = box + '\nhttps://yakkun.com/ch/zukan/n6x';
-    expect(message).toMatchInlineSnapshot(`
-      "**メガリザードンＸ** の情報ロト！
-      ほのお・ドラゴン | 特性: かたいツメ
+    const vm = buildPokemonViewModel('メガリザードンＸ', pokemon);
+    expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
+      {
+        "color": 15761456,
+        "description": "タイプ: ほのお・ドラゴン
+      特性: かたいツメ
+
       \`\`\`
-      +----------------------+------+-----+-----+------+
-      |                      | Max+ | Max | Min | Min- |
-      +----------------------+------+-----+-----+------+
-      | H ####            78 |      | 185 | 153 |      |
-      | A #######        130 |  200 | 182 | 150 |  135 |
-      | B ######         111 |  179 | 163 | 131 |  117 |
-      | C #######        130 |  200 | 182 | 150 |  135 |
-      | D #####           85 |  150 | 137 | 105 |   94 |
-      | S #####          100 |  167 | 152 | 120 |  108 |
-      +----------------------+------+-----+-----+------+
-      \`\`\`
-      https://yakkun.com/ch/zukan/n6x"
+      H  78 | 153 ~ 185
+      A 130 | 135 ~ 200
+      B 111 | 117 ~ 179
+      C 130 | 135 ~ 200
+      D  85 |  94 ~ 150
+      S 100 | 108 ~ 167
+      合計 634
+      \`\`\`",
+        "title": "メガリザードンＸ の情報ロト！",
+        "url": "https://yakkun.com/ch/zukan/n6x",
+      }
     `);
+  });
+
+  test('pokemon without yakkun URL has no url field', () => {
+    const pokemon = fakePokemon({
+      baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
+    });
+    const vm = buildPokemonViewModel('テストポケモン', pokemon);
+    expect(formatPokemonEmbed(vm).url).toBeUndefined();
   });
 });
 
