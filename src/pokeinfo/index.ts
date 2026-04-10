@@ -65,11 +65,11 @@ const TABLE_CHARS = {
   'bottom-left': '+',
   'bottom-right': '+',
   left: '|',
-  'left-mid': '+',
-  mid: '-',
-  'mid-mid': '+',
+  'left-mid': '',
+  mid: '',
+  'mid-mid': '',
   right: '|',
-  'right-mid': '+',
+  'right-mid': '',
   middle: '|',
 };
 
@@ -81,7 +81,7 @@ export function formatPokemonInfoBox(params: {
 }): string {
   const { name, types, baseStats, abilities } = params;
   const typeStr = types.join('・');
-  // ASCII-only table for stats (no Japanese inside code block)
+  // Single table, no mid borders
   const table = new Table({
     chars: TABLE_CHARS,
     style: { head: [], border: [] },
@@ -99,7 +99,7 @@ export function formatPokemonInfoBox(params: {
   for (const key of STAT_KEYS) {
     const base = baseStats[key];
     const barLen = Math.round((base / MAX_STAT) * BAR_WIDTH);
-    const bar = '='.repeat(barLen) + ' '.repeat(BAR_WIDTH - barLen);
+    const bar = '#'.repeat(barLen) + ' '.repeat(BAR_WIDTH - barLen);
     const barStr = `${key} ${bar} ${base.toString().padStart(3)}`;
     const actuals = calcActuals(key, base);
     const cells =
@@ -109,11 +109,16 @@ export function formatPokemonInfoBox(params: {
     table.push([barStr, ...cells]);
   }
 
+  // Insert separator after header row (duplicate top border)
+  const tableLines = table.toString().split('\n');
+  tableLines.splice(2, 0, tableLines[0]!);
+  const tableStr = tableLines.join('\n');
+
   const lines = [
     `**${name}** の情報ロト！`,
-    `${typeStr} / 特性: ${abilities.join(' / ')}`,
+    `${typeStr} | 特性: ${abilities.join(' / ')}`,
     '```',
-    table.toString(),
+    tableStr,
     '```',
   ];
 
