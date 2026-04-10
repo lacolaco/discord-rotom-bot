@@ -88,6 +88,14 @@ export function formatPokemonInfoBox(params: {
     colAligns: ['left', 'right', 'right', 'right', 'right'],
   });
 
+  table.push([
+    { hAlign: 'left' as const, content: '' },
+    'Max+',
+    'Max',
+    'Min',
+    'Min-',
+  ]);
+
   for (const key of STAT_KEYS) {
     const base = baseStats[key];
     const barLen = Math.round((base / MAX_STAT) * BAR_WIDTH);
