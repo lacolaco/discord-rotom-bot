@@ -37,16 +37,26 @@ export async function getAllPokemonNames(params: {
   });
 }
 
-export function formatBaseStats(baseStats: {
-  H: number;
-  A: number;
-  B: number;
-  C: number;
-  D: number;
-  S: number;
-}) {
-  // join stats as H-A-B-C-D-S
-  return `${baseStats.H}-${baseStats.A}-${baseStats.B}-${baseStats.C}-${baseStats.D}-${baseStats.S}`;
+const STAT_KEYS: (keyof Pokemon['baseStats'])[] = [
+  'H',
+  'A',
+  'B',
+  'C',
+  'D',
+  'S',
+];
+
+const MAX_STAT = 255;
+const BAR_WIDTH = 18;
+
+export function formatBaseStatsGraph(baseStats: Pokemon['baseStats']): string {
+  const lines = STAT_KEYS.map((key) => {
+    const value = baseStats[key];
+    const barLen = Math.round((value / MAX_STAT) * BAR_WIDTH);
+    const bar = '='.repeat(barLen) + ' '.repeat(BAR_WIDTH - barLen);
+    return `${key} |${bar}| ${value.toString().padStart(3)}`;
+  });
+  return '```\n' + lines.join('\n') + '\n```';
 }
 
 export function formatSpeedLines(baseS: number): string {

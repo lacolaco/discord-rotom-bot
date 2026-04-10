@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import {
+  formatBaseStatsGraph,
   formatSpeedLines,
   getAllPokemonNames,
   searchPokemonByName,
@@ -44,6 +45,46 @@ describe('formatSpeedLines', () => {
     // 準速: floor((floor((272+31+63)*50/100)+5)*1.0) = floor(183+5) = 188
     // 最速: floor(188*1.1) = floor(206.8) = 206
     expect(result).toBe('S実数値: 最遅140 / 無振り156 / 準速188 / 最速206');
+  });
+});
+
+describe('formatBaseStatsGraph', () => {
+  test('formats stats as bar chart in code block', () => {
+    const result = formatBaseStatsGraph({
+      H: 40,
+      A: 61,
+      B: 56,
+      C: 62,
+      D: 63,
+      S: 65,
+    });
+    expect(result).toBe(
+      '```\n' +
+        'H |===               |  40\n' +
+        'A |====              |  61\n' +
+        'B |====              |  56\n' +
+        'C |====              |  62\n' +
+        'D |====              |  63\n' +
+        'S |=====             |  65\n' +
+        '```',
+    );
+  });
+
+  test('scales bars correctly for extreme values', () => {
+    const result = formatBaseStatsGraph({
+      H: 255,
+      A: 0,
+      B: 128,
+      C: 1,
+      D: 200,
+      S: 100,
+    });
+    expect(result).toContain('H |==================| 255');
+    expect(result).toContain('A |                  |   0');
+    expect(result).toContain('B |=========         | 128');
+    expect(result).toContain('C |                  |   1');
+    expect(result).toContain('D |==============    | 200');
+    expect(result).toContain('S |=======           | 100');
   });
 });
 
