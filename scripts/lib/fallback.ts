@@ -82,8 +82,8 @@ export function injectMissingForms(
 }
 
 /**
- * statsMapにstatsはあるがtype1が空のエントリについて、
- * @pkmn/dex からtype/abilityだけを補完する（statsは保持）。
+ * statsMapにstatsはあるがtype1またはability1が空のエントリについて、
+ * @pkmn/dex からtype/abilityを補完する（statsは保持）。
  */
 export function supplementMissingTypes(
   entryIdToInfo: Map<string, EntryInfo>,
@@ -100,7 +100,9 @@ export function supplementMissingTypes(
 
   let count = 0;
   for (const [entryId, statsEntry] of statsMap) {
-    if (statsEntry.stats.type1) continue;
+    const needsType = !statsEntry.stats.type1;
+    const needsAbility = !statsEntry.stats.ability1;
+    if (!needsType && !needsAbility) continue;
     const info = entryIdToInfo.get(entryId);
     if (!info) continue;
 
@@ -111,8 +113,10 @@ export function supplementMissingTypes(
     const dexEntry = fetchEntry(nameEng, info.formEng, pokedexBase);
     if (!dexEntry || !dexEntry.type1) continue;
 
-    statsEntry.stats.type1 = dexEntry.type1;
-    statsEntry.stats.type2 = dexEntry.type2;
+    if (needsType) {
+      statsEntry.stats.type1 = dexEntry.type1;
+      statsEntry.stats.type2 = dexEntry.type2;
+    }
     if (!statsEntry.stats.ability1) statsEntry.stats.ability1 = dexEntry.ability1;
     if (!statsEntry.stats.ability2) statsEntry.stats.ability2 = dexEntry.ability2;
     if (!statsEntry.stats.dream_ability) statsEntry.stats.dream_ability = dexEntry.dream_ability;
