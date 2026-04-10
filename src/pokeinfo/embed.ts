@@ -56,14 +56,22 @@ function buildActualFields(data: PokemonViewModel): APIEmbedField[] {
 export function formatPokemonEmbed(data: PokemonViewModel): APIEmbed {
   const color = TYPE_COLORS[data.types[0] ?? ''] ?? 0x808080;
 
+  const fields: APIEmbedField[] = [
+    ...buildMetaFields(data),
+    buildBaseStatsField(data),
+    ...buildActualFields(data),
+  ];
+  if (data.yakkunUrl) {
+    fields.push({
+      name: 'ポケ徹',
+      value: data.yakkunUrl,
+      inline: false,
+    });
+  }
+
   return {
     title: `${data.name} の情報ロト！`,
     color,
-    fields: [
-      ...buildMetaFields(data),
-      buildBaseStatsField(data),
-      ...buildActualFields(data),
-    ],
-    ...(data.yakkunUrl ? { url: data.yakkunUrl } : {}),
+    fields,
   };
 }

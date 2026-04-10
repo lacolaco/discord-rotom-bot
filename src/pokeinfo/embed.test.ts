@@ -71,9 +71,13 @@ describe('formatPokemonEmbed', () => {
             "name": "S",
             "value": "**206** / 188 / 156 / **140**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n991",
+          },
         ],
         "title": "テツノツツミ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n991",
       }
     `);
   });
@@ -135,9 +139,13 @@ describe('formatPokemonEmbed', () => {
             "name": "S",
             "value": "**95** / 87 / 55 / **49**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n35",
+          },
         ],
         "title": "ピッピ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n35",
       }
     `);
   });
@@ -199,18 +207,24 @@ describe('formatPokemonEmbed', () => {
             "name": "S",
             "value": "**167** / 152 / 120 / **108**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n6x",
+          },
         ],
         "title": "メガリザードンＸ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n6x",
       }
     `);
   });
 
-  test('pokemon without yakkun URL has no url field', () => {
+  test('pokemon without yakkun URL has no link field', () => {
     const pokemon = fakePokemon({
       baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
     });
     const vm = buildPokemonViewModel('テストポケモン', pokemon);
-    expect(formatPokemonEmbed(vm).url).toBeUndefined();
+    const embed = formatPokemonEmbed(vm);
+    expect(embed.url).toBeUndefined();
+    expect(embed.fields?.find((f) => f.name === 'ポケ徹')).toBeUndefined();
   });
 });
