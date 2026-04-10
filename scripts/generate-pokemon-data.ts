@@ -297,33 +297,16 @@ writeFileSync(
   'utf-8',
 );
 
-// Sync yakkun-map.json: add null for new entries, preserve all existing entries
-let yakkunMapChanged = false;
+// Sync yakkun-map.json: rebuild from sortedOutput keys only
+const newYakkunMap: Record<string, string | null> = {};
 for (const name of Object.keys(sortedOutput)) {
-  if (!(name in yakkunMap)) {
-    yakkunMap[name] = null;
-    yakkunMapChanged = true;
-  }
+  newYakkunMap[name] = yakkunMap[name] ?? null;
 }
-if (yakkunMapChanged) {
-  // Rebuild in sortedOutput order, then append remaining existing entries
-  const newYakkunMap: Record<string, string | null> = {};
-  for (const name of Object.keys(sortedOutput)) {
-    if (name in yakkunMap) {
-      newYakkunMap[name] = yakkunMap[name];
-    }
-  }
-  for (const name of Object.keys(yakkunMap)) {
-    if (!(name in newYakkunMap)) {
-      newYakkunMap[name] = yakkunMap[name];
-    }
-  }
-  writeFileSync(
-    YAKKUN_MAP_PATH,
-    JSON.stringify(newYakkunMap, null, 2) + '\n',
-    'utf-8',
-  );
-}
+writeFileSync(
+  YAKKUN_MAP_PATH,
+  JSON.stringify(newYakkunMap, null, 2) + '\n',
+  'utf-8',
+);
 
 // --- Step 6: Summary ---
 
@@ -347,4 +330,7 @@ for (const [game, count] of [...sourceDist.entries()].sort((a, b) => b[1] - a[1]
 
 if (noStats.length > 0) {
   console.log(`\n  dropped (no stats): ${noStats.length}`);
+  for (const name of noStats) {
+    console.log(`    - ${name}`);
+  }
 }
