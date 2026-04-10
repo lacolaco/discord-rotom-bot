@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import {
-  formatBaseStatsGraph,
-  formatSpeedLines,
+  displayWidth,
+  formatPokemonInfoBox,
   getAllPokemonNames,
   searchPokemonByName,
 } from './index';
@@ -28,63 +28,95 @@ describe('searchPokemonByName', () => {
   });
 });
 
-describe('formatSpeedLines', () => {
-  test('calculates speed lines for base speed 65 (ニャオハ)', () => {
-    const result = formatSpeedLines(65);
-    // 最遅: floor((floor((130+31)*50/100)+5)*0.9) = floor(85*0.9) = 76
-    // 無振り: floor((80+5)*1.0) = 85
-    // 準速: floor((floor((130+31+63)*50/100)+5)*1.0) = floor(112+5) = 117
-    // 最速: floor(117*1.1) = 128
-    expect(result).toBe('S実数値: 最遅76 / 無振り85 / 準速117 / 最速128');
+describe('displayWidth', () => {
+  test('counts ASCII characters as 1 column', () => {
+    expect(displayWidth('ABC')).toBe(3);
+    expect(displayWidth('H 123')).toBe(5);
   });
 
-  test('calculates speed lines for base speed 136 (テツノツツミ)', () => {
-    const result = formatSpeedLines(136);
-    // 最遅: floor((floor((272+31)*50/100)+5)*0.9) = floor((151+5)*0.9) = floor(140.4) = 140
-    // 無振り: floor((151+5)*1.0) = 156
-    // 準速: floor((floor((272+31+63)*50/100)+5)*1.0) = floor(183+5) = 188
-    // 最速: floor(188*1.1) = floor(206.8) = 206
-    expect(result).toBe('S実数値: 最遅140 / 無振り156 / 準速188 / 最速206');
+  test('counts full-width Japanese characters as 2 columns', () => {
+    expect(displayWidth('テスト')).toBe(6);
+    expect(displayWidth('こおり')).toBe(6);
+  });
+
+  test('counts mixed ASCII and Japanese correctly', () => {
+    expect(displayWidth('こおり・みず')).toBe(12);
+    expect(displayWidth('S実数値')).toBe(7);
+    expect(displayWidth('No.991')).toBe(6);
+  });
+
+  test('counts katakana middle dot as full-width', () => {
+    expect(displayWidth('・')).toBe(2);
   });
 });
 
-describe('formatBaseStatsGraph', () => {
-  test('formats stats as bar chart in code block', () => {
-    const result = formatBaseStatsGraph({
-      H: 40,
-      A: 61,
-      B: 56,
-      C: 62,
-      D: 63,
-      S: 65,
+describe('formatPokemonInfoBox', () => {
+  test('produces 2-column box with single ability', () => {
+    const result = formatPokemonInfoBox({
+      name: 'テツノツツミ',
+      types: ['こおり', 'みず'],
+      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
+      abilities: ['クォークチャージ'],
     });
-    expect(result).toBe(
-      '```\n' +
-        'H |===               |  40\n' +
-        'A |====              |  61\n' +
-        'B |====              |  56\n' +
-        'C |====              |  62\n' +
-        'D |====              |  63\n' +
-        'S |=====             |  65\n' +
-        '```',
-    );
+
+    // Wrapped in code block
+    expect(result).toMatch(/^```\n/);
+    expect(result).toMatch(/\n```$/);
+
+    // Left column contains name and type
+    expect(result).toContain('| テツノツツミ');
+    expect(result).toContain('| こおり・みず');
+
+    // Right column contains stat bars with correct values
+    expect(result).toContain('H ====');
+    expect(result).toContain('56');
+    expect(result).toContain('C =========');
+    expect(result).toContain('124');
+    expect(result).toContain('S ==========');
+    expect(result).toContain('136');
+
+    // Bottom section contains abilities and speed
+    expect(result).toContain('特性 クォークチャージ');
+    expect(result).toContain('S実数値 遅140/無156/準188/速206');
+
+    // All lines (excluding code block markers) have same display width
+    const lines = result.split('\n').slice(1, -1);
+    const widths = lines.map((l) => displayWidth(l));
+    expect(new Set(widths).size).toBe(1);
   });
 
-  test('scales bars correctly for extreme values', () => {
-    const result = formatBaseStatsGraph({
-      H: 255,
-      A: 0,
-      B: 128,
-      C: 1,
-      D: 200,
-      S: 100,
+  test('handles multiple abilities', () => {
+    const result = formatPokemonInfoBox({
+      name: 'ピッピ',
+      types: ['フェアリー'],
+      baseStats: { H: 70, A: 45, B: 48, C: 60, D: 65, S: 35 },
+      abilities: ['メロメロボディ', 'マジックガード', 'フレンドガード'],
     });
-    expect(result).toContain('H |==================| 255');
-    expect(result).toContain('A |                  |   0');
-    expect(result).toContain('B |=========         | 128');
-    expect(result).toContain('C |                  |   1');
-    expect(result).toContain('D |==============    | 200');
-    expect(result).toContain('S |=======           | 100');
+
+    expect(result).toContain(
+      '特性 メロメロボディ / マジックガード / フレンドガード',
+    );
+
+    // All lines have same display width
+    const lines = result.split('\n').slice(1, -1);
+    const widths = lines.map((l) => displayWidth(l));
+    expect(new Set(widths).size).toBe(1);
+  });
+
+  test('handles long pokemon name', () => {
+    const result = formatPokemonInfoBox({
+      name: 'メガリザードンＸ',
+      types: ['ほのお', 'ドラゴン'],
+      baseStats: { H: 78, A: 130, B: 111, C: 130, D: 85, S: 100 },
+      abilities: ['かたいツメ'],
+    });
+
+    expect(result).toContain('| メガリザードンＸ');
+
+    // All lines have same display width
+    const lines = result.split('\n').slice(1, -1);
+    const widths = lines.map((l) => displayWidth(l));
+    expect(new Set(widths).size).toBe(1);
   });
 });
 

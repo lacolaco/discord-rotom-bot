@@ -9,10 +9,8 @@ import {
   InteractionResponseType,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
-import { bold } from '../discord/utils';
 import {
-  formatBaseStatsGraph,
-  formatSpeedLines,
+  formatPokemonInfoBox,
   getAllPokemonNames,
   searchPokemonByName,
 } from '../pokeinfo';
@@ -51,10 +49,12 @@ export async function createResponse(
   if (data) {
     console.log(`[pokeinfo] found pokemon: ${data.yakkun?.url ?? name}`);
     const lines = [
-      `${bold(name)} の情報ロト！ ${data.types.join('・')}`,
-      formatBaseStatsGraph(data.baseStats),
-      formatSpeedLines(data.baseStats.S),
-      `特性: ${data.abilities.join(' / ')}`,
+      formatPokemonInfoBox({
+        name,
+        types: data.types,
+        baseStats: data.baseStats,
+        abilities: data.abilities,
+      }),
     ];
     if (data.yakkun?.url) {
       lines.push(data.yakkun.url);
