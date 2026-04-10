@@ -50,6 +50,8 @@ for name in nulls:
 
 各nullエントリの全国図鑑番号 N を使い、zukanKeyの優先順で検索する。最初に見つかったURLを採用する。
 
+**検索方法**: `search=1&min=N&max=N&{zukanKey}=0` で全国図鑑番号Nのポケモンを検索する。`{zukanKey}=0` フラグは「そのzukanKeyの全ポケモンを対象にする」フラグ。検索APIは一部のポケモンを返さない場合があるが、このフラグにより網羅性が向上する。
+
 ```python
 import subprocess, re
 
@@ -61,7 +63,7 @@ def search_yakkun(nat_num):
     for zukan in ZUKANKEY_PRIORITY:
         raw = subprocess.run(
             ['curl', '-sL', '-A', 'Mozilla/5.0',
-             f'https://yakkun.com/{zukan}/zukan/search/?search=1&min={nat_num}&max={nat_num}'],
+             f'https://yakkun.com/{zukan}/zukan/search/?search=1&min={nat_num}&max={nat_num}&{zukan}=0'],
             capture_output=True
         ).stdout
         html = raw.decode('euc-jp', errors='replace')
@@ -83,26 +85,6 @@ for name in nulls:
     print(f'#{index} {name}:')
     for rname, url, zk in results:
         print(f'  {rname} -> {url}')
-```
-
-検索APIは一部のポケモン（進化前など）を返さない場合がある。その場合は図鑑ページ本体をスクレイプする:
-
-```python
-def scrape_zukan_page(zukan_key):
-    """図鑑ページ全体をスクレイプして {name: url} を返す"""
-    raw = subprocess.run(
-        ['curl', '-sL', '-A', 'Mozilla/5.0',
-         f'https://yakkun.com/{zukan_key}/zukan/'],
-        capture_output=True
-    ).stdout
-    html = raw.decode('euc-jp', errors='replace')
-    pattern = r'<a href="/(\w+)/zukan/(n\d+\w*)"><i[^>]*></i>(.*?)</a>'
-    entries = {}
-    for zk, pk, content in re.findall(pattern, html, re.DOTALL):
-        clean = re.sub(r'<[^>]+>', '', content).strip()
-        if clean and clean not in entries:
-            entries[clean] = f'https://yakkun.com/{zk}/zukan/{pk}'
-    return entries
 ```
 
 ### 3. yakkun-map.json の更新

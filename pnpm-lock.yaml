@@ -30,6 +30,9 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.2.0)
+      '@pkmn/dex':
+        specifier: ^0.10.7
+        version: 0.10.7
       discord-api-types:
         specifier: ^0.38.0
         version: 0.38.44
@@ -668,6 +671,15 @@ packages:
 
   '@oxc-project/types@0.123.0':
     resolution: {integrity: sha512-YtECP/y8Mj1lSHiUWGSRzy/C6teUKlS87dEfuVKT09LgQbUsBW1rNg+MiJ4buGu3yuADV60gbIvo9/HplA56Ew==}
+
+  '@pkmn/dex-types@0.10.7':
+    resolution: {integrity: sha512-ewinxJHyeLwYSOcDsy+2pq9e1mMYNXwBB9B3CZG2fvonrkxAyycR5AtLKPqE61480jPPxaZocOh+SLtUm648SA==}
+
+  '@pkmn/dex@0.10.7':
+    resolution: {integrity: sha512-W2/92PNtEP8h/2nIPH1v7qCiiKb9r4JUybv46yo3nxXVZehs3gFR4h/TKK1sopJpLBFul1VSRCTpCdhQx5gLag==}
+
+  '@pkmn/types@4.0.0':
+    resolution: {integrity: sha512-gR2s/pxJYEegek1TtsYCQupNR3d5hMlcJFsiD+2LyfKr4tc+gETTql47tWLX5mFSbPcbXh7f4+7txlMIDoZx/g==}
 
   '@poppinss/colors@4.1.6':
     resolution: {integrity: sha512-H9xkIdFswbS8n1d6vmRd8+c10t2Qe+rZITbbDHHkQixH5+2x1FDGmi/0K+WgWiqQFKPSlIYB7jlH6Kpfn6Fleg==}
@@ -1933,6 +1945,16 @@ snapshots:
     optional: true
 
   '@oxc-project/types@0.123.0': {}
+
+  '@pkmn/dex-types@0.10.7':
+    dependencies:
+      '@pkmn/types': 4.0.0
+
+  '@pkmn/dex@0.10.7':
+    dependencies:
+      '@pkmn/dex-types': 0.10.7
+
+  '@pkmn/types@4.0.0': {}
 
   '@poppinss/colors@4.1.6':
     dependencies:
