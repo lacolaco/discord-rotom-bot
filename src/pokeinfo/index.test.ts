@@ -38,8 +38,7 @@ describe('formatPokemonInfoBox', () => {
     const message = box + '\nhttps://yakkun.com/ch/zukan/n991';
     expect(message).toMatchInlineSnapshot(`
       "**テツノツツミ**
-      こおり・みず
-      特性: クォークチャージ
+      こおり・みず / 特性: クォークチャージ
       \`\`\`
       +----------------------+------+-----+-----+------+
       |                      | Max+ | Max | Min | Min- |
@@ -71,8 +70,7 @@ describe('formatPokemonInfoBox', () => {
     const message = box + '\nhttps://yakkun.com/ch/zukan/n35';
     expect(message).toMatchInlineSnapshot(`
       "**ピッピ**
-      フェアリー
-      特性: メロメロボディ / マジックガード / フレンドガード
+      フェアリー / 特性: メロメロボディ / マジックガード / フレンドガード
       \`\`\`
       +----------------------+------+-----+-----+------+
       |                      | Max+ | Max | Min | Min- |
@@ -104,8 +102,7 @@ describe('formatPokemonInfoBox', () => {
     const message = box + '\nhttps://yakkun.com/ch/zukan/n6x';
     expect(message).toMatchInlineSnapshot(`
       "**メガリザードンＸ**
-      ほのお・ドラゴン
-      特性: かたいツメ
+      ほのお・ドラゴン / 特性: かたいツメ
       \`\`\`
       +----------------------+------+-----+-----+------+
       |                      | Max+ | Max | Min | Min- |

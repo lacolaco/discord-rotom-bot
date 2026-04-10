@@ -111,8 +111,7 @@ export function formatPokemonInfoBox(params: {
 
   const lines = [
     `**${name}**`,
-    typeStr,
-    `特性: ${abilities.join(' / ')}`,
+    `${typeStr} / 特性: ${abilities.join(' / ')}`,
     '```',
     table.toString(),
     '```',
