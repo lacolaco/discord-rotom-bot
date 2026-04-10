@@ -30,6 +30,7 @@ export type PokemonViewModel = {
   stats: StatActuals[];
   bst: number;
   yakkunUrl?: string;
+  yakkunImageUrl?: string;
 };
 
 export function buildPokemonViewModel(
@@ -56,5 +57,8 @@ export function buildPokemonViewModel(
     stats,
     bst,
     yakkunUrl: pokemon.yakkun?.url,
+    yakkunImageUrl: pokemon.yakkun
+      ? `https://img.yakkun.com/sprites/home/${pokemon.yakkun.key}.png`
+      : undefined,
   };
 }

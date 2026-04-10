@@ -77,6 +77,9 @@ describe('formatPokemonEmbed', () => {
             "value": "https://yakkun.com/ch/zukan/n991",
           },
         ],
+        "thumbnail": {
+          "url": "https://img.yakkun.com/sprites/home/n991.png",
+        },
         "title": "テツノツツミ の情報ロト！",
       }
     `);
@@ -145,6 +148,9 @@ describe('formatPokemonEmbed', () => {
             "value": "https://yakkun.com/ch/zukan/n35",
           },
         ],
+        "thumbnail": {
+          "url": "https://img.yakkun.com/sprites/home/n35.png",
+        },
         "title": "ピッピ の情報ロト！",
       }
     `);
@@ -213,6 +219,9 @@ describe('formatPokemonEmbed', () => {
             "value": "https://yakkun.com/ch/zukan/n6x",
           },
         ],
+        "thumbnail": {
+          "url": "https://img.yakkun.com/sprites/home/n6x.png",
+        },
         "title": "メガリザードンＸ の情報ロト！",
       }
     `);

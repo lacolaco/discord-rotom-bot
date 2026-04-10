@@ -73,5 +73,8 @@ export function formatPokemonEmbed(data: PokemonViewModel): APIEmbed {
     title: `${data.name} の情報ロト！`,
     color,
     fields,
+    ...(data.yakkunImageUrl && {
+      thumbnail: { url: data.yakkunImageUrl },
+    }),
   };
 }
