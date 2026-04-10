@@ -63,10 +63,11 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 - **生成スクリプト**: `npx tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
   - `scripts/lib/pokedex-parser.ts`: pokedex解析（グローバル図鑑→名前マッピング、ゲームデータ→種族値）
   - `scripts/lib/showdown.ts`: @pkmn/dex ヘルパー（Showdownデータからstats/types/abilities取得、特性の英日変換）
-  - `scripts/lib/fallback.ts`: フォールバック補完（drop検出 + showdown.tsでデータ解決）
+  - `scripts/lib/fallback.ts`: フォールバック補完（drop検出 + showdown.tsでデータ解決 + 欠損メガ/ゲンシフォーム注入）
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
 - **除外パターン**: `pokedex-parser.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES`
-- **フォールバック**: pokedexにstatsがないポケモンを `@pkmn/dex` (Showdown) から自動補完。ネットワーク不要。pokedex側にstatsが追加されれば自動的に不要になる
+- **フォールバック（stats補完）**: pokedexにstatsがないポケモンを `@pkmn/dex` (Showdown) から自動補完。ネットワーク不要。pokedex側にstatsが追加されれば自動的に不要になる
+- **フォールバック（フォーム注入）**: pokedexにエントリ自体がないメガ/ゲンシフォームを `@pkmn/dex` から自動検出・注入（`injectMissingForms`）。基本フォームの英語名 + Mega/Mega-X/Mega-Y/Primal で検索。日本語名は `メガ{基本名}` / `ゲンシ{基本名}` で構築。@pkmn/dex の `isNonstandard: "Future"` フラグはZ-Aメガ全体に付いておりフィルタに使えない
 - **フォールバック設計原則**: 外部データソース選定時は候補を比較評価してから決定する。曖昧マッチ（fuzzy/startsWith）は不可、確実なID照合手段があるソースを選ぶ。前提が変わったら中間成果物（キャッシュ等）を温存せずゼロから設計し直す
 - **定期更新**: `update-pokemon-data.yml` が週次でpokedex submoduleを更新しPR作成
 - `*.generated.*` ファイルは eslint / prettier の対象外
