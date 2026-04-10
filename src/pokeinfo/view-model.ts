@@ -10,18 +10,24 @@ const STAT_KEYS: (keyof Pokemon['baseStats'])[] = [
   'S',
 ];
 
-export type StatRange = {
+export type StatActuals = {
   key: string;
   base: number;
-  min: number;
+  /** 性格↑ 努力値252 (HPは null) */
+  maxPlus: number | null;
+  /** 性格無 努力値252 */
   max: number;
+  /** 性格無 努力値0 */
+  min: number;
+  /** 性格↓ 努力値0 (HPは null) */
+  minMinus: number | null;
 };
 
 export type PokemonViewModel = {
   name: string;
   types: string[];
   abilities: string[];
-  stats: StatRange[];
+  stats: StatActuals[];
   bst: number;
   yakkunUrl?: string;
 };
@@ -32,12 +38,14 @@ export function buildPokemonViewModel(
 ): PokemonViewModel {
   const stats = STAT_KEYS.map((key) => {
     const base = pokemon.baseStats[key];
-    const actuals = calcActuals(key, base);
+    const [maxPlus, max, min, minMinus] = calcActuals(key, base);
     return {
       key,
       base,
-      min: key === 'H' ? actuals[2] : actuals[3],
-      max: key === 'H' ? actuals[1] : actuals[0],
+      maxPlus: key === 'H' ? null : maxPlus,
+      max,
+      min,
+      minMinus: key === 'H' ? null : minMinus,
     };
   });
   const bst = stats.reduce((sum, s) => sum + s.base, 0);

@@ -1,5 +1,5 @@
 import type { APIEmbed, APIEmbedField } from 'discord-api-types/v10';
-import type { PokemonViewModel } from './view-model';
+import type { PokemonViewModel, StatActuals } from './view-model';
 
 const TYPE_COLORS: Record<string, number> = {
   ノーマル: 0xa8a878,
@@ -29,10 +29,20 @@ function buildMetaFields(data: PokemonViewModel): APIEmbedField[] {
   ];
 }
 
+function formatStatValue(s: StatActuals): string {
+  const values = [
+    s.maxPlus !== null ? String(s.maxPlus) : '-',
+    String(s.max),
+    String(s.min),
+    s.minMinus !== null ? String(s.minMinus) : '-',
+  ];
+  return `**${s.base}**\n${values.join(' / ')}`;
+}
+
 function buildStatFields(data: PokemonViewModel): APIEmbedField[] {
   return data.stats.map((s) => ({
     name: s.key,
-    value: `**${s.base}** (${s.min}~${s.max})`,
+    value: formatStatValue(s),
     inline: true,
   }));
 }
@@ -45,7 +55,7 @@ export function formatPokemonEmbed(data: PokemonViewModel): APIEmbed {
     color,
     fields: [
       ...buildMetaFields(data),
-      { name: '種族値', value: 'Lv.50 実数値範囲', inline: false },
+      { name: '種族値', value: 'Max+ / Max / Min / Min-', inline: false },
       ...buildStatFields(data),
     ],
     footer: { text: `合計: ${data.bst}` },
