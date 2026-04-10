@@ -39,44 +39,45 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "Max+ / Max / Min / Min-",
+            "value": "56-80-114-124-60-136 (合計 570)",
           },
           {
             "inline": true,
-            "name": "H 56",
+            "name": "H",
             "value": "163 / 131",
           },
           {
             "inline": true,
-            "name": "A 80",
+            "name": "A",
             "value": "**145** / 132 / 100 / **90**",
           },
           {
             "inline": true,
-            "name": "B 114",
+            "name": "B",
             "value": "**182** / 166 / 134 / **120**",
           },
           {
             "inline": true,
-            "name": "C 124",
+            "name": "C",
             "value": "**193** / 176 / 144 / **129**",
           },
           {
             "inline": true,
-            "name": "D 60",
+            "name": "D",
             "value": "**123** / 112 / 80 / **72**",
           },
           {
             "inline": true,
-            "name": "S 136",
+            "name": "S",
             "value": "**206** / 188 / 156 / **140**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n991",
+          },
         ],
-        "footer": {
-          "text": "合計: 570",
-        },
         "title": "テツノツツミ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n991",
       }
     `);
   });
@@ -106,44 +107,45 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "Max+ / Max / Min / Min-",
+            "value": "70-45-48-60-65-35 (合計 323)",
           },
           {
             "inline": true,
-            "name": "H 70",
+            "name": "H",
             "value": "177 / 145",
           },
           {
             "inline": true,
-            "name": "A 45",
+            "name": "A",
             "value": "**106** / 97 / 65 / **58**",
           },
           {
             "inline": true,
-            "name": "B 48",
+            "name": "B",
             "value": "**110** / 100 / 68 / **61**",
           },
           {
             "inline": true,
-            "name": "C 60",
+            "name": "C",
             "value": "**123** / 112 / 80 / **72**",
           },
           {
             "inline": true,
-            "name": "D 65",
+            "name": "D",
             "value": "**128** / 117 / 85 / **76**",
           },
           {
             "inline": true,
-            "name": "S 35",
+            "name": "S",
             "value": "**95** / 87 / 55 / **49**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n35",
+          },
         ],
-        "footer": {
-          "text": "合計: 323",
-        },
         "title": "ピッピ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n35",
       }
     `);
   });
@@ -173,53 +175,56 @@ describe('formatPokemonEmbed', () => {
           {
             "inline": false,
             "name": "種族値",
-            "value": "Max+ / Max / Min / Min-",
+            "value": "78-130-111-130-85-100 (合計 634)",
           },
           {
             "inline": true,
-            "name": "H 78",
+            "name": "H",
             "value": "185 / 153",
           },
           {
             "inline": true,
-            "name": "A 130",
+            "name": "A",
             "value": "**200** / 182 / 150 / **135**",
           },
           {
             "inline": true,
-            "name": "B 111",
+            "name": "B",
             "value": "**179** / 163 / 131 / **117**",
           },
           {
             "inline": true,
-            "name": "C 130",
+            "name": "C",
             "value": "**200** / 182 / 150 / **135**",
           },
           {
             "inline": true,
-            "name": "D 85",
+            "name": "D",
             "value": "**150** / 137 / 105 / **94**",
           },
           {
             "inline": true,
-            "name": "S 100",
+            "name": "S",
             "value": "**167** / 152 / 120 / **108**",
           },
+          {
+            "inline": false,
+            "name": "ポケ徹",
+            "value": "https://yakkun.com/ch/zukan/n6x",
+          },
         ],
-        "footer": {
-          "text": "合計: 634",
-        },
         "title": "メガリザードンＸ の情報ロト！",
-        "url": "https://yakkun.com/ch/zukan/n6x",
       }
     `);
   });
 
-  test('pokemon without yakkun URL has no url field', () => {
+  test('pokemon without yakkun URL has no link field', () => {
     const pokemon = fakePokemon({
       baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
     });
     const vm = buildPokemonViewModel('テストポケモン', pokemon);
-    expect(formatPokemonEmbed(vm).url).toBeUndefined();
+    const embed = formatPokemonEmbed(vm);
+    expect(embed.url).toBeUndefined();
+    expect(embed.fields?.find((f) => f.name === 'ポケ徹')).toBeUndefined();
   });
 });
