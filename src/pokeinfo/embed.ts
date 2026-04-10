@@ -1,4 +1,4 @@
-import type { APIEmbed } from 'discord-api-types/v10';
+import type { APIEmbed, APIEmbedField } from 'discord-api-types/v10';
 import type { PokemonViewModel } from './view-model';
 
 const TYPE_COLORS: Record<string, number> = {
@@ -22,31 +22,33 @@ const TYPE_COLORS: Record<string, number> = {
   フェアリー: 0xee99ac,
 };
 
+function buildMetaFields(data: PokemonViewModel): APIEmbedField[] {
+  return [
+    { name: 'タイプ', value: data.types.join('・'), inline: true },
+    { name: '特性', value: data.abilities.join(' / '), inline: true },
+  ];
+}
+
+function buildStatFields(data: PokemonViewModel): APIEmbedField[] {
+  return data.stats.map((s) => ({
+    name: s.key,
+    value: `**${s.base}** (${s.min}~${s.max})`,
+    inline: true,
+  }));
+}
+
 export function formatPokemonEmbed(data: PokemonViewModel): APIEmbed {
-  const typeStr = data.types.join('・');
-  const abilityStr = data.abilities.join(' / ');
-
-  const statLines = data.stats.map(
-    (s) =>
-      `${s.key} ${String(s.base).padStart(3)} | ${String(s.min).padStart(3)} ~ ${s.max}`,
-  );
-  statLines.push(`合計 ${data.bst}`);
-
-  const description = [
-    `タイプ: ${typeStr}`,
-    `特性: ${abilityStr}`,
-    '',
-    '```',
-    ...statLines,
-    '```',
-  ].join('\n');
-
   const color = TYPE_COLORS[data.types[0] ?? ''] ?? 0x808080;
 
   return {
     title: `${data.name} の情報ロト！`,
-    description,
     color,
+    fields: [
+      ...buildMetaFields(data),
+      { name: '種族値', value: 'Lv.50 実数値範囲', inline: false },
+      ...buildStatFields(data),
+    ],
+    footer: { text: `合計: ${data.bst}` },
     ...(data.yakkunUrl ? { url: data.yakkunUrl } : {}),
   };
 }

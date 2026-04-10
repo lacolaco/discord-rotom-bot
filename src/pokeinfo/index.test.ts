@@ -160,18 +160,56 @@ describe('formatPokemonEmbed', () => {
     expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
       {
         "color": 10016984,
-        "description": "タイプ: こおり・みず
-      特性: クォークチャージ
-
-      \`\`\`
-      H  56 | 131 ~ 163
-      A  80 |  90 ~ 145
-      B 114 | 120 ~ 182
-      C 124 | 129 ~ 193
-      D  60 |  72 ~ 123
-      S 136 | 140 ~ 206
-      合計 570
-      \`\`\`",
+        "fields": [
+          {
+            "inline": true,
+            "name": "タイプ",
+            "value": "こおり・みず",
+          },
+          {
+            "inline": true,
+            "name": "特性",
+            "value": "クォークチャージ",
+          },
+          {
+            "inline": false,
+            "name": "種族値",
+            "value": "Lv.50 実数値範囲",
+          },
+          {
+            "inline": true,
+            "name": "H",
+            "value": "**56** (131~163)",
+          },
+          {
+            "inline": true,
+            "name": "A",
+            "value": "**80** (90~145)",
+          },
+          {
+            "inline": true,
+            "name": "B",
+            "value": "**114** (120~182)",
+          },
+          {
+            "inline": true,
+            "name": "C",
+            "value": "**124** (129~193)",
+          },
+          {
+            "inline": true,
+            "name": "D",
+            "value": "**60** (72~123)",
+          },
+          {
+            "inline": true,
+            "name": "S",
+            "value": "**136** (140~206)",
+          },
+        ],
+        "footer": {
+          "text": "合計: 570",
+        },
         "title": "テツノツツミ の情報ロト！",
         "url": "https://yakkun.com/ch/zukan/n991",
       }
@@ -189,18 +227,56 @@ describe('formatPokemonEmbed', () => {
     expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
       {
         "color": 15636908,
-        "description": "タイプ: フェアリー
-      特性: メロメロボディ / マジックガード / フレンドガード
-
-      \`\`\`
-      H  70 | 145 ~ 177
-      A  45 |  58 ~ 106
-      B  48 |  61 ~ 110
-      C  60 |  72 ~ 123
-      D  65 |  76 ~ 128
-      S  35 |  49 ~ 95
-      合計 323
-      \`\`\`",
+        "fields": [
+          {
+            "inline": true,
+            "name": "タイプ",
+            "value": "フェアリー",
+          },
+          {
+            "inline": true,
+            "name": "特性",
+            "value": "メロメロボディ / マジックガード / フレンドガード",
+          },
+          {
+            "inline": false,
+            "name": "種族値",
+            "value": "Lv.50 実数値範囲",
+          },
+          {
+            "inline": true,
+            "name": "H",
+            "value": "**70** (145~177)",
+          },
+          {
+            "inline": true,
+            "name": "A",
+            "value": "**45** (58~106)",
+          },
+          {
+            "inline": true,
+            "name": "B",
+            "value": "**48** (61~110)",
+          },
+          {
+            "inline": true,
+            "name": "C",
+            "value": "**60** (72~123)",
+          },
+          {
+            "inline": true,
+            "name": "D",
+            "value": "**65** (76~128)",
+          },
+          {
+            "inline": true,
+            "name": "S",
+            "value": "**35** (49~95)",
+          },
+        ],
+        "footer": {
+          "text": "合計: 323",
+        },
         "title": "ピッピ の情報ロト！",
         "url": "https://yakkun.com/ch/zukan/n35",
       }
@@ -218,18 +294,56 @@ describe('formatPokemonEmbed', () => {
     expect(formatPokemonEmbed(vm)).toMatchInlineSnapshot(`
       {
         "color": 15761456,
-        "description": "タイプ: ほのお・ドラゴン
-      特性: かたいツメ
-
-      \`\`\`
-      H  78 | 153 ~ 185
-      A 130 | 135 ~ 200
-      B 111 | 117 ~ 179
-      C 130 | 135 ~ 200
-      D  85 |  94 ~ 150
-      S 100 | 108 ~ 167
-      合計 634
-      \`\`\`",
+        "fields": [
+          {
+            "inline": true,
+            "name": "タイプ",
+            "value": "ほのお・ドラゴン",
+          },
+          {
+            "inline": true,
+            "name": "特性",
+            "value": "かたいツメ",
+          },
+          {
+            "inline": false,
+            "name": "種族値",
+            "value": "Lv.50 実数値範囲",
+          },
+          {
+            "inline": true,
+            "name": "H",
+            "value": "**78** (153~185)",
+          },
+          {
+            "inline": true,
+            "name": "A",
+            "value": "**130** (135~200)",
+          },
+          {
+            "inline": true,
+            "name": "B",
+            "value": "**111** (117~179)",
+          },
+          {
+            "inline": true,
+            "name": "C",
+            "value": "**130** (135~200)",
+          },
+          {
+            "inline": true,
+            "name": "D",
+            "value": "**85** (94~150)",
+          },
+          {
+            "inline": true,
+            "name": "S",
+            "value": "**100** (108~167)",
+          },
+        ],
+        "footer": {
+          "text": "合計: 634",
+        },
         "title": "メガリザードンＸ の情報ロト！",
         "url": "https://yakkun.com/ch/zukan/n6x",
       }
