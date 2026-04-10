@@ -858,6 +858,56 @@
       "key": "n25"
     }
   },
+  "メガライチュウＸ": {
+    "index": 26,
+    "types": [
+      "でんき"
+    ],
+    "abilities": [
+      "サーフテール"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 135,
+      "B": 95,
+      "C": 90,
+      "D": 95,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n26x",
+      "key": "n26x"
+    }
+  },
+  "メガライチュウＹ": {
+    "index": 26,
+    "types": [
+      "でんき"
+    ],
+    "abilities": [
+      "サーフテール"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 100,
+      "B": 55,
+      "C": 160,
+      "D": 80,
+      "S": 130
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n26y",
+      "key": "n26y"
+    }
+  },
   "ライチュウ": {
     "index": 26,
     "types": [
@@ -11776,6 +11826,32 @@
       "key": "n358"
     }
   },
+  "メガチリーン": {
+    "index": 358,
+    "types": [
+      "エスパー",
+      "はがね"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 50,
+      "B": 110,
+      "C": 135,
+      "D": 120,
+      "S": 65
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n358m",
+      "key": "n358m"
+    }
+  },
   "アブソル": {
     "index": 359,
     "types": [
@@ -13135,6 +13211,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n398",
       "key": "n398"
+    }
+  },
+  "メガムクホーク": {
+    "index": 398,
+    "types": [
+      "かくとう",
+      "ひこう"
+    ],
+    "abilities": [
+      "いかく",
+      "すてみ"
+    ],
+    "baseStats": {
+      "H": 85,
+      "A": 140,
+      "B": 100,
+      "C": 60,
+      "D": 90,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n398m",
+      "key": "n398m"
     }
   },
   "ビッパ": {
@@ -15847,6 +15950,33 @@
       "key": "n485"
     }
   },
+  "メガヒードラン": {
+    "index": 485,
+    "types": [
+      "ほのお",
+      "はがね"
+    ],
+    "abilities": [
+      "もらいび",
+      "ほのおのからだ"
+    ],
+    "baseStats": {
+      "H": 91,
+      "A": 120,
+      "B": 106,
+      "C": 175,
+      "D": 141,
+      "S": 67
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n485m",
+      "key": "n485m"
+    }
+  },
   "レジギガス": {
     "index": 486,
     "types": [
@@ -16020,6 +16150,31 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n491",
       "key": "n491"
+    }
+  },
+  "メガダークライ": {
+    "index": 491,
+    "types": [
+      "あく"
+    ],
+    "abilities": [
+      "ナイトメア"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 120,
+      "B": 130,
+      "C": 165,
+      "D": 130,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n491m",
+      "key": "n491m"
     }
   },
   "シェイミ(スカイフォルム)": {
@@ -19964,6 +20119,34 @@
       "key": "n623"
     }
   },
+  "メガゴルーグ": {
+    "index": 623,
+    "types": [
+      "じめん",
+      "ゴースト"
+    ],
+    "abilities": [
+      "てつのこぶし",
+      "ぶきよう",
+      "ノーガード"
+    ],
+    "baseStats": {
+      "H": 89,
+      "A": 159,
+      "B": 105,
+      "C": 70,
+      "D": 105,
+      "S": 55
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n623m",
+      "key": "n623m"
+    }
+  },
   "コマタナ": {
     "index": 624,
     "types": [
@@ -23823,6 +24006,34 @@
       "key": "n740"
     }
   },
+  "メガケケンカニ": {
+    "index": 740,
+    "types": [
+      "かくとう",
+      "こおり"
+    ],
+    "abilities": [
+      "かいりきバサミ",
+      "てつのこぶし",
+      "いかりのつぼ"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 157,
+      "B": 122,
+      "C": 62,
+      "D": 107,
+      "S": 33
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n740m",
+      "key": "n740m"
+    }
+  },
   "オドリドリ(ぱちぱちスタイル)": {
     "index": 741,
     "types": [
@@ -24733,6 +24944,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n768",
       "key": "n768"
+    }
+  },
+  "メガグソクムシャ": {
+    "index": 768,
+    "types": [
+      "むし",
+      "はがね"
+    ],
+    "abilities": [
+      "ききかいひ"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 150,
+      "B": 175,
+      "C": 70,
+      "D": 120,
+      "S": 40
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n768m",
+      "key": "n768m"
     }
   },
   "スナバァ": {
@@ -25701,6 +25938,32 @@
       "key": "n801"
     }
   },
+  "メガマギアナ": {
+    "index": 801,
+    "types": [
+      "はがね",
+      "フェアリー"
+    ],
+    "abilities": [
+      "ソウルハート"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 125,
+      "B": 115,
+      "C": 170,
+      "D": 115,
+      "S": 95
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n801m",
+      "key": "n801m"
+    }
+  },
   "マーシャドー": {
     "index": 802,
     "types": [
@@ -25853,6 +26116,31 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n807",
       "key": "n807"
+    }
+  },
+  "メガゼラオラ": {
+    "index": 807,
+    "types": [
+      "でんき"
+    ],
+    "abilities": [
+      "ちくでん"
+    ],
+    "baseStats": {
+      "H": 88,
+      "A": 157,
+      "B": 75,
+      "C": 147,
+      "D": 80,
+      "S": 153
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n807m",
+      "key": "n807m"
     }
   },
   "メルタン": {
@@ -30070,6 +30358,34 @@
       "key": "n939"
     }
   },
+  "メガスコヴィラン": {
+    "index": 952,
+    "types": [
+      "くさ",
+      "ほのお"
+    ],
+    "abilities": [
+      "ようりょくそ",
+      "ふみん",
+      "ムラっけ"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 138,
+      "B": 85,
+      "C": 138,
+      "D": 85,
+      "S": 75
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n939m",
+      "key": "n939m"
+    }
+  },
   "シガロコ": {
     "index": 953,
     "types": [
@@ -30577,6 +30893,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n967",
       "key": "n967"
+    }
+  },
+  "メガキラフロル": {
+    "index": 970,
+    "types": [
+      "いわ",
+      "どく"
+    ],
+    "abilities": [
+      "どくげしょう",
+      "ふしょく"
+    ],
+    "baseStats": {
+      "H": 83,
+      "A": 90,
+      "B": 105,
+      "C": 150,
+      "D": 96,
+      "S": 101
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n967m",
+      "key": "n967m"
     }
   },
   "ボチ": {
@@ -31324,6 +31667,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n951",
       "key": "n951"
+    }
+  },
+  "メガセグレイブ": {
+    "index": 998,
+    "types": [
+      "ドラゴン",
+      "こおり"
+    ],
+    "abilities": [
+      "ねつこうかん",
+      "アイスボディ"
+    ],
+    "baseStats": {
+      "H": 115,
+      "A": 175,
+      "B": 117,
+      "C": 105,
+      "D": 101,
+      "S": 87
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": "Showdown"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n951m",
+      "key": "n951m"
     }
   },
   "コレクレー(とほフォルム)": {

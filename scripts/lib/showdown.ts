@@ -31,6 +31,7 @@ const EXCLUSIVE_ABILITIES: Record<string, string> = {
   'Desolate Land': 'おわりのだいち',
   'Neuroforce': 'ブレインフォース',
   "Mind's Eye": 'しんがん',
+  'Bad Dreams': 'ナイトメア',
 };
 
 let abilityMapBuilt = false;
@@ -114,20 +115,9 @@ function buildLookupName(nameEng: string, formEng: string): string {
 }
 
 /**
- * @pkmn/dex からポケモンデータを取得し、GamePokedexEntry 形式で返す。
- * 初回呼び出し時にpokedexBase指定で特性マップを構築する。
+ * @pkmn/dex の Species を GamePokedexEntry に変換する。
  */
-export function fetchEntry(
-  nameEng: string,
-  formEng: string,
-  pokedexBase: string,
-): GamePokedexEntry | null {
-  buildAbilityMap(pokedexBase);
-
-  const lookup = buildLookupName(nameEng, formEng);
-  const species = dex.species.get(lookup);
-  if (!species?.exists) return null;
-
+function speciesToEntry(species: ReturnType<typeof dex.species.get>): GamePokedexEntry {
   const types = species.types;
   const abilities = species.abilities;
   const regularSlots = [abilities['0'], abilities['1']].filter(Boolean);
@@ -146,4 +136,62 @@ export function fetchEntry(
     ability2: regularSlots[1] ? getAbilityJaName(regularSlots[1]) : '',
     dream_ability: hiddenSlot ? getAbilityJaName(hiddenSlot) : '',
   };
+}
+
+/**
+ * @pkmn/dex からポケモンデータを取得し、GamePokedexEntry 形式で返す。
+ * 初回呼び出し時にpokedexBase指定で特性マップを構築する。
+ */
+export function fetchEntry(
+  nameEng: string,
+  formEng: string,
+  pokedexBase: string,
+): GamePokedexEntry | null {
+  buildAbilityMap(pokedexBase);
+
+  const lookup = buildLookupName(nameEng, formEng);
+  const species = dex.species.get(lookup);
+  if (!species?.exists) return null;
+
+  return speciesToEntry(species);
+}
+
+// --- Missing form detection ---
+
+/** メガ/ゲンシフォームの dex suffix → 日本語名構築ルール */
+const MEGA_PRIMAL_SUFFIXES: { dexSuffix: string; jpn: (baseName: string) => string }[] = [
+  { dexSuffix: 'Mega', jpn: (n) => `メガ${n}` },
+  { dexSuffix: 'Mega-X', jpn: (n) => `メガ${n}Ｘ` },
+  { dexSuffix: 'Mega-Y', jpn: (n) => `メガ${n}Ｙ` },
+  { dexSuffix: 'Primal', jpn: (n) => `ゲンシ${n}` },
+];
+
+export interface DetectedForm {
+  displayName: string;
+  forme: string;
+  data: GamePokedexEntry;
+}
+
+/**
+ * 指定された英語名のポケモンについて、@pkmn/dex にメガ/ゲンシフォームが
+ * 存在するかチェックし、見つかったフォームを返す。
+ */
+export function findMegaPrimalForms(
+  nameEng: string,
+  jpnBaseName: string,
+  pokedexBase: string,
+): DetectedForm[] {
+  buildAbilityMap(pokedexBase);
+
+  const results: DetectedForm[] = [];
+  for (const { dexSuffix, jpn } of MEGA_PRIMAL_SUFFIXES) {
+    const species = dex.species.get(`${nameEng}-${dexSuffix}`);
+    if (!species?.exists) continue;
+    results.push({
+      displayName: jpn(jpnBaseName),
+      forme: dexSuffix,
+      data: speciesToEntry(species),
+    });
+  }
+  return results;
 }
