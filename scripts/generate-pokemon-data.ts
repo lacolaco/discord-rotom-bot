@@ -155,6 +155,14 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
     } else if (formName === 'ノーマルモード') {
       formName = null;
     }
+    // コスチューム違いフォームの除外: base entry以外をスキップ
+    // base entryのformNameは既定フォーム名なので無視する
+    if (COSMETIC_ONLY_BASE_NAMES.includes(jpnName)) {
+      if (entryId !== baseEntryId) {
+        continue;
+      }
+      formName = null;
+    }
     const displayName =
       formName?.startsWith('メガ') || formName?.startsWith('ゲンシ')
         ? formName
@@ -170,10 +178,6 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
     }
     // upstream未対応フォームの除外
     if (UPSTREAM_MISSING_FORMS.includes(displayName)) {
-      continue;
-    }
-    // コスチューム違いフォームの除外: base formのみ残す
-    if (formName && COSMETIC_ONLY_BASE_NAMES.includes(jpnName)) {
       continue;
     }
     // 特定サフィックスを含むフォームの除外

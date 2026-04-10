@@ -6943,6 +6943,27 @@
       "key": "n200"
     }
   },
+  "アンノーン": {
+    "index": 201,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 48,
+      "A": 72,
+      "B": 48,
+      "C": 72,
+      "D": 48,
+      "S": 48
+    },
+    "source": {
+      "game": "HeartGold_SoulSilver",
+      "pokedex": "ジョウト図鑑"
+    }
+  },
   "ソーナンス": {
     "index": 202,
     "types": [
@@ -11438,6 +11459,27 @@
       "key": "n350"
     }
   },
+  "ポワルン": {
+    "index": 351,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "てんきや"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 70,
+      "B": 70,
+      "C": 70,
+      "D": 70,
+      "S": 70
+    },
+    "source": {
+      "game": "UltraSun_UltraMoon",
+      "pokedex": "アローラ図鑑"
+    }
+  },
   "カクレオン": {
     "index": 352,
     "types": [
@@ -13222,6 +13264,28 @@
       "key": "n411"
     }
   },
+  "ミノムッチ": {
+    "index": 412,
+    "types": [
+      "むし"
+    ],
+    "abilities": [
+      "だっぴ",
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 29,
+      "B": 45,
+      "C": 29,
+      "D": 45,
+      "S": 36
+    },
+    "source": {
+      "game": "X_Y",
+      "pokedex": "セントラルカロス図鑑"
+    }
+  },
   "ミノマダム(くさきのミノ)": {
     "index": 413,
     "types": [
@@ -13486,6 +13550,74 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n420",
       "key": "n420"
+    }
+  },
+  "チェリム": {
+    "index": 421,
+    "types": [
+      "くさ"
+    ],
+    "abilities": [
+      "フラワーギフト"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 60,
+      "B": 70,
+      "C": 87,
+      "D": 78,
+      "S": 85
+    },
+    "source": {
+      "game": "Sword_Shield",
+      "pokedex": "ガラル図鑑"
+    }
+  },
+  "カラナクシ": {
+    "index": 422,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "ねんちゃく",
+      "よびみず",
+      "すなのちから"
+    ],
+    "baseStats": {
+      "H": 76,
+      "A": 48,
+      "B": 48,
+      "C": 57,
+      "D": 62,
+      "S": 34
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
+  "トリトドン": {
+    "index": 423,
+    "types": [
+      "みず",
+      "じめん"
+    ],
+    "abilities": [
+      "ねんちゃく",
+      "よびみず",
+      "すなのちから"
+    ],
+    "baseStats": {
+      "H": 111,
+      "A": 83,
+      "B": 68,
+      "C": 92,
+      "D": 82,
+      "S": 39
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
     }
   },
   "エテボース": {
@@ -18453,6 +18585,54 @@
       "key": "n584"
     }
   },
+  "シキジカ": {
+    "index": 585,
+    "types": [
+      "ノーマル",
+      "くさ"
+    ],
+    "abilities": [
+      "ようりょくそ",
+      "そうしょく",
+      "てんのめぐみ"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 60,
+      "B": 50,
+      "C": 40,
+      "D": 50,
+      "S": 75
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
+  "メブキジカ": {
+    "index": 586,
+    "types": [
+      "ノーマル",
+      "くさ"
+    ],
+    "abilities": [
+      "ようりょくそ",
+      "そうしょく",
+      "てんのめぐみ"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 100,
+      "B": 70,
+      "C": 60,
+      "D": 70,
+      "S": 95
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
   "エモンガ": {
     "index": 587,
     "types": [
@@ -20289,6 +20469,28 @@
       "key": "n648"
     }
   },
+  "ゲノセクト": {
+    "index": 649,
+    "types": [
+      "むし",
+      "はがね"
+    ],
+    "abilities": [
+      "ダウンロード"
+    ],
+    "baseStats": {
+      "H": 71,
+      "A": 120,
+      "B": 95,
+      "C": 120,
+      "D": 95,
+      "S": 99
+    },
+    "source": {
+      "game": "Black2_White2",
+      "pokedex": "イッシュ図鑑"
+    }
+  },
   "ハリマロン": {
     "index": 650,
     "types": [
@@ -20779,6 +20981,30 @@
       "key": "n665"
     }
   },
+  "ビビヨン": {
+    "index": 666,
+    "types": [
+      "ひこう",
+      "むし"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
   "シシコ": {
     "index": 667,
     "types": [
@@ -20857,6 +21083,72 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n668m",
       "key": "n668m"
+    }
+  },
+  "フラベベ": {
+    "index": 669,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "フラワーベール",
+      "きょうせい"
+    ],
+    "baseStats": {
+      "H": 44,
+      "A": 38,
+      "B": 39,
+      "C": 61,
+      "D": 79,
+      "S": 42
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
+  "フラエッテ": {
+    "index": 670,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "フラワーベール",
+      "きょうせい"
+    ],
+    "baseStats": {
+      "H": 54,
+      "A": 45,
+      "B": 47,
+      "C": 75,
+      "D": 98,
+      "S": 52
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
+  "フラージェス": {
+    "index": 671,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "フラワーベール",
+      "きょうせい"
+    ],
+    "baseStats": {
+      "H": 78,
+      "A": 65,
+      "B": 68,
+      "C": 112,
+      "D": 154,
+      "S": 75
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
     }
   },
   "メェークル": {
@@ -20956,6 +21248,25 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n675",
       "key": "n675"
+    }
+  },
+  "トリミアン": {
+    "index": 676,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [],
+    "baseStats": {
+      "H": 75,
+      "A": 80,
+      "B": 60,
+      "C": 65,
+      "D": 90,
+      "S": 102
+    },
+    "source": {
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     }
   },
   "ニャスパー": {
@@ -22312,6 +22623,25 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n715",
       "key": "n715"
+    }
+  },
+  "ゼルネアス": {
+    "index": 716,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [],
+    "baseStats": {
+      "H": 126,
+      "A": 131,
+      "B": 95,
+      "C": 131,
+      "D": 98,
+      "S": 99
+    },
+    "source": {
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     }
   },
   "イベルタル": {
@@ -24112,6 +24442,49 @@
       "key": "n772"
     }
   },
+  "シルヴァディ": {
+    "index": 773,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "ARシステム"
+    ],
+    "baseStats": {
+      "H": 95,
+      "A": 95,
+      "B": 95,
+      "C": 95,
+      "D": 95,
+      "S": 95
+    },
+    "source": {
+      "game": "Sword_Shield",
+      "pokedex": "ガラル図鑑"
+    }
+  },
+  "メテノ": {
+    "index": 774,
+    "types": [
+      "ひこう",
+      "いわ"
+    ],
+    "abilities": [
+      "リミットシールド"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 60,
+      "B": 100,
+      "C": 60,
+      "D": 100,
+      "S": 60
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "ブルーベリー図鑑"
+    }
+  },
   "ネッコアラ": {
     "index": 775,
     "types": [
@@ -24189,6 +24562,28 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n777",
       "key": "n777"
+    }
+  },
+  "ミミッキュ": {
+    "index": 778,
+    "types": [
+      "ゴースト",
+      "フェアリー"
+    ],
+    "abilities": [
+      "ばけのかわ"
+    ],
+    "baseStats": {
+      "H": 55,
+      "A": 90,
+      "B": 80,
+      "C": 50,
+      "D": 105,
+      "S": 96
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
     }
   },
   "ハギギシリ": {
@@ -26183,6 +26578,50 @@
       "key": "n853"
     }
   },
+  "ヤバチャ": {
+    "index": 854,
+    "types": [
+      "ゴースト"
+    ],
+    "abilities": [
+      "くだけるよろい",
+      "のろわれボディ"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 45,
+      "B": 45,
+      "C": 74,
+      "D": 54,
+      "S": 50
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
+  "ポットデス": {
+    "index": 855,
+    "types": [
+      "ゴースト"
+    ],
+    "abilities": [
+      "くだけるよろい",
+      "のろわれボディ"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 65,
+      "B": 65,
+      "C": 134,
+      "D": 114,
+      "S": 70
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
   "ミブリム": {
     "index": 856,
     "types": [
@@ -26536,6 +26975,28 @@
       "key": "n868"
     }
   },
+  "マホイップ": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "ブルーベリー図鑑"
+    }
+  },
   "タイレーツ": {
     "index": 870,
     "types": [
@@ -26794,6 +27255,28 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n876f",
       "key": "n876f"
+    }
+  },
+  "モルペコ": {
+    "index": 877,
+    "types": [
+      "でんき",
+      "あく"
+    ],
+    "abilities": [
+      "はらぺこスイッチ"
+    ],
+    "baseStats": {
+      "H": 58,
+      "A": 95,
+      "B": 58,
+      "C": 70,
+      "D": 58,
+      "S": 97
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "キタカミ図鑑"
     }
   },
   "ゾウドウ": {
@@ -28224,6 +28707,29 @@
       "key": "n945"
     }
   },
+  "イッカネズミ": {
+    "index": 925,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "フレンドガード",
+      "ほおぶくろ",
+      "テクニシャン"
+    ],
+    "baseStats": {
+      "H": 74,
+      "A": 75,
+      "B": 70,
+      "C": 65,
+      "D": 75,
+      "S": 111
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
   "パピモッチ": {
     "index": 926,
     "types": [
@@ -28355,6 +28861,30 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n937",
       "key": "n937"
+    }
+  },
+  "イキリンコ": {
+    "index": 931,
+    "types": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "abilities": [
+      "いかく",
+      "はりきり",
+      "こんじょう"
+    ],
+    "baseStats": {
+      "H": 82,
+      "A": 96,
+      "B": 51,
+      "C": 45,
+      "D": 51,
+      "S": 92
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
     }
   },
   "コジオ": {
@@ -29623,6 +30153,29 @@
       "key": "n931"
     }
   },
+  "シャリタツ": {
+    "index": 978,
+    "types": [
+      "みず",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "しれいとう",
+      "よびみず"
+    ],
+    "baseStats": {
+      "H": 68,
+      "A": 50,
+      "B": 60,
+      "C": 120,
+      "D": 95,
+      "S": 82
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
+    }
+  },
   "コノヨザル": {
     "index": 979,
     "types": [
@@ -29705,6 +30258,29 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n928",
       "key": "n928"
+    }
+  },
+  "ノココッチ": {
+    "index": 982,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "てんのめぐみ",
+      "にげあし",
+      "びびり"
+    ],
+    "baseStats": {
+      "H": 125,
+      "A": 100,
+      "B": 80,
+      "C": 85,
+      "D": 75,
+      "S": 55
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "パルデア図鑑"
     }
   },
   "ドドゲザン": {
@@ -30490,6 +31066,52 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1012",
       "key": "n1012"
+    }
+  },
+  "チャデス": {
+    "index": 1012,
+    "types": [
+      "くさ",
+      "ゴースト"
+    ],
+    "abilities": [
+      "おもてなし",
+      "たいねつ"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 45,
+      "B": 45,
+      "C": 74,
+      "D": 54,
+      "S": 50
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "キタカミ図鑑"
+    }
+  },
+  "ヤバソチャ": {
+    "index": 1013,
+    "types": [
+      "くさ",
+      "ゴースト"
+    ],
+    "abilities": [
+      "おもてなし",
+      "たいねつ"
+    ],
+    "baseStats": {
+      "H": 71,
+      "A": 60,
+      "B": 106,
+      "C": 121,
+      "D": 80,
+      "S": 70
+    },
+    "source": {
+      "game": "Scarlet_Violet",
+      "pokedex": "キタカミ図鑑"
     }
   },
   "イイネイヌ": {
