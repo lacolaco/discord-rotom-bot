@@ -30,18 +30,15 @@ function buildMetaFields(data: PokemonViewModel): APIEmbedField[] {
 }
 
 function formatStatValue(s: StatActuals): string {
-  const values = [
-    s.maxPlus !== null ? String(s.maxPlus) : '-',
-    String(s.max),
-    String(s.min),
-    s.minMinus !== null ? String(s.minMinus) : '-',
-  ];
-  return `**${s.base}**\n${values.join(' / ')}`;
+  if (s.maxPlus === null) {
+    return `${s.max} / ${s.min}`;
+  }
+  return `**${s.maxPlus}** / ${s.max} / ${s.min} / **${s.minMinus}**`;
 }
 
 function buildStatFields(data: PokemonViewModel): APIEmbedField[] {
   return data.stats.map((s) => ({
-    name: s.key,
+    name: `${s.key} ${s.base}`,
     value: formatStatValue(s),
     inline: true,
   }));
