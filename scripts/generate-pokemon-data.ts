@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseGlobalPokedex, loadGameStats, type EntryInfo, type StatsEntry } from './lib/pokedex-parser';
-import { injectMissingForms, supplementMissingStats } from './lib/fallback';
+import { injectMissingForms, supplementMissingStats, supplementMissingTypes } from './lib/fallback';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const POKEDEX_BASE = resolve(ROOT, 'vendor/pokedex/pokedex');
@@ -34,6 +34,7 @@ const { entryIdToInfo, nameToNatNum } = parseGlobalPokedex(POKEDEX_BASE);
 const statsMap = loadGameStats(POKEDEX_BASE);
 injectMissingForms(entryIdToInfo, statsMap, nameToNatNum, POKEDEX_BASE);
 supplementMissingStats(entryIdToInfo, statsMap, POKEDEX_BASE);
+supplementMissingTypes(entryIdToInfo, statsMap, POKEDEX_BASE);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),

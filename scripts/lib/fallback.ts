@@ -82,6 +82,49 @@ export function injectMissingForms(
 }
 
 /**
+ * statsMapにstatsはあるがtype1が空のエントリについて、
+ * @pkmn/dex からtype/abilityだけを補完する（statsは保持）。
+ */
+export function supplementMissingTypes(
+  entryIdToInfo: Map<string, EntryInfo>,
+  statsMap: Map<string, StatsEntry>,
+  pokedexBase: string,
+): void {
+  // nameEng が null のエントリ用に、natNum → 英語名のマップを構築
+  const natNumToBaseEng = new Map<number, string>();
+  for (const info of entryIdToInfo.values()) {
+    if (info.nameEng && !natNumToBaseEng.has(info.natNum)) {
+      natNumToBaseEng.set(info.natNum, info.nameEng);
+    }
+  }
+
+  let count = 0;
+  for (const [entryId, statsEntry] of statsMap) {
+    if (statsEntry.stats.type1) continue;
+    const info = entryIdToInfo.get(entryId);
+    if (!info) continue;
+
+    // nameEng が null の場合、基本フォームの英語名で代替
+    const nameEng = info.nameEng || natNumToBaseEng.get(info.natNum);
+    if (!nameEng) continue;
+
+    const dexEntry = fetchEntry(nameEng, info.formEng, pokedexBase);
+    if (!dexEntry || !dexEntry.type1) continue;
+
+    statsEntry.stats.type1 = dexEntry.type1;
+    statsEntry.stats.type2 = dexEntry.type2;
+    if (!statsEntry.stats.ability1) statsEntry.stats.ability1 = dexEntry.ability1;
+    if (!statsEntry.stats.ability2) statsEntry.stats.ability2 = dexEntry.ability2;
+    if (!statsEntry.stats.dream_ability) statsEntry.stats.dream_ability = dexEntry.dream_ability;
+    count++;
+    console.log(`    ${info.displayName}`);
+  }
+  if (count > 0) {
+    console.log(`  Supplemented types/abilities: ${count} entries from @pkmn/dex`);
+  }
+}
+
+/**
  * statsMapに存在せず、同じdisplayNameの別エントリにもstatsがないものを抽出。
  */
 function findGenuineDrops(
