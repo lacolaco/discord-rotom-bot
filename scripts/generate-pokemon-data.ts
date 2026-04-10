@@ -232,8 +232,12 @@ try {
   if (fallbackCount > 0) {
     console.log(`  PokeAPI fallback: ${fallbackCount} entries supplemented`);
   }
-} catch {
-  // fallback file not found — continue without
+} catch (e) {
+  if (e instanceof Error && 'code' in e && (e as NodeJS.ErrnoException).code === 'ENOENT') {
+    console.log('  PokeAPI fallback file not found, skipping');
+  } else {
+    throw e;
+  }
 }
 
 // --- Step 3: yakkun-map.json ---
