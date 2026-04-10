@@ -6962,6 +6962,10 @@
     "source": {
       "game": "HeartGold_SoulSilver",
       "pokedex": "ジョウト図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n201",
+      "key": "n201"
     }
   },
   "ソーナンス": {
@@ -11478,6 +11482,10 @@
     "source": {
       "game": "UltraSun_UltraMoon",
       "pokedex": "アローラ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n351",
+      "key": "n351"
     }
   },
   "カクレオン": {
@@ -13284,6 +13292,10 @@
     "source": {
       "game": "X_Y",
       "pokedex": "セントラルカロス図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n412",
+      "key": "n412"
     }
   },
   "ミノマダム(くさきのミノ)": {
@@ -13571,6 +13583,10 @@
     "source": {
       "game": "Sword_Shield",
       "pokedex": "ガラル図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n421",
+      "key": "n421"
     }
   },
   "カラナクシ": {
@@ -13594,6 +13610,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n422",
+      "key": "n422"
     }
   },
   "トリトドン": {
@@ -13618,6 +13638,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n423",
+      "key": "n423"
     }
   },
   "エテボース": {
@@ -18607,6 +18631,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n585",
+      "key": "n585"
     }
   },
   "メブキジカ": {
@@ -18631,6 +18659,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n586",
+      "key": "n586"
     }
   },
   "エモンガ": {
@@ -20489,6 +20521,10 @@
     "source": {
       "game": "Black2_White2",
       "pokedex": "イッシュ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n649",
+      "key": "n649"
     }
   },
   "ハリマロン": {
@@ -21003,6 +21039,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666",
+      "key": "n666"
     }
   },
   "シシコ": {
@@ -21105,6 +21145,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n669",
+      "key": "n669"
     }
   },
   "フラエッテ": {
@@ -21127,6 +21171,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n670",
+      "key": "n670"
     }
   },
   "フラージェス": {
@@ -21149,6 +21197,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n671",
+      "key": "n671"
     }
   },
   "メェークル": {
@@ -21267,6 +21319,10 @@
     "source": {
       "game": "LegendsZA",
       "pokedex": "ミアレ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n676",
+      "key": "n676"
     }
   },
   "ニャスパー": {
@@ -22642,6 +22698,10 @@
     "source": {
       "game": "LegendsZA",
       "pokedex": "ミアレ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n716",
+      "key": "n716"
     }
   },
   "イベルタル": {
@@ -24461,6 +24521,10 @@
     "source": {
       "game": "Sword_Shield",
       "pokedex": "ガラル図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n773",
+      "key": "n773"
     }
   },
   "メテノ": {
@@ -24483,6 +24547,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "ブルーベリー図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n774",
+      "key": "n774"
     }
   },
   "ネッコアラ": {
@@ -24584,6 +24652,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n778",
+      "key": "n778"
     }
   },
   "ハギギシリ": {
@@ -26598,6 +26670,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n854",
+      "key": "n854"
     }
   },
   "ポットデス": {
@@ -26620,6 +26696,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n855",
+      "key": "n855"
     }
   },
   "ミブリム": {
@@ -26995,6 +27075,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "ブルーベリー図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869",
+      "key": "n869"
     }
   },
   "タイレーツ": {
@@ -27277,6 +27361,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "キタカミ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n877",
+      "key": "n877"
     }
   },
   "ゾウドウ": {
@@ -28728,6 +28816,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n946",
+      "key": "n946"
     }
   },
   "パピモッチ": {
@@ -28885,6 +28977,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n960",
+      "key": "n960"
     }
   },
   "コジオ": {
@@ -30174,6 +30270,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n952",
+      "key": "n952"
     }
   },
   "コノヨザル": {
@@ -30281,6 +30381,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "パルデア図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n917",
+      "key": "n917"
     }
   },
   "ドドゲザン": {
@@ -31089,6 +31193,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "キタカミ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1024",
+      "key": "n1024"
     }
   },
   "ヤバソチャ": {
@@ -31112,6 +31220,10 @@
     "source": {
       "game": "Scarlet_Violet",
       "pokedex": "キタカミ図鑑"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1025",
+      "key": "n1025"
     }
   },
   "イイネイヌ": {

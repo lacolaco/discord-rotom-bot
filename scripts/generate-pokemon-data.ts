@@ -297,6 +297,34 @@ writeFileSync(
   'utf-8',
 );
 
+// Sync yakkun-map.json: add null for new entries, preserve all existing entries
+let yakkunMapChanged = false;
+for (const name of Object.keys(sortedOutput)) {
+  if (!(name in yakkunMap)) {
+    yakkunMap[name] = null;
+    yakkunMapChanged = true;
+  }
+}
+if (yakkunMapChanged) {
+  // Rebuild in sortedOutput order, then append remaining existing entries
+  const newYakkunMap: Record<string, string | null> = {};
+  for (const name of Object.keys(sortedOutput)) {
+    if (name in yakkunMap) {
+      newYakkunMap[name] = yakkunMap[name];
+    }
+  }
+  for (const name of Object.keys(yakkunMap)) {
+    if (!(name in newYakkunMap)) {
+      newYakkunMap[name] = yakkunMap[name];
+    }
+  }
+  writeFileSync(
+    YAKKUN_MAP_PATH,
+    JSON.stringify(newYakkunMap, null, 2) + '\n',
+    'utf-8',
+  );
+}
+
 // --- Step 6: Summary ---
 
 const totalEntries = Object.keys(sortedOutput).length;
