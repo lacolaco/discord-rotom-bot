@@ -81,18 +81,13 @@ export function formatPokemonInfoBox(params: {
 }): string {
   const { name, types, baseStats, abilities } = params;
   const typeStr = types.join('・');
-  const abilityLine = `特性 ${abilities.join(' / ')}`;
-
+  // ASCII-only table for stats (no Japanese inside code block)
   const table = new Table({
     chars: TABLE_CHARS,
     style: { head: [], border: [] },
     colAligns: ['left', 'right', 'right', 'right', 'right'],
   });
 
-  // Header: name + type (single colSpan cell to avoid column width interference)
-  table.push([{ colSpan: 5, content: `${name}  ${typeStr}` }]);
-
-  // Stat rows: bar + 4 actual values
   for (const key of STAT_KEYS) {
     const base = baseStats[key];
     const barLen = Math.round((base / MAX_STAT) * BAR_WIDTH);
@@ -106,10 +101,16 @@ export function formatPokemonInfoBox(params: {
     table.push([barStr, ...cells]);
   }
 
-  // Abilities
-  table.push([{ colSpan: 5, content: abilityLine }]);
+  const lines = [
+    `**${name}**`,
+    typeStr,
+    `特性: ${abilities.join(' / ')}`,
+    '```',
+    table.toString(),
+    '```',
+  ];
 
-  return '```\n' + table.toString() + '\n```';
+  return lines.join('\n');
 }
 
 /**
