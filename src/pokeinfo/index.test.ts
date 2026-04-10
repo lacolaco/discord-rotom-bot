@@ -25,6 +25,28 @@ describe('searchPokemonByName', () => {
     expect(result).not.toBeNull();
     expect(result!.yakkun?.key).toBe('n6x');
   });
+
+  test('returns data for PokéAPI-supplemented pokemon', async () => {
+    const result = await searchPokemonByName('メガジュカイン');
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['くさ', 'ドラゴン']);
+    expect(result!.baseStats.H).toBe(70);
+    expect(result!.abilities).toContain('ひらいしん');
+  });
+
+  test('returns data for Meltan (PokéAPI-supplemented)', async () => {
+    const result = await searchPokemonByName('メルタン');
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['はがね']);
+    expect(result!.baseStats.H).toBe(46);
+  });
+
+  test('returns data for primal form (PokéAPI-supplemented)', async () => {
+    const result = await searchPokemonByName('ゲンシカイオーガ');
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['みず']);
+    expect(result!.baseStats.C).toBe(180);
+  });
 });
 
 describe('formatPokemonInfoBox', () => {

@@ -8627,6 +8627,32 @@
       "key": "n254"
     }
   },
+  "メガジュカイン": {
+    "index": 254,
+    "types": [
+      "くさ",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "ひらいしん"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 110,
+      "B": 75,
+      "C": 145,
+      "D": 85,
+      "S": 145
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n254m",
+      "key": "n254m"
+    }
+  },
   "アチャモ": {
     "index": 255,
     "types": [
@@ -8707,6 +8733,32 @@
       "key": "n257"
     }
   },
+  "メガバシャーモ": {
+    "index": 257,
+    "types": [
+      "ほのお",
+      "かくとう"
+    ],
+    "abilities": [
+      "かそく"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 160,
+      "B": 80,
+      "C": 130,
+      "D": 80,
+      "S": 100
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n257m",
+      "key": "n257m"
+    }
+  },
   "ミズゴロウ": {
     "index": 258,
     "types": [
@@ -8758,6 +8810,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n259",
       "key": "n259"
+    }
+  },
+  "メガラグラージ": {
+    "index": 260,
+    "types": [
+      "みず",
+      "じめん"
+    ],
+    "abilities": [
+      "すいすい"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 150,
+      "B": 110,
+      "C": 95,
+      "D": 110,
+      "S": 70
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n260m",
+      "key": "n260m"
     }
   },
   "ラグラージ": {
@@ -12357,6 +12435,32 @@
       "key": "n379"
     }
   },
+  "メガラティアス": {
+    "index": 380,
+    "types": [
+      "ドラゴン",
+      "エスパー"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 100,
+      "B": 120,
+      "C": 140,
+      "D": 150,
+      "S": 110
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n380m",
+      "key": "n380m"
+    }
+  },
   "ラティアス": {
     "index": 380,
     "types": [
@@ -12381,6 +12485,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n380",
       "key": "n380"
+    }
+  },
+  "メガラティオス": {
+    "index": 381,
+    "types": [
+      "ドラゴン",
+      "エスパー"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 130,
+      "B": 100,
+      "C": 160,
+      "D": 120,
+      "S": 110
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n381m",
+      "key": "n381m"
     }
   },
   "ラティオス": {
@@ -12434,6 +12564,31 @@
       "key": "n382"
     }
   },
+  "ゲンシカイオーガ": {
+    "index": 382,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "はじまりのうみ"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 150,
+      "B": 90,
+      "C": 180,
+      "D": 160,
+      "S": 90
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n382p",
+      "key": "n382p"
+    }
+  },
   "グラードン": {
     "index": 383,
     "types": [
@@ -12457,6 +12612,58 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n383",
       "key": "n383"
+    }
+  },
+  "ゲンシグラードン": {
+    "index": 383,
+    "types": [
+      "じめん",
+      "ほのお"
+    ],
+    "abilities": [
+      "おわりのだいち"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 180,
+      "B": 160,
+      "C": 150,
+      "D": 90,
+      "S": 90
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n383p",
+      "key": "n383p"
+    }
+  },
+  "メガレックウザ": {
+    "index": 384,
+    "types": [
+      "ドラゴン",
+      "ひこう"
+    ],
+    "abilities": [
+      "デルタストリーム"
+    ],
+    "baseStats": {
+      "H": 105,
+      "A": 180,
+      "B": 100,
+      "C": 180,
+      "D": 100,
+      "S": 115
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n384m",
+      "key": "n384m"
     }
   },
   "レックウザ": {
@@ -17562,6 +17769,33 @@
       "key": "n550"
     }
   },
+  "バスラオ(しろすじのすがた)": {
+    "index": 550,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "びびり",
+      "てきおうりょく",
+      "かたやぶり"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 92,
+      "B": 65,
+      "C": 80,
+      "D": 55,
+      "S": 98
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n550w",
+      "key": "n550w"
+    }
+  },
   "メグロコ": {
     "index": 551,
     "types": [
@@ -20449,6 +20683,58 @@
       "key": "n646"
     }
   },
+  "キュレム(ブラックキュレム)": {
+    "index": 646,
+    "types": [
+      "ドラゴン",
+      "こおり"
+    ],
+    "abilities": [
+      "テラボルテージ"
+    ],
+    "baseStats": {
+      "H": 125,
+      "A": 170,
+      "B": 100,
+      "C": 120,
+      "D": 90,
+      "S": 95
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n646b",
+      "key": "n646b"
+    }
+  },
+  "キュレム(ホワイトキュレム)": {
+    "index": 646,
+    "types": [
+      "ドラゴン",
+      "こおり"
+    ],
+    "abilities": [
+      "ターボブレイズ"
+    ],
+    "baseStats": {
+      "H": 125,
+      "A": 120,
+      "B": 90,
+      "C": 170,
+      "D": 100,
+      "S": 95
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n646w",
+      "key": "n646w"
+    }
+  },
   "ケルディオ(いつものすがた)": {
     "index": 647,
     "types": [
@@ -20473,6 +20759,58 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n647",
       "key": "n647"
+    }
+  },
+  "ケルディオ(かくごのすがた)": {
+    "index": 647,
+    "types": [
+      "みず",
+      "かくとう"
+    ],
+    "abilities": [
+      "せいぎのこころ"
+    ],
+    "baseStats": {
+      "H": 91,
+      "A": 72,
+      "B": 90,
+      "C": 129,
+      "D": 90,
+      "S": 108
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n647k",
+      "key": "n647k"
+    }
+  },
+  "メロエッタ(ステップフォルム)": {
+    "index": 648,
+    "types": [
+      "ノーマル",
+      "かくとう"
+    ],
+    "abilities": [
+      "てんのめぐみ"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 128,
+      "B": 90,
+      "C": 77,
+      "D": 77,
+      "S": 128
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n648f",
+      "key": "n648f"
     }
   },
   "メロエッタ(ボイスフォルム)": {
@@ -25259,6 +25597,84 @@
       "key": "n800"
     }
   },
+  "ネクロズマ(あかつきのつばさ)": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "ゴースト"
+    ],
+    "abilities": [
+      "プリズムアーマー"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 113,
+      "B": 109,
+      "C": 157,
+      "D": 127,
+      "S": 77
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800m",
+      "key": "n800m"
+    }
+  },
+  "ネクロズマ(ウルトラネクロズマ)": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "ブレインフォース"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 167,
+      "B": 97,
+      "C": 167,
+      "D": 97,
+      "S": 129
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800u",
+      "key": "n800u"
+    }
+  },
+  "ネクロズマ(たそがれのたてがみ)": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "はがね"
+    ],
+    "abilities": [
+      "プリズムアーマー"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 157,
+      "B": 127,
+      "C": 113,
+      "D": 109,
+      "S": 77
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800s",
+      "key": "n800s"
+    }
+  },
   "マギアナ": {
     "index": 801,
     "types": [
@@ -25437,6 +25853,56 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n807",
       "key": "n807"
+    }
+  },
+  "メルタン": {
+    "index": 808,
+    "types": [
+      "はがね"
+    ],
+    "abilities": [
+      "じりょく"
+    ],
+    "baseStats": {
+      "H": 46,
+      "A": 65,
+      "B": 65,
+      "C": 55,
+      "D": 35,
+      "S": 34
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n808",
+      "key": "n808"
+    }
+  },
+  "メルメタル": {
+    "index": 809,
+    "types": [
+      "はがね"
+    ],
+    "abilities": [
+      "てつのこぶし"
+    ],
+    "baseStats": {
+      "H": 135,
+      "A": 143,
+      "B": 143,
+      "C": 80,
+      "D": 65,
+      "S": 34
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n809",
+      "key": "n809"
     }
   },
   "サルノリ": {
@@ -28130,6 +28596,32 @@
       "key": "n901"
     }
   },
+  "ガチグマ(アカツキ)": {
+    "index": 901,
+    "types": [
+      "じめん",
+      "ノーマル"
+    ],
+    "abilities": [
+      "しんがん"
+    ],
+    "baseStats": {
+      "H": 113,
+      "A": 70,
+      "B": 120,
+      "C": 135,
+      "D": 65,
+      "S": 52
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n901f",
+      "key": "n901f"
+    }
+  },
   "イダイトウ(オスのすがた)": {
     "index": 902,
     "types": [
@@ -28260,6 +28752,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n905",
       "key": "n905"
+    }
+  },
+  "ラブトロス(れいじゅうフォルム)": {
+    "index": 905,
+    "types": [
+      "フェアリー",
+      "ひこう"
+    ],
+    "abilities": [
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 74,
+      "A": 115,
+      "B": 110,
+      "C": 135,
+      "D": 100,
+      "S": 46
+    },
+    "source": {
+      "game": "PokeAPI",
+      "pokedex": "PokeAPI"
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n905a",
+      "key": "n905a"
     }
   },
   "ニャオハ": {

@@ -97,14 +97,7 @@ const EXCLUDED_FORMS = [
   'ゲッコウガ(サトシゲッコウガ)', // アニメ限定、通常入手不可
 ];
 
-/**
- * towakey/pokedex upstream にstatsデータが存在しないフォーム。
- * upstream が修正されたら除外リストから削除すること。
- */
-const UPSTREAM_MISSING_FORMS = [
-  'ゲンシカイオーガ',
-  'ゲンシグラードン',
-];
+const POKEAPI_FALLBACK_PATH = resolve(ROOT, 'scripts/pokeapi-fallback.generated.json');
 
 const GAME_PRIORITY = [
   'Scarlet_Violet',
@@ -176,10 +169,6 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
     if (EXCLUDED_FORMS.includes(displayName)) {
       continue;
     }
-    // upstream未対応フォームの除外
-    if (UPSTREAM_MISSING_FORMS.includes(displayName)) {
-      continue;
-    }
     // 特定サフィックスを含むフォームの除外
     if (formName && EXCLUDED_FORM_SUFFIXES.some((s) => formName.includes(s))) {
       continue;
@@ -227,6 +216,26 @@ for (const game of GAME_PRIORITY) {
   }
 }
 
+// --- Step 2.5: PokéAPI fallback for upstream-missing stats ---
+
+try {
+  const fallback: Record<string, GamePokedexEntry> = JSON.parse(
+    readFileSync(POKEAPI_FALLBACK_PATH, 'utf-8'),
+  );
+  let fallbackCount = 0;
+  for (const [entryId, entry] of Object.entries(fallback)) {
+    if (!statsMap.has(entryId)) {
+      statsMap.set(entryId, { stats: entry, game: 'PokeAPI', pokedex: 'PokeAPI' });
+      fallbackCount++;
+    }
+  }
+  if (fallbackCount > 0) {
+    console.log(`  PokeAPI fallback: ${fallbackCount} entries supplemented`);
+  }
+} catch {
+  // fallback file not found — continue without
+}
+
 // --- Step 3: yakkun-map.json ---
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
@@ -243,7 +252,9 @@ for (const [entryId, info] of entryIdToInfo) {
   const statsInfo = statsMap.get(entryId);
 
   if (!statsInfo) {
-    noStats.push(displayName);
+    if (!(displayName in output)) {
+      noStats.push(displayName);
+    }
     continue;
   }
 
