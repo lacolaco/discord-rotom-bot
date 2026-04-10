@@ -1,4 +1,6 @@
+import Table from 'cli-table3';
 import pokemonData from './data.generated.json';
+import { calcActuals } from './stats';
 
 export type Pokemon = {
   index: number;
@@ -37,6 +39,10 @@ export async function getAllPokemonNames(params: {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Pokemon info box
+// ---------------------------------------------------------------------------
+
 const STAT_KEYS: (keyof Pokemon['baseStats'])[] = [
   'H',
   'A',
@@ -47,25 +53,72 @@ const STAT_KEYS: (keyof Pokemon['baseStats'])[] = [
 ];
 
 const MAX_STAT = 255;
-const BAR_WIDTH = 18;
+const BAR_WIDTH = 14;
 
-export function formatBaseStatsGraph(baseStats: Pokemon['baseStats']): string {
-  const lines = STAT_KEYS.map((key) => {
-    const value = baseStats[key];
-    const barLen = Math.round((value / MAX_STAT) * BAR_WIDTH);
-    const bar = '='.repeat(barLen) + ' '.repeat(BAR_WIDTH - barLen);
-    return `${key} |${bar}| ${value.toString().padStart(3)}`;
+const TABLE_CHARS = {
+  top: '-',
+  'top-mid': '+',
+  'top-left': '+',
+  'top-right': '+',
+  bottom: '-',
+  'bottom-mid': '+',
+  'bottom-left': '+',
+  'bottom-right': '+',
+  left: '|',
+  'left-mid': '+',
+  mid: '-',
+  'mid-mid': '+',
+  right: '|',
+  'right-mid': '+',
+  middle: '|',
+};
+
+export function formatPokemonInfoBox(params: {
+  name: string;
+  types: string[];
+  baseStats: Pokemon['baseStats'];
+  abilities: string[];
+}): string {
+  const { name, types, baseStats, abilities } = params;
+  const typeStr = types.join('・');
+  // ASCII-only table for stats (no Japanese inside code block)
+  const table = new Table({
+    chars: TABLE_CHARS,
+    style: { head: [], border: [] },
+    colAligns: ['left', 'right', 'right', 'right', 'right'],
   });
-  return '```\n' + lines.join('\n') + '\n```';
-}
 
-export function formatSpeedLines(baseS: number): string {
-  const calc = (ev: number, nature: number) =>
-    Math.floor(
-      (Math.floor(((2 * baseS + 31 + Math.floor(ev / 4)) * 50) / 100) + 5) *
-        nature,
-    );
-  return `S実数値: 最遅${calc(0, 0.9)} / 無振り${calc(0, 1.0)} / 準速${calc(252, 1.0)} / 最速${calc(252, 1.1)}`;
+  table.push([
+    { hAlign: 'left' as const, content: '' },
+    'Max+',
+    'Max',
+    'Min',
+    'Min-',
+  ]);
+
+  for (const key of STAT_KEYS) {
+    const base = baseStats[key];
+    const barLen = Math.round((base / MAX_STAT) * BAR_WIDTH);
+    const bar = '='.repeat(barLen) + ' '.repeat(BAR_WIDTH - barLen);
+    const barStr = `${key} ${bar} ${base.toString().padStart(3)}`;
+    const actuals = calcActuals(key, base);
+    const cells =
+      key === 'H'
+        ? ['', String(actuals[1]), String(actuals[2]), '']
+        : actuals.map(String);
+    table.push([barStr, ...cells]);
+  }
+
+  const lines = [
+    `**${name}**`,
+    typeStr,
+    `特性: ${abilities.join(' / ')}`,
+    '```',
+    table.toString(),
+    '```',
+  ];
+
+  return lines.join('\n');
 }
 
 /**

@@ -1,7 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import {
-  formatBaseStatsGraph,
-  formatSpeedLines,
+  formatPokemonInfoBox,
   getAllPokemonNames,
   searchPokemonByName,
 } from './index';
@@ -28,63 +27,104 @@ describe('searchPokemonByName', () => {
   });
 });
 
-describe('formatSpeedLines', () => {
-  test('calculates speed lines for base speed 65 (ニャオハ)', () => {
-    const result = formatSpeedLines(65);
-    // 最遅: floor((floor((130+31)*50/100)+5)*0.9) = floor(85*0.9) = 76
-    // 無振り: floor((80+5)*1.0) = 85
-    // 準速: floor((floor((130+31+63)*50/100)+5)*1.0) = floor(112+5) = 117
-    // 最速: floor(117*1.1) = 128
-    expect(result).toBe('S実数値: 最遅76 / 無振り85 / 準速117 / 最速128');
-  });
-
-  test('calculates speed lines for base speed 136 (テツノツツミ)', () => {
-    const result = formatSpeedLines(136);
-    // 最遅: floor((floor((272+31)*50/100)+5)*0.9) = floor((151+5)*0.9) = floor(140.4) = 140
-    // 無振り: floor((151+5)*1.0) = 156
-    // 準速: floor((floor((272+31+63)*50/100)+5)*1.0) = floor(183+5) = 188
-    // 最速: floor(188*1.1) = floor(206.8) = 206
-    expect(result).toBe('S実数値: 最遅140 / 無振り156 / 準速188 / 最速206');
-  });
-});
-
-describe('formatBaseStatsGraph', () => {
-  test('formats stats as bar chart in code block', () => {
-    const result = formatBaseStatsGraph({
-      H: 40,
-      A: 61,
-      B: 56,
-      C: 62,
-      D: 63,
-      S: 65,
+describe('formatPokemonInfoBox', () => {
+  test('single ability pokemon with URL', () => {
+    const box = formatPokemonInfoBox({
+      name: 'テツノツツミ',
+      types: ['こおり', 'みず'],
+      baseStats: { H: 56, A: 80, B: 114, C: 124, D: 60, S: 136 },
+      abilities: ['クォークチャージ'],
     });
-    expect(result).toBe(
-      '```\n' +
-        'H |===               |  40\n' +
-        'A |====              |  61\n' +
-        'B |====              |  56\n' +
-        'C |====              |  62\n' +
-        'D |====              |  63\n' +
-        'S |=====             |  65\n' +
-        '```',
-    );
+    const message = box + '\nhttps://yakkun.com/ch/zukan/n991';
+    expect(message).toMatchInlineSnapshot(`
+      "**テツノツツミ**
+      こおり・みず
+      特性: クォークチャージ
+      \`\`\`
+      +----------------------+------+-----+-----+------+
+      |                      | Max+ | Max | Min | Min- |
+      +----------------------+------+-----+-----+------+
+      | H ===             56 |      | 163 | 131 |      |
+      +----------------------+------+-----+-----+------+
+      | A ====            80 |  145 | 132 | 100 |   90 |
+      +----------------------+------+-----+-----+------+
+      | B ======         114 |  182 | 166 | 134 |  120 |
+      +----------------------+------+-----+-----+------+
+      | C =======        124 |  193 | 176 | 144 |  129 |
+      +----------------------+------+-----+-----+------+
+      | D ===             60 |  123 | 112 |  80 |   72 |
+      +----------------------+------+-----+-----+------+
+      | S =======        136 |  206 | 188 | 156 |  140 |
+      +----------------------+------+-----+-----+------+
+      \`\`\`
+      https://yakkun.com/ch/zukan/n991"
+    `);
   });
 
-  test('scales bars correctly for extreme values', () => {
-    const result = formatBaseStatsGraph({
-      H: 255,
-      A: 0,
-      B: 128,
-      C: 1,
-      D: 200,
-      S: 100,
+  test('multiple abilities pokemon with URL', () => {
+    const box = formatPokemonInfoBox({
+      name: 'ピッピ',
+      types: ['フェアリー'],
+      baseStats: { H: 70, A: 45, B: 48, C: 60, D: 65, S: 35 },
+      abilities: ['メロメロボディ', 'マジックガード', 'フレンドガード'],
     });
-    expect(result).toContain('H |==================| 255');
-    expect(result).toContain('A |                  |   0');
-    expect(result).toContain('B |=========         | 128');
-    expect(result).toContain('C |                  |   1');
-    expect(result).toContain('D |==============    | 200');
-    expect(result).toContain('S |=======           | 100');
+    const message = box + '\nhttps://yakkun.com/ch/zukan/n35';
+    expect(message).toMatchInlineSnapshot(`
+      "**ピッピ**
+      フェアリー
+      特性: メロメロボディ / マジックガード / フレンドガード
+      \`\`\`
+      +----------------------+------+-----+-----+------+
+      |                      | Max+ | Max | Min | Min- |
+      +----------------------+------+-----+-----+------+
+      | H ====            70 |      | 177 | 145 |      |
+      +----------------------+------+-----+-----+------+
+      | A ==              45 |  106 |  97 |  65 |   58 |
+      +----------------------+------+-----+-----+------+
+      | B ===             48 |  110 | 100 |  68 |   61 |
+      +----------------------+------+-----+-----+------+
+      | C ===             60 |  123 | 112 |  80 |   72 |
+      +----------------------+------+-----+-----+------+
+      | D ====            65 |  128 | 117 |  85 |   76 |
+      +----------------------+------+-----+-----+------+
+      | S ==              35 |   95 |  87 |  55 |   49 |
+      +----------------------+------+-----+-----+------+
+      \`\`\`
+      https://yakkun.com/ch/zukan/n35"
+    `);
+  });
+
+  test('long pokemon name with URL', () => {
+    const box = formatPokemonInfoBox({
+      name: 'メガリザードンＸ',
+      types: ['ほのお', 'ドラゴン'],
+      baseStats: { H: 78, A: 130, B: 111, C: 130, D: 85, S: 100 },
+      abilities: ['かたいツメ'],
+    });
+    const message = box + '\nhttps://yakkun.com/ch/zukan/n6x';
+    expect(message).toMatchInlineSnapshot(`
+      "**メガリザードンＸ**
+      ほのお・ドラゴン
+      特性: かたいツメ
+      \`\`\`
+      +----------------------+------+-----+-----+------+
+      |                      | Max+ | Max | Min | Min- |
+      +----------------------+------+-----+-----+------+
+      | H ====            78 |      | 185 | 153 |      |
+      +----------------------+------+-----+-----+------+
+      | A =======        130 |  200 | 182 | 150 |  135 |
+      +----------------------+------+-----+-----+------+
+      | B ======         111 |  179 | 163 | 131 |  117 |
+      +----------------------+------+-----+-----+------+
+      | C =======        130 |  200 | 182 | 150 |  135 |
+      +----------------------+------+-----+-----+------+
+      | D =====           85 |  150 | 137 | 105 |   94 |
+      +----------------------+------+-----+-----+------+
+      | S =====          100 |  167 | 152 | 120 |  108 |
+      +----------------------+------+-----+-----+------+
+      \`\`\`
+      https://yakkun.com/ch/zukan/n6x"
+    `);
   });
 });
 
