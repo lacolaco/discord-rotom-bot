@@ -29,17 +29,26 @@ function buildMetaFields(data: PokemonViewModel): APIEmbedField[] {
   ];
 }
 
-function formatStatValue(s: StatActuals): string {
+function buildBaseStatsField(data: PokemonViewModel): APIEmbedField {
+  const values = data.stats.map((s) => s.base).join('-');
+  return {
+    name: '種族値',
+    value: `${values} (合計 ${data.bst})`,
+    inline: false,
+  };
+}
+
+function formatActualValue(s: StatActuals): string {
   if (s.maxPlus === null) {
     return `${s.max} / ${s.min}`;
   }
   return `**${s.maxPlus}** / ${s.max} / ${s.min} / **${s.minMinus}**`;
 }
 
-function buildStatFields(data: PokemonViewModel): APIEmbedField[] {
+function buildActualFields(data: PokemonViewModel): APIEmbedField[] {
   return data.stats.map((s) => ({
-    name: `${s.key} ${s.base}`,
-    value: formatStatValue(s),
+    name: s.key,
+    value: formatActualValue(s),
     inline: true,
   }));
 }
@@ -52,10 +61,9 @@ export function formatPokemonEmbed(data: PokemonViewModel): APIEmbed {
     color,
     fields: [
       ...buildMetaFields(data),
-      { name: '種族値', value: 'Max+ / Max / Min / Min-', inline: false },
-      ...buildStatFields(data),
+      buildBaseStatsField(data),
+      ...buildActualFields(data),
     ],
-    footer: { text: `合計: ${data.bst}` },
     ...(data.yakkunUrl ? { url: data.yakkunUrl } : {}),
   };
 }
