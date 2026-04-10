@@ -104,7 +104,8 @@ function getAbilityJaName(englishName: string): string {
 function buildLookupName(nameEng: string, formEng: string): string {
   if (!formEng) return nameEng;
   if (formEng.toLowerCase().includes(nameEng.toLowerCase())) {
-    const rest = formEng.replace(new RegExp(nameEng, 'i'), '').trim();
+    const escaped = nameEng.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const rest = formEng.replace(new RegExp(escaped, 'i'), '').trim();
     if (rest) return `${nameEng}-${rest}`;
     return nameEng;
   }
