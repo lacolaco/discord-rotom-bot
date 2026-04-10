@@ -9,11 +9,9 @@ import {
   InteractionResponseType,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
-import {
-  formatPokemonInfoBox,
-  getAllPokemonNames,
-  searchPokemonByName,
-} from '../pokeinfo';
+import { buildPokemonViewModel } from '../pokeinfo/view-model';
+import { formatPokemonEmbed } from '../pokeinfo/embed';
+import { getAllPokemonNames, searchPokemonByName } from '../pokeinfo';
 
 export default {
   name: 'pokeinfo',
@@ -48,21 +46,12 @@ export async function createResponse(
   const data = await searchPokemonByName(name);
   if (data) {
     console.log(`[pokeinfo] found pokemon: ${data.yakkun?.url ?? name}`);
-    const lines = [
-      formatPokemonInfoBox({
-        name,
-        types: data.types,
-        baseStats: data.baseStats,
-        abilities: data.abilities,
-      }),
-    ];
-    if (data.yakkun?.url) {
-      lines.push(data.yakkun.url);
-    }
+    const viewModel = buildPokemonViewModel(name, data);
+    const embed = formatPokemonEmbed(viewModel);
     return {
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: lines.join('\n'),
+        embeds: [embed],
       },
     };
   } else {
