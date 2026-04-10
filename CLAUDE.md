@@ -61,9 +61,12 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 
 - **データソース**: `vendor/pokedex` (git submodule, towakey/pokedex)
 - **生成スクリプト**: `npx tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
+  - `scripts/lib/pokedex-parser.ts`: pokedex解析（グローバル図鑑→名前マッピング、ゲームデータ→種族値）
+  - `scripts/lib/showdown.ts`: @pkmn/dex ヘルパー（Showdownデータからstats/types/abilities取得、特性の英日変換）
+  - `scripts/lib/fallback.ts`: フォールバック補完（drop検出 + showdown.tsでデータ解決）
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
-- **除外パターン**: `generate-pokemon-data.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES`
-- **PokéAPIフォールバック**: `scripts/fetch-pokeapi-fallback.ts` が `pokeapi-fallback.generated.json` を生成。pokedexにstatsがないポケモンを補完。pokedex側にstatsが追加されれば自動的に無視される
+- **除外パターン**: `pokedex-parser.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES`
+- **フォールバック**: pokedexにstatsがないポケモンを `@pkmn/dex` (Showdown) から自動補完。ネットワーク不要。pokedex側にstatsが追加されれば自動的に不要になる
 - **定期更新**: `update-pokemon-data.yml` が週次でpokedex submoduleを更新しPR作成
 - `*.generated.*` ファイルは eslint / prettier の対象外
 

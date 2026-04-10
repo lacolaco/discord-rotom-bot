@@ -27,7 +27,6 @@ jobs:
           cd vendor/pokedex
           git fetch origin
           git checkout origin/master
-      - run: npx tsx scripts/fetch-pokeapi-fallback.ts
       - run: npx tsx scripts/generate-pokemon-data.ts
       - name: Check for changes
         id: diff
@@ -42,7 +41,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           BRANCH="chore/update-pokemon-data-$(date +%Y%m%d%H%M%S)"
           git checkout -b "$BRANCH"
-          git add vendor/pokedex src/pokeinfo/data.generated.json src/pokeinfo/yakkun-map.json scripts/pokeapi-fallback.generated.json
+          git add vendor/pokedex src/pokeinfo/data.generated.json src/pokeinfo/yakkun-map.json
           git commit -m "chore: update pokemon data from towakey/pokedex"
           git push origin "$BRANCH"
           gh pr create --title "chore: update pokemon data" --body "towakey/pokedex の最新データで data.generated.json を更新。"
