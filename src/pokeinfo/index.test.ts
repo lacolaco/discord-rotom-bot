@@ -47,6 +47,15 @@ describe('searchPokemonByName', () => {
     expect(result!.types).toEqual(['みず']);
     expect(result!.baseStats.C).toBe(180);
   });
+
+  test('returns data for mega form injected from @pkmn/dex', async () => {
+    const result = await searchPokemonByName('メガスコヴィラン');
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['くさ', 'ほのお']);
+    expect(result!.baseStats.H).toBe(65);
+    expect(result!.baseStats.A).toBe(138);
+    expect(result!.index).toBe(952);
+  });
 });
 
 describe('formatPokemonInfoBox', () => {
