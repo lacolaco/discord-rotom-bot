@@ -1,4 +1,4 @@
-compatibility_date = "2023-09-17"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 main = "src/index.ts"
 name = "discord-rotom-bot"
