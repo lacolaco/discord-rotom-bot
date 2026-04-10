@@ -115,6 +115,23 @@ function buildLookupName(nameEng: string, formEng: string): string {
 }
 
 /**
+ * @pkmn/dex の Species を名前で検索する。
+ * buildLookupName で見つからない場合、formEng の先頭単語のみで再試行する。
+ */
+function findSpecies(nameEng: string, formEng: string) {
+  const primary = buildLookupName(nameEng, formEng);
+  const sp = dex.species.get(primary);
+  if (sp?.exists) return sp;
+  // フォールバック: formEng の先頭単語のみ（例: "Eternal Flower" → "Eternal"）
+  if (formEng && formEng.includes(' ')) {
+    const firstWord = formEng.split(' ')[0];
+    const fallback = dex.species.get(`${nameEng}-${firstWord}`);
+    if (fallback?.exists) return fallback;
+  }
+  return null;
+}
+
+/**
  * @pkmn/dex の Species を GamePokedexEntry に変換する。
  */
 function speciesToEntry(species: ReturnType<typeof dex.species.get>): GamePokedexEntry {
@@ -149,9 +166,8 @@ export function fetchEntry(
 ): GamePokedexEntry | null {
   buildAbilityMap(pokedexBase);
 
-  const lookup = buildLookupName(nameEng, formEng);
-  const species = dex.species.get(lookup);
-  if (!species?.exists) return null;
+  const species = findSpecies(nameEng, formEng);
+  if (!species) return null;
 
   return speciesToEntry(species);
 }
