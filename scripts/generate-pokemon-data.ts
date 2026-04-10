@@ -155,6 +155,14 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
     } else if (formName === 'ノーマルモード') {
       formName = null;
     }
+    // コスチューム違いフォームの除外: base entry以外をスキップ
+    // base entryのformNameは既定フォーム名なので無視する
+    if (COSMETIC_ONLY_BASE_NAMES.includes(jpnName)) {
+      if (entryId !== baseEntryId) {
+        continue;
+      }
+      formName = null;
+    }
     const displayName =
       formName?.startsWith('メガ') || formName?.startsWith('ゲンシ')
         ? formName
@@ -170,10 +178,6 @@ for (const [natNum, entries] of Object.entries(globalPokedex.pokedex)) {
     }
     // upstream未対応フォームの除外
     if (UPSTREAM_MISSING_FORMS.includes(displayName)) {
-      continue;
-    }
-    // コスチューム違いフォームの除外: base formのみ残す
-    if (formName && COSMETIC_ONLY_BASE_NAMES.includes(jpnName)) {
       continue;
     }
     // 特定サフィックスを含むフォームの除外
@@ -293,6 +297,17 @@ writeFileSync(
   'utf-8',
 );
 
+// Sync yakkun-map.json: rebuild from sortedOutput keys only
+const newYakkunMap: Record<string, string | null> = {};
+for (const name of Object.keys(sortedOutput)) {
+  newYakkunMap[name] = yakkunMap[name] ?? null;
+}
+writeFileSync(
+  YAKKUN_MAP_PATH,
+  JSON.stringify(newYakkunMap, null, 2) + '\n',
+  'utf-8',
+);
+
 // --- Step 6: Summary ---
 
 const totalEntries = Object.keys(sortedOutput).length;
@@ -315,4 +330,7 @@ for (const [game, count] of [...sourceDist.entries()].sort((a, b) => b[1] - a[1]
 
 if (noStats.length > 0) {
   console.log(`\n  dropped (no stats): ${noStats.length}`);
+  for (const name of noStats) {
+    console.log(`    - ${name}`);
+  }
 }
