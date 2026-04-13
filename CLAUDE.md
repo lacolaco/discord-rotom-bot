@@ -75,6 +75,8 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
   - `scripts/lib/fallback.ts`: フォールバック補完（drop検出 + showdown.tsでデータ解決 + 欠損メガ/ゲンシフォーム注入）
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
 - **除外パターン**: `pokedex-parser.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES` / `EXCLUDED_FORMS`（フラエッテは花色のみ個別除外、えいえんのはな・メガは別種族値のため残す）
+- **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用し、全データソースの処理結果を最終補正する。`GamePokedexEntry` の任意のフィールドを部分指定可能
+- **データ優先順位**: errata（最終補正） > @pkmn/dex（フォールバック） > vendor/pokedex
 - **フォールバック（stats補完）**: pokedexにstatsがないポケモンを `@pkmn/dex` (Showdown) から自動補完。ネットワーク不要。pokedex側にstatsが追加されれば自動的に不要になる
 - **フォールバック（フォーム注入）**: pokedexにエントリ自体がないメガ/ゲンシフォームを `@pkmn/dex` から自動検出・注入（`injectMissingForms`）。基本フォームの英語名 + Mega/Mega-X/Mega-Y/Primal で検索。日本語名は `メガ{基本名}` / `ゲンシ{基本名}` で構築。@pkmn/dex の `isNonstandard: "Future"` フラグはZ-Aメガ全体に付いておりフィルタに使えない
 - **フォールバック（type/ability補完）**: pokedexにstatsはあるがtype1またはability1が空のエントリ（LegendsZA新フォーム等）のtype/abilityを `@pkmn/dex` から補完（`supplementMissingTypes`）。statsは vendor/pokedex の値を保持。type1がある場合はtypeを上書きしない
