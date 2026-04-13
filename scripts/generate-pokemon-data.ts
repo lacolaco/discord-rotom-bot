@@ -14,7 +14,7 @@ import { applyErrata, injectMissingForms, supplementMissingStats, supplementMiss
 
 const ROOT = resolve(import.meta.dirname, '..');
 const POKEDEX_BASE = resolve(ROOT, 'vendor/pokedex/pokedex');
-const ERRATA_PATH = resolve(import.meta.dirname, 'errata.json');
+const ERRATA_PATH = resolve(import.meta.dirname, 'pokedex-errata.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
 
