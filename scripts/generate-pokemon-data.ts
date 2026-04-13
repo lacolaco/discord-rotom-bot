@@ -10,10 +10,11 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseGlobalPokedex, loadGameStats, type EntryInfo, type StatsEntry } from './lib/pokedex-parser';
-import { injectMissingForms, supplementMissingStats, supplementMissingTypes } from './lib/fallback';
+import { applyErrata, injectMissingForms, supplementMissingStats, supplementMissingTypes } from './lib/fallback';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const POKEDEX_BASE = resolve(ROOT, 'vendor/pokedex/pokedex');
+const ERRATA_PATH = resolve(import.meta.dirname, 'errata.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
 
@@ -35,6 +36,9 @@ const statsMap = loadGameStats(POKEDEX_BASE);
 injectMissingForms(entryIdToInfo, statsMap, nameToNatNum, POKEDEX_BASE);
 supplementMissingStats(entryIdToInfo, statsMap, POKEDEX_BASE);
 supplementMissingTypes(entryIdToInfo, statsMap, POKEDEX_BASE);
+
+const errata = JSON.parse(readFileSync(ERRATA_PATH, 'utf-8'));
+applyErrata(entryIdToInfo, statsMap, errata);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),

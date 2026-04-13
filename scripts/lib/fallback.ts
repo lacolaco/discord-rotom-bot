@@ -5,7 +5,46 @@
  * pokedex にエントリ自体がないメガ/ゲンシフォームも @pkmn/dex から注入する。
  */
 import { fetchEntry, findMegaPrimalForms } from './showdown';
-import type { EntryInfo, StatsEntry } from './pokedex-parser';
+import type { EntryInfo, GamePokedexEntry, StatsEntry } from './pokedex-parser';
+
+/**
+ * 外部データソースの既知の誤りを正誤表（errata）で最終補正する。
+ * パイプラインの末尾で実行し、全データソースの処理結果を上書きする。
+ * 指定されたフィールドのみ上書きし、それ以外は既存値を保持する。
+ */
+export function applyErrata(
+  entryIdToInfo: Map<string, EntryInfo>,
+  statsMap: Map<string, StatsEntry>,
+  errata: Record<string, Partial<GamePokedexEntry>>,
+): void {
+  // displayName → entryId の逆引きマップ
+  const displayNameToEntryId = new Map<string, string>();
+  for (const [entryId, info] of entryIdToInfo) {
+    if (!displayNameToEntryId.has(info.displayName)) {
+      displayNameToEntryId.set(info.displayName, entryId);
+    }
+  }
+
+  let count = 0;
+  for (const [displayName, corrections] of Object.entries(errata)) {
+    const entryId = displayNameToEntryId.get(displayName);
+    if (!entryId) {
+      console.log(`    WARNING: errata target not found: ${displayName}`);
+      continue;
+    }
+    const statsEntry = statsMap.get(entryId);
+    if (!statsEntry) {
+      console.log(`    WARNING: errata target has no stats: ${displayName}`);
+      continue;
+    }
+    Object.assign(statsEntry.stats, corrections);
+    count++;
+    console.log(`    ${displayName}`);
+  }
+  if (count > 0) {
+    console.log(`  Errata applied: ${count} entries`);
+  }
+}
 
 /**
  * statsMapに存在しないポケモンを @pkmn/dex から取得してstatsMapに追加する。

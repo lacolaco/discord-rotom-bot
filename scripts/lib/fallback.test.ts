@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { EntryInfo, GamePokedexEntry, StatsEntry } from './pokedex-parser';
-import { supplementMissingTypes } from './fallback';
+import { applyErrata, supplementMissingTypes } from './fallback';
 
 vi.mock('./showdown', () => ({
   fetchEntry: vi.fn(
@@ -64,6 +64,70 @@ function makeStats(overrides: Partial<GamePokedexEntry>): StatsEntry {
     pokedex: 'LegendsArceus',
   };
 }
+
+describe('applyErrata', () => {
+  it('正誤表のフィールドを既存エントリに適用する', () => {
+    const entryIdToInfo = new Map<string, EntryInfo>([
+      ['0670_mega', makeInfo({ displayName: 'メガフラエッテ', natNum: 670, nameEng: 'Floette', formEng: 'Mega Floette' })],
+    ]);
+    const statsMap = new Map<string, StatsEntry>([
+      ['0670_mega', makeStats({ type1: '', ability1: '', ability2: '', dream_ability: '' })],
+    ]);
+    const overrides: Record<string, Partial<GamePokedexEntry>> = {
+      'メガフラエッテ': {
+        type1: 'フェアリー',
+        ability1: 'フェアリーオーラ',
+      },
+    };
+
+    applyErrata(entryIdToInfo, statsMap, overrides);
+
+    const stats = statsMap.get('0670_mega')!.stats;
+    expect(stats.ability1).toBe('フェアリーオーラ');
+    expect(stats.type1).toBe('フェアリー');
+    // 正誤表にないフィールドは変更しない
+    expect(stats.ability2).toBe('');
+    expect(stats.hp).toBe(80);
+  });
+
+  it('正誤表にないポケモンは影響を受けない', () => {
+    const entryIdToInfo = new Map<string, EntryInfo>([
+      ['0025', makeInfo({ displayName: 'ピカチュウ', natNum: 25, nameEng: 'Pikachu' })],
+    ]);
+    const original: GamePokedexEntry = {
+      type1: 'でんき', type2: '', hp: 35, attack: 55, defense: 40,
+      special_attack: 50, special_defense: 50, speed: 90,
+      ability1: 'せいでんき', ability2: '', dream_ability: 'ひらいしん',
+    };
+    const statsMap = new Map<string, StatsEntry>([
+      ['0025', { stats: { ...original }, game: 'Scarlet_Violet', pokedex: 'Scarlet_Violet' }],
+    ]);
+
+    applyErrata(entryIdToInfo, statsMap, { 'メガフラエッテ': { ability1: 'フェアリーオーラ' } });
+
+    expect(statsMap.get('0025')!.stats).toEqual(original);
+  });
+
+  it('supplementMissingTypesで補完された誤データをerrataで最終補正する', () => {
+    const entryIdToInfo = new Map<string, EntryInfo>([
+      ['test01', makeInfo({ displayName: 'テストモン', natNum: 999, nameEng: 'TestMon' })],
+    ]);
+    const statsMap = new Map<string, StatsEntry>([
+      ['test01', makeStats({ ability1: '', ability2: '' })],
+    ]);
+
+    // supplementMissingTypesが外部データで補完（誤データ）
+    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
+    expect(statsMap.get('test01')!.stats.ability1).toBe('もうか');
+
+    // errataで最終補正
+    applyErrata(entryIdToInfo, statsMap, { 'テストモン': { ability1: 'カスタム特性' } });
+
+    const stats = statsMap.get('test01')!.stats;
+    expect(stats.ability1).toBe('カスタム特性');
+    expect(stats.type1).toBe('ほのお'); // errataにないフィールドは維持
+  });
+});
 
 describe('supplementMissingTypes', () => {
   it('type1ありability空のエントリのabilityを補完し、type1は上書きしない', () => {
