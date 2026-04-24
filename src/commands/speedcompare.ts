@@ -29,7 +29,7 @@ type History = {
 const HISTORY_LIMIT = 10;
 const HISTORY_TTL_SECONDS = 60 * 60 * 24 * 30; // 30日
 const AUTOCOMPLETE_LIMIT = 25;
-const TYPICAL_SP_VALUES = [0, 4, 12, 20, 28, 32];
+const TYPICAL_SP_VALUES = [0, 2, 32];
 
 export default {
   name: 'speedcompare',
@@ -247,7 +247,7 @@ export async function createAutocompleteResponse(
     focused.type === ApplicationCommandOptionType.Integer &&
     focused.name === 'a_sp'
   ) {
-    // a_sp の候補は少数固定 (typical 6 + history 10) のため、入力値でのフィルタは行わず全件提示する
+    // a_sp の候補は少数固定 (typical 3 + history 10) のため、入力値でのフィルタは行わず全件提示する
     const candidates = Array.from(
       new Set([...history.aSp, ...TYPICAL_SP_VALUES]),
     ).filter((n) => n >= 0 && n <= 32);
