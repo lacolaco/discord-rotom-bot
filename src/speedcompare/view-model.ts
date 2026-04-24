@@ -1,6 +1,10 @@
 import type { Pokemon } from '../pokeinfo';
 import { calcActuals } from '../pokeinfo/stats';
-import { findMinimalReversal, Nature, ReversalResult } from './compare';
+import {
+  findMinimalReversal,
+  type Nature,
+  type ReversalResult,
+} from './compare';
 import { effectiveSpeed } from './speed';
 
 export type AInput = {

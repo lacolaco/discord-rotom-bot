@@ -29,8 +29,8 @@ describe('buildSpeedCompareViewModel', () => {
     expect(vm.aName).toBe('テツノツツミ');
     expect(vm.aConfig).toBe('SP32 ↑補正');
     expect(vm.aSpeed).toBe(206);
-    // Bランク0: B最速(AP32↑)=206 → 同速 → always_a (>の判定なので等速はA勝ち扱い)
-    // Bランク+1: B最遅(AP0↓)= floor(140*1.5)=210 > 206 → always_b
+    // Bランク0: B最速(SP32↑)=206 → 同速 → always_a (>の判定なので等速はA勝ち扱い)
+    // Bランク+1: B最遅(SP0↓)= floor(140*1.5)=210 > 206 → always_b
     const rank0 = vm.reversals.find((r) => r.rank === 0);
     expect(rank0?.result).toEqual({ kind: 'always_a' });
     const rankPlus1 = vm.reversals.find((r) => r.rank === 1);
