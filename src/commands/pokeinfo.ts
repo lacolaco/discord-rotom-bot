@@ -38,6 +38,7 @@ const SHARE_ACTION = 'share';
 
 export async function createResponse(
   interaction: APIApplicationCommandInteraction,
+  _env: unknown,
 ): Promise<APIInteractionResponse | null> {
   if (interaction.data.type !== ApplicationCommandType.ChatInput) {
     return null;
@@ -130,6 +131,7 @@ export async function createComponentResponse(
 
 export async function createAutocompleteResponse(
   interaction: APIApplicationCommandAutocompleteInteraction,
+  _env: unknown,
 ): Promise<APIApplicationCommandAutocompleteResponse | null> {
   const focusedValue = interaction.data.options.find(
     (option) =>

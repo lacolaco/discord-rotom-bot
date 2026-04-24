@@ -3,6 +3,7 @@ import { Sentry } from './observability/types';
 export type Env = {
   SENTRY_DSN: string;
   NEWS_KV: KVNamespace;
+  SPEEDCOMPARE_KV: KVNamespace;
   DISCORD_APPLICATION_ID: string;
   DISCORD_TOKEN: string;
   DISCORD_PUBLIC_KEY: string;

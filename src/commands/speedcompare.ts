@@ -1,24 +1,16 @@
 import {
-  APIActionRowComponent,
   APIApplicationCommandAutocompleteInteraction,
   APIApplicationCommandAutocompleteResponse,
   APIApplicationCommandInteraction,
-  APIComponentInMessageActionRow,
-  APIComponentInModalActionRow,
+  APIInteraction,
   APIInteractionResponse,
-  APIMessageComponentInteraction,
-  APIModalInteractionResponseCallbackData,
-  APIModalSubmitInteraction,
   ApplicationCommandOptionType,
   ApplicationCommandType,
-  ButtonStyle,
-  ComponentType,
   InteractionResponseType,
   MessageFlags,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
-  TextInputStyle,
 } from 'discord-api-types/v10';
-import { ComponentResult } from '.';
+import { Env } from '../context';
 import { getAllPokemonNames, searchPokemonByName } from '../pokeinfo';
 import type { Nature } from '../speedcompare/compare';
 import { buildSpeedCompareViewModel } from '../speedcompare/view-model';
@@ -28,9 +20,16 @@ const NATURE_UP = 'up';
 const NATURE_NEUTRAL = 'neutral';
 const NATURE_DOWN = 'down';
 
-const CHANGE_B_ACTION = 'change_b';
-const SUBMIT_B_ACTION = 'submit_b';
-const MODAL_B_NAME_INPUT = 'b_name';
+type History = {
+  a: string[];
+  aSp: number[];
+  b: string[];
+};
+
+const HISTORY_LIMIT = 10;
+const HISTORY_TTL_SECONDS = 60 * 60 * 24 * 30; // 30日
+const AUTOCOMPLETE_LIMIT = 25;
+const TYPICAL_SP_VALUES = [0, 4, 12, 20, 28, 32];
 
 export default {
   name: 'speedcompare',
@@ -38,18 +37,20 @@ export default {
   options: [
     {
       name: 'a',
-      description: 'ベースポケモンA（自分側）',
+      description:
+        'ベースポケモンA（直近使用したポケモンが上位に表示されます）',
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
     },
     {
       name: 'a_sp',
-      description: 'Aの素早さSP (0〜32)',
+      description: 'Aの素早さSP (0〜32、直近使用値が上位に表示されます)',
       type: ApplicationCommandOptionType.Integer,
       required: true,
       min_value: 0,
       max_value: 32,
+      autocomplete: true,
     },
     {
       name: 'a_nature',
@@ -64,7 +65,8 @@ export default {
     },
     {
       name: 'b',
-      description: '仮想敵ポケモンB',
+      description:
+        '仮想敵ポケモンB（直近使用したポケモンが上位に表示されます）',
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
@@ -72,100 +74,65 @@ export default {
   ],
 } satisfies RESTPostAPIChatInputApplicationCommandsJSONBody;
 
-function parseNature(code: string): Nature {
-  if (code === NATURE_UP) return 1.1;
-  if (code === NATURE_DOWN) return 0.9;
+function parseNature(value: string): Nature {
+  if (value === NATURE_UP) return 1.1;
+  if (value === NATURE_DOWN) return 0.9;
   return 1.0;
 }
 
-function natureCode(nature: Nature): string {
-  if (nature === 1.1) return NATURE_UP;
-  if (nature === 0.9) return NATURE_DOWN;
-  return NATURE_NEUTRAL;
+function getUserId(interaction: APIInteraction): string | null {
+  return interaction.member?.user.id ?? interaction.user?.id ?? null;
 }
 
-function buildChangeBRow(
-  aName: string,
-  aSp: number,
-  aNature: Nature,
-): APIActionRowComponent<APIComponentInMessageActionRow> {
-  return {
-    type: ComponentType.ActionRow,
-    components: [
-      {
-        type: ComponentType.Button,
-        style: ButtonStyle.Secondary,
-        label: '🔁 Bを変えて再計算',
-        custom_id: `speedcompare:${CHANGE_B_ACTION}:${aName}:${aSp}:${natureCode(aNature)}`,
-      },
-    ],
-  };
+function historyKey(userId: string): string {
+  return `sc:history:${userId}`;
 }
 
-function buildChangeBModal(
-  aName: string,
-  aSp: number,
-  aNature: Nature,
-): APIModalInteractionResponseCallbackData {
-  const row: APIActionRowComponent<APIComponentInModalActionRow> = {
-    type: ComponentType.ActionRow,
-    components: [
-      {
-        type: ComponentType.TextInput,
-        custom_id: MODAL_B_NAME_INPUT,
-        label: 'ポケモンB名 (日本語正式名)',
-        style: TextInputStyle.Short,
-        required: true,
-        max_length: 32,
-      },
-    ],
-  };
-  return {
-    custom_id: `speedcompare:${SUBMIT_B_ACTION}:${aName}:${aSp}:${natureCode(aNature)}`,
-    title: `vs ${aName} (SP${aSp} ${aNature === 1.1 ? '↑' : aNature === 0.9 ? '↓' : '無'})`,
-    components: [row],
-  };
+function emptyHistory(): History {
+  return { a: [], aSp: [], b: [] };
 }
 
-async function renderResult(
-  aName: string,
-  aSp: number,
-  aNature: Nature,
-  bName: string,
-): Promise<APIInteractionResponse> {
-  const [aData, bData] = await Promise.all([
-    searchPokemonByName(aName),
-    searchPokemonByName(bName),
-  ]);
-  if (!aData || !bData) {
-    const missing = [!aData && `"${aName}"`, !bData && `"${bName}"`]
-      .filter(Boolean)
-      .join(' と ');
+async function loadHistory(env: Env, userId: string): Promise<History> {
+  const raw = await env.SPEEDCOMPARE_KV.get(historyKey(userId));
+  if (!raw) return emptyHistory();
+  try {
+    const parsed = JSON.parse(raw) as Partial<History>;
     return {
-      type: InteractionResponseType.ChannelMessageWithSource,
-      data: {
-        content: `${missing} の情報は見つからなかったロトね...`,
-        flags: MessageFlags.Ephemeral,
-      },
+      a: Array.isArray(parsed.a) ? parsed.a : [],
+      aSp: Array.isArray(parsed.aSp) ? parsed.aSp : [],
+      b: Array.isArray(parsed.b) ? parsed.b : [],
     };
+  } catch {
+    return emptyHistory();
   }
-  const vm = buildSpeedCompareViewModel({
-    a: { name: aName, pokemon: aData, sp: aSp, nature: aNature },
-    b: { name: bName, pokemon: bData },
+}
+
+async function saveHistory(
+  env: Env,
+  userId: string,
+  history: History,
+): Promise<void> {
+  await env.SPEEDCOMPARE_KV.put(historyKey(userId), JSON.stringify(history), {
+    expirationTtl: HISTORY_TTL_SECONDS,
   });
-  const embed = formatSpeedCompareEmbed(vm);
-  return {
-    type: InteractionResponseType.ChannelMessageWithSource,
-    data: {
-      embeds: [embed],
-      components: [buildChangeBRow(aName, aSp, aNature)],
-      flags: MessageFlags.Ephemeral,
-    },
-  };
+}
+
+function pushHistory<T>(list: T[], value: T): T[] {
+  return [value, ...list.filter((v) => v !== value)].slice(0, HISTORY_LIMIT);
+}
+
+/** 候補リストを、historyにある値を上位にくるよう並び替える (重複なし) */
+function sortByHistory<T>(choices: T[], history: T[]): T[] {
+  const choiceSet = new Set(choices);
+  const historyPart = history.filter((v) => choiceSet.has(v));
+  const historySet = new Set(historyPart);
+  const restPart = choices.filter((v) => !historySet.has(v));
+  return [...historyPart, ...restPart];
 }
 
 export async function createResponse(
   interaction: APIApplicationCommandInteraction,
+  env: Env,
 ): Promise<APIInteractionResponse | null> {
   if (interaction.data.type !== ApplicationCommandType.ChatInput) {
     return null;
@@ -187,78 +154,101 @@ export async function createResponse(
   const aSp = spOpt.value;
   const aNature = parseNature(natureOpt.value);
   const bName = bOpt.value;
+  const userId = getUserId(interaction);
   console.log(
-    `[speedcompare] a=${aName} sp=${aSp} nature=${aNature} b=${bName}`,
+    `[speedcompare] a=${aName} sp=${aSp} nature=${aNature} b=${bName} (user=${userId})`,
   );
-  return renderResult(aName, aSp, aNature, bName);
-}
 
-export async function createComponentResponse(
-  interaction: APIMessageComponentInteraction,
-): Promise<ComponentResult | null> {
-  const [, action, aName, aSpStr, aNatureCode] =
-    interaction.data.custom_id.split(':');
-  if (action !== CHANGE_B_ACTION || !aName || !aSpStr || !aNatureCode) {
-    return null;
+  const [aData, bData] = await Promise.all([
+    searchPokemonByName(aName),
+    searchPokemonByName(bName),
+  ]);
+  if (!aData || !bData) {
+    const missing = [!aData && `"${aName}"`, !bData && `"${bName}"`]
+      .filter(Boolean)
+      .join(' と ');
+    return {
+      type: InteractionResponseType.ChannelMessageWithSource,
+      data: {
+        content: `${missing} の情報は見つからなかったロトね...`,
+        flags: MessageFlags.Ephemeral,
+      },
+    };
   }
-  const aSp = Number(aSpStr);
-  const aNature = parseNature(aNatureCode);
+
+  if (userId) {
+    const prev = await loadHistory(env, userId);
+    const next: History = {
+      a: pushHistory(prev.a, aName),
+      aSp: pushHistory(prev.aSp, aSp),
+      b: pushHistory(prev.b, bName),
+    };
+    await saveHistory(env, userId, next);
+  }
+
+  const vm = buildSpeedCompareViewModel({
+    a: { name: aName, pokemon: aData, sp: aSp, nature: aNature },
+    b: { name: bName, pokemon: bData },
+  });
+  const embed = formatSpeedCompareEmbed(vm);
   return {
-    response: {
-      type: InteractionResponseType.Modal,
-      data: buildChangeBModal(aName, aSp, aNature),
+    type: InteractionResponseType.ChannelMessageWithSource,
+    data: {
+      embeds: [embed],
+      flags: MessageFlags.Ephemeral,
     },
   };
-}
-
-export async function createModalSubmitResponse(
-  interaction: APIModalSubmitInteraction,
-): Promise<ComponentResult | null> {
-  const [, action, aName, aSpStr, aNatureCode] =
-    interaction.data.custom_id.split(':');
-  if (action !== SUBMIT_B_ACTION || !aName || !aSpStr || !aNatureCode) {
-    return null;
-  }
-  const aSp = Number(aSpStr);
-  const aNature = parseNature(aNatureCode);
-  let bName: string | undefined;
-  for (const row of interaction.data.components) {
-    if (row.type !== ComponentType.ActionRow) continue;
-    for (const comp of row.components) {
-      if (
-        comp.type === ComponentType.TextInput &&
-        comp.custom_id === MODAL_B_NAME_INPUT
-      ) {
-        bName = comp.value.trim();
-      }
-    }
-  }
-  if (!bName) {
-    return null;
-  }
-  console.log(
-    `[speedcompare:modal] a=${aName} sp=${aSp} nature=${aNature} b=${bName}`,
-  );
-  return { response: await renderResult(aName, aSp, aNature, bName) };
 }
 
 export async function createAutocompleteResponse(
   interaction: APIApplicationCommandAutocompleteInteraction,
+  env: Env,
 ): Promise<APIApplicationCommandAutocompleteResponse | null> {
   const focused = interaction.data.options.find(
-    (o) => o.type === ApplicationCommandOptionType.String && o.focused,
+    (o) =>
+      (o.type === ApplicationCommandOptionType.String ||
+        o.type === ApplicationCommandOptionType.Integer) &&
+      o.focused,
   );
-  if (!focused || focused.type !== ApplicationCommandOptionType.String) {
-    return null;
+  if (!focused) return null;
+
+  const userId = getUserId(interaction);
+  const history = userId ? await loadHistory(env, userId) : emptyHistory();
+
+  if (
+    focused.type === ApplicationCommandOptionType.String &&
+    (focused.name === 'a' || focused.name === 'b')
+  ) {
+    const query = focused.value;
+    const hits = await getAllPokemonNames({ prefix: query });
+    const histList = focused.name === 'a' ? history.a : history.b;
+    const sorted = sortByHistory(hits, histList).slice(0, AUTOCOMPLETE_LIMIT);
+    return {
+      type: InteractionResponseType.ApplicationCommandAutocompleteResult,
+      data: {
+        choices: sorted.map((c) => ({ name: c, value: c })),
+      },
+    };
   }
-  if (focused.name !== 'a' && focused.name !== 'b') {
-    return null;
+
+  if (
+    focused.type === ApplicationCommandOptionType.Integer &&
+    focused.name === 'a_sp'
+  ) {
+    const candidates = Array.from(
+      new Set([...history.aSp, ...TYPICAL_SP_VALUES]),
+    ).filter((n) => n >= 0 && n <= 32);
+    const sorted = sortByHistory(candidates, history.aSp).slice(
+      0,
+      AUTOCOMPLETE_LIMIT,
+    );
+    return {
+      type: InteractionResponseType.ApplicationCommandAutocompleteResult,
+      data: {
+        choices: sorted.map((n) => ({ name: String(n), value: n })),
+      },
+    };
   }
-  const choices = await getAllPokemonNames({ prefix: focused.value });
-  return {
-    type: InteractionResponseType.ApplicationCommandAutocompleteResult,
-    data: {
-      choices: choices.slice(0, 25).map((c) => ({ name: c, value: c })),
-    },
-  };
+
+  return null;
 }

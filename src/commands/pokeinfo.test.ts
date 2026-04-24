@@ -66,7 +66,10 @@ function buildComponentInteraction(
 
 describe('createResponse', () => {
   test('known pokemon returns ephemeral embed with share button', async () => {
-    const res = await createResponse(buildSlashInteraction('ピカチュウ'));
+    const res = await createResponse(
+      buildSlashInteraction('ピカチュウ'),
+      {} as never,
+    );
     expect(res).not.toBeNull();
     expect(res!.type).toBe(InteractionResponseType.ChannelMessageWithSource);
     const data = (res as { data: Record<string, unknown> }).data;
@@ -82,7 +85,10 @@ describe('createResponse', () => {
   });
 
   test('unknown pokemon returns ephemeral text without button', async () => {
-    const res = await createResponse(buildSlashInteraction('__nope__'));
+    const res = await createResponse(
+      buildSlashInteraction('__nope__'),
+      {} as never,
+    );
     expect(res).not.toBeNull();
     const data = (res as { data: Record<string, unknown> }).data;
     expect(data.flags).toBe(MessageFlags.Ephemeral);
