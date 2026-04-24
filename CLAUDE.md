@@ -93,3 +93,7 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 - `wrangler secret put`で設定: `DISCORD_TOKEN`, `DISCORD_PUBLIC_KEY`, `NEWS_NOTIFICATION_CHANNEL_ID`, `NEWS_SUBSCRIBER_ROLE_ID`（シークレット）
 - KVバインディング: `NEWS_KV`（ニュース通知状態の永続化）
 - 全環境変数の型定義: `src/context.ts`の`Env`型
+
+### 運用ルール
+
+- ユーザー指示に含まれない破壊的・不可逆フラグをコマンドに追加しない（`--delete-branch`, `--force`, `-D`, `--hard`, `--no-verify` 等）。付与が必要と判断した場合は必ず事前に確認を取る
