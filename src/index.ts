@@ -29,10 +29,7 @@ app.get('/', (c) => c.text('Hello!'));
  */
 app.post('/api/interactions', verifyKeyMiddleware(), async (c) => {
   const interaction = await c.req.json<Interaction>();
-  const { response, followup } = await handleInteractionRequest(
-    interaction,
-    c.env,
-  );
+  const { response, followup } = await handleInteractionRequest(interaction);
   if (followup && 'token' in interaction) {
     const discord = new DiscordApi(c.env.DISCORD_TOKEN);
     const ctx: Parameters<typeof followup>[0] = {

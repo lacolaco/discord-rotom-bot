@@ -38,7 +38,6 @@ const SHARE_ACTION = 'share';
 
 export async function createResponse(
   interaction: APIApplicationCommandInteraction,
-  _env: unknown,
 ): Promise<APIInteractionResponse | null> {
   if (interaction.data.type !== ApplicationCommandType.ChatInput) {
     return null;

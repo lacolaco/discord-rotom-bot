@@ -4,8 +4,8 @@ import {
   APIApplicationCommandInteraction,
   APIInteractionResponse,
   APIMessageComponentInteraction,
+  APIModalSubmitInteraction,
 } from 'discord-api-types/v10';
-import { Env } from '../context';
 import DiscordApi from '../discord/api';
 import * as ping from './ping';
 import * as pokeinfo from './pokeinfo';
@@ -29,13 +29,15 @@ type Command = {
   };
   createResponse: (
     interaction: APIApplicationCommandInteraction,
-    env: Env,
   ) => Promise<APIInteractionResponse | null>;
   createAutocompleteResponse?: (
     interaction: APIApplicationCommandAutocompleteInteraction,
   ) => Promise<APIApplicationCommandAutocompleteResponse | null>;
   createComponentResponse?: (
     interaction: APIMessageComponentInteraction,
+  ) => Promise<ComponentResult | null>;
+  createModalSubmitResponse?: (
+    interaction: APIModalSubmitInteraction,
   ) => Promise<ComponentResult | null>;
 };
 

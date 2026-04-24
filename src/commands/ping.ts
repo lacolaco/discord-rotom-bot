@@ -12,7 +12,6 @@ export default {
 
 export async function createResponse(
   _interaction: APIApplicationCommandInteraction,
-  _env: unknown,
 ): Promise<APIInteractionResponse> {
   return {
     type: InteractionResponseType.ChannelMessageWithSource,
