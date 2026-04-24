@@ -13,13 +13,13 @@ const STAT_KEYS: (keyof Pokemon['baseStats'])[] = [
 export type StatActuals = {
   key: string;
   base: number;
-  /** 性格↑ 努力値252 (HPは null) */
+  /** 性格↑ SP32 (HPは null) */
   maxPlus: number | null;
-  /** 性格無 努力値252 */
+  /** 性格無 SP32 */
   max: number;
-  /** 性格無 努力値0 */
+  /** 性格無 SP0 */
   min: number;
-  /** 性格↓ 努力値0 (HPは null) */
+  /** 性格↓ SP0 (HPは null) */
   minMinus: number | null;
 };
 
