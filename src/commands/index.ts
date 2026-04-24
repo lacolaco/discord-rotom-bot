@@ -3,9 +3,22 @@ import {
   APIApplicationCommandAutocompleteResponse,
   APIApplicationCommandInteraction,
   APIInteractionResponse,
+  APIMessageComponentInteraction,
 } from 'discord-api-types/v10';
+import DiscordApi from '../discord/api';
 import * as ping from './ping';
 import * as pokeinfo from './pokeinfo';
+
+export type ComponentFollowupContext = {
+  applicationId: string;
+  interactionToken: string;
+  discord: DiscordApi;
+};
+
+export type ComponentResult = {
+  response: APIInteractionResponse;
+  followup?: (ctx: ComponentFollowupContext) => Promise<void>;
+};
 
 type Command = {
   default: {
@@ -18,6 +31,9 @@ type Command = {
   createAutocompleteResponse?: (
     interaction: APIApplicationCommandAutocompleteInteraction,
   ) => Promise<APIApplicationCommandAutocompleteResponse | null>;
+  createComponentResponse?: (
+    interaction: APIMessageComponentInteraction,
+  ) => Promise<ComponentResult | null>;
 };
 
 export const commands: Command[] = [ping, pokeinfo];

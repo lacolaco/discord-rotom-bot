@@ -1,5 +1,6 @@
 import {
   RESTPostAPIChannelMessageJSONBody,
+  RESTPostAPIWebhookWithTokenJSONBody,
   RESTPutAPIApplicationGuildCommandsJSONBody,
 } from 'discord-api-types/v10';
 
@@ -29,6 +30,33 @@ export default class DiscordApi {
   }
 
   /**
+   * Create Followup Message for an Interaction (channel-visible by default).
+   * interaction_token authenticates the request; bot token is not used.
+   * @see https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message
+   */
+  async postInteractionFollowup(
+    applicationId: string,
+    interactionToken: string,
+    body: RESTPostAPIWebhookWithTokenJSONBody,
+  ): Promise<Response> {
+    const url = `${baseUrl}/webhooks/${applicationId}/${interactionToken}`;
+    return await this.#requestUnauthenticated(url, 'POST', body);
+  }
+
+  /**
+   * Edit the Original Interaction Response (used to roll back on followup failure).
+   * @see https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response
+   */
+  async patchOriginalInteractionResponse(
+    applicationId: string,
+    interactionToken: string,
+    body: RESTPostAPIWebhookWithTokenJSONBody,
+  ): Promise<Response> {
+    const url = `${baseUrl}/webhooks/${applicationId}/${interactionToken}/messages/@original`;
+    return await this.#requestUnauthenticated(url, 'PATCH', body);
+  }
+
+  /**
    * Bulk Overwrite Guild Application Commands
    * @see https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-guild-application-commands
    */
@@ -47,22 +75,38 @@ export default class DiscordApi {
     body: unknown,
     headers = {},
   ): Promise<Response> {
-    const response = await fetch(url, {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bot ${this.#token}`,
-        ...headers,
-      },
-      body: JSON.stringify(body),
+    return await sendJson(url, method, body, {
+      Authorization: `Bot ${this.#token}`,
+      ...headers,
     });
-    if (!response.ok) {
-      const text = await response.text();
-      console.error(text);
-      throw new Error(
-        `Failed to request ${url}: ${response.status} ${response.statusText}`,
-      );
-    }
-    return response;
   }
+
+  async #requestUnauthenticated(
+    url: string,
+    method: string,
+    body: unknown,
+  ): Promise<Response> {
+    return await sendJson(url, method, body, {});
+  }
+}
+
+async function sendJson(
+  url: string,
+  method: string,
+  body: unknown,
+  headers: Record<string, string>,
+): Promise<Response> {
+  const response = await fetch(url, {
+    method,
+    headers: { 'Content-Type': 'application/json', ...headers },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    console.error(text);
+    throw new Error(
+      `Failed to request ${url}: ${response.status} ${response.statusText}`,
+    );
+  }
+  return response;
 }

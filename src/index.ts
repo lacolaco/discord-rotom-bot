@@ -29,7 +29,21 @@ app.get('/', (c) => c.text('Hello!'));
  */
 app.post('/api/interactions', verifyKeyMiddleware(), async (c) => {
   const interaction = await c.req.json<Interaction>();
-  const response = await handleInteractionRequest(interaction);
+  const { response, followup } = await handleInteractionRequest(interaction);
+  if (followup && 'token' in interaction) {
+    const discord = new DiscordApi(c.env.DISCORD_TOKEN);
+    const ctx: Parameters<typeof followup>[0] = {
+      applicationId: c.env.DISCORD_APPLICATION_ID,
+      interactionToken: interaction.token,
+      discord,
+    };
+    c.executionCtx.waitUntil(
+      followup(ctx).catch((e) => {
+        console.error('Followup failed:', e);
+        c.var.sentry?.captureException(e);
+      }),
+    );
+  }
   if (response) {
     return c.json(response);
   } else {
