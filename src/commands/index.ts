@@ -4,6 +4,7 @@ import {
   APIApplicationCommandInteraction,
   APIInteractionResponse,
   APIMessageComponentInteraction,
+  APIModalSubmitInteraction,
 } from 'discord-api-types/v10';
 import DiscordApi from '../discord/api';
 import * as ping from './ping';
@@ -34,6 +35,9 @@ type Command = {
   ) => Promise<APIApplicationCommandAutocompleteResponse | null>;
   createComponentResponse?: (
     interaction: APIMessageComponentInteraction,
+  ) => Promise<ComponentResult | null>;
+  createModalSubmitResponse?: (
+    interaction: APIModalSubmitInteraction,
   ) => Promise<ComponentResult | null>;
 };
 

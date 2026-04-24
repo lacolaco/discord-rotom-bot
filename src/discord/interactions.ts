@@ -4,6 +4,7 @@ import {
   APIInteraction,
   APIInteractionResponse,
   APIMessageComponentInteraction,
+  APIModalSubmitInteraction,
   InteractionResponseType,
   InteractionType,
 } from 'discord-api-types/v10';
@@ -56,6 +57,8 @@ export async function handleInteractionRequest(
       };
     case InteractionType.MessageComponent:
       return await handleMessageComponentInteraction(interaction);
+    case InteractionType.ModalSubmit:
+      return await handleModalSubmitInteraction(interaction);
   }
   throw new Error('Unknown interaction');
 }
@@ -95,5 +98,21 @@ async function handleMessageComponentInteraction(
     }
   }
   console.warn(`No handler for component custom_id: ${customId}`);
+  return { response: null };
+}
+
+async function handleModalSubmitInteraction(
+  interaction: APIModalSubmitInteraction,
+): Promise<InteractionResult> {
+  const customId = interaction.data.custom_id;
+  const [namespace] = customId.split(':');
+  const command = namespace ? getCommandByName(namespace) : undefined;
+  if (command && command.createModalSubmitResponse) {
+    const result = await command.createModalSubmitResponse(interaction);
+    if (result) {
+      return result;
+    }
+  }
+  console.warn(`No handler for modal custom_id: ${customId}`);
   return { response: null };
 }
