@@ -229,7 +229,7 @@ export async function createModalSubmitResponse(
         comp.type === ComponentType.TextInput &&
         comp.custom_id === MODAL_B_NAME_INPUT
       ) {
-        bName = comp.value;
+        bName = comp.value.trim();
       }
     }
   }
@@ -239,7 +239,7 @@ export async function createModalSubmitResponse(
   console.log(
     `[speedcompare:modal] a=${aName} sp=${aSp} nature=${aNature} b=${bName}`,
   );
-  return { response: await renderResult(aName, aSp, aNature, bName.trim()) };
+  return { response: await renderResult(aName, aSp, aNature, bName) };
 }
 
 export async function createAutocompleteResponse(
