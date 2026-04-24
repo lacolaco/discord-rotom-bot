@@ -4,14 +4,13 @@ import {
   APIInteraction,
   APIInteractionResponse,
   APIMessageComponentInteraction,
-  APIModalSubmitInteraction,
   InteractionResponseType,
   InteractionType,
 } from 'discord-api-types/v10';
 import { verifyKey } from 'discord-interactions';
 import { MiddlewareHandler } from 'hono';
 import { ComponentFollowupContext, getCommandByName } from '../commands';
-import { HonoAppContext } from '../context';
+import { Env, HonoAppContext } from '../context';
 
 export type Interaction = APIInteraction;
 
@@ -39,6 +38,7 @@ export const verifyKeyMiddleware =
 // https://discord.com/developers/docs/interactions/receiving-and-responding#interactions
 export async function handleInteractionRequest(
   interaction: Interaction,
+  env: Env,
 ): Promise<InteractionResult> {
   console.log(
     `handleInteractionRequest: ${interaction.type} ${interaction.id}`,
@@ -48,7 +48,7 @@ export async function handleInteractionRequest(
       return { response: { type: InteractionResponseType.Pong } };
     case InteractionType.ApplicationCommand:
       return {
-        response: await handleApplicationCommandInteraction(interaction),
+        response: await handleApplicationCommandInteraction(interaction, env),
       };
     case InteractionType.ApplicationCommandAutocomplete:
       return {
@@ -57,19 +57,18 @@ export async function handleInteractionRequest(
       };
     case InteractionType.MessageComponent:
       return await handleMessageComponentInteraction(interaction);
-    case InteractionType.ModalSubmit:
-      return await handleModalSubmitInteraction(interaction);
   }
   throw new Error('Unknown interaction');
 }
 
 async function handleApplicationCommandInteraction(
   interaction: APIApplicationCommandInteraction,
+  env: Env,
 ): Promise<APIInteractionResponse | null> {
   const commandName = interaction.data.name;
   const command = getCommandByName(commandName);
   if (command) {
-    return await command.createResponse(interaction);
+    return await command.createResponse(interaction, env);
   }
   return { type: InteractionResponseType.Pong };
 }
@@ -98,21 +97,5 @@ async function handleMessageComponentInteraction(
     }
   }
   console.warn(`No handler for component custom_id: ${customId}`);
-  return { response: null };
-}
-
-async function handleModalSubmitInteraction(
-  interaction: APIModalSubmitInteraction,
-): Promise<InteractionResult> {
-  const customId = interaction.data.custom_id;
-  const [namespace] = customId.split(':');
-  const command = namespace ? getCommandByName(namespace) : undefined;
-  if (command && command.createModalSubmitResponse) {
-    const result = await command.createModalSubmitResponse(interaction);
-    if (result) {
-      return result;
-    }
-  }
-  console.warn(`No handler for modal custom_id: ${customId}`);
   return { response: null };
 }
