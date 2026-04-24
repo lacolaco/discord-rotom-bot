@@ -8,6 +8,7 @@ import {
 import DiscordApi from '../discord/api';
 import * as ping from './ping';
 import * as pokeinfo from './pokeinfo';
+import * as speedcompare from './speedcompare';
 
 export type ComponentFollowupContext = {
   applicationId: string;
@@ -36,7 +37,7 @@ type Command = {
   ) => Promise<ComponentResult | null>;
 };
 
-export const commands: Command[] = [ping, pokeinfo];
+export const commands: Command[] = [ping, pokeinfo, speedcompare];
 
 export function getCommandByName(name: string) {
   return commands.find((c) => c.default.name === name);
