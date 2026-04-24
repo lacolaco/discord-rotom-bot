@@ -70,33 +70,33 @@ export default {
       ],
     },
     {
-      name: 'b',
-      description:
-        '仮想敵ポケモンB（直近使用したポケモンが上位に表示されます）',
-      type: ApplicationCommandOptionType.String,
-      required: true,
-      autocomplete: true,
-    },
-    {
       name: 'a_rank',
-      description: 'Aの能力ランク補正 (-6〜+6、省略時は0)',
+      description: 'Aの能力ランク補正',
       type: ApplicationCommandOptionType.Integer,
-      required: false,
+      required: true,
       choices: [
-        { name: '-6', value: -6 },
-        { name: '-5', value: -5 },
-        { name: '-4', value: -4 },
-        { name: '-3', value: -3 },
-        { name: '-2 (まひ相当)', value: -2 },
-        { name: '-1', value: -1 },
-        { name: '±0', value: 0 },
+        { name: '±0 (補正なし)', value: 0 },
         { name: '+1 (スカーフ相当)', value: 1 },
         { name: '+2 (おいかぜ相当)', value: 2 },
         { name: '+3', value: 3 },
         { name: '+4', value: 4 },
         { name: '+5', value: 5 },
         { name: '+6', value: 6 },
+        { name: '-1', value: -1 },
+        { name: '-2 (まひ相当)', value: -2 },
+        { name: '-3', value: -3 },
+        { name: '-4', value: -4 },
+        { name: '-5', value: -5 },
+        { name: '-6', value: -6 },
       ],
+    },
+    {
+      name: 'b',
+      description:
+        '仮想敵ポケモンB（直近使用したポケモンが上位に表示されます）',
+      type: ApplicationCommandOptionType.String,
+      required: true,
+      autocomplete: true,
     },
   ],
 } satisfies RESTPostAPIChatInputApplicationCommandsJSONBody;
@@ -180,12 +180,13 @@ export async function createResponse(
   const aOpt = options.find((o) => o.name === 'a');
   const spOpt = options.find((o) => o.name === 'a_sp');
   const natureOpt = options.find((o) => o.name === 'a_nature');
-  const bOpt = options.find((o) => o.name === 'b');
   const rankOpt = options.find((o) => o.name === 'a_rank');
+  const bOpt = options.find((o) => o.name === 'b');
   if (
     aOpt?.type !== ApplicationCommandOptionType.String ||
     spOpt?.type !== ApplicationCommandOptionType.Integer ||
     natureOpt?.type !== ApplicationCommandOptionType.String ||
+    rankOpt?.type !== ApplicationCommandOptionType.Integer ||
     bOpt?.type !== ApplicationCommandOptionType.String
   ) {
     return null;
@@ -193,9 +194,8 @@ export async function createResponse(
   const aName = aOpt.value;
   const aSp = spOpt.value;
   const aNature = parseNature(natureOpt.value);
+  const aRank = rankOpt.value;
   const bName = bOpt.value;
-  const aRank =
-    rankOpt?.type === ApplicationCommandOptionType.Integer ? rankOpt.value : 0;
   const userId = getUserId(interaction);
   console.log(
     `[speedcompare] a=${aName} sp=${aSp} nature=${aNature} rank=${aRank} b=${bName} (user=${userId})`,
