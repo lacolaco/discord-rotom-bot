@@ -5,6 +5,7 @@ name = "discord-rotom-bot"
 
 kv_namespaces = [
   {binding = "NEWS_KV", id = "696d3e3efb594ffcb9edd17c44a82566"},
+  {binding = "SPEEDCOMPARE_KV", id = "8c21dd1fd9844b12a131f5fe37f9e8b5"},
 ]
 
 # wrangler.toml (wrangler v3.88.0^)
