@@ -92,15 +92,27 @@ function emptyHistory(): History {
   return { a: [], aSp: [], b: [] };
 }
 
+function toStringArray(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((v): v is string => typeof v === 'string')
+    : [];
+}
+
+function toNumberArray(value: unknown): number[] {
+  return Array.isArray(value)
+    ? value.filter((v): v is number => typeof v === 'number')
+    : [];
+}
+
 async function loadHistory(env: Env, userId: string): Promise<History> {
   const raw = await env.SPEEDCOMPARE_KV.get(historyKey(userId));
   if (!raw) return emptyHistory();
   try {
-    const parsed = JSON.parse(raw) as Partial<History>;
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
     return {
-      a: Array.isArray(parsed.a) ? parsed.a : [],
-      aSp: Array.isArray(parsed.aSp) ? parsed.aSp : [],
-      b: Array.isArray(parsed.b) ? parsed.b : [],
+      a: toStringArray(parsed.a),
+      aSp: toNumberArray(parsed.aSp),
+      b: toStringArray(parsed.b),
     };
   } catch {
     return emptyHistory();
@@ -235,6 +247,7 @@ export async function createAutocompleteResponse(
     focused.type === ApplicationCommandOptionType.Integer &&
     focused.name === 'a_sp'
   ) {
+    // a_sp の候補は少数固定 (typical 6 + history 10) のため、入力値でのフィルタは行わず全件提示する
     const candidates = Array.from(
       new Set([...history.aSp, ...TYPICAL_SP_VALUES]),
     ).filter((n) => n >= 0 && n <= 32);

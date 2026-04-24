@@ -4,6 +4,7 @@ import {
   InteractionResponseType,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
+import { Env } from '../context';
 
 export default {
   name: 'ping',
@@ -12,7 +13,7 @@ export default {
 
 export async function createResponse(
   _interaction: APIApplicationCommandInteraction,
-  _env: unknown,
+  _env: Env,
 ): Promise<APIInteractionResponse> {
   return {
     type: InteractionResponseType.ChannelMessageWithSource,

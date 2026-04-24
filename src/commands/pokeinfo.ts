@@ -16,6 +16,7 @@ import {
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { ComponentResult } from '.';
+import { Env } from '../context';
 import { buildPokemonViewModel } from '../pokeinfo/view-model';
 import { formatPokemonEmbed } from '../pokeinfo/embed';
 import { getAllPokemonNames, searchPokemonByName } from '../pokeinfo';
@@ -38,7 +39,7 @@ const SHARE_ACTION = 'share';
 
 export async function createResponse(
   interaction: APIApplicationCommandInteraction,
-  _env: unknown,
+  _env: Env,
 ): Promise<APIInteractionResponse | null> {
   if (interaction.data.type !== ApplicationCommandType.ChatInput) {
     return null;
@@ -131,7 +132,7 @@ export async function createComponentResponse(
 
 export async function createAutocompleteResponse(
   interaction: APIApplicationCommandAutocompleteInteraction,
-  _env: unknown,
+  _env: Env,
 ): Promise<APIApplicationCommandAutocompleteResponse | null> {
   const focusedValue = interaction.data.options.find(
     (option) =>
