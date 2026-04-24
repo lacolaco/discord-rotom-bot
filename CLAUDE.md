@@ -61,7 +61,7 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 
 3レイヤー構成:
 - `src/pokeinfo/index.ts`: データアクセス（Pokemon型、検索関数）
-- `src/pokeinfo/view-model.ts`: 何を表示するか（PokemonViewModel、StatActuals — baseStatsからLv.50実数値4値を計算）
+- `src/pokeinfo/view-model.ts`: 何を表示するか（PokemonViewModel、StatActuals — baseStatsからPokémon Champions仕様(Lv.50・個体値31・SP 0/32・性格0.9/1.0/1.1)で実数値4値を計算。従来の「努力値」概念は使わず、ステータス計算は常にSP(Status Point, 0〜32)で表現する）
 - `src/pokeinfo/embed.ts`: どう表示するか（Discord Embed構築 — fields、footer、タイプ色）
 
 テストもソース構造に対応して分割: `index.test.ts` / `view-model.test.ts` / `embed.test.ts`
