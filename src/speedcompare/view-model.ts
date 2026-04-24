@@ -12,6 +12,8 @@ export type AInput = {
   pokemon: Pokemon;
   sp: number;
   nature: Nature;
+  /** Aの能力ランク補正 (-6〜+6、省略時は0) */
+  rank?: number;
 };
 
 export type BInput = {
@@ -44,12 +46,19 @@ function formatNature(nature: Nature): string {
   return '無補正';
 }
 
+function formatRankSuffix(rank: number): string {
+  if (rank === 0) return '';
+  if (rank > 0) return ` ランク+${rank}`;
+  return ` ランク${rank}`;
+}
+
 export function buildSpeedCompareViewModel(input: {
   a: AInput;
   b: BInput;
 }): SpeedCompareViewModel {
   const { a, b } = input;
-  const aSpeed = effectiveSpeed(a.pokemon.baseStats.S, a.sp, a.nature, 0);
+  const aRank = a.rank ?? 0;
+  const aSpeed = effectiveSpeed(a.pokemon.baseStats.S, a.sp, a.nature, aRank);
   const bBase = b.pokemon.baseStats.S;
   const bActuals = calcActuals('S', bBase) as [number, number, number, number];
 
@@ -60,7 +69,7 @@ export function buildSpeedCompareViewModel(input: {
 
   return {
     aName: a.name,
-    aConfig: `SP${a.sp} ${formatNature(a.nature)}`,
+    aConfig: `SP${a.sp} ${formatNature(a.nature)}${formatRankSuffix(aRank)}`,
     aBase: a.pokemon.baseStats.S,
     aSpeed,
     bName: b.name,

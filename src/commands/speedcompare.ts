@@ -1,15 +1,21 @@
 import {
+  APIActionRowComponent,
   APIApplicationCommandAutocompleteInteraction,
   APIApplicationCommandAutocompleteResponse,
   APIApplicationCommandInteraction,
+  APIComponentInMessageActionRow,
   APIInteraction,
   APIInteractionResponse,
+  APIMessageComponentInteraction,
   ApplicationCommandOptionType,
   ApplicationCommandType,
+  ButtonStyle,
+  ComponentType,
   InteractionResponseType,
   MessageFlags,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
+import { ComponentResult } from '.';
 import { Env } from '../context';
 import { getAllPokemonNames, searchPokemonByName } from '../pokeinfo';
 import type { Nature } from '../speedcompare/compare';
@@ -70,6 +76,27 @@ export default {
       type: ApplicationCommandOptionType.String,
       required: true,
       autocomplete: true,
+    },
+    {
+      name: 'a_rank',
+      description: 'Aの能力ランク補正 (-6〜+6、省略時は0)',
+      type: ApplicationCommandOptionType.Integer,
+      required: false,
+      choices: [
+        { name: '-6', value: -6 },
+        { name: '-5', value: -5 },
+        { name: '-4', value: -4 },
+        { name: '-3', value: -3 },
+        { name: '-2 (まひ相当)', value: -2 },
+        { name: '-1', value: -1 },
+        { name: '±0', value: 0 },
+        { name: '+1 (スカーフ相当)', value: 1 },
+        { name: '+2 (おいかぜ相当)', value: 2 },
+        { name: '+3', value: 3 },
+        { name: '+4', value: 4 },
+        { name: '+5', value: 5 },
+        { name: '+6', value: 6 },
+      ],
     },
   ],
 } satisfies RESTPostAPIChatInputApplicationCommandsJSONBody;
@@ -154,6 +181,7 @@ export async function createResponse(
   const spOpt = options.find((o) => o.name === 'a_sp');
   const natureOpt = options.find((o) => o.name === 'a_nature');
   const bOpt = options.find((o) => o.name === 'b');
+  const rankOpt = options.find((o) => o.name === 'a_rank');
   if (
     aOpt?.type !== ApplicationCommandOptionType.String ||
     spOpt?.type !== ApplicationCommandOptionType.Integer ||
@@ -166,9 +194,11 @@ export async function createResponse(
   const aSp = spOpt.value;
   const aNature = parseNature(natureOpt.value);
   const bName = bOpt.value;
+  const aRank =
+    rankOpt?.type === ApplicationCommandOptionType.Integer ? rankOpt.value : 0;
   const userId = getUserId(interaction);
   console.log(
-    `[speedcompare] a=${aName} sp=${aSp} nature=${aNature} b=${bName} (user=${userId})`,
+    `[speedcompare] a=${aName} sp=${aSp} nature=${aNature} rank=${aRank} b=${bName} (user=${userId})`,
   );
 
   const [aData, bData] = await Promise.all([
@@ -199,7 +229,7 @@ export async function createResponse(
   }
 
   const vm = buildSpeedCompareViewModel({
-    a: { name: aName, pokemon: aData, sp: aSp, nature: aNature },
+    a: { name: aName, pokemon: aData, sp: aSp, nature: aNature, rank: aRank },
     b: { name: bName, pokemon: bData },
   });
   const embed = formatSpeedCompareEmbed(vm);
@@ -207,7 +237,72 @@ export async function createResponse(
     type: InteractionResponseType.ChannelMessageWithSource,
     data: {
       embeds: [embed],
+      components: [buildShareActionRow()],
       flags: MessageFlags.Ephemeral,
+    },
+  };
+}
+
+const SHARE_ACTION = 'share';
+
+function buildShareActionRow(): APIActionRowComponent<APIComponentInMessageActionRow> {
+  return {
+    type: ComponentType.ActionRow,
+    components: [
+      {
+        type: ComponentType.Button,
+        style: ButtonStyle.Primary,
+        label: 'チャンネルにシェア',
+        custom_id: `speedcompare:${SHARE_ACTION}`,
+      },
+    ],
+  };
+}
+
+export async function createComponentResponse(
+  interaction: APIMessageComponentInteraction,
+): Promise<ComponentResult | null> {
+  const [, action] = interaction.data.custom_id.split(':');
+  if (action !== SHARE_ACTION) {
+    return null;
+  }
+  const embeds = interaction.message.embeds;
+  if (!embeds || embeds.length === 0) {
+    return {
+      response: {
+        type: InteractionResponseType.UpdateMessage,
+        data: {
+          content: 'シェアできる内容がなかったロト...',
+          embeds: [],
+          components: [],
+        },
+      },
+    };
+  }
+  return {
+    response: {
+      type: InteractionResponseType.UpdateMessage,
+      data: {
+        content: 'チャンネルにシェアしたロト！',
+        embeds: [],
+        components: [],
+      },
+    },
+    followup: async ({ applicationId, interactionToken, discord }) => {
+      try {
+        await discord.postInteractionFollowup(applicationId, interactionToken, {
+          embeds,
+        });
+      } catch (e) {
+        await discord
+          .patchOriginalInteractionResponse(applicationId, interactionToken, {
+            content: 'シェアに失敗したロト...',
+            embeds,
+            components: [buildShareActionRow()],
+          })
+          .catch((e2) => console.error('Rollback failed:', e2));
+        throw e;
+      }
     },
   };
 }
