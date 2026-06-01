@@ -5542,8 +5542,8 @@
   "メガミュウツーＸ": {
     "index": 150,
     "types": [
-      "かくとう",
-      "エスパー"
+      "エスパー",
+      "かくとう"
     ],
     "abilities": [
       "ふくつのこころ"
@@ -5557,8 +5557,8 @@
       "S": 130
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "マウンテンカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n150x",
@@ -5582,8 +5582,8 @@
       "S": 140
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "マウンテンカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n150y",
@@ -16607,7 +16607,7 @@
     ],
     "abilities": [
       "もうか",
-      "あついしぼう"
+      "すてみ"
     ],
     "baseStats": {
       "H": 110,
