@@ -1510,8 +1510,8 @@
       "S": 55
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n41",
@@ -1537,8 +1537,8 @@
       "S": 90
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n42",
@@ -1894,8 +1894,8 @@
       "S": 90
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n52a",
@@ -1975,8 +1975,8 @@
       "S": 115
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n53a",
@@ -3124,8 +3124,8 @@
       "S": 60
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n83",
@@ -3150,8 +3150,8 @@
       "S": 55
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n83g",
@@ -3884,8 +3884,8 @@
       "S": 35
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ヨロイ島図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n104",
@@ -3911,8 +3911,8 @@
       "S": 45
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ヨロイ島図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n105",
@@ -3939,8 +3939,8 @@
       "S": 45
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ヨロイ島図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n105a",
@@ -4483,8 +4483,8 @@
       "S": 90
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n122",
@@ -4511,8 +4511,8 @@
       "S": 100
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n122g",
@@ -5542,8 +5542,8 @@
   "メガミュウツーＸ": {
     "index": 150,
     "types": [
-      "かくとう",
-      "エスパー"
+      "エスパー",
+      "かくとう"
     ],
     "abilities": [
       "ふくつのこころ"
@@ -5557,8 +5557,8 @@
       "S": 130
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "マウンテンカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n150x",
@@ -5582,8 +5582,8 @@
       "S": 140
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "マウンテンカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n150y",
@@ -6171,8 +6171,8 @@
       "S": 130
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n169",
@@ -8819,8 +8819,8 @@
       "S": 145
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n254m",
@@ -8925,8 +8925,8 @@
       "S": 100
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n257m",
@@ -9004,8 +9004,8 @@
       "S": 70
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n260m",
@@ -11792,8 +11792,8 @@
       "S": 40
     },
     "source": {
-      "game": "UltraSun_UltraMoon",
-      "pokedex": "アローラ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n352",
@@ -12002,8 +12002,8 @@
       "S": 65
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n358m",
@@ -12676,8 +12676,8 @@
   "メガラティアス": {
     "index": 380,
     "types": [
-      "ドラゴン",
-      "エスパー"
+      "エスパー",
+      "ドラゴン"
     ],
     "abilities": [
       "ふゆう"
@@ -12691,8 +12691,8 @@
       "S": 110
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n380m",
@@ -12717,8 +12717,8 @@
       "S": 110
     },
     "source": {
-      "game": "Ruby_Sapphire_Emerald",
-      "pokedex": "ホウエン図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n380",
@@ -12728,8 +12728,8 @@
   "メガラティオス": {
     "index": 381,
     "types": [
-      "ドラゴン",
-      "エスパー"
+      "エスパー",
+      "ドラゴン"
     ],
     "abilities": [
       "ふゆう"
@@ -12743,8 +12743,8 @@
       "S": 110
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n381m",
@@ -12769,8 +12769,8 @@
       "S": 110
     },
     "source": {
-      "game": "Ruby_Sapphire_Emerald",
-      "pokedex": "ホウエン図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n381",
@@ -12794,8 +12794,8 @@
       "S": 90
     },
     "source": {
-      "game": "Ruby_Sapphire_Emerald",
-      "pokedex": "ホウエン図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n382",
@@ -12819,8 +12819,8 @@
       "S": 90
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n382p",
@@ -12844,8 +12844,8 @@
       "S": 90
     },
     "source": {
-      "game": "Ruby_Sapphire_Emerald",
-      "pokedex": "ホウエン図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n383",
@@ -12870,8 +12870,8 @@
       "S": 90
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n383p",
@@ -12881,8 +12881,8 @@
   "メガレックウザ": {
     "index": 384,
     "types": [
-      "ドラゴン",
-      "ひこう"
+      "ひこう",
+      "ドラゴン"
     ],
     "abilities": [
       "デルタストリーム"
@@ -12896,8 +12896,8 @@
       "S": 115
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n384m",
@@ -12922,8 +12922,8 @@
       "S": 95
     },
     "source": {
-      "game": "Ruby_Sapphire_Emerald",
-      "pokedex": "ホウエン図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n384",
@@ -13394,8 +13394,8 @@
       "S": 110
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n398m",
@@ -14576,8 +14576,8 @@
       "S": 60
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n439",
@@ -16129,8 +16129,8 @@
       "S": 77
     },
     "source": {
-      "game": "Diamond_Pearl_Platinum",
-      "pokedex": "シンオウ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n485",
@@ -16156,8 +16156,8 @@
       "S": 67
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n485m",
@@ -16333,8 +16333,8 @@
       "S": 125
     },
     "source": {
-      "game": "Diamond_Pearl_Platinum",
-      "pokedex": "シンオウ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n491",
@@ -16358,8 +16358,8 @@
       "S": 85
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n491m",
@@ -16607,7 +16607,7 @@
     ],
     "abilities": [
       "もうか",
-      "あついしぼう"
+      "すてみ"
     ],
     "baseStats": {
       "H": 110,
@@ -16911,8 +16911,8 @@
       "S": 66
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n509",
@@ -16938,8 +16938,8 @@
       "S": 106
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n510",
@@ -17121,8 +17121,8 @@
       "S": 24
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n517",
@@ -17148,8 +17148,8 @@
       "S": 29
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n518",
@@ -17750,8 +17750,8 @@
       "S": 45
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n538",
@@ -17777,8 +17777,8 @@
       "S": 85
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n539",
@@ -18600,8 +18600,8 @@
       "S": 30
     },
     "source": {
-      "game": "Black2_White2",
-      "pokedex": "イッシュ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n562",
@@ -18625,8 +18625,8 @@
       "S": 30
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n562g",
@@ -18650,8 +18650,8 @@
       "S": 30
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n563",
@@ -20431,8 +20431,8 @@
       "S": 55
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n623m",
@@ -20867,8 +20867,8 @@
       "S": 108
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n638",
@@ -20893,8 +20893,8 @@
       "S": 108
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n639",
@@ -20919,8 +20919,8 @@
       "S": 108
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "カンムリ雪原図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n640",
@@ -21232,8 +21232,8 @@
       "S": 108
     },
     "source": {
-      "game": "Black2_White2",
-      "pokedex": "イッシュ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n647",
@@ -21310,8 +21310,8 @@
       "S": 90
     },
     "source": {
-      "game": "Black2_White2",
-      "pokedex": "イッシュ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n648",
@@ -21336,8 +21336,8 @@
       "S": 99
     },
     "source": {
-      "game": "Black2_White2",
-      "pokedex": "イッシュ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n649",
@@ -22300,6 +22300,29 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n678f",
       "key": "n678f"
+    }
+  },
+  "メガニャオニクス": {
+    "index": 678,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "するどいめ",
+      "すりぬけ",
+      "かちき"
+    ],
+    "baseStats": {
+      "H": 74,
+      "A": 48,
+      "B": 76,
+      "C": 143,
+      "D": 101,
+      "S": 124
+    },
+    "source": {
+      "game": "LegendsZA",
+      "pokedex": "ミアレ図鑑"
     }
   },
   "ヒトツキ": {
@@ -23920,8 +23943,8 @@
       "S": 70
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "セントラルカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n720",
@@ -23946,8 +23969,8 @@
       "S": 80
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "セントラルカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n720u",
@@ -23972,8 +23995,8 @@
       "S": 70
     },
     "source": {
-      "game": "X_Y",
-      "pokedex": "セントラルカロス図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n721",
@@ -24536,8 +24559,8 @@
       "S": 33
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n740m",
@@ -25422,8 +25445,8 @@
       "S": 80
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n767",
@@ -25448,8 +25471,8 @@
       "S": 40
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n768",
@@ -25474,8 +25497,8 @@
       "S": 40
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n768m",
@@ -26448,8 +26471,8 @@
       "S": 65
     },
     "source": {
-      "game": "UltraSun_UltraMoon",
-      "pokedex": "アローラ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n801",
@@ -26500,8 +26523,8 @@
       "S": 125
     },
     "source": {
-      "game": "UltraSun_UltraMoon",
-      "pokedex": "アローラ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n802",
@@ -26628,8 +26651,8 @@
       "S": 143
     },
     "source": {
-      "game": "UltraSun_UltraMoon",
-      "pokedex": "アローラ図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n807",
@@ -26653,8 +26676,8 @@
       "S": 153
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n807m",
@@ -26678,8 +26701,8 @@
       "S": 34
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n808",
@@ -26703,8 +26726,8 @@
       "S": 34
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n809",
@@ -27181,8 +27204,8 @@
       "S": 50
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n827",
@@ -27208,8 +27231,8 @@
       "S": 90
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n828",
@@ -27888,8 +27911,8 @@
       "S": 32
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n852",
@@ -27914,8 +27937,8 @@
       "S": 42
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n853",
@@ -28187,8 +28210,8 @@
       "S": 50
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n863",
@@ -28239,8 +28262,8 @@
       "S": 65
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n865",
@@ -28267,8 +28290,8 @@
       "S": 70
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n866",
@@ -28293,8 +28316,8 @@
       "S": 30
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n867",
@@ -30910,8 +30933,8 @@
       "S": 75
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n939m",
@@ -31446,8 +31469,8 @@
       "S": 101
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n967m",
@@ -32220,8 +32243,8 @@
       "S": 87
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "LegendsZA",
+      "pokedex": "異次元図鑑"
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n951m",
