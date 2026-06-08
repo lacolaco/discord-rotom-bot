@@ -35,7 +35,7 @@
     "toucan-js": "^4.1.1"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.15.0",
+    "@cloudflare/vitest-pool-workers": "^0.16.0",
     "@cloudflare/workers-types": "^4.20230914.0",
     "@eslint/js": "^10.0.1",
     "@pkmn/dex": "^0.10.7",
