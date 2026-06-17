@@ -2,7 +2,7 @@ name: Update Pokemon Data
 
 on:
   schedule:
-    - cron: '0 0 * * 1' # 毎週月曜 00:00 UTC
+    - cron: '0 0 * * *' # 毎日 00:00 UTC
   workflow_dispatch:
 
 permissions:
