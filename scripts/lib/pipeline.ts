@@ -142,13 +142,13 @@ export function syncYakkunMap(
     if (recovered > 0) {
       console.log(`  yakkun URL recovered: ${recovered} entries from renamed displayNames`);
     }
-  }
 
-  for (const [oldName, url] of Object.entries(yakkunMap)) {
-    if (oldName in synced) continue;
-    if (recoveredOldNames.has(oldName)) continue;
-    if (url) {
-      synced[oldName] = url;
+    const unrecovered = [...orphaned.keys()].filter(n => !recoveredOldNames.has(n));
+    if (unrecovered.length > 0) {
+      console.log(`  yakkun URL dropped: ${unrecovered.length} entries no longer in data`);
+      for (const name of unrecovered) {
+        console.log(`    ${name}`);
+      }
     }
   }
 

@@ -1150,7 +1150,7 @@
   "パモット": "https://yakkun.com/ch/zukan/n955",
   "パーモット": "https://yakkun.com/ch/zukan/n956",
   "ワッカネズミ": "https://yakkun.com/ch/zukan/n945",
-  "イッカネズミ(３びきかぞく)": null,
+  "イッカネズミ(３びきかぞく)": "https://yakkun.com/ch/zukan/n946",
   "パピモッチ": "https://yakkun.com/ch/zukan/n970",
   "バウッツェル": "https://yakkun.com/ch/zukan/n971",
   "ミニーブ": "https://yakkun.com/ch/zukan/n935",
@@ -1243,7 +1243,7 @@
   "カミッチュ": "https://yakkun.com/ch/zukan/n1012",
   "チャデス": "https://yakkun.com/ch/zukan/n1024",
   "ヤバソチャ(ケッサクのすがた)": null,
-  "ヤバソチャ(ボンサクのすがた)": null,
+  "ヤバソチャ(ボンサクのすがた)": "https://yakkun.com/ch/zukan/n1025",
   "イイネイヌ": "https://yakkun.com/ch/zukan/n1014",
   "マシマシラ": "https://yakkun.com/ch/zukan/n1015",
   "キチキギス": "https://yakkun.com/ch/zukan/n1016",
@@ -1260,14 +1260,5 @@
   "テラパゴス(ステラフォルム)": "https://yakkun.com/ch/zukan/n1021s",
   "テラパゴス(テラスタルフォルム)": "https://yakkun.com/ch/zukan/n1021t",
   "テラパゴス(ノーマルフォルム)": "https://yakkun.com/ch/zukan/n1021",
-  "モモワロウ": "https://yakkun.com/ch/zukan/n1022",
-  "イッカネズミ": "https://yakkun.com/ch/zukan/n946",
-  "ヤバソチャ": "https://yakkun.com/ch/zukan/n1025",
-  "メガヒードラン": "https://yakkun.com/ch/zukan/n485m",
-  "メガダークライ": "https://yakkun.com/ch/zukan/n491m",
-  "メガジガルデ": "https://yakkun.com/ch/zukan/n718m",
-  "メガグソクムシャ": "https://yakkun.com/ch/zukan/n768m",
-  "メガマギアナ": "https://yakkun.com/ch/zukan/n801m",
-  "メガゼラオラ": "https://yakkun.com/ch/zukan/n807m",
-  "メガセグレイブ": "https://yakkun.com/ch/zukan/n951m"
+  "モモワロウ": "https://yakkun.com/ch/zukan/n1022"
 }

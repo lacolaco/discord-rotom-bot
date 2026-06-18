@@ -133,11 +133,11 @@ describe('syncYakkunMap', () => {
     expect(result['新ポケモン']).toBeNull();
   });
 
-  it('新データにないエントリもURLがあれば保持する', () => {
+  it('新データにないエントリはURLがあっても保持しない', () => {
     const sorted = {};
     const oldMap = { '旧ポケモン': 'https://yakkun.com/ch/zukan/n100' };
     const result = syncYakkunMap(sorted, oldMap);
-    expect(result['旧ポケモン']).toBe('https://yakkun.com/ch/zukan/n100');
+    expect(result).not.toHaveProperty('旧ポケモン');
   });
 
   it('新データにないエントリでURLがnullなら保持しない', () => {
@@ -197,7 +197,7 @@ describe('syncYakkunMap', () => {
     expect(result['カットロトム']).toBe('https://yakkun.com/ch/zukan/n479c');
   });
 
-  it('recoveryされなかった旧フォームのURLは保持する', () => {
+  it('recoveryされなかった旧フォームのURLは保持しない', () => {
     const sorted = { 'デオキシス': makeOutputEntry(386) };
     const oldMap = {
       'デオキシス(ノーマルフォルム)': 'https://yakkun.com/ch/zukan/n386',
@@ -206,8 +206,8 @@ describe('syncYakkunMap', () => {
     };
     const result = syncYakkunMap(sorted, oldMap);
     expect(result['デオキシス']).toBeTruthy();
-    expect(result['デオキシス(アタックフォルム)']).toBe('https://yakkun.com/ch/zukan/n386a');
-    expect(result['デオキシス(ディフェンスフォルム)']).toBe('https://yakkun.com/ch/zukan/n386d');
+    expect(result).not.toHaveProperty('デオキシス(アタックフォルム)');
+    expect(result).not.toHaveProperty('デオキシス(ディフェンスフォルム)');
   });
 
   it('直接一致エントリの既存URLは上書きしない', () => {
