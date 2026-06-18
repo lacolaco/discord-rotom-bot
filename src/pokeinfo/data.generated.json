@@ -661,6 +661,34 @@
       "key": "n19"
     }
   },
+  "コラッタ(アローラのすがた)": {
+    "index": 19,
+    "types": [
+      "あく",
+      "ノーマル"
+    ],
+    "abilities": [
+      "くいしんぼう",
+      "はりきり",
+      "あついしぼう"
+    ],
+    "baseStats": {
+      "H": 30,
+      "A": 56,
+      "B": 35,
+      "C": 25,
+      "D": 35,
+      "S": 72
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n19a",
+      "key": "n19a"
+    }
+  },
   "ラッタ": {
     "index": 20,
     "types": [
@@ -686,6 +714,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n20",
       "key": "n20"
+    }
+  },
+  "ラッタ(アローラのすがた)": {
+    "index": 20,
+    "types": [
+      "あく",
+      "ノーマル"
+    ],
+    "abilities": [
+      "くいしんぼう",
+      "はりきり",
+      "あついしぼう"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 71,
+      "B": 70,
+      "C": 40,
+      "D": 80,
+      "S": 77
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n20a",
+      "key": "n20a"
     }
   },
   "オニスズメ": {
@@ -822,6 +878,28 @@
       "key": "n25"
     }
   },
+  "ピカチュウ(アローラのすがた)": {
+    "index": 25,
+    "types": [
+      "でんき"
+    ],
+    "abilities": [
+      "せいでんき",
+      "ひらいしん"
+    ],
+    "baseStats": {
+      "H": 35,
+      "A": 55,
+      "B": 40,
+      "C": 50,
+      "D": 50,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
   "メガライチュウＸ": {
     "index": 26,
     "types": [
@@ -950,6 +1028,33 @@
       "key": "n27"
     }
   },
+  "サンド(アローラのすがた)": {
+    "index": 27,
+    "types": [
+      "こおり",
+      "はがね"
+    ],
+    "abilities": [
+      "ゆきがくれ",
+      "ゆきかき"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 75,
+      "B": 90,
+      "C": 10,
+      "D": 35,
+      "S": 40
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n27a",
+      "key": "n27a"
+    }
+  },
   "サンドパン": {
     "index": 28,
     "types": [
@@ -974,6 +1079,60 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n28",
       "key": "n28"
+    }
+  },
+  "サンドパン(アローラのすがた)": {
+    "index": 28,
+    "types": [
+      "こおり",
+      "はがね"
+    ],
+    "abilities": [
+      "ゆきがくれ",
+      "ゆきかき"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 100,
+      "B": 120,
+      "C": 25,
+      "D": 65,
+      "S": 65
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n28a",
+      "key": "n28a"
+    }
+  },
+  "ニドラン♀": {
+    "index": 29,
+    "types": [
+      "どく"
+    ],
+    "abilities": [
+      "どくのトゲ",
+      "とうそうしん",
+      "はりきり"
+    ],
+    "baseStats": {
+      "H": 55,
+      "A": 47,
+      "B": 52,
+      "C": 40,
+      "D": 40,
+      "S": 41
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n29",
+      "key": "n29"
     }
   },
   "ニドリーナ": {
@@ -1029,6 +1188,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n31",
       "key": "n31"
+    }
+  },
+  "ニドラン♂": {
+    "index": 32,
+    "types": [
+      "どく"
+    ],
+    "abilities": [
+      "どくのトゲ",
+      "とうそうしん",
+      "はりきり"
+    ],
+    "baseStats": {
+      "H": 46,
+      "A": 57,
+      "B": 40,
+      "C": 40,
+      "D": 40,
+      "S": 50
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n32",
+      "key": "n32"
     }
   },
   "ニドリーノ": {
@@ -1190,6 +1376,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n37",
       "key": "n37"
+    }
+  },
+  "ロコン(アローラのすがた)": {
+    "index": 37,
+    "types": [
+      "こおり"
+    ],
+    "abilities": [
+      "ゆきがくれ",
+      "ゆきふらし"
+    ],
+    "baseStats": {
+      "H": 38,
+      "A": 41,
+      "B": 40,
+      "C": 50,
+      "D": 65,
+      "S": 65
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n37a",
+      "key": "n37a"
     }
   },
   "キュウコン": {
@@ -1575,6 +1787,34 @@
       "key": "n50"
     }
   },
+  "ディグダ(アローラのすがた)": {
+    "index": 50,
+    "types": [
+      "じめん",
+      "はがね"
+    ],
+    "abilities": [
+      "すながくれ",
+      "カーリーヘアー",
+      "すなのちから"
+    ],
+    "baseStats": {
+      "H": 10,
+      "A": 55,
+      "B": 30,
+      "C": 35,
+      "D": 45,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n50a",
+      "key": "n50a"
+    }
+  },
   "ダグトリオ": {
     "index": 51,
     "types": [
@@ -1600,6 +1840,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n51",
       "key": "n51"
+    }
+  },
+  "ダグトリオ(アローラのすがた)": {
+    "index": 51,
+    "types": [
+      "じめん",
+      "はがね"
+    ],
+    "abilities": [
+      "すながくれ",
+      "カーリーヘアー",
+      "すなのちから"
+    ],
+    "baseStats": {
+      "H": 35,
+      "A": 100,
+      "B": 60,
+      "C": 50,
+      "D": 70,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n51a",
+      "key": "n51a"
     }
   },
   "ニャース": {
@@ -1629,6 +1897,60 @@
       "key": "n52"
     }
   },
+  "ニャース(アローラのすがた)": {
+    "index": 52,
+    "types": [
+      "あく"
+    ],
+    "abilities": [
+      "ものひろい",
+      "テクニシャン",
+      "Rattled"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 35,
+      "B": 35,
+      "C": 50,
+      "D": 40,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n52a",
+      "key": "n52a"
+    }
+  },
+  "ニャース(ガラルのすがた)": {
+    "index": 52,
+    "types": [
+      "はがね"
+    ],
+    "abilities": [
+      "ものひろい",
+      "かたいツメ",
+      "きんちょうかん"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 65,
+      "B": 55,
+      "C": 40,
+      "D": 40,
+      "S": 40
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n52g",
+      "key": "n52g"
+    }
+  },
   "ペルシアン": {
     "index": 53,
     "types": [
@@ -1654,6 +1976,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n53",
       "key": "n53"
+    }
+  },
+  "ペルシアン(アローラのすがた)": {
+    "index": 53,
+    "types": [
+      "あく"
+    ],
+    "abilities": [
+      "ファーコート",
+      "テクニシャン",
+      "Rattled"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 60,
+      "C": 75,
+      "D": 65,
+      "S": 115
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n53a",
+      "key": "n53a"
     }
   },
   "コダック": {
@@ -1789,6 +2138,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n58",
       "key": "n58"
+    }
+  },
+  "ガーディ(ヒスイのすがた)": {
+    "index": 58,
+    "types": [
+      "ほのお",
+      "いわ"
+    ],
+    "abilities": [
+      "いかく",
+      "もらいび",
+      "いしあたま"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 75,
+      "B": 45,
+      "C": 65,
+      "D": 50,
+      "S": 55
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n58h",
+      "key": "n58h"
     }
   },
   "ウインディ": {
@@ -2306,6 +2683,34 @@
       "key": "n74"
     }
   },
+  "イシツブテ(アローラのすがた)": {
+    "index": 74,
+    "types": [
+      "いわ",
+      "でんき"
+    ],
+    "abilities": [
+      "Magnet Pull",
+      "がんじょう",
+      "Galvanize"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 80,
+      "B": 100,
+      "C": 30,
+      "D": 30,
+      "S": 20
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n74a",
+      "key": "n74a"
+    }
+  },
   "ゴローン": {
     "index": 75,
     "types": [
@@ -2332,6 +2737,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n75",
       "key": "n75"
+    }
+  },
+  "ゴローン(アローラのすがた)": {
+    "index": 75,
+    "types": [
+      "いわ",
+      "でんき"
+    ],
+    "abilities": [
+      "Magnet Pull",
+      "がんじょう",
+      "Galvanize"
+    ],
+    "baseStats": {
+      "H": 55,
+      "A": 95,
+      "B": 115,
+      "C": 45,
+      "D": 45,
+      "S": 35
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n75a",
+      "key": "n75a"
     }
   },
   "ゴローニャ": {
@@ -2362,6 +2795,34 @@
       "key": "n76"
     }
   },
+  "ゴローニャ(アローラのすがた)": {
+    "index": 76,
+    "types": [
+      "いわ",
+      "でんき"
+    ],
+    "abilities": [
+      "Magnet Pull",
+      "がんじょう",
+      "Galvanize"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 120,
+      "B": 130,
+      "C": 55,
+      "D": 65,
+      "S": 45
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n76a",
+      "key": "n76a"
+    }
+  },
   "ポニータ": {
     "index": 77,
     "types": [
@@ -2387,6 +2848,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n77",
       "key": "n77"
+    }
+  },
+  "ポニータ(ガラルのすがた)": {
+    "index": 77,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "Run Away",
+      "Pastel Veil",
+      "きけんよち"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 85,
+      "B": 55,
+      "C": 65,
+      "D": 65,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n77g",
+      "key": "n77g"
     }
   },
   "ギャロップ": {
@@ -2416,6 +2904,34 @@
       "key": "n78"
     }
   },
+  "ギャロップ(ガラルのすがた)": {
+    "index": 78,
+    "types": [
+      "エスパー",
+      "フェアリー"
+    ],
+    "abilities": [
+      "Run Away",
+      "Pastel Veil",
+      "きけんよち"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 100,
+      "B": 70,
+      "C": 80,
+      "D": 80,
+      "S": 105
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n78g",
+      "key": "n78g"
+    }
+  },
   "ヤドン": {
     "index": 79,
     "types": [
@@ -2442,6 +2958,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n79",
       "key": "n79"
+    }
+  },
+  "ヤドン(ガラルのすがた)": {
+    "index": 79,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "くいしんぼう",
+      "マイペース",
+      "さいせいりょく"
+    ],
+    "baseStats": {
+      "H": 90,
+      "A": 65,
+      "B": 65,
+      "C": 40,
+      "D": 40,
+      "S": 15
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n79g",
+      "key": "n79g"
     }
   },
   "メガヤドラン": {
@@ -2610,6 +3153,32 @@
       "key": "n83"
     }
   },
+  "カモネギ(ガラルのすがた)": {
+    "index": 83,
+    "types": [
+      "かくとう"
+    ],
+    "abilities": [
+      "ふくつのこころ",
+      "きもったま"
+    ],
+    "baseStats": {
+      "H": 52,
+      "A": 95,
+      "B": 55,
+      "C": 58,
+      "D": 62,
+      "S": 55
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n83g",
+      "key": "n83g"
+    }
+  },
   "ドードー": {
     "index": 84,
     "types": [
@@ -2748,6 +3317,34 @@
       "key": "n88"
     }
   },
+  "ベトベター(アローラのすがた)": {
+    "index": 88,
+    "types": [
+      "どく",
+      "あく"
+    ],
+    "abilities": [
+      "どくしゅ",
+      "くいしんぼう",
+      "Power of Alchemy"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 80,
+      "B": 50,
+      "C": 40,
+      "D": 50,
+      "S": 25
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n88a",
+      "key": "n88a"
+    }
+  },
   "ベトベトン": {
     "index": 89,
     "types": [
@@ -2773,6 +3370,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n89",
       "key": "n89"
+    }
+  },
+  "ベトベトン(アローラのすがた)": {
+    "index": 89,
+    "types": [
+      "どく",
+      "あく"
+    ],
+    "abilities": [
+      "どくしゅ",
+      "くいしんぼう",
+      "Power of Alchemy"
+    ],
+    "baseStats": {
+      "H": 105,
+      "A": 105,
+      "B": 75,
+      "C": 65,
+      "D": 100,
+      "S": 50
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n89a",
+      "key": "n89a"
     }
   },
   "シェルダー": {
@@ -3097,6 +3722,34 @@
       "key": "n100"
     }
   },
+  "ビリリダマ(ヒスイのすがた)": {
+    "index": 100,
+    "types": [
+      "でんき",
+      "くさ"
+    ],
+    "abilities": [
+      "ぼうおん",
+      "せいでんき",
+      "ゆうばく"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 30,
+      "B": 50,
+      "C": 55,
+      "D": 55,
+      "S": 100
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n100h",
+      "key": "n100h"
+    }
+  },
   "マルマイン": {
     "index": 101,
     "types": [
@@ -3122,6 +3775,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n101",
       "key": "n101"
+    }
+  },
+  "マルマイン(ヒスイのすがた)": {
+    "index": 101,
+    "types": [
+      "でんき",
+      "くさ"
+    ],
+    "abilities": [
+      "ぼうおん",
+      "せいでんき",
+      "ゆうばく"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 50,
+      "B": 70,
+      "C": 80,
+      "D": 80,
+      "S": 150
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n101h",
+      "key": "n101h"
     }
   },
   "タマタマ": {
@@ -3178,6 +3859,33 @@
       "key": "n103"
     }
   },
+  "ナッシー(アローラのすがた)": {
+    "index": 103,
+    "types": [
+      "くさ",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "おみとおし",
+      "しゅうかく"
+    ],
+    "baseStats": {
+      "H": 95,
+      "A": 105,
+      "B": 85,
+      "C": 125,
+      "D": 75,
+      "S": 45
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n103a",
+      "key": "n103a"
+    }
+  },
   "カラカラ": {
     "index": 104,
     "types": [
@@ -3230,6 +3938,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n105",
       "key": "n105"
+    }
+  },
+  "ガラガラ(アローラのすがた)": {
+    "index": 105,
+    "types": [
+      "ほのお",
+      "ゴースト"
+    ],
+    "abilities": [
+      "のろわれボディ",
+      "ひらいしん",
+      "いしあたま"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 80,
+      "B": 110,
+      "C": 50,
+      "D": 80,
+      "S": 45
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n105a",
+      "key": "n105a"
     }
   },
   "サワムラー": {
@@ -3365,6 +4101,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n110",
       "key": "n110"
+    }
+  },
+  "マタドガス(ガラルのすがた)": {
+    "index": 110,
+    "types": [
+      "どく",
+      "フェアリー"
+    ],
+    "abilities": [
+      "ふゆう",
+      "Neutralizing Gas",
+      "Misty Surge"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 90,
+      "B": 120,
+      "C": 85,
+      "D": 70,
+      "S": 60
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n110g",
+      "key": "n110g"
     }
   },
   "サイホーン": {
@@ -3744,6 +4508,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n122",
       "key": "n122"
+    }
+  },
+  "バリヤード(ガラルのすがた)": {
+    "index": 122,
+    "types": [
+      "こおり",
+      "エスパー"
+    ],
+    "abilities": [
+      "やるき",
+      "バリアフリー",
+      "アイスボディ"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 65,
+      "B": 65,
+      "C": 90,
+      "D": 90,
+      "S": 100
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n122g",
+      "key": "n122g"
     }
   },
   "ストライク": {
@@ -4502,6 +5294,32 @@
       "key": "n144"
     }
   },
+  "フリーザー(ガラルのすがた)": {
+    "index": 144,
+    "types": [
+      "エスパー",
+      "ひこう"
+    ],
+    "abilities": [
+      "かちき"
+    ],
+    "baseStats": {
+      "H": 90,
+      "A": 85,
+      "B": 85,
+      "C": 125,
+      "D": 100,
+      "S": 95
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n144g",
+      "key": "n144g"
+    }
+  },
   "サンダー": {
     "index": 145,
     "types": [
@@ -4529,6 +5347,32 @@
       "key": "n145"
     }
   },
+  "サンダー(ガラルのすがた)": {
+    "index": 145,
+    "types": [
+      "かくとう",
+      "ひこう"
+    ],
+    "abilities": [
+      "まけんき"
+    ],
+    "baseStats": {
+      "H": 90,
+      "A": 125,
+      "B": 90,
+      "C": 85,
+      "D": 90,
+      "S": 100
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n145g",
+      "key": "n145g"
+    }
+  },
   "ファイヤー": {
     "index": 146,
     "types": [
@@ -4554,6 +5398,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n146",
       "key": "n146"
+    }
+  },
+  "ファイヤー(ガラルのすがた)": {
+    "index": 146,
+    "types": [
+      "あく",
+      "ひこう"
+    ],
+    "abilities": [
+      "ぎゃくじょう"
+    ],
+    "baseStats": {
+      "H": 90,
+      "A": 85,
+      "B": 90,
+      "C": 100,
+      "D": 125,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n146g",
+      "key": "n146g"
     }
   },
   "ミニリュウ": {
@@ -4685,6 +5555,57 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n150",
       "key": "n150"
+    }
+  },
+  "メガミュウツーＸ": {
+    "index": 150,
+    "types": [
+      "エスパー",
+      "かくとう"
+    ],
+    "abilities": [
+      "ふくつのこころ"
+    ],
+    "baseStats": {
+      "H": 106,
+      "A": 190,
+      "B": 100,
+      "C": 154,
+      "D": 100,
+      "S": 130
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n150x",
+      "key": "n150x"
+    }
+  },
+  "メガミュウツーＹ": {
+    "index": 150,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "ふみん"
+    ],
+    "baseStats": {
+      "H": 106,
+      "A": 150,
+      "B": 70,
+      "C": 194,
+      "D": 120,
+      "S": 140
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n150y",
+      "key": "n150y"
     }
   },
   "ミュウ": {
@@ -5983,6 +6904,34 @@
       "key": "n194"
     }
   },
+  "ウパー(パルデアのすがた)": {
+    "index": 194,
+    "types": [
+      "どく",
+      "じめん"
+    ],
+    "abilities": [
+      "どくのトゲ",
+      "ちょすい",
+      "てんねん"
+    ],
+    "baseStats": {
+      "H": 55,
+      "A": 45,
+      "B": 45,
+      "C": 25,
+      "D": 25,
+      "S": 15
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n194p",
+      "key": "n194p"
+    }
+  },
   "ヌオー": {
     "index": 195,
     "types": [
@@ -6495,6 +7444,34 @@
       "key": "n211"
     }
   },
+  "ハリーセン(ヒスイのすがた)": {
+    "index": 211,
+    "types": [
+      "あく",
+      "どく"
+    ],
+    "abilities": [
+      "どくのトゲ",
+      "すいすい",
+      "いかく"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 95,
+      "B": 85,
+      "C": 55,
+      "D": 55,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n211h",
+      "key": "n211h"
+    }
+  },
   "ハッサム": {
     "index": 212,
     "types": [
@@ -6657,6 +7634,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n215",
       "key": "n215"
+    }
+  },
+  "ニューラ(ヒスイのすがた)": {
+    "index": 215,
+    "types": [
+      "かくとう",
+      "どく"
+    ],
+    "abilities": [
+      "せいしんりょく",
+      "するどいめ",
+      "わるいてぐせ"
+    ],
+    "baseStats": {
+      "H": 55,
+      "A": 95,
+      "B": 55,
+      "C": 35,
+      "D": 75,
+      "S": 115
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n215h",
+      "key": "n215h"
     }
   },
   "ヒメグマ": {
@@ -6850,6 +7855,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n222",
       "key": "n222"
+    }
+  },
+  "サニーゴ(ガラルのすがた)": {
+    "index": 222,
+    "types": [
+      "ゴースト"
+    ],
+    "abilities": [
+      "くだけるよろい",
+      "のろわれボディ"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 55,
+      "B": 100,
+      "C": 65,
+      "D": 100,
+      "S": 30
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n222g",
+      "key": "n222g"
     }
   },
   "テッポウオ": {
@@ -8108,6 +9139,34 @@
       "key": "n263"
     }
   },
+  "ジグザグマ(ガラルのすがた)": {
+    "index": 263,
+    "types": [
+      "あく",
+      "ノーマル"
+    ],
+    "abilities": [
+      "ものひろい",
+      "くいしんぼう",
+      "はやあし"
+    ],
+    "baseStats": {
+      "H": 38,
+      "A": 30,
+      "B": 41,
+      "C": 30,
+      "D": 41,
+      "S": 60
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n263g",
+      "key": "n263g"
+    }
+  },
   "マッスグマ": {
     "index": 264,
     "types": [
@@ -8133,6 +9192,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n264",
       "key": "n264"
+    }
+  },
+  "マッスグマ(ガラルのすがた)": {
+    "index": 264,
+    "types": [
+      "あく",
+      "ノーマル"
+    ],
+    "abilities": [
+      "ものひろい",
+      "くいしんぼう",
+      "はやあし"
+    ],
+    "baseStats": {
+      "H": 78,
+      "A": 70,
+      "B": 61,
+      "C": 50,
+      "D": 61,
+      "S": 100
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n264g",
+      "key": "n264g"
     }
   },
   "ケムッソ": {
@@ -11462,6 +12549,32 @@
       "key": "n373"
     }
   },
+  "メガボーマンダ": {
+    "index": 373,
+    "types": [
+      "ドラゴン",
+      "ひこう"
+    ],
+    "abilities": [
+      "スカイスキン"
+    ],
+    "baseStats": {
+      "H": 95,
+      "A": 145,
+      "B": 130,
+      "C": 120,
+      "D": 90,
+      "S": 120
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n373m",
+      "key": "n373m"
+    }
+  },
   "ダンバル": {
     "index": 374,
     "types": [
@@ -11647,6 +12760,32 @@
       "key": "n379"
     }
   },
+  "メガラティアス": {
+    "index": 380,
+    "types": [
+      "ドラゴン",
+      "エスパー"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 100,
+      "B": 120,
+      "C": 140,
+      "D": 150,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n380m",
+      "key": "n380m"
+    }
+  },
   "ラティアス": {
     "index": 380,
     "types": [
@@ -11671,6 +12810,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n380",
       "key": "n380"
+    }
+  },
+  "メガラティオス": {
+    "index": 381,
+    "types": [
+      "ドラゴン",
+      "エスパー"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 130,
+      "B": 100,
+      "C": 160,
+      "D": 120,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n381m",
+      "key": "n381m"
     }
   },
   "ラティオス": {
@@ -11724,6 +12889,31 @@
       "key": "n382"
     }
   },
+  "ゲンシカイオーガ": {
+    "index": 382,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "Primordial Sea"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 150,
+      "B": 90,
+      "C": 180,
+      "D": 160,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n382p",
+      "key": "n382p"
+    }
+  },
   "グラードン": {
     "index": 383,
     "types": [
@@ -11747,6 +12937,58 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n383",
       "key": "n383"
+    }
+  },
+  "ゲンシグラードン": {
+    "index": 383,
+    "types": [
+      "じめん",
+      "ほのお"
+    ],
+    "abilities": [
+      "Desolate Land"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 180,
+      "B": 160,
+      "C": 150,
+      "D": 90,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n383p",
+      "key": "n383p"
+    }
+  },
+  "メガレックウザ": {
+    "index": 384,
+    "types": [
+      "ドラゴン",
+      "ひこう"
+    ],
+    "abilities": [
+      "Delta Stream"
+    ],
+    "baseStats": {
+      "H": 105,
+      "A": 180,
+      "B": 100,
+      "C": 180,
+      "D": 100,
+      "S": 115
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n384m",
+      "key": "n384m"
     }
   },
   "レックウザ": {
@@ -11801,7 +13043,82 @@
       "key": "n385"
     }
   },
-  "デオキシス": {
+  "デオキシス(アタックフォルム)": {
+    "index": 386,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "プレッシャー"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 180,
+      "B": 20,
+      "C": 180,
+      "D": 20,
+      "S": 150
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n386a",
+      "key": "n386a"
+    }
+  },
+  "デオキシス(スピードフォルム)": {
+    "index": 386,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "プレッシャー"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 95,
+      "B": 90,
+      "C": 95,
+      "D": 90,
+      "S": 180
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n386s",
+      "key": "n386s"
+    }
+  },
+  "デオキシス(ディフェンスフォルム)": {
+    "index": 386,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "プレッシャー"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 70,
+      "B": 160,
+      "C": 70,
+      "D": 160,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n386d",
+      "key": "n386d"
+    }
+  },
+  "デオキシス(ノーマルフォルム)": {
     "index": 386,
     "types": [
       "エスパー"
@@ -11822,8 +13139,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n386a",
-      "key": "n386a"
+      "url": "https://yakkun.com/ch/zukan/n386",
+      "key": "n386"
     }
   },
   "ナエトル": {
@@ -12547,7 +13864,51 @@
       "key": "n412"
     }
   },
-  "ミノマダム": {
+  "ミノムッチ(ゴミのミノ)": {
+    "index": 412,
+    "types": [
+      "むし"
+    ],
+    "abilities": [
+      "だっぴ",
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 29,
+      "B": 45,
+      "C": 29,
+      "D": 45,
+      "S": 36
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ミノムッチ(すなちのミノ)": {
+    "index": 412,
+    "types": [
+      "むし"
+    ],
+    "abilities": [
+      "だっぴ",
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 40,
+      "A": 29,
+      "B": 45,
+      "C": 29,
+      "D": 45,
+      "S": 36
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ミノマダム(くさきのミノ)": {
     "index": 413,
     "types": [
       "むし",
@@ -12572,6 +13933,60 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n413",
       "key": "n413"
+    }
+  },
+  "ミノマダム(ゴミのミノ)": {
+    "index": 413,
+    "types": [
+      "むし",
+      "はがね"
+    ],
+    "abilities": [
+      "きけんよち",
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 69,
+      "B": 95,
+      "C": 69,
+      "D": 95,
+      "S": 36
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n413d",
+      "key": "n413d"
+    }
+  },
+  "ミノマダム(すなちのミノ)": {
+    "index": 413,
+    "types": [
+      "むし",
+      "じめん"
+    ],
+    "abilities": [
+      "きけんよち",
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 60,
+      "A": 79,
+      "B": 105,
+      "C": 59,
+      "D": 85,
+      "S": 36
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n413s",
+      "key": "n413s"
     }
   },
   "ガーメイル": {
@@ -14748,6 +16163,33 @@
       "key": "n483"
     }
   },
+  "ディアルガ(オリジンフォルム)": {
+    "index": 483,
+    "types": [
+      "はがね",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "プレッシャー",
+      "テレパシー"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 100,
+      "B": 120,
+      "C": 150,
+      "D": 120,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n483o",
+      "key": "n483o"
+    }
+  },
   "パルキア": {
     "index": 484,
     "types": [
@@ -14773,6 +16215,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n484",
       "key": "n484"
+    }
+  },
+  "パルキア(オリジンフォルム)": {
+    "index": 484,
+    "types": [
+      "みず",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "プレッシャー",
+      "テレパシー"
+    ],
+    "baseStats": {
+      "H": 90,
+      "A": 100,
+      "B": 100,
+      "C": 150,
+      "D": 120,
+      "S": 120
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n484o",
+      "key": "n484o"
     }
   },
   "ヒードラン": {
@@ -14827,7 +16296,7 @@
       "key": "n486"
     }
   },
-  "ギラティナ": {
+  "ギラティナ(アナザーフォルム)": {
     "index": 487,
     "types": [
       "ゴースト",
@@ -14852,6 +16321,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n487",
       "key": "n487"
+    }
+  },
+  "ギラティナ(オリジンフォルム)": {
+    "index": 487,
+    "types": [
+      "ゴースト",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "ふゆう"
+    ],
+    "baseStats": {
+      "H": 150,
+      "A": 120,
+      "B": 100,
+      "C": 120,
+      "D": 100,
+      "S": 90
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n487o",
+      "key": "n487o"
     }
   },
   "クレセリア": {
@@ -14954,7 +16449,33 @@
       "key": "n491"
     }
   },
-  "シェイミ": {
+  "シェイミ(スカイフォルム)": {
+    "index": 492,
+    "types": [
+      "くさ",
+      "ひこう"
+    ],
+    "abilities": [
+      "Serene Grace"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 103,
+      "B": 75,
+      "C": 120,
+      "D": 75,
+      "S": 127
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n492s",
+      "key": "n492s"
+    }
+  },
+  "シェイミ(ランドフォルム)": {
     "index": 492,
     "types": [
       "くさ"
@@ -14975,8 +16496,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n492s",
-      "key": "n492s"
+      "url": "https://yakkun.com/ch/zukan/n492",
+      "key": "n492"
     }
   },
   "アルセウス": {
@@ -16649,7 +18170,62 @@
       "key": "n549"
     }
   },
-  "バスラオ": {
+  "ドレディア(ヒスイのすがた)": {
+    "index": 549,
+    "types": [
+      "くさ",
+      "かくとう"
+    ],
+    "abilities": [
+      "ようりょくそ",
+      "はりきり",
+      "リーフガード"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 105,
+      "B": 75,
+      "C": 50,
+      "D": 75,
+      "S": 105
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n549h",
+      "key": "n549h"
+    }
+  },
+  "バスラオ(あおすじのすがた)": {
+    "index": 550,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "いしあたま",
+      "てきおうりょく",
+      "かたやぶり"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 92,
+      "B": 65,
+      "C": 80,
+      "D": 55,
+      "S": 98
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n550f",
+      "key": "n550f"
+    }
+  },
+  "バスラオ(あかすじのすがた)": {
     "index": 550,
     "types": [
       "みず"
@@ -16672,8 +18248,35 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n550f",
-      "key": "n550f"
+      "url": "https://yakkun.com/ch/zukan/n550",
+      "key": "n550"
+    }
+  },
+  "バスラオ(しろすじのすがた)": {
+    "index": 550,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "Rattled",
+      "てきおうりょく",
+      "かたやぶり"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 92,
+      "B": 65,
+      "C": 80,
+      "D": 55,
+      "S": 98
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n550w",
+      "key": "n550w"
     }
   },
   "メグロコ": {
@@ -16786,6 +18389,32 @@
       "key": "n554"
     }
   },
+  "ダルマッカ(ガラルのすがた)": {
+    "index": 554,
+    "types": [
+      "こおり"
+    ],
+    "abilities": [
+      "はりきり",
+      "せいしんりょく"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 90,
+      "B": 45,
+      "C": 15,
+      "D": 45,
+      "S": 50
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n554g",
+      "key": "n554g"
+    }
+  },
   "ヒヒダルマ": {
     "index": 555,
     "types": [
@@ -16810,6 +18439,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n555",
       "key": "n555"
+    }
+  },
+  "ヒヒダルマ(ガラルのすがた)": {
+    "index": 555,
+    "types": [
+      "こおり"
+    ],
+    "abilities": [
+      "Gorilla Tactics",
+      "Zen Mode"
+    ],
+    "baseStats": {
+      "H": 105,
+      "A": 140,
+      "B": 55,
+      "C": 30,
+      "D": 55,
+      "S": 95
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n555g",
+      "key": "n555g"
     }
   },
   "マラカッチ": {
@@ -17030,6 +18685,32 @@
       "key": "n562"
     }
   },
+  "デスマス(ガラルのすがた)": {
+    "index": 562,
+    "types": [
+      "じめん",
+      "ゴースト"
+    ],
+    "abilities": [
+      "さまようたましい"
+    ],
+    "baseStats": {
+      "H": 38,
+      "A": 55,
+      "B": 85,
+      "C": 30,
+      "D": 65,
+      "S": 30
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n562g",
+      "key": "n562g"
+    }
+  },
   "デスカーン": {
     "index": 563,
     "types": [
@@ -17240,6 +18921,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n570",
       "key": "n570"
+    }
+  },
+  "ゾロア(ヒスイのすがた)": {
+    "index": 570,
+    "types": [
+      "ノーマル",
+      "ゴースト"
+    ],
+    "abilities": [
+      "イリュージョン"
+    ],
+    "baseStats": {
+      "H": 35,
+      "A": 60,
+      "B": 40,
+      "C": 85,
+      "D": 40,
+      "S": 70
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n570h",
+      "key": "n570h"
     }
   },
   "ゾロアーク": {
@@ -18945,6 +20652,34 @@
       "key": "n628"
     }
   },
+  "ウォーグル(ヒスイのすがた)": {
+    "index": 628,
+    "types": [
+      "エスパー",
+      "ひこう"
+    ],
+    "abilities": [
+      "するどいめ",
+      "ちからずく",
+      "Tinted Lens"
+    ],
+    "baseStats": {
+      "H": 110,
+      "A": 83,
+      "B": 70,
+      "C": 112,
+      "D": 70,
+      "S": 65
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n628h",
+      "key": "n628h"
+    }
+  },
   "バルチャイ": {
     "index": 629,
     "types": [
@@ -19266,7 +21001,7 @@
       "key": "n640"
     }
   },
-  "トルネロス": {
+  "トルネロス(けしんフォルム)": {
     "index": 641,
     "types": [
       "ひこう"
@@ -19292,7 +21027,32 @@
       "key": "n641"
     }
   },
-  "ボルトロス": {
+  "トルネロス(れいじゅうフォルム)": {
+    "index": 641,
+    "types": [
+      "ひこう"
+    ],
+    "abilities": [
+      "さいせいりょく"
+    ],
+    "baseStats": {
+      "H": 79,
+      "A": 100,
+      "B": 80,
+      "C": 110,
+      "D": 90,
+      "S": 121
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n641a",
+      "key": "n641a"
+    }
+  },
+  "ボルトロス(けしんフォルム)": {
     "index": 642,
     "types": [
       "でんき",
@@ -19317,6 +21077,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n642",
       "key": "n642"
+    }
+  },
+  "ボルトロス(れいじゅうフォルム)": {
+    "index": 642,
+    "types": [
+      "でんき",
+      "ひこう"
+    ],
+    "abilities": [
+      "ちくでん"
+    ],
+    "baseStats": {
+      "H": 79,
+      "A": 105,
+      "B": 70,
+      "C": 145,
+      "D": 80,
+      "S": 101
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n642a",
+      "key": "n642a"
     }
   },
   "レシラム": {
@@ -19371,7 +21157,7 @@
       "key": "n644"
     }
   },
-  "ランドロス": {
+  "ランドロス(けしんフォルム)": {
     "index": 645,
     "types": [
       "じめん",
@@ -19396,6 +21182,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n645",
       "key": "n645"
+    }
+  },
+  "ランドロス(れいじゅうフォルム)": {
+    "index": 645,
+    "types": [
+      "じめん",
+      "ひこう"
+    ],
+    "abilities": [
+      "いかく"
+    ],
+    "baseStats": {
+      "H": 89,
+      "A": 145,
+      "B": 90,
+      "C": 105,
+      "D": 80,
+      "S": 91
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n645a",
+      "key": "n645a"
     }
   },
   "キュレム": {
@@ -19424,7 +21236,59 @@
       "key": "n646"
     }
   },
-  "ケルディオ": {
+  "ブラックキュレム": {
+    "index": 646,
+    "types": [
+      "ドラゴン",
+      "こおり"
+    ],
+    "abilities": [
+      "Teravolt"
+    ],
+    "baseStats": {
+      "H": 125,
+      "A": 170,
+      "B": 100,
+      "C": 120,
+      "D": 90,
+      "S": 95
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n646b",
+      "key": "n646b"
+    }
+  },
+  "ホワイトキュレム": {
+    "index": 646,
+    "types": [
+      "ドラゴン",
+      "こおり"
+    ],
+    "abilities": [
+      "Turboblaze"
+    ],
+    "baseStats": {
+      "H": 125,
+      "A": 120,
+      "B": 90,
+      "C": 170,
+      "D": 100,
+      "S": 95
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n646w",
+      "key": "n646w"
+    }
+  },
+  "ケルディオ(いつものすがた)": {
     "index": 647,
     "types": [
       "みず",
@@ -19450,7 +21314,59 @@
       "key": "n647"
     }
   },
-  "メロエッタ": {
+  "ケルディオ(かくごのすがた)": {
+    "index": 647,
+    "types": [
+      "みず",
+      "かくとう"
+    ],
+    "abilities": [
+      "せいぎのこころ"
+    ],
+    "baseStats": {
+      "H": 91,
+      "A": 72,
+      "B": 90,
+      "C": 129,
+      "D": 90,
+      "S": 108
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n647k",
+      "key": "n647k"
+    }
+  },
+  "メロエッタ(ステップフォルム)": {
+    "index": 648,
+    "types": [
+      "ノーマル",
+      "かくとう"
+    ],
+    "abilities": [
+      "Serene Grace"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 128,
+      "B": 90,
+      "C": 77,
+      "D": 77,
+      "S": 128
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n648f",
+      "key": "n648f"
+    }
+  },
+  "メロエッタ(ボイスフォルム)": {
     "index": 648,
     "types": [
       "ノーマル",
@@ -19472,8 +21388,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n648f",
-      "key": "n648f"
+      "url": "https://yakkun.com/ch/zukan/n648",
+      "key": "n648"
     }
   },
   "ゲノセクト": {
@@ -20006,6 +21922,298 @@
       "key": "n665"
     }
   },
+  "ビビヨン(オーシャンのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666",
+      "key": "n666"
+    }
+  },
+  "ビビヨン(ぐんとうのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(こうやのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(さじんのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(サバンナのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(ジャングルのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(スコールのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(せつげんのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(たいがのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(たいようのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(たいりくのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(ていえんのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
   "ビビヨン(ひょうせつのもよう)": {
     "index": 666,
     "types": [
@@ -20028,10 +22236,150 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    }
+  },
+  "ビビヨン(ファンシーなもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
     },
-    "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n666",
-      "key": "n666"
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(ボールのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(マリンのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(みやびなもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(モダンなもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "ビビヨン(ゆきぐにのもよう)": {
+    "index": 666,
+    "types": [
+      "むし",
+      "ひこう"
+    ],
+    "abilities": [
+      "りんぷん",
+      "ふくがん",
+      "フレンドガード"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 52,
+      "B": 50,
+      "C": 90,
+      "D": 50,
+      "S": 89
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
     }
   },
   "シシコ": {
@@ -20140,6 +22488,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n669",
       "key": "n669"
+    }
+  },
+  "フラエッテ": {
+    "index": 670,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "フラワーベール",
+      "きょうせい"
+    ],
+    "baseStats": {
+      "H": 54,
+      "A": 45,
+      "B": 47,
+      "C": 75,
+      "D": 98,
+      "S": 52
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n670",
+      "key": "n670"
     }
   },
   "フラエッテ(えいえんのはな)": {
@@ -21310,6 +23684,34 @@
       "key": "n705"
     }
   },
+  "ヌメイル(ヒスイのすがた)": {
+    "index": 705,
+    "types": [
+      "はがね",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "そうしょく",
+      "シェルアーマー",
+      "ぬめぬめ"
+    ],
+    "baseStats": {
+      "H": 58,
+      "A": 75,
+      "B": 83,
+      "C": 83,
+      "D": 113,
+      "S": 40
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n705h",
+      "key": "n705h"
+    }
+  },
   "ヌメルゴン": {
     "index": 706,
     "types": [
@@ -21448,7 +23850,91 @@
       "key": "n709"
     }
   },
-  "バケッチャ": {
+  "バケッチャ(おおだましゅ)": {
+    "index": 710,
+    "types": [
+      "ゴースト",
+      "くさ"
+    ],
+    "abilities": [
+      "ものひろい",
+      "おみとおし",
+      "ふみん"
+    ],
+    "baseStats": {
+      "H": 54,
+      "A": 66,
+      "B": 70,
+      "C": 44,
+      "D": 55,
+      "S": 46
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n710l",
+      "key": "n710l"
+    }
+  },
+  "バケッチャ(ギガだましゅ)": {
+    "index": 710,
+    "types": [
+      "ゴースト",
+      "くさ"
+    ],
+    "abilities": [
+      "ものひろい",
+      "おみとおし",
+      "ふみん"
+    ],
+    "baseStats": {
+      "H": 59,
+      "A": 66,
+      "B": 70,
+      "C": 44,
+      "D": 55,
+      "S": 41
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n710k",
+      "key": "n710k"
+    }
+  },
+  "バケッチャ(こだましゅ)": {
+    "index": 710,
+    "types": [
+      "ゴースト",
+      "くさ"
+    ],
+    "abilities": [
+      "ものひろい",
+      "おみとおし",
+      "ふみん"
+    ],
+    "baseStats": {
+      "H": 44,
+      "A": 66,
+      "B": 70,
+      "C": 44,
+      "D": 55,
+      "S": 56
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n710s",
+      "key": "n710s"
+    }
+  },
+  "バケッチャ(ちゅうだましゅ)": {
     "index": 710,
     "types": [
       "ゴースト",
@@ -21472,8 +23958,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n710l",
-      "key": "n710l"
+      "url": "https://yakkun.com/ch/zukan/n710",
+      "key": "n710"
     }
   },
   "パンプジン(おおだましゅ)": {
@@ -21777,7 +24263,33 @@
       "key": "n717"
     }
   },
-  "ジガルデ": {
+  "ジガルデ(１０％フォルム)": {
+    "index": 718,
+    "types": [
+      "ドラゴン",
+      "じめん"
+    ],
+    "abilities": [
+      "Aura Break"
+    ],
+    "baseStats": {
+      "H": 54,
+      "A": 100,
+      "B": 71,
+      "C": 61,
+      "D": 85,
+      "S": 115
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n718t",
+      "key": "n718t"
+    }
+  },
+  "ジガルデ(５０％フォルム)": {
     "index": 718,
     "types": [
       "ドラゴン",
@@ -21799,8 +24311,34 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n718t",
-      "key": "n718t"
+      "url": "https://yakkun.com/ch/zukan/n718",
+      "key": "n718"
+    }
+  },
+  "ジガルデ(パーフェクトフォルム)": {
+    "index": 718,
+    "types": [
+      "ドラゴン",
+      "じめん"
+    ],
+    "abilities": [
+      "Power Construct"
+    ],
+    "baseStats": {
+      "H": 216,
+      "A": 100,
+      "B": 121,
+      "C": 91,
+      "D": 95,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n718c",
+      "key": "n718c"
     }
   },
   "ディアンシー": {
@@ -21829,7 +24367,33 @@
       "key": "n719"
     }
   },
-  "フーパ": {
+  "メガディアンシー": {
+    "index": 719,
+    "types": [
+      "いわ",
+      "フェアリー"
+    ],
+    "abilities": [
+      "マジックミラー"
+    ],
+    "baseStats": {
+      "H": 50,
+      "A": 160,
+      "B": 110,
+      "C": 160,
+      "D": 110,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n719m",
+      "key": "n719m"
+    }
+  },
+  "いましめられしフーパ": {
     "index": 720,
     "types": [
       "エスパー",
@@ -21853,6 +24417,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n720",
       "key": "n720"
+    }
+  },
+  "ときはなたれしフーパ": {
+    "index": 720,
+    "types": [
+      "エスパー",
+      "あく"
+    ],
+    "abilities": [
+      "マジシャン"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 160,
+      "B": 60,
+      "C": 170,
+      "D": 130,
+      "S": 80
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n720u",
+      "key": "n720u"
     }
   },
   "ボルケニオン": {
@@ -22443,7 +25033,85 @@
       "key": "n740m"
     }
   },
-  "オドリドリ": {
+  "オドリドリ(ぱちぱちスタイル)": {
+    "index": 741,
+    "types": [
+      "でんき",
+      "ひこう"
+    ],
+    "abilities": [
+      "Dancer"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 70,
+      "B": 70,
+      "C": 98,
+      "D": 70,
+      "S": 93
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n741p",
+      "key": "n741p"
+    }
+  },
+  "オドリドリ(ふらふらスタイル)": {
+    "index": 741,
+    "types": [
+      "エスパー",
+      "ひこう"
+    ],
+    "abilities": [
+      "Dancer"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 70,
+      "B": 70,
+      "C": 98,
+      "D": 70,
+      "S": 93
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n741f",
+      "key": "n741f"
+    }
+  },
+  "オドリドリ(まいまいスタイル)": {
+    "index": 741,
+    "types": [
+      "ゴースト",
+      "ひこう"
+    ],
+    "abilities": [
+      "Dancer"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 70,
+      "B": 70,
+      "C": 98,
+      "D": 70,
+      "S": 93
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n741m",
+      "key": "n741m"
+    }
+  },
+  "オドリドリ(めらめらスタイル)": {
     "index": 741,
     "types": [
       "ほのお",
@@ -22465,8 +25133,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n741p",
-      "key": "n741p"
+      "url": "https://yakkun.com/ch/zukan/n741",
+      "key": "n741"
     }
   },
   "アブリー": {
@@ -22631,7 +25299,7 @@
       "key": "n745f"
     }
   },
-  "ヨワシ": {
+  "ヨワシ(たんどくのすがた)": {
     "index": 746,
     "types": [
       "みず"
@@ -22654,6 +25322,31 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n746",
       "key": "n746"
+    }
+  },
+  "ヨワシ(むれたすがた)": {
+    "index": 746,
+    "types": [
+      "みず"
+    ],
+    "abilities": [
+      "Schooling"
+    ],
+    "baseStats": {
+      "H": 45,
+      "A": 140,
+      "B": 130,
+      "C": 140,
+      "D": 135,
+      "S": 30
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n746f",
+      "key": "n746f"
     }
   },
   "ヒドイデ": {
@@ -24095,6 +26788,32 @@
       "key": "n799"
     }
   },
+  "ウルトラネクロズマ": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "ドラゴン"
+    ],
+    "abilities": [
+      "Neuroforce"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 167,
+      "B": 97,
+      "C": 167,
+      "D": 97,
+      "S": 129
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800u",
+      "key": "n800u"
+    }
+  },
   "ネクロズマ": {
     "index": 800,
     "types": [
@@ -24118,6 +26837,58 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n800",
       "key": "n800"
+    }
+  },
+  "ネクロズマ(あかつきのつばさ)": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "ゴースト"
+    ],
+    "abilities": [
+      "Prism Armor"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 113,
+      "B": 109,
+      "C": 157,
+      "D": 127,
+      "S": 77
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800m",
+      "key": "n800m"
+    }
+  },
+  "ネクロズマ(たそがれのたてがみ)": {
+    "index": 800,
+    "types": [
+      "エスパー",
+      "はがね"
+    ],
+    "abilities": [
+      "Prism Armor"
+    ],
+    "baseStats": {
+      "H": 97,
+      "A": 157,
+      "B": 127,
+      "C": 113,
+      "D": 109,
+      "S": 77
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n800s",
+      "key": "n800s"
     }
   },
   "マギアナ": {
@@ -25397,7 +28168,7 @@
       "key": "n848"
     }
   },
-  "ストリンダー": {
+  "ストリンダー(ハイなすがた)": {
     "index": 849,
     "types": [
       "でんき",
@@ -25423,6 +28194,34 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n849",
       "key": "n849"
+    }
+  },
+  "ストリンダー(ローなすがた)": {
+    "index": 849,
+    "types": [
+      "でんき",
+      "どく"
+    ],
+    "abilities": [
+      "Punk Rock",
+      "マイナス",
+      "テクニシャン"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 98,
+      "B": 70,
+      "C": 114,
+      "D": 70,
+      "S": 75
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n849f",
+      "key": "n849f"
     }
   },
   "ヤクデ": {
@@ -25938,6 +28737,54 @@
       "key": "n868"
     }
   },
+  "マホイップ(キャラメルミックス)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869",
+      "key": "n869"
+    }
+  },
+  "マホイップ(トリプルミックス)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
   "マホイップ(ミルキィバニラ)": {
     "index": 869,
     "types": [
@@ -25958,10 +28805,116 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    }
+  },
+  "マホイップ(ミルキィまっちゃ)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
     },
-    "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n869",
-      "key": "n869"
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "マホイップ(ミルキィミント)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "マホイップ(ミルキィルビー)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "マホイップ(ミルキィレモン)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
+  "マホイップ(ルビーミックス)": {
+    "index": 869,
+    "types": [
+      "フェアリー"
+    ],
+    "abilities": [
+      "スイートベール",
+      "アロマベール"
+    ],
+    "baseStats": {
+      "H": 65,
+      "A": 60,
+      "B": 75,
+      "C": 110,
+      "D": 121,
+      "S": 64
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
     }
   },
   "タイレーツ": {
@@ -26120,7 +29073,7 @@
       "key": "n874"
     }
   },
-  "コオリッポ": {
+  "コオリッポ(アイスフェイス)": {
     "index": 875,
     "types": [
       "こおり"
@@ -26145,7 +29098,32 @@
       "key": "n875"
     }
   },
-  "イエッサン": {
+  "コオリッポ(ナイスフェイス)": {
+    "index": 875,
+    "types": [
+      "こおり"
+    ],
+    "abilities": [
+      "Ice Face"
+    ],
+    "baseStats": {
+      "H": 75,
+      "A": 80,
+      "B": 70,
+      "C": 65,
+      "D": 50,
+      "S": 130
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n875f",
+      "key": "n875f"
+    }
+  },
+  "イエッサン(オスのすがた)": {
     "index": 876,
     "types": [
       "エスパー",
@@ -26173,6 +29151,60 @@
       "key": "n876"
     }
   },
+  "イエッサン(メスのすがた)": {
+    "index": 876,
+    "types": [
+      "エスパー",
+      "ノーマル"
+    ],
+    "abilities": [
+      "マイペース",
+      "シンクロ",
+      "Psychic Surge"
+    ],
+    "baseStats": {
+      "H": 70,
+      "A": 55,
+      "B": 65,
+      "C": 95,
+      "D": 105,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n876f",
+      "key": "n876f"
+    }
+  },
+  "モルペコ(はらぺこもよう)": {
+    "index": 877,
+    "types": [
+      "でんき",
+      "あく"
+    ],
+    "abilities": [
+      "はらぺこスイッチ"
+    ],
+    "baseStats": {
+      "H": 58,
+      "A": 95,
+      "B": 58,
+      "C": 70,
+      "D": 58,
+      "S": 97
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n877",
+      "key": "n877"
+    }
+  },
   "モルペコ(まんぷくもよう)": {
     "index": 877,
     "types": [
@@ -26193,10 +29225,6 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
-    },
-    "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n877",
-      "key": "n877"
     }
   },
   "ゾウドウ": {
@@ -26475,7 +29503,33 @@
       "key": "n887"
     }
   },
-  "ザシアン": {
+  "ザシアン(けんのおう)": {
+    "index": 888,
+    "types": [
+      "フェアリー",
+      "はがね"
+    ],
+    "abilities": [
+      "Intrepid Sword"
+    ],
+    "baseStats": {
+      "H": 92,
+      "A": 150,
+      "B": 115,
+      "C": 80,
+      "D": 115,
+      "S": 148
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n888f",
+      "key": "n888f"
+    }
+  },
+  "ザシアン(れきせんのゆうしゃ)": {
     "index": 888,
     "types": [
       "フェアリー"
@@ -26496,11 +29550,37 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n888f",
-      "key": "n888f"
+      "url": "https://yakkun.com/ch/zukan/n888",
+      "key": "n888"
     }
   },
-  "ザマゼンタ": {
+  "ザマゼンタ(たてのおう)": {
+    "index": 889,
+    "types": [
+      "かくとう",
+      "はがね"
+    ],
+    "abilities": [
+      "Dauntless Shield"
+    ],
+    "baseStats": {
+      "H": 92,
+      "A": 120,
+      "B": 140,
+      "C": 80,
+      "D": 140,
+      "S": 128
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n889f",
+      "key": "n889f"
+    }
+  },
+  "ザマゼンタ(れきせんのゆうしゃ)": {
     "index": 889,
     "types": [
       "かくとう"
@@ -26521,8 +29601,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n889f",
-      "key": "n889f"
+      "url": "https://yakkun.com/ch/zukan/n889",
+      "key": "n889"
     }
   },
   "ムゲンダイナ": {
@@ -26576,7 +29656,7 @@
       "key": "n891"
     }
   },
-  "ウーラオス": {
+  "ウーラオス(いちげきのかた)": {
     "index": 892,
     "types": [
       "かくとう",
@@ -26600,6 +29680,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n892",
       "key": "n892"
+    }
+  },
+  "ウーラオス(れんげきのかた)": {
+    "index": 892,
+    "types": [
+      "かくとう",
+      "みず"
+    ],
+    "abilities": [
+      "ふかしのこぶし"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 130,
+      "B": 100,
+      "C": 63,
+      "D": 60,
+      "S": 97
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n892r",
+      "key": "n892r"
     }
   },
   "ザルード": {
@@ -26754,6 +29860,58 @@
       "key": "n898"
     }
   },
+  "バドレックス(こくばじょうのすがた)": {
+    "index": 898,
+    "types": [
+      "エスパー",
+      "ゴースト"
+    ],
+    "abilities": [
+      "As One (Spectrier)"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 85,
+      "B": 80,
+      "C": 165,
+      "D": 100,
+      "S": 150
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n898b",
+      "key": "n898b"
+    }
+  },
+  "バドレックス(はくばじょうのすがた)": {
+    "index": 898,
+    "types": [
+      "エスパー",
+      "こおり"
+    ],
+    "abilities": [
+      "As One (Glastrier)"
+    ],
+    "baseStats": {
+      "H": 100,
+      "A": 165,
+      "B": 150,
+      "C": 85,
+      "D": 130,
+      "S": 50
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n898w",
+      "key": "n898w"
+    }
+  },
   "アヤシシ": {
     "index": 899,
     "types": [
@@ -26836,6 +29994,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n901",
       "key": "n901"
+    }
+  },
+  "ガチグマ(アカツキ)": {
+    "index": 901,
+    "types": [
+      "じめん",
+      "ノーマル"
+    ],
+    "abilities": [
+      "Mind's Eye"
+    ],
+    "baseStats": {
+      "H": 113,
+      "A": 70,
+      "B": 120,
+      "C": 135,
+      "D": 65,
+      "S": 52
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n901f",
+      "key": "n901f"
     }
   },
   "イダイトウ(オスのすがた)": {
@@ -26950,7 +30134,7 @@
       "key": "n904"
     }
   },
-  "ラブトロス": {
+  "ラブトロス(けしんフォルム)": {
     "index": 905,
     "types": [
       "フェアリー",
@@ -26975,6 +30159,32 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n905",
       "key": "n905"
+    }
+  },
+  "ラブトロス(れいじゅうフォルム)": {
+    "index": 905,
+    "types": [
+      "フェアリー",
+      "ひこう"
+    ],
+    "abilities": [
+      "ぼうじん"
+    ],
+    "baseStats": {
+      "H": 74,
+      "A": 115,
+      "B": 110,
+      "C": 135,
+      "D": 100,
+      "S": 46
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n905a",
+      "key": "n905a"
     }
   },
   "ニャオハ": {
@@ -27241,7 +30451,7 @@
       "key": "n915"
     }
   },
-  "パフュートン": {
+  "パフュートン(オスのすがた)": {
     "index": 916,
     "types": [
       "ノーマル"
@@ -27266,6 +30476,33 @@
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n916",
       "key": "n916"
+    }
+  },
+  "パフュートン(メスのすがた)": {
+    "index": 916,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "アロマベール",
+      "くいしんぼう",
+      "あついしぼう"
+    ],
+    "baseStats": {
+      "H": 115,
+      "A": 90,
+      "B": 70,
+      "C": 59,
+      "D": 90,
+      "S": 65
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n916f",
+      "key": "n916f"
     }
   },
   "タマンチュラ": {
@@ -29544,7 +32781,32 @@
       "key": "n951"
     }
   },
-  "コレクレー": {
+  "コレクレー(とほフォルム)": {
+    "index": 999,
+    "types": [
+      "ゴースト"
+    ],
+    "abilities": [
+      "Run Away"
+    ],
+    "baseStats": {
+      "H": 45,
+      "A": 30,
+      "B": 25,
+      "C": 75,
+      "D": 45,
+      "S": 80
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n976f",
+      "key": "n976f"
+    }
+  },
+  "コレクレー(はこフォルム)": {
     "index": 999,
     "types": [
       "ゴースト"
@@ -29563,6 +32825,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n976",
+      "key": "n976"
     }
   },
   "サーフゴー": {
@@ -29906,6 +33172,29 @@
       "key": "n1024"
     }
   },
+  "ヤバソチャ(ケッサクのすがた)": {
+    "index": 1013,
+    "types": [
+      "くさ",
+      "ゴースト"
+    ],
+    "abilities": [
+      "おもてなし",
+      "たいねつ"
+    ],
+    "baseStats": {
+      "H": 71,
+      "A": 60,
+      "B": 106,
+      "C": 121,
+      "D": 80,
+      "S": 70
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    }
+  },
   "ヤバソチャ(ボンサクのすがた)": {
     "index": 1013,
     "types": [
@@ -30010,7 +33299,85 @@
       "key": "n1016"
     }
   },
-  "オーガポン": {
+  "オーガポン(いしずえのめん)": {
+    "index": 1017,
+    "types": [
+      "くさ",
+      "いわ"
+    ],
+    "abilities": [
+      "がんじょう"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 120,
+      "B": 84,
+      "C": 60,
+      "D": 96,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1011c",
+      "key": "n1011c"
+    }
+  },
+  "オーガポン(いどのめん)": {
+    "index": 1017,
+    "types": [
+      "くさ",
+      "みず"
+    ],
+    "abilities": [
+      "ちょすい"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 120,
+      "B": 84,
+      "C": 60,
+      "D": 96,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1011w",
+      "key": "n1011w"
+    }
+  },
+  "オーガポン(かまどのめん)": {
+    "index": 1017,
+    "types": [
+      "くさ",
+      "ほのお"
+    ],
+    "abilities": [
+      "かたやぶり"
+    ],
+    "baseStats": {
+      "H": 80,
+      "A": 120,
+      "B": 84,
+      "C": 60,
+      "D": 96,
+      "S": 110
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1011h",
+      "key": "n1011h"
+    }
+  },
+  "オーガポン(みどりのめん)": {
     "index": 1017,
     "types": [
       "くさ"
@@ -30029,6 +33396,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1011",
+      "key": "n1011"
     }
   },
   "ブリジュラス": {
@@ -30191,7 +33562,57 @@
       "key": "n1019"
     }
   },
-  "テラパゴス": {
+  "テラパゴス(ステラフォルム)": {
+    "index": 1024,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "Teraform Zero"
+    ],
+    "baseStats": {
+      "H": 160,
+      "A": 105,
+      "B": 110,
+      "C": 130,
+      "D": 110,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1021s",
+      "key": "n1021s"
+    }
+  },
+  "テラパゴス(テラスタルフォルム)": {
+    "index": 1024,
+    "types": [
+      "ノーマル"
+    ],
+    "abilities": [
+      "Tera Shell"
+    ],
+    "baseStats": {
+      "H": 95,
+      "A": 95,
+      "B": 110,
+      "C": 105,
+      "D": 110,
+      "S": 85
+    },
+    "source": {
+      "game": "Showdown",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1021t",
+      "key": "n1021t"
+    }
+  },
+  "テラパゴス(ノーマルフォルム)": {
     "index": 1024,
     "types": [
       "ノーマル"
@@ -30210,6 +33631,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1021",
+      "key": "n1021"
     }
   },
   "モモワロウ": {

@@ -133,25 +133,34 @@ describe('syncYakkunMap', () => {
     expect(result['新ポケモン']).toBeNull();
   });
 
-  it('削除されたエントリは出力に含まれない', () => {
+  it('新データにないエントリもURLがあれば保持する', () => {
     const sorted = {};
     const oldMap = { '旧ポケモン': 'https://yakkun.com/ch/zukan/n100' };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['旧ポケモン']).toBe('https://yakkun.com/ch/zukan/n100');
+  });
+
+  it('新データにないエントリでURLがnullなら保持しない', () => {
+    const sorted = {};
+    const oldMap: Record<string, string | null> = { '旧ポケモン': null };
     const result = syncYakkunMap(sorted, oldMap);
     expect(result).not.toHaveProperty('旧ポケモン');
   });
 
-  it('natNum一致で唯一の候補がある場合URLを引き継ぐ', () => {
+  it('natNum一致で唯一の候補がある場合URLを引き継ぎ旧名は残さない', () => {
     const sorted = { 'デオキシス': makeOutputEntry(386) };
     const oldMap = { 'デオキシス(ノーマルフォルム)': 'https://yakkun.com/ch/zukan/n386' };
     const result = syncYakkunMap(sorted, oldMap);
     expect(result['デオキシス']).toBe('https://yakkun.com/ch/zukan/n386');
+    expect(result).not.toHaveProperty('デオキシス(ノーマルフォルム)');
   });
 
-  it('名前の表記変更（括弧→なし）でURLを引き継ぐ', () => {
+  it('名前の表記変更（括弧→なし）でURLを引き継ぎ旧名は残さない', () => {
     const sorted = { 'ウォッシュロトム': makeOutputEntry(479) };
     const oldMap = { 'ロトム(ウォッシュロトム)': 'https://yakkun.com/ch/zukan/n479w' };
     const result = syncYakkunMap(sorted, oldMap);
     expect(result['ウォッシュロトム']).toBe('https://yakkun.com/ch/zukan/n479w');
+    expect(result).not.toHaveProperty('ロトム(ウォッシュロトム)');
   });
 
   it('中黒の有無でURLを引き継ぐ', () => {
@@ -186,6 +195,19 @@ describe('syncYakkunMap', () => {
     expect(result['ウォッシュロトム']).toBe('https://yakkun.com/ch/zukan/n479w');
     expect(result['ヒートロトム']).toBe('https://yakkun.com/ch/zukan/n479h');
     expect(result['カットロトム']).toBe('https://yakkun.com/ch/zukan/n479c');
+  });
+
+  it('recoveryされなかった旧フォームのURLは保持する', () => {
+    const sorted = { 'デオキシス': makeOutputEntry(386) };
+    const oldMap = {
+      'デオキシス(ノーマルフォルム)': 'https://yakkun.com/ch/zukan/n386',
+      'デオキシス(アタックフォルム)': 'https://yakkun.com/ch/zukan/n386a',
+      'デオキシス(ディフェンスフォルム)': 'https://yakkun.com/ch/zukan/n386d',
+    };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['デオキシス']).toBeTruthy();
+    expect(result['デオキシス(アタックフォルム)']).toBe('https://yakkun.com/ch/zukan/n386a');
+    expect(result['デオキシス(ディフェンスフォルム)']).toBe('https://yakkun.com/ch/zukan/n386d');
   });
 
   it('直接一致エントリの既存URLは上書きしない', () => {

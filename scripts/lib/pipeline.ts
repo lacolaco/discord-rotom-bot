@@ -75,7 +75,9 @@ function normalizeForMatch(name: string): string {
 
 /**
  * yakkun-map.json を新しいポケモンデータに同期する。
- * displayName が変更された場合、natNum + 名前の類似度で旧URLを引き継ぐ。
+ * - 新データに存在するポケモンは既存URLを引き継ぎ、未登録なら null で追加
+ * - 旧データにしかないエントリもURLごと保持する（リージョンフォーム等の削除防止）
+ * - displayName が変更された場合、natNum + 名前の類似度で旧URLを引き継ぐ
  */
 export function syncYakkunMap(
   sorted: Record<string, OutputEntry>,
@@ -87,55 +89,67 @@ export function syncYakkunMap(
     synced[name] = yakkunMap[name] ?? null;
   }
 
+  const recoveredOldNames = new Set<string>();
+
   const orphaned = new Map<string, { url: string; natNum: number }>();
   for (const [oldName, url] of Object.entries(yakkunMap)) {
-    if (!url) continue;
     if (oldName in sorted) continue;
+    if (!url) continue;
     const match = url.match(/\/n(\d+)/);
     if (match) {
       orphaned.set(oldName, { url, natNum: parseInt(match[1]) });
     }
   }
 
-  if (orphaned.size === 0) return synced;
-
-  const orphansByNatNum = new Map<number, Map<string, string>>();
-  for (const [oldName, { url, natNum }] of orphaned) {
-    if (!orphansByNatNum.has(natNum)) orphansByNatNum.set(natNum, new Map());
-    orphansByNatNum.get(natNum)!.set(oldName, url);
-  }
-
-  let recovered = 0;
-  for (const [name, url] of Object.entries(synced)) {
-    if (url !== null) continue;
-    const natNum = sorted[name].index;
-    const candidates = orphansByNatNum.get(natNum);
-    if (!candidates || candidates.size === 0) continue;
-
-    if (candidates.size === 1) {
-      const [oldName, orphanUrl] = [...candidates.entries()][0];
-      synced[name] = orphanUrl;
-      candidates.delete(oldName);
-      recovered++;
-      continue;
+  if (orphaned.size > 0) {
+    const orphansByNatNum = new Map<number, Map<string, string>>();
+    for (const [oldName, { url, natNum }] of orphaned) {
+      if (!orphansByNatNum.has(natNum)) orphansByNatNum.set(natNum, new Map());
+      orphansByNatNum.get(natNum)!.set(oldName, url);
     }
 
-    const normalizedNew = normalizeForMatch(name);
-    for (const [oldName, orphanUrl] of candidates) {
-      const normalizedOld = normalizeForMatch(oldName);
-      if (normalizedOld === normalizedNew ||
-          normalizedOld.includes(normalizedNew) ||
-          normalizedNew.includes(normalizedOld)) {
+    let recovered = 0;
+    for (const [name, url] of Object.entries(synced)) {
+      if (url !== null) continue;
+      const natNum = sorted[name].index;
+      const candidates = orphansByNatNum.get(natNum);
+      if (!candidates || candidates.size === 0) continue;
+
+      if (candidates.size === 1) {
+        const [oldName, orphanUrl] = [...candidates.entries()][0];
         synced[name] = orphanUrl;
         candidates.delete(oldName);
+        recoveredOldNames.add(oldName);
         recovered++;
-        break;
+        continue;
       }
+
+      const normalizedNew = normalizeForMatch(name);
+      for (const [oldName, orphanUrl] of candidates) {
+        const normalizedOld = normalizeForMatch(oldName);
+        if (normalizedOld === normalizedNew ||
+            normalizedOld.includes(normalizedNew) ||
+            normalizedNew.includes(normalizedOld)) {
+          synced[name] = orphanUrl;
+          candidates.delete(oldName);
+          recoveredOldNames.add(oldName);
+          recovered++;
+          break;
+        }
+      }
+    }
+
+    if (recovered > 0) {
+      console.log(`  yakkun URL recovered: ${recovered} entries from renamed displayNames`);
     }
   }
 
-  if (recovered > 0) {
-    console.log(`  yakkun URL recovered: ${recovered} entries from renamed displayNames`);
+  for (const [oldName, url] of Object.entries(yakkunMap)) {
+    if (oldName in synced) continue;
+    if (recoveredOldNames.has(oldName)) continue;
+    if (url) {
+      synced[oldName] = url;
+    }
   }
 
   return synced;

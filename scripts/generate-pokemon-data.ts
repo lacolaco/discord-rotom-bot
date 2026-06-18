@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseChampout } from './lib/champout-parser';
-import { supplementNonChampionsPokemon } from './lib/fallback';
+import { supplementNonChampionsPokemon, supplementPokemonFormes } from './lib/fallback';
 import { applyErrata, buildOutput, sortByNatNum, syncYakkunMap, type OutputEntry } from './lib/pipeline';
 
 const ROOT = resolve(import.meta.dirname, '..');
@@ -25,7 +25,10 @@ const { pokemon, nameToNatNum } = parseChampout(CHAMPOUT_BASE);
 console.log(`  Champions data: ${pokemon.size} entries`);
 
 supplementNonChampionsPokemon(pokemon, nameToNatNum, CHAMPOUT_BASE);
-console.log(`  After fallback: ${pokemon.size} entries`);
+console.log(`  After base fallback: ${pokemon.size} entries`);
+
+supplementPokemonFormes(pokemon, nameToNatNum, CHAMPOUT_BASE);
+console.log(`  After forme fallback: ${pokemon.size} entries`);
 
 const errata: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>> = JSON.parse(
   readFileSync(ERRATA_PATH, 'utf-8'),
