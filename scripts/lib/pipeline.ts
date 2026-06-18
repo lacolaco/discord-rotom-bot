@@ -33,6 +33,53 @@ export function applyErrata(
   }
 }
 
+export function supplementChampionsExclusive(
+  pokemon: Map<string, ChampoutPokemon>,
+  nameToNatNum: Map<string, number>,
+  exclusiveData: Record<string, { index: number; types: string[]; abilities: string[]; baseStats: OutputEntry['baseStats']; source: string }>,
+): void {
+  let count = 0;
+  for (const [displayName, data] of Object.entries(exclusiveData)) {
+    if (pokemon.has(displayName)) continue;
+    pokemon.set(displayName, {
+      displayName,
+      natNum: data.index,
+      nameEng: '',
+      types: data.types,
+      abilities: data.abilities,
+      baseStats: data.baseStats,
+      source: data.source,
+    });
+    nameToNatNum.set(displayName, data.index);
+    count++;
+  }
+  if (count > 0) {
+    console.log(`  Champions exclusive: ${count} entries`);
+  }
+}
+
+export function addDisplayNameAliases(
+  pokemon: Map<string, ChampoutPokemon>,
+  nameToNatNum: Map<string, number>,
+  aliases: Record<string, string>,
+): void {
+  let count = 0;
+  for (const [aliasName, targetName] of Object.entries(aliases)) {
+    if (pokemon.has(aliasName)) continue;
+    const target = pokemon.get(targetName);
+    if (!target) {
+      console.log(`    WARNING: alias target not found: ${aliasName} → ${targetName}`);
+      continue;
+    }
+    pokemon.set(aliasName, { ...target, displayName: aliasName });
+    nameToNatNum.set(aliasName, target.natNum);
+    count++;
+  }
+  if (count > 0) {
+    console.log(`  Display name aliases: ${count} entries`);
+  }
+}
+
 export function buildOutput(
   data: Map<string, ChampoutPokemon>,
   yakkun: Record<string, string | null>,

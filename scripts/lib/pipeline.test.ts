@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyErrata, buildOutput, sortByNatNum, syncYakkunMap } from './pipeline';
+import { addDisplayNameAliases, applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -111,6 +111,90 @@ describe('sortByNatNum', () => {
     const natNums = new Map([['A', 6], ['メガB', 6]]);
     const sorted = sortByNatNum(output, natNums);
     expect(Object.keys(sorted)).toEqual(['A', 'メガB']);
+  });
+});
+
+describe('supplementChampionsExclusive', () => {
+  it('Champions限定ポケモンをデータに追加する', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    const nameToNatNum = new Map<string, number>();
+    const exclusive = {
+      'メガヒードラン': {
+        index: 485,
+        types: ['ほのお', 'はがね'],
+        abilities: ['もらいび'],
+        baseStats: { H: 91, A: 120, B: 106, C: 175, D: 141, S: 67 },
+        source: 'Champions',
+      },
+    };
+    supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
+    expect(pokemon.has('メガヒードラン')).toBe(true);
+    expect(pokemon.get('メガヒードラン')!.natNum).toBe(485);
+    expect(nameToNatNum.get('メガヒードラン')).toBe(485);
+  });
+
+  it('既存エントリと重複する場合はスキップする', () => {
+    const pokemon = new Map([['メガヒードラン', makePokemon({ displayName: 'メガヒードラン', natNum: 485 })]]);
+    const nameToNatNum = new Map([['メガヒードラン', 485]]);
+    const exclusive = {
+      'メガヒードラン': {
+        index: 485,
+        types: ['ほのお'],
+        abilities: ['もらいび'],
+        baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 },
+        source: 'Champions',
+      },
+    };
+    supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
+    expect(pokemon.get('メガヒードラン')!.types).toEqual(['ノーマル']);
+  });
+});
+
+describe('addDisplayNameAliases', () => {
+  it('旧表示名のエイリアスを追加する', () => {
+    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
+    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
+    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
+    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
+    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
+    expect(pokemon.get('ロトム(ウォッシュロトム)')!.natNum).toBe(479);
+    expect(nameToNatNum.get('ロトム(ウォッシュロトム)')).toBe(479);
+  });
+
+  it('ターゲットが存在しない場合はスキップする', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    const nameToNatNum = new Map<string, number>();
+    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
+    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
+    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(false);
+  });
+
+  it('既にエイリアス名と同名のエントリがある場合はスキップする', () => {
+    const pokemon = new Map([
+      ['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })],
+      ['ロトム(ウォッシュロトム)', makePokemon({ displayName: 'ロトム(ウォッシュロトム)', natNum: 999 })],
+    ]);
+    const nameToNatNum = new Map<string, number>();
+    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
+    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
+    expect(pokemon.get('ロトム(ウォッシュロトム)')!.natNum).toBe(999);
+  });
+
+  it('ベースフォーム名のエイリアスを追加する', () => {
+    const pokemon = new Map([['ミミッキュ(ばけたすがた)', makePokemon({ displayName: 'ミミッキュ(ばけたすがた)', natNum: 778 })]]);
+    const nameToNatNum = new Map([['ミミッキュ(ばけたすがた)', 778]]);
+    const aliases = { 'ミミッキュ': 'ミミッキュ(ばけたすがた)' };
+    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
+    expect(pokemon.has('ミミッキュ')).toBe(true);
+    expect(pokemon.get('ミミッキュ')!.natNum).toBe(778);
+  });
+
+  it('エイリアスの displayName はエイリアス名になる', () => {
+    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
+    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
+    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
+    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
+    expect(pokemon.get('ロトム(ウォッシュロトム)')!.displayName).toBe('ロトム(ウォッシュロトム)');
   });
 });
 
