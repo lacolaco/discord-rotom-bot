@@ -1,0 +1,115 @@
+import { describe, expect, it } from 'vitest';
+import type { ChampoutPokemon } from './champout-parser';
+import { applyErrata, buildOutput, sortByNatNum } from './pipeline';
+
+function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
+  return {
+    nameEng: '',
+    types: ['ノーマル'],
+    abilities: ['にげあし'],
+    baseStats: { H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 },
+    source: 'Champions',
+    ...overrides,
+  };
+}
+
+describe('applyErrata', () => {
+  it('タイプを上書きする', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    applyErrata(pokemon, { 'テスト': { types: ['ほのお', 'ひこう'] } });
+    expect(pokemon.get('テスト')!.types).toEqual(['ほのお', 'ひこう']);
+  });
+
+  it('特性を上書きする', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    applyErrata(pokemon, { 'テスト': { abilities: ['もうか'] } });
+    expect(pokemon.get('テスト')!.abilities).toEqual(['もうか']);
+  });
+
+  it('種族値を部分的に上書きする', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    applyErrata(pokemon, { 'テスト': { baseStats: { H: 100, A: 120 } } });
+    const stats = pokemon.get('テスト')!.baseStats;
+    expect(stats.H).toBe(100);
+    expect(stats.A).toBe(120);
+    expect(stats.B).toBe(50);
+  });
+
+  it('存在しない対象は警告のみでスキップする', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    applyErrata(pokemon, { '存在しない': { types: ['みず'] } });
+    expect(pokemon.size).toBe(0);
+  });
+
+  it('空の errata では何も変更しない', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    const original = { ...pokemon.get('テスト')! };
+    applyErrata(pokemon, {});
+    expect(pokemon.get('テスト')!.types).toEqual(original.types);
+  });
+
+  it('複数エントリを同時に補正する', () => {
+    const pokemon = new Map([
+      ['A', makePokemon({ displayName: 'A', natNum: 1 })],
+      ['B', makePokemon({ displayName: 'B', natNum: 2 })],
+    ]);
+    applyErrata(pokemon, {
+      'A': { types: ['みず'] },
+      'B': { types: ['ほのお'] },
+    });
+    expect(pokemon.get('A')!.types).toEqual(['みず']);
+    expect(pokemon.get('B')!.types).toEqual(['ほのお']);
+  });
+});
+
+describe('buildOutput', () => {
+  it('ChampoutPokemon を OutputEntry に変換する', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 42, nameEng: 'Test' })]]);
+    const output = buildOutput(pokemon, {});
+    expect(output['テスト']).toEqual({
+      index: 42,
+      types: ['ノーマル'],
+      abilities: ['にげあし'],
+      baseStats: { H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 },
+      source: { game: 'Champions', pokedex: '' },
+    });
+  });
+
+  it('yakkun URL がある場合は yakkun フィールドを付与する', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    const output = buildOutput(pokemon, { 'テスト': 'https://yakkun.com/champions/n001' });
+    expect(output['テスト'].yakkun).toEqual({
+      url: 'https://yakkun.com/champions/n001',
+      key: 'n001',
+    });
+  });
+
+  it('yakkun URL が null の場合は yakkun フィールドなし', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    const output = buildOutput(pokemon, { 'テスト': null });
+    expect(output['テスト'].yakkun).toBeUndefined();
+  });
+});
+
+describe('sortByNatNum', () => {
+  it('natNum 昇順でソートする', () => {
+    const output = {
+      'C': { index: 3, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+      'A': { index: 1, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+      'B': { index: 2, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+    };
+    const natNums = new Map([['A', 1], ['B', 2], ['C', 3]]);
+    const sorted = sortByNatNum(output, natNums);
+    expect(Object.keys(sorted)).toEqual(['A', 'B', 'C']);
+  });
+
+  it('同一 natNum は名前順でソートする', () => {
+    const output = {
+      'メガB': { index: 6, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+      'A': { index: 6, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+    };
+    const natNums = new Map([['A', 6], ['メガB', 6]]);
+    const sorted = sortByNatNum(output, natNums);
+    expect(Object.keys(sorted)).toEqual(['A', 'メガB']);
+  });
+});

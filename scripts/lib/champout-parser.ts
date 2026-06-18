@@ -19,7 +19,7 @@ export interface ChampoutPokemon {
   source: string;
 }
 
-interface PersonalEntry {
+export interface PersonalEntry {
   id: string;
   no: string;
   fo: string;
@@ -64,7 +64,7 @@ const TYPE_ID_TO_JA: Record<string, string> = {
  * champout の personal.json にはコスメティックフォーム（ビビヨン模様、トリミアンカット等）も
  * 含まれているため、同一種族値のフォームを自動検出してフィルタする。
  */
-function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
+export function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
   const byNo = new Map<string, PersonalEntry[]>();
   for (const e of entries) {
     const list = byNo.get(e.no) ?? [];
@@ -93,7 +93,7 @@ function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
   return result;
 }
 
-function isCosmeticForm(a: PersonalEntry, b: PersonalEntry): boolean {
+export function isCosmeticForm(a: PersonalEntry, b: PersonalEntry): boolean {
   return (
     a.hp === b.hp && a.atk === b.atk && a.def === b.def &&
     a.spatk === b.spatk && a.spdef === b.spdef && a.agi === b.agi &&
@@ -115,7 +115,7 @@ function loadTextMap(path: string): Map<string, string> {
 
 // --- Display name construction ---
 
-function buildDisplayName(baseName: string, formName: string): string {
+export function buildDisplayName(baseName: string, formName: string): string {
   if (!formName) return baseName;
   if (formName.startsWith('メガ') || formName.startsWith('ゲンシ')) return formName;
   if (formName.includes(baseName)) return formName;
@@ -126,7 +126,7 @@ function buildDisplayName(baseName: string, formName: string): string {
  * ベースフォーム (fo=0) で formName が「{baseName}のすがた」のようなパターンの場合、
  * フォーム名を無視して baseName をそのまま使う。
  */
-function isRedundantBaseFormName(baseName: string, formName: string, fo: string): boolean {
+export function isRedundantBaseFormName(baseName: string, formName: string, fo: string): boolean {
   if (fo !== '0') return false;
   if (!formName) return false;
   if (formName === `${baseName}のすがた`) return true;

@@ -9,25 +9,15 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { parseChampout, type ChampoutPokemon } from './lib/champout-parser';
+import { parseChampout } from './lib/champout-parser';
 import { supplementNonChampionsPokemon } from './lib/fallback';
+import { applyErrata, buildOutput, sortByNatNum, type OutputEntry } from './lib/pipeline';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const CHAMPOUT_BASE = resolve(ROOT, 'vendor/champout');
 const ERRATA_PATH = resolve(import.meta.dirname, 'pokedex-errata.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
-
-// --- Types ---
-
-interface OutputEntry {
-  index: number;
-  types: string[];
-  abilities: string[];
-  baseStats: { H: number; A: number; B: number; C: number; D: number; S: number };
-  source: { game: string; pokedex: string };
-  yakkun?: { url: string; key: string };
-}
 
 // --- Pipeline ---
 
@@ -54,64 +44,6 @@ syncYakkunMap(sorted, yakkunMap);
 printSummary(sorted);
 
 // --- Functions ---
-
-function applyErrata(
-  data: Map<string, ChampoutPokemon>,
-  errataData: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>>,
-): void {
-  let count = 0;
-  for (const [displayName, corrections] of Object.entries(errataData)) {
-    const entry = data.get(displayName);
-    if (!entry) {
-      console.log(`    WARNING: errata target not found: ${displayName}`);
-      continue;
-    }
-    if (corrections.types) entry.types = corrections.types;
-    if (corrections.abilities) entry.abilities = corrections.abilities;
-    if (corrections.baseStats) Object.assign(entry.baseStats, corrections.baseStats);
-    count++;
-    console.log(`    ${displayName}`);
-  }
-  if (count > 0) {
-    console.log(`  Errata applied: ${count} entries`);
-  }
-}
-
-function buildOutput(
-  data: Map<string, ChampoutPokemon>,
-  yakkun: Record<string, string | null>,
-): Record<string, OutputEntry> {
-  const output: Record<string, OutputEntry> = {};
-
-  for (const [displayName, poke] of data) {
-    const yakkunUrl = yakkun[displayName];
-    output[displayName] = {
-      index: poke.natNum,
-      types: poke.types,
-      abilities: poke.abilities,
-      baseStats: poke.baseStats,
-      source: { game: poke.source, pokedex: '' },
-      ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
-    };
-  }
-
-  return output;
-}
-
-function sortByNatNum(
-  output: Record<string, OutputEntry>,
-  natNums: Map<string, number>,
-): Record<string, OutputEntry> {
-  const sorted: Record<string, OutputEntry> = {};
-  for (const [name, entry] of Object.entries(output).sort((a, b) => {
-    const numA = natNums.get(a[0]) ?? Infinity;
-    const numB = natNums.get(b[0]) ?? Infinity;
-    return numA !== numB ? numA - numB : a[0].localeCompare(b[0]);
-  })) {
-    sorted[name] = entry;
-  }
-  return sorted;
-}
 
 function writeGeneratedData(sorted: Record<string, OutputEntry>): void {
   writeFileSync(OUTPUT_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
