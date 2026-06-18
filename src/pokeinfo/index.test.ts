@@ -67,7 +67,9 @@ describe('searchPokemonByName', () => {
   });
 
   test('旧フォーム名でエイリアス解決される（中黒の有無）', async () => {
-    const result = await searchPokemonByName('ケンタロス(パルデアのすがた ウォーターしゅ)');
+    const result = await searchPokemonByName(
+      'ケンタロス(パルデアのすがた ウォーターしゅ)',
+    );
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['かくとう', 'みず']);
   });
