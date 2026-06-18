@@ -68,23 +68,20 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
 
 ### ポケモンデータ
 
-- **データソース**: `vendor/pokedex` (git submodule, towakey/pokedex)
-- **生成スクリプト**: `npx tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
-  - `scripts/lib/pokedex-parser.ts`: pokedex解析（グローバル図鑑→名前マッピング、ゲームデータ→種族値）
-  - `scripts/lib/showdown.ts`: @pkmn/dex ヘルパー（Showdownデータからstats/types/abilities取得、特性の英日変換）
-  - `scripts/lib/fallback.ts`: フォールバック補完（drop検出 + showdown.tsでデータ解決 + 欠損メガ/ゲンシフォーム注入）
+- **データソース**: `vendor/champout` (git submodule, projectpokemon/champout) — Pokemon Champions のゲームROMデータ
+- **生成スクリプト**: `pnpm exec tsx scripts/generate-pokemon-data.ts` → `src/pokeinfo/data.generated.json` を生成
+  - `scripts/lib/champout-parser.ts`: champout解析（masterdata/personal.json + rom-txt ローカライズデータ → ポケモンデータ）
+  - `scripts/lib/fallback.ts`: Champions未収録ポケモンを `@pkmn/dex` (Showdown) からベースフォームのみ補完
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
-- **除外パターン**: `pokedex-parser.ts` の `COSMETIC_ONLY_BASE_NAMES` / `EXCLUDED_FORM_SUFFIXES` / `EXCLUDED_FORMS`（フラエッテは花色のみ個別除外、えいえんのはな・メガは別種族値のため残す）
-- **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用し、全データソースの処理結果を最終補正する。`GamePokedexEntry` の任意のフィールドを部分指定可能
-- **データ優先順位**: errata（最終補正） > @pkmn/dex（フォールバック） > vendor/pokedex
-- **フォールバック（stats補完）**: pokedexにstatsがないポケモンを `@pkmn/dex` (Showdown) から自動補完。ネットワーク不要。pokedex側にstatsが追加されれば自動的に不要になる
-- **フォールバック（フォーム注入）**: pokedexにエントリ自体がないメガ/ゲンシフォームを `@pkmn/dex` から自動検出・注入（`injectMissingForms`）。基本フォームの英語名 + Mega/Mega-X/Mega-Y/Primal で検索。日本語名は `メガ{基本名}` / `ゲンシ{基本名}` で構築。@pkmn/dex の `isNonstandard: "Future"` フラグはZ-Aメガ全体に付いておりフィルタに使えない
-- **フォールバック（type/ability補完）**: pokedexにstatsはあるがtype1またはability1が空のエントリ（LegendsZA新フォーム等）のtype/abilityを `@pkmn/dex` から補完（`supplementMissingTypes`）。statsは vendor/pokedex の値を保持。type1がある場合はtypeを上書きしない
-- **フォールバック設計原則**: 外部データソース選定時は候補を比較評価してから決定する。曖昧マッチ（fuzzy/startsWith）は不可、確実なID照合手段があるソースを選ぶ。前提が変わったら中間成果物（キャッシュ等）を温存せずゼロから設計し直す。データフィールドの欠損は独立事象として扱い、あるフィールドの存在を別フィールドの完全性の代理指標にしない（ゲームごとにデータ充実度が異なるため）
+- **コスメティックフォーム除外**: `champout-parser.ts` の `filterCosmeticForms` で同一 no 内のベースフォームと種族値・タイプ・特性が完全一致するフォームを自動検出・除外
+- **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用
+- **データ優先順位**: errata（最終補正） > champout（一次ソース、Champions実装分） > @pkmn/dex（フォールバック、未収録分のベースフォームのみ）
+- **フォールバック**: Champions に収録されていないポケモン（進化前、一部伝説等）のベースフォームを `@pkmn/dex` から補完。champout の `monsname_syn.json` に日本語名があるが `personal.json` にエントリがないものが対象。特性翻訳は champout の `tokusei.json` で解決し、未収録特性は英語名のまま
+- **champout データ構造**: `masterdata/personal.json`（種族値・タイプID・特性ID）、`rom-txt/jpn/monsname_syn.json`（日本語名）、`rom-txt/jpn/tokusei.json`（特性名）、`rom-txt/jpn/zkn_form_syn.json`（フォーム名）、`rom-txt/usa/monsname_syn.json`（英語名）
 - **一貫性チェーン**: ファイル名・型名・関数名・テスト構造・呼び出し側は一つのチェーン。1つを変更したら残り全てを同時に揃える。部分的なリネームは禁止
 - **出力フォーマット駆動設計**: UI変更時は出力フォーマットの構造要素を先に理解し、その機能を活かした設計にする。テキストを流し込むだけなら形式を変える意味がない
 - **表示形式の選択と情報量の変更は別の承認事項**: 形式（テーブル→Embed等）の選択を、情報量の削減（4値→2値等）の暗黙的承認とみなさない
-- **定期更新**: `update-pokemon-data.yml` が週次でpokedex submoduleを更新しPR作成
+- **定期更新**: `update-pokemon-data.yml` が毎日 champout submodule を更新しPR作成
 - `*.generated.*` ファイルは eslint / prettier の対象外
 
 ### 環境変数・シークレット

@@ -1,198 +1,123 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { EntryInfo, GamePokedexEntry, StatsEntry } from './pokedex-parser';
-import { applyErrata, supplementMissingTypes } from './fallback';
+import type { ChampoutPokemon } from './champout-parser';
+import { supplementNonChampionsPokemon } from './fallback';
 
-vi.mock('./showdown', () => ({
-  fetchEntry: vi.fn(
-    (nameEng: string, formEng: string): GamePokedexEntry | null => {
-      if (nameEng === 'Goodra' && formEng === 'Hisui') {
-        return {
-          type1: 'ドラゴン',
-          type2: 'はがね',
-          hp: 80,
-          attack: 100,
-          defense: 100,
-          special_attack: 110,
-          special_defense: 150,
-          speed: 60,
-          ability1: 'そうしょく',
-          ability2: 'シェルアーマー',
-          dream_ability: 'ぬめぬめ',
-        };
-      }
-      if (nameEng === 'TestMon' && formEng === '') {
-        return {
-          type1: 'ほのお',
-          type2: '',
-          hp: 50,
-          attack: 50,
-          defense: 50,
-          special_attack: 50,
-          special_defense: 50,
-          speed: 50,
-          ability1: 'もうか',
-          ability2: '',
-          dream_ability: '',
-        };
-      }
-      return null;
+vi.mock('@pkmn/dex', () => {
+  const species = new Map<string, any>();
+  species.set('bulbasaur', {
+    name: 'Bulbasaur', num: 1, exists: true, forme: '',
+    types: ['Grass', 'Poison'],
+    abilities: { '0': 'Overgrow', '1': '', H: 'Chlorophyll' },
+    baseStats: { hp: 45, atk: 49, def: 49, spa: 65, spd: 65, spe: 45 },
+  });
+  species.set('meltan', {
+    name: 'Meltan', num: 808, exists: true, forme: '',
+    types: ['Steel'],
+    abilities: { '0': 'Magnet Pull', '1': '', H: '' },
+    baseStats: { hp: 46, atk: 65, def: 65, spa: 55, spd: 35, spe: 34 },
+  });
+  return {
+    Dex: {
+      forGen: () => ({
+        species: { get: (name: string) => species.get(name.toLowerCase()) ?? { exists: false } },
+        abilities: { all: () => [
+          { name: 'Overgrow', num: 65, exists: true, isNonstandard: null },
+          { name: 'Chlorophyll', num: 34, exists: true, isNonstandard: null },
+          { name: 'Magnet Pull', num: 42, exists: true, isNonstandard: null },
+        ] },
+      }),
     },
-  ),
+  };
+});
+
+vi.mock('node:fs', () => ({
+  readFileSync: vi.fn((path: string) => {
+    if (path.includes('tokusei.json')) {
+      return JSON.stringify({
+        mSDataSet: [
+          { LabelName: 'TOKUSEI_065', OriginalText: 'しんりょく' },
+          { LabelName: 'TOKUSEI_034', OriginalText: 'ようりょくそ' },
+        ],
+      });
+    }
+    if (path.includes('jpn/monsname_syn.json')) {
+      return JSON.stringify({
+        mSDataSet: [
+          { LabelName: 'MONSNAME_000', OriginalText: 'タマゴ' },
+          { LabelName: 'MONSNAME_001', OriginalText: 'フシギダネ' },
+          { LabelName: 'MONSNAME_808', OriginalText: 'メルタン' },
+        ],
+      });
+    }
+    if (path.includes('usa/monsname_syn.json')) {
+      return JSON.stringify({
+        mSDataSet: [
+          { LabelName: 'MONSNAME_000', OriginalText: 'Egg' },
+          { LabelName: 'MONSNAME_001', OriginalText: 'Bulbasaur' },
+          { LabelName: 'MONSNAME_808', OriginalText: 'Meltan' },
+        ],
+      });
+    }
+    return '{}';
+  }),
 }));
 
-function makeInfo(overrides: Partial<EntryInfo> & Pick<EntryInfo, 'displayName' | 'natNum' | 'nameEng'>): EntryInfo {
-  return { formEng: '', ...overrides };
-}
-
-function makeStats(overrides: Partial<GamePokedexEntry>): StatsEntry {
+function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
-    stats: {
-      type1: '',
-      type2: '',
-      hp: 80,
-      attack: 100,
-      defense: 100,
-      special_attack: 110,
-      special_defense: 150,
-      speed: 60,
-      ability1: '',
-      ability2: '',
-      dream_ability: '',
-      ...overrides,
-    },
-    game: 'LegendsArceus',
-    pokedex: 'LegendsArceus',
+    nameEng: '',
+    types: [],
+    abilities: [],
+    baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 },
+    source: 'Champions',
+    ...overrides,
   };
 }
 
-describe('applyErrata', () => {
-  it('正誤表のフィールドを既存エントリに適用する', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['0670_mega', makeInfo({ displayName: 'メガフラエッテ', natNum: 670, nameEng: 'Floette', formEng: 'Mega Floette' })],
+describe('supplementNonChampionsPokemon', () => {
+  it('Champions に存在する natNum はスキップする', () => {
+    const pokemon = new Map<string, ChampoutPokemon>([
+      ['フシギダネ', makePokemon({ displayName: 'フシギダネ', natNum: 1, nameEng: 'Bulbasaur' })],
     ]);
-    const statsMap = new Map<string, StatsEntry>([
-      ['0670_mega', makeStats({ type1: '', ability1: '', ability2: '', dream_ability: '' })],
-    ]);
-    const overrides: Record<string, Partial<GamePokedexEntry>> = {
-      'メガフラエッテ': {
-        type1: 'フェアリー',
-        ability1: 'フェアリーオーラ',
-      },
-    };
+    const nameToNatNum = new Map([['フシギダネ', 1]]);
 
-    applyErrata(entryIdToInfo, statsMap, overrides);
+    supplementNonChampionsPokemon(pokemon, nameToNatNum, '/dummy');
 
-    const stats = statsMap.get('0670_mega')!.stats;
-    expect(stats.ability1).toBe('フェアリーオーラ');
-    expect(stats.type1).toBe('フェアリー');
-    // 正誤表にないフィールドは変更しない
-    expect(stats.ability2).toBe('');
-    expect(stats.hp).toBe(80);
+    expect(pokemon.get('フシギダネ')!.source).toBe('Champions');
   });
 
-  it('正誤表にないポケモンは影響を受けない', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['0025', makeInfo({ displayName: 'ピカチュウ', natNum: 25, nameEng: 'Pikachu' })],
-    ]);
-    const original: GamePokedexEntry = {
-      type1: 'でんき', type2: '', hp: 35, attack: 55, defense: 40,
-      special_attack: 50, special_defense: 50, speed: 90,
-      ability1: 'せいでんき', ability2: '', dream_ability: 'ひらいしん',
-    };
-    const statsMap = new Map<string, StatsEntry>([
-      ['0025', { stats: { ...original }, game: 'Scarlet_Violet', pokedex: 'Scarlet_Violet' }],
-    ]);
+  it('Champions 未収録のポケモンを @pkmn/dex から補完する', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    const nameToNatNum = new Map<string, number>();
 
-    applyErrata(entryIdToInfo, statsMap, { 'メガフラエッテ': { ability1: 'フェアリーオーラ' } });
+    supplementNonChampionsPokemon(pokemon, nameToNatNum, '/dummy');
 
-    expect(statsMap.get('0025')!.stats).toEqual(original);
+    const meltan = pokemon.get('メルタン');
+    expect(meltan).toBeDefined();
+    expect(meltan!.source).toBe('Showdown');
+    expect(meltan!.types).toEqual(['はがね']);
+    expect(meltan!.baseStats.H).toBe(46);
   });
 
-  it('supplementMissingTypesで補完された誤データをerrataで最終補正する', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['test01', makeInfo({ displayName: 'テストモン', natNum: 999, nameEng: 'TestMon' })],
-    ]);
-    const statsMap = new Map<string, StatsEntry>([
-      ['test01', makeStats({ ability1: '', ability2: '' })],
-    ]);
+  it('champout にある特性は日本語に翻訳される', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    const nameToNatNum = new Map<string, number>();
 
-    // supplementMissingTypesが外部データで補完（誤データ）
-    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
-    expect(statsMap.get('test01')!.stats.ability1).toBe('もうか');
+    supplementNonChampionsPokemon(pokemon, nameToNatNum, '/dummy');
 
-    // errataで最終補正
-    applyErrata(entryIdToInfo, statsMap, { 'テストモン': { ability1: 'カスタム特性' } });
-
-    const stats = statsMap.get('test01')!.stats;
-    expect(stats.ability1).toBe('カスタム特性');
-    expect(stats.type1).toBe('ほのお'); // errataにないフィールドは維持
-  });
-});
-
-describe('supplementMissingTypes', () => {
-  it('type1ありability空のエントリのabilityを補完し、type1は上書きしない', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['0706_03', makeInfo({ displayName: 'ヌメルゴン(ヒスイのすがた)', natNum: 706, nameEng: 'Goodra', formEng: 'Hisui' })],
-    ]);
-    const statsMap = new Map<string, StatsEntry>([
-      ['0706_03', makeStats({ type1: 'ドラゴン', type2: 'はがね' })],
-    ]);
-
-    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
-
-    const stats = statsMap.get('0706_03')!.stats;
-    expect(stats.type1).toBe('ドラゴン');
-    expect(stats.type2).toBe('はがね');
-    expect(stats.ability1).toBe('そうしょく');
-    expect(stats.ability2).toBe('シェルアーマー');
-    expect(stats.dream_ability).toBe('ぬめぬめ');
+    const bulbasaur = pokemon.get('フシギダネ');
+    expect(bulbasaur).toBeDefined();
+    expect(bulbasaur!.abilities).toContain('しんりょく');
+    expect(bulbasaur!.abilities).toContain('ようりょくそ');
   });
 
-  it('type1もabilityも空のエントリは両方とも補完する', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['test01', makeInfo({ displayName: 'テストモン', natNum: 999, nameEng: 'TestMon' })],
-    ]);
-    const statsMap = new Map<string, StatsEntry>([
-      ['test01', makeStats({})],
-    ]);
+  it('champout にない特性は英語名のまま返す', () => {
+    const pokemon = new Map<string, ChampoutPokemon>();
+    const nameToNatNum = new Map<string, number>();
 
-    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
+    supplementNonChampionsPokemon(pokemon, nameToNatNum, '/dummy');
 
-    const stats = statsMap.get('test01')!.stats;
-    expect(stats.type1).toBe('ほのお');
-    expect(stats.ability1).toBe('もうか');
-  });
-
-  it('type1もabilityもあるエントリはスキップする', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['0025', makeInfo({ displayName: 'ピカチュウ', natNum: 25, nameEng: 'Pikachu' })],
-    ]);
-    const original: GamePokedexEntry = {
-      type1: 'でんき', type2: '', hp: 35, attack: 55, defense: 40,
-      special_attack: 50, special_defense: 50, speed: 90,
-      ability1: 'せいでんき', ability2: '', dream_ability: 'ひらいしん',
-    };
-    const statsMap = new Map<string, StatsEntry>([
-      ['0025', { stats: { ...original }, game: 'Scarlet_Violet', pokedex: 'Scarlet_Violet' }],
-    ]);
-
-    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
-
-    const stats = statsMap.get('0025')!.stats;
-    expect(stats).toEqual(original);
-  });
-
-  it('fetchEntryがnullを返すエントリは変更しない', () => {
-    const entryIdToInfo = new Map<string, EntryInfo>([
-      ['unknown', makeInfo({ displayName: '不明ポケモン', natNum: 9999, nameEng: 'Unknown' })],
-    ]);
-    const statsMap = new Map<string, StatsEntry>([
-      ['unknown', makeStats({ type1: 'ノーマル' })],
-    ]);
-
-    supplementMissingTypes(entryIdToInfo, statsMap, '/dummy');
-
-    const stats = statsMap.get('unknown')!.stats;
-    expect(stats.ability1).toBe('');
+    const meltan = pokemon.get('メルタン');
+    expect(meltan).toBeDefined();
+    expect(meltan!.abilities).toContain('Magnet Pull');
   });
 });

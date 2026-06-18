@@ -1,194 +1,167 @@
 /**
  * フォールバック補完モジュール
  *
- * pokedex にstatsがないポケモンを自動検出し、@pkmn/dex から補完する。
- * pokedex にエントリ自体がないメガ/ゲンシフォームも @pkmn/dex から注入する。
+ * Champions 未収録のポケモンを @pkmn/dex から補完する。
+ * champout の monsname_syn.json に日本語名があるが personal.json にエントリがないポケモンが対象。
  */
-import { fetchEntry, findMegaPrimalForms } from './showdown';
-import type { EntryInfo, GamePokedexEntry, StatsEntry } from './pokedex-parser';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { Dex } from '@pkmn/dex';
+import type { ChampoutPokemon } from './champout-parser';
 
-/**
- * 外部データソースの既知の誤りを正誤表（errata）で最終補正する。
- * パイプラインの末尾で実行し、全データソースの処理結果を上書きする。
- * 指定されたフィールドのみ上書きし、それ以外は既存値を保持する。
- */
-export function applyErrata(
-  entryIdToInfo: Map<string, EntryInfo>,
-  statsMap: Map<string, StatsEntry>,
-  errata: Record<string, Partial<GamePokedexEntry>>,
-): void {
-  // displayName → entryId の逆引きマップ
-  const displayNameToEntryId = new Map<string, string>();
-  for (const [entryId, info] of entryIdToInfo) {
-    if (!displayNameToEntryId.has(info.displayName)) {
-      displayNameToEntryId.set(info.displayName, entryId);
-    }
-  }
+const dex = Dex.forGen(9);
 
-  let count = 0;
-  for (const [displayName, corrections] of Object.entries(errata)) {
-    const entryId = displayNameToEntryId.get(displayName);
-    if (!entryId) {
-      console.log(`    WARNING: errata target not found: ${displayName}`);
-      continue;
-    }
-    const statsEntry = statsMap.get(entryId);
-    if (!statsEntry) {
-      console.log(`    WARNING: errata target has no stats: ${displayName}`);
-      continue;
-    }
-    Object.assign(statsEntry.stats, corrections);
-    count++;
-    console.log(`    ${displayName}`);
-  }
-  if (count > 0) {
-    console.log(`  Errata applied: ${count} entries`);
-  }
+// --- Type translation ---
+
+const TYPE_EN_TO_JA: Record<string, string> = {
+  Normal: 'ノーマル', Fire: 'ほのお', Water: 'みず', Grass: 'くさ',
+  Electric: 'でんき', Ice: 'こおり', Fighting: 'かくとう', Poison: 'どく',
+  Ground: 'じめん', Flying: 'ひこう', Psychic: 'エスパー', Bug: 'むし',
+  Rock: 'いわ', Ghost: 'ゴースト', Dark: 'あく', Dragon: 'ドラゴン',
+  Steel: 'はがね', Fairy: 'フェアリー',
+};
+
+// --- Ability translation ---
+
+interface TextDataFile {
+  mSDataSet: Array<{ LabelName: string; OriginalText: string }>;
 }
 
-/**
- * statsMapに存在しないポケモンを @pkmn/dex から取得してstatsMapに追加する。
- */
-export function supplementMissingStats(
-  entryIdToInfo: Map<string, EntryInfo>,
-  statsMap: Map<string, StatsEntry>,
-  pokedexBase: string,
-): void {
-  const drops = findGenuineDrops(entryIdToInfo, statsMap);
-  if (drops.size === 0) return;
+let champoutAbilityMap: Map<string, string> | null = null;
 
-  console.log(`  Fallback: resolving ${drops.size} entries from @pkmn/dex...`);
-  for (const [entryId, info] of drops) {
-    const entry = fetchEntry(info.nameEng, info.formEng, pokedexBase);
-    if (!entry) {
-      console.log(`    WARNING: ${info.displayName} not found (${info.nameEng} / ${info.formEng})`);
-      continue;
-    }
-    statsMap.set(entryId, { stats: entry, game: 'Showdown', pokedex: 'Showdown' });
-    console.log(`    ${info.displayName}`);
+function loadChampoutAbilities(champoutBase: string): Map<string, string> {
+  if (champoutAbilityMap) return champoutAbilityMap;
+  const data: TextDataFile = JSON.parse(
+    readFileSync(resolve(champoutBase, 'rom-txt/jpn/tokusei.json'), 'utf-8'),
+  );
+  champoutAbilityMap = new Map<string, string>();
+  for (const entry of data.mSDataSet) {
+    champoutAbilityMap.set(entry.LabelName, entry.OriginalText);
   }
+  return champoutAbilityMap;
 }
 
+let abilityEnToJaMap: Map<string, string> | null = null;
+
 /**
- * vendor/pokedex にエントリがないメガ/ゲンシフォームを @pkmn/dex から検出し、
- * entryIdToInfo・statsMap・nameToNatNum に注入する。
+ * @pkmn/dex の全特性について英語名→日本語名のマッピングを構築する。
+ * champout の tokusei.json をベースに、特性番号でマッチングする。
+ * champout に含まれない特性（Champions未使用）は英語名のまま返す。
  */
-export function injectMissingForms(
-  entryIdToInfo: Map<string, EntryInfo>,
-  statsMap: Map<string, StatsEntry>,
+function buildAbilityTranslation(champoutBase: string): Map<string, string> {
+  if (abilityEnToJaMap) return abilityEnToJaMap;
+  abilityEnToJaMap = new Map<string, string>();
+
+  const champoutAbilities = loadChampoutAbilities(champoutBase);
+
+  // champout のラベル (TOKUSEI_NNN) から Index → 日本語名 のマップを作成
+  const idToJa = new Map<number, string>();
+  for (const [label, name] of champoutAbilities) {
+    const num = parseInt(label.replace('TOKUSEI_', ''));
+    if (!isNaN(num)) idToJa.set(num, name);
+  }
+
+  for (const ability of dex.abilities.all()) {
+    if (!ability.exists || ability.isNonstandard) continue;
+    const jaName = idToJa.get(ability.num);
+    if (jaName) {
+      abilityEnToJaMap.set(ability.name, jaName);
+    }
+  }
+
+  return abilityEnToJaMap;
+}
+
+function getAbilityJaName(englishName: string, champoutBase: string): string {
+  const map = buildAbilityTranslation(champoutBase);
+  return map.get(englishName) ?? englishName;
+}
+
+// --- Fallback ---
+
+/**
+ * Champions 未収録のポケモンを @pkmn/dex から補完する。
+ * champout の monsname_syn.json に含まれる全1026種のうち、
+ * personal.json にエントリがないものを検出し、@pkmn/dex で解決する。
+ */
+export function supplementNonChampionsPokemon(
+  pokemon: Map<string, ChampoutPokemon>,
   nameToNatNum: Map<string, number>,
-  pokedexBase: string,
+  champoutBase: string,
 ): void {
-  const existingDisplayNames = new Set<string>();
-  for (const info of entryIdToInfo.values()) {
-    existingDisplayNames.add(info.displayName);
+  const namesData: TextDataFile = JSON.parse(
+    readFileSync(resolve(champoutBase, 'rom-txt/jpn/monsname_syn.json'), 'utf-8'),
+  );
+  const engNamesData: TextDataFile = JSON.parse(
+    readFileSync(resolve(champoutBase, 'rom-txt/usa/monsname_syn.json'), 'utf-8'),
+  );
+
+  // MONSNAME_NNN → { jpn, eng, natNum }
+  const allSpecies: { jpn: string; eng: string; natNum: number }[] = [];
+  const engMap = new Map<string, string>();
+  for (const entry of engNamesData.mSDataSet) {
+    engMap.set(entry.LabelName, entry.OriginalText);
+  }
+  for (const entry of namesData.mSDataSet) {
+    const numStr = entry.LabelName.replace('MONSNAME_', '');
+    const natNum = parseInt(numStr);
+    if (natNum <= 0) continue;
+    allSpecies.push({
+      jpn: entry.OriginalText,
+      eng: engMap.get(entry.LabelName) ?? '',
+      natNum,
+    });
   }
 
-  // 基本フォーム（formEng が空）のみ対象
-  const baseForms = new Map<string, EntryInfo>();
-  for (const [entryId, info] of entryIdToInfo) {
-    if (!info.formEng && !baseForms.has(info.nameEng)) {
-      baseForms.set(info.nameEng, info);
-    }
-  }
-
-  let injected = 0;
-  for (const [nameEng, baseInfo] of baseForms) {
-    const forms = findMegaPrimalForms(nameEng, baseInfo.displayName, pokedexBase);
-    for (const form of forms) {
-      if (existingDisplayNames.has(form.displayName)) continue;
-
-      const syntheticId = `injected_${baseInfo.natNum}_${form.forme}`;
-      const info: EntryInfo = {
-        displayName: form.displayName,
-        natNum: baseInfo.natNum,
-        nameEng,
-        formEng: form.forme,
-      };
-
-      entryIdToInfo.set(syntheticId, info);
-      statsMap.set(syntheticId, { stats: form.data, game: 'Showdown', pokedex: 'Showdown' });
-      nameToNatNum.set(form.displayName, baseInfo.natNum);
-      existingDisplayNames.add(form.displayName);
-      injected++;
-      console.log(`    ${form.displayName}`);
-    }
-  }
-
-  if (injected > 0) {
-    console.log(`  Injected: ${injected} missing mega/primal forms from @pkmn/dex`);
-  }
-}
-
-/**
- * statsMapにstatsはあるがtype1またはability1が空のエントリについて、
- * @pkmn/dex からtype/abilityを補完する（statsは保持）。
- */
-export function supplementMissingTypes(
-  entryIdToInfo: Map<string, EntryInfo>,
-  statsMap: Map<string, StatsEntry>,
-  pokedexBase: string,
-): void {
-  // nameEng が null のエントリ用に、natNum → 英語名のマップを構築
-  const natNumToBaseEng = new Map<number, string>();
-  for (const info of entryIdToInfo.values()) {
-    if (info.nameEng && !natNumToBaseEng.has(info.natNum)) {
-      natNumToBaseEng.set(info.natNum, info.nameEng);
-    }
+  // Champions に存在する natNum を収集
+  const championsNatNums = new Set<number>();
+  for (const poke of pokemon.values()) {
+    championsNatNums.add(poke.natNum);
   }
 
   let count = 0;
-  for (const [entryId, statsEntry] of statsMap) {
-    const needsType = !statsEntry.stats.type1;
-    const needsAbility = !statsEntry.stats.ability1;
-    if (!needsType && !needsAbility) continue;
-    const info = entryIdToInfo.get(entryId);
-    if (!info) continue;
+  for (const { jpn, eng, natNum } of allSpecies) {
+    if (championsNatNums.has(natNum)) continue;
+    if (!eng) continue;
 
-    // nameEng が null の場合、基本フォームの英語名で代替
-    const nameEng = info.nameEng || natNumToBaseEng.get(info.natNum);
-    if (!nameEng) continue;
+    const species = dex.species.get(eng);
+    if (!species?.exists) continue;
+    if (species.forme) continue;
 
-    const dexEntry = fetchEntry(nameEng, info.formEng, pokedexBase);
-    if (!dexEntry || !dexEntry.type1) continue;
+    const types = species.types.map((t) => TYPE_EN_TO_JA[t] ?? t);
+    const deduped = types[0] === types[1] ? [types[0]] : types;
 
-    if (needsType) {
-      statsEntry.stats.type1 = dexEntry.type1;
-      statsEntry.stats.type2 = dexEntry.type2;
+    const abilities: string[] = [];
+    for (const slot of ['0', '1', 'H'] as const) {
+      const abilityEng = species.abilities[slot];
+      if (!abilityEng) continue;
+      const ja = getAbilityJaName(abilityEng, champoutBase);
+      if (!abilities.includes(ja)) abilities.push(ja);
     }
-    if (!statsEntry.stats.ability1) statsEntry.stats.ability1 = dexEntry.ability1;
-    if (!statsEntry.stats.ability2) statsEntry.stats.ability2 = dexEntry.ability2;
-    if (!statsEntry.stats.dream_ability) statsEntry.stats.dream_ability = dexEntry.dream_ability;
+
+    const poke: ChampoutPokemon = {
+      displayName: jpn,
+      natNum,
+      nameEng: eng,
+      types: deduped,
+      abilities,
+      baseStats: {
+        H: species.baseStats.hp,
+        A: species.baseStats.atk,
+        B: species.baseStats.def,
+        C: species.baseStats.spa,
+        D: species.baseStats.spd,
+        S: species.baseStats.spe,
+      },
+      source: 'Showdown',
+    };
+
+    pokemon.set(jpn, poke);
+    nameToNatNum.set(jpn, natNum);
     count++;
-    console.log(`    ${info.displayName}`);
   }
+
   if (count > 0) {
-    console.log(`  Supplemented types/abilities: ${count} entries from @pkmn/dex`);
+    console.log(`  Fallback: ${count} non-Champions species from @pkmn/dex`);
   }
-}
-
-/**
- * statsMapに存在せず、同じdisplayNameの別エントリにもstatsがないものを抽出。
- */
-function findGenuineDrops(
-  entryIdToInfo: Map<string, EntryInfo>,
-  statsMap: Map<string, StatsEntry>,
-): Map<string, EntryInfo> {
-  const displayNameHasStats = new Set<string>();
-  for (const [entryId, info] of entryIdToInfo) {
-    if (statsMap.has(entryId)) {
-      displayNameHasStats.add(info.displayName);
-    }
-  }
-
-  const drops = new Map<string, EntryInfo>();
-  const seen = new Set<string>();
-  for (const [entryId, info] of entryIdToInfo) {
-    if (seen.has(info.displayName)) continue;
-    seen.add(info.displayName);
-    if (!displayNameHasStats.has(info.displayName)) {
-      drops.set(entryId, info);
-    }
-  }
-  return drops;
 }

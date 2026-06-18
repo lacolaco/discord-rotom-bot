@@ -22,7 +22,7 @@ describe('searchPokemonByName', () => {
     expect(result!.yakkun?.key).toBe('n6x');
   });
 
-  test('returns data for PokéAPI-supplemented pokemon', async () => {
+  test('returns data for Champions mega evolution', async () => {
     const result = await searchPokemonByName('メガジュカイン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['くさ', 'ドラゴン']);
@@ -30,21 +30,21 @@ describe('searchPokemonByName', () => {
     expect(result!.abilities).toContain('ひらいしん');
   });
 
-  test('returns data for Meltan (PokéAPI-supplemented)', async () => {
+  test('returns data for Showdown-fallback pokemon', async () => {
     const result = await searchPokemonByName('メルタン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['はがね']);
     expect(result!.baseStats.H).toBe(46);
   });
 
-  test('returns data for primal form (PokéAPI-supplemented)', async () => {
-    const result = await searchPokemonByName('ゲンシカイオーガ');
+  test('returns data for Showdown-fallback base form', async () => {
+    const result = await searchPokemonByName('カイオーガ');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['みず']);
-    expect(result!.baseStats.C).toBe(180);
+    expect(result!.baseStats.C).toBe(150);
   });
 
-  test('returns data for mega form injected from @pkmn/dex', async () => {
+  test('returns data for Champions mega form', async () => {
     const result = await searchPokemonByName('メガスコヴィラン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['くさ', 'ほのお']);
