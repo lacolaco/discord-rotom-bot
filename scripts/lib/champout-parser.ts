@@ -86,14 +86,14 @@ function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
     result.push(base);
     for (const e of group) {
       if (e.fo === '0') continue;
-      if (hasSameStats(base, e)) continue;
+      if (isCosmeticForm(base, e)) continue;
       result.push(e);
     }
   }
   return result;
 }
 
-function hasSameStats(a: PersonalEntry, b: PersonalEntry): boolean {
+function isCosmeticForm(a: PersonalEntry, b: PersonalEntry): boolean {
   return (
     a.hp === b.hp && a.atk === b.atk && a.def === b.def &&
     a.spatk === b.spatk && a.spdef === b.spdef && a.agi === b.agi &&

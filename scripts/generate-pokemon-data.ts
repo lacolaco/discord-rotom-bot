@@ -5,7 +5,7 @@
  * ボットが使用するポケモンデータを生成する。
  * Champions 未収録のポケモンは @pkmn/dex から補完する。
  *
- * 使用方法: npx tsx scripts/generate-pokemon-data.ts
+ * 使用方法: pnpm exec tsx scripts/generate-pokemon-data.ts
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
