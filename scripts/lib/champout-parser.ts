@@ -166,7 +166,10 @@ export function parseChampout(champoutBase: string): {
     }
 
     const displayName = buildDisplayName(baseName, formName);
-    if (pokemon.has(displayName)) continue;
+    if (pokemon.has(displayName)) {
+      console.log(`  WARNING: duplicate displayName skipped: ${displayName} (entry ${entry.id})`);
+      continue;
+    }
 
     const nameEng = engNames.get(entry.ms_name_lbl) ?? '';
     const natNum = parseInt(entry.no);
@@ -177,7 +180,7 @@ export function parseChampout(champoutBase: string): {
       console.log(`  WARNING: unknown type ID ${entry.type1} for ${displayName}`);
       continue;
     }
-    const types = type1 === type2 ? [type1] : [type1, type2];
+    const types = type1 === type2 ? [type1] : type2 ? [type1, type2] : [type1];
 
     const abilities: string[] = [];
     for (const key of [entry.toku0, entry.toku1, entry.toku2]) {
