@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseChampout } from './lib/champout-parser';
 import { supplementNonChampionsPokemon } from './lib/fallback';
-import { applyErrata, buildOutput, sortByNatNum, type OutputEntry } from './lib/pipeline';
+import { applyErrata, buildOutput, sortByNatNum, syncYakkunMap, type OutputEntry } from './lib/pipeline';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const CHAMPOUT_BASE = resolve(ROOT, 'vendor/champout');
@@ -40,24 +40,14 @@ const output = buildOutput(pokemon, yakkunMap);
 const sorted = sortByNatNum(output, nameToNatNum);
 
 writeGeneratedData(sorted);
-syncYakkunMap(sorted, yakkunMap);
+const syncedYakkun = syncYakkunMap(sorted, yakkunMap);
+writeFileSync(YAKKUN_MAP_PATH, JSON.stringify(syncedYakkun, null, 2) + '\n', 'utf-8');
 printSummary(sorted);
 
 // --- Functions ---
 
 function writeGeneratedData(sorted: Record<string, OutputEntry>): void {
   writeFileSync(OUTPUT_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
-}
-
-function syncYakkunMap(
-  sorted: Record<string, OutputEntry>,
-  yakkunMap: Record<string, string | null>,
-): void {
-  const synced: Record<string, string | null> = {};
-  for (const name of Object.keys(sorted)) {
-    synced[name] = yakkunMap[name] ?? null;
-  }
-  writeFileSync(YAKKUN_MAP_PATH, JSON.stringify(synced, null, 2) + '\n', 'utf-8');
 }
 
 function printSummary(sorted: Record<string, OutputEntry>): void {

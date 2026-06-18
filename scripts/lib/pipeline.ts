@@ -68,3 +68,75 @@ export function sortByNatNum(
   }
   return sorted;
 }
+
+function normalizeForMatch(name: string): string {
+  return name.replace(/[・\s()（）]/g, '');
+}
+
+/**
+ * yakkun-map.json を新しいポケモンデータに同期する。
+ * displayName が変更された場合、natNum + 名前の類似度で旧URLを引き継ぐ。
+ */
+export function syncYakkunMap(
+  sorted: Record<string, OutputEntry>,
+  yakkunMap: Record<string, string | null>,
+): Record<string, string | null> {
+  const synced: Record<string, string | null> = {};
+
+  for (const name of Object.keys(sorted)) {
+    synced[name] = yakkunMap[name] ?? null;
+  }
+
+  const orphaned = new Map<string, { url: string; natNum: number }>();
+  for (const [oldName, url] of Object.entries(yakkunMap)) {
+    if (!url) continue;
+    if (oldName in sorted) continue;
+    const match = url.match(/\/n(\d+)/);
+    if (match) {
+      orphaned.set(oldName, { url, natNum: parseInt(match[1]) });
+    }
+  }
+
+  if (orphaned.size === 0) return synced;
+
+  const orphansByNatNum = new Map<number, Map<string, string>>();
+  for (const [oldName, { url, natNum }] of orphaned) {
+    if (!orphansByNatNum.has(natNum)) orphansByNatNum.set(natNum, new Map());
+    orphansByNatNum.get(natNum)!.set(oldName, url);
+  }
+
+  let recovered = 0;
+  for (const [name, url] of Object.entries(synced)) {
+    if (url !== null) continue;
+    const natNum = sorted[name].index;
+    const candidates = orphansByNatNum.get(natNum);
+    if (!candidates || candidates.size === 0) continue;
+
+    if (candidates.size === 1) {
+      const [oldName, orphanUrl] = [...candidates.entries()][0];
+      synced[name] = orphanUrl;
+      candidates.delete(oldName);
+      recovered++;
+      continue;
+    }
+
+    const normalizedNew = normalizeForMatch(name);
+    for (const [oldName, orphanUrl] of candidates) {
+      const normalizedOld = normalizeForMatch(oldName);
+      if (normalizedOld === normalizedNew ||
+          normalizedOld.includes(normalizedNew) ||
+          normalizedNew.includes(normalizedOld)) {
+        synced[name] = orphanUrl;
+        candidates.delete(oldName);
+        recovered++;
+        break;
+      }
+    }
+  }
+
+  if (recovered > 0) {
+    console.log(`  yakkun URL recovered: ${recovered} entries from renamed displayNames`);
+  }
+
+  return synced;
+}

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyErrata, buildOutput, sortByNatNum } from './pipeline';
+import { applyErrata, buildOutput, sortByNatNum, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -111,5 +111,94 @@ describe('sortByNatNum', () => {
     const natNums = new Map([['A', 6], ['メガB', 6]]);
     const sorted = sortByNatNum(output, natNums);
     expect(Object.keys(sorted)).toEqual(['A', 'メガB']);
+  });
+});
+
+function makeOutputEntry(index: number): { index: number; types: string[]; abilities: string[]; baseStats: { H: number; A: number; B: number; C: number; D: number; S: number }; source: { game: string; pokedex: string } } {
+  return { index, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } };
+}
+
+describe('syncYakkunMap', () => {
+  it('名前が一致するエントリはそのまま引き継ぐ', () => {
+    const sorted = { 'ピカチュウ': makeOutputEntry(25) };
+    const oldMap = { 'ピカチュウ': 'https://yakkun.com/ch/zukan/n25' };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['ピカチュウ']).toBe('https://yakkun.com/ch/zukan/n25');
+  });
+
+  it('新規エントリは null になる', () => {
+    const sorted = { '新ポケモン': makeOutputEntry(999) };
+    const oldMap = {};
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['新ポケモン']).toBeNull();
+  });
+
+  it('削除されたエントリは出力に含まれない', () => {
+    const sorted = {};
+    const oldMap = { '旧ポケモン': 'https://yakkun.com/ch/zukan/n100' };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result).not.toHaveProperty('旧ポケモン');
+  });
+
+  it('natNum一致で唯一の候補がある場合URLを引き継ぐ', () => {
+    const sorted = { 'デオキシス': makeOutputEntry(386) };
+    const oldMap = { 'デオキシス(ノーマルフォルム)': 'https://yakkun.com/ch/zukan/n386' };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['デオキシス']).toBe('https://yakkun.com/ch/zukan/n386');
+  });
+
+  it('名前の表記変更（括弧→なし）でURLを引き継ぐ', () => {
+    const sorted = { 'ウォッシュロトム': makeOutputEntry(479) };
+    const oldMap = { 'ロトム(ウォッシュロトム)': 'https://yakkun.com/ch/zukan/n479w' };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['ウォッシュロトム']).toBe('https://yakkun.com/ch/zukan/n479w');
+  });
+
+  it('中黒の有無でURLを引き継ぐ', () => {
+    const sorted = {
+      'ケンタロス(パルデアのすがた・ウォーターしゅ)': makeOutputEntry(128),
+      'ケンタロス(パルデアのすがた・コンバットしゅ)': makeOutputEntry(128),
+      'ケンタロス(パルデアのすがた・ブレイズしゅ)': makeOutputEntry(128),
+    };
+    const oldMap = {
+      'ケンタロス(パルデアのすがた ウォーターしゅ)': 'https://yakkun.com/ch/zukan/n128c',
+      'ケンタロス(パルデアのすがた コンバットしゅ)': 'https://yakkun.com/ch/zukan/n128a',
+      'ケンタロス(パルデアのすがた ブレイズしゅ)': 'https://yakkun.com/ch/zukan/n128b',
+    };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['ケンタロス(パルデアのすがた・ウォーターしゅ)']).toBe('https://yakkun.com/ch/zukan/n128c');
+    expect(result['ケンタロス(パルデアのすがた・コンバットしゅ)']).toBe('https://yakkun.com/ch/zukan/n128a');
+    expect(result['ケンタロス(パルデアのすがた・ブレイズしゅ)']).toBe('https://yakkun.com/ch/zukan/n128b');
+  });
+
+  it('同一natNumの複数フォームでURLを正しく振り分ける', () => {
+    const sorted = {
+      'ウォッシュロトム': makeOutputEntry(479),
+      'ヒートロトム': makeOutputEntry(479),
+      'カットロトム': makeOutputEntry(479),
+    };
+    const oldMap = {
+      'ロトム(ウォッシュロトム)': 'https://yakkun.com/ch/zukan/n479w',
+      'ロトム(ヒートロトム)': 'https://yakkun.com/ch/zukan/n479h',
+      'ロトム(カットロトム)': 'https://yakkun.com/ch/zukan/n479c',
+    };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['ウォッシュロトム']).toBe('https://yakkun.com/ch/zukan/n479w');
+    expect(result['ヒートロトム']).toBe('https://yakkun.com/ch/zukan/n479h');
+    expect(result['カットロトム']).toBe('https://yakkun.com/ch/zukan/n479c');
+  });
+
+  it('直接一致エントリの既存URLは上書きしない', () => {
+    const sorted = {
+      'ピカチュウ': makeOutputEntry(25),
+      '新フォーム': makeOutputEntry(25),
+    };
+    const oldMap = {
+      'ピカチュウ': 'https://yakkun.com/ch/zukan/n25',
+      '旧フォーム': 'https://yakkun.com/ch/zukan/n25a',
+    };
+    const result = syncYakkunMap(sorted, oldMap);
+    expect(result['ピカチュウ']).toBe('https://yakkun.com/ch/zukan/n25');
+    expect(result['新フォーム']).toBe('https://yakkun.com/ch/zukan/n25a');
   });
 });
