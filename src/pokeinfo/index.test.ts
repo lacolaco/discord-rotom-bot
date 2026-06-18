@@ -52,6 +52,32 @@ describe('searchPokemonByName', () => {
     expect(result!.baseStats.A).toBe(138);
     expect(result!.index).toBe(952);
   });
+
+  test('旧表示名でエイリアス解決される', async () => {
+    const result = await searchPokemonByName('ロトム(ウォッシュロトム)');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(479);
+    expect(result!.types).toEqual(['でんき', 'みず']);
+  });
+
+  test('旧ベースフォーム名でエイリアス解決される', async () => {
+    const result = await searchPokemonByName('ミミッキュ');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(778);
+  });
+
+  test('旧フォーム名でエイリアス解決される（中黒の有無）', async () => {
+    const result = await searchPokemonByName('ケンタロス(パルデアのすがた ウォーターしゅ)');
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['かくとう', 'みず']);
+  });
+
+  test('Champions限定メガが取得できる', async () => {
+    const result = await searchPokemonByName('メガヒードラン');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(485);
+    expect(result!.types).toEqual(['ほのお', 'はがね']);
+  });
 });
 
 describe('getAllPokemonNames', () => {

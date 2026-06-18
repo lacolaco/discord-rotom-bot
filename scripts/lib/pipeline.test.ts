@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { addDisplayNameAliases, applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
+import { applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -147,54 +147,6 @@ describe('supplementChampionsExclusive', () => {
     };
     supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
     expect(pokemon.get('メガヒードラン')!.types).toEqual(['ノーマル']);
-  });
-});
-
-describe('addDisplayNameAliases', () => {
-  it('旧表示名のエイリアスを追加する', () => {
-    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
-    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
-    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
-    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
-    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
-    expect(pokemon.get('ロトム(ウォッシュロトム)')!.natNum).toBe(479);
-    expect(nameToNatNum.get('ロトム(ウォッシュロトム)')).toBe(479);
-  });
-
-  it('ターゲットが存在しない場合はスキップする', () => {
-    const pokemon = new Map<string, ChampoutPokemon>();
-    const nameToNatNum = new Map<string, number>();
-    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
-    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
-    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(false);
-  });
-
-  it('既にエイリアス名と同名のエントリがある場合はスキップする', () => {
-    const pokemon = new Map([
-      ['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })],
-      ['ロトム(ウォッシュロトム)', makePokemon({ displayName: 'ロトム(ウォッシュロトム)', natNum: 999 })],
-    ]);
-    const nameToNatNum = new Map<string, number>();
-    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
-    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
-    expect(pokemon.get('ロトム(ウォッシュロトム)')!.natNum).toBe(999);
-  });
-
-  it('ベースフォーム名のエイリアスを追加する', () => {
-    const pokemon = new Map([['ミミッキュ(ばけたすがた)', makePokemon({ displayName: 'ミミッキュ(ばけたすがた)', natNum: 778 })]]);
-    const nameToNatNum = new Map([['ミミッキュ(ばけたすがた)', 778]]);
-    const aliases = { 'ミミッキュ': 'ミミッキュ(ばけたすがた)' };
-    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
-    expect(pokemon.has('ミミッキュ')).toBe(true);
-    expect(pokemon.get('ミミッキュ')!.natNum).toBe(778);
-  });
-
-  it('エイリアスの displayName はエイリアス名になる', () => {
-    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
-    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
-    const aliases = { 'ロトム(ウォッシュロトム)': 'ウォッシュロトム' };
-    addDisplayNameAliases(pokemon, nameToNatNum, aliases);
-    expect(pokemon.get('ロトム(ウォッシュロトム)')!.displayName).toBe('ロトム(ウォッシュロトム)');
   });
 });
 

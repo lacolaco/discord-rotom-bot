@@ -58,28 +58,6 @@ export function supplementChampionsExclusive(
   }
 }
 
-export function addDisplayNameAliases(
-  pokemon: Map<string, ChampoutPokemon>,
-  nameToNatNum: Map<string, number>,
-  aliases: Record<string, string>,
-): void {
-  let count = 0;
-  for (const [aliasName, targetName] of Object.entries(aliases)) {
-    if (pokemon.has(aliasName)) continue;
-    const target = pokemon.get(targetName);
-    if (!target) {
-      console.log(`    WARNING: alias target not found: ${aliasName} → ${targetName}`);
-      continue;
-    }
-    pokemon.set(aliasName, { ...target, displayName: aliasName });
-    nameToNatNum.set(aliasName, target.natNum);
-    count++;
-  }
-  if (count > 0) {
-    console.log(`  Display name aliases: ${count} entries`);
-  }
-}
-
 export function buildOutput(
   data: Map<string, ChampoutPokemon>,
   yakkun: Record<string, string | null>,

@@ -12,7 +12,6 @@ import { resolve } from 'node:path';
 import { parseChampout } from './lib/champout-parser';
 import { supplementNonChampionsPokemon, supplementPokemonFormes } from './lib/fallback';
 import {
-  addDisplayNameAliases,
   applyErrata,
   buildOutput,
   sortByNatNum,
@@ -25,7 +24,6 @@ const ROOT = resolve(import.meta.dirname, '..');
 const CHAMPOUT_BASE = resolve(ROOT, 'vendor/champout');
 const ERRATA_PATH = resolve(import.meta.dirname, 'pokedex-errata.json');
 const EXCLUSIVE_PATH = resolve(import.meta.dirname, 'champions-exclusive.json');
-const ALIASES_PATH = resolve(import.meta.dirname, 'display-name-aliases.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
 
@@ -48,9 +46,6 @@ const errata: Record<string, Partial<{ types: string[]; abilities: string[]; bas
   readFileSync(ERRATA_PATH, 'utf-8'),
 );
 applyErrata(pokemon, errata);
-
-const aliases: Record<string, string> = JSON.parse(readFileSync(ALIASES_PATH, 'utf-8'));
-addDisplayNameAliases(pokemon, nameToNatNum, aliases);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),
