@@ -76,8 +76,8 @@ function normalizeForMatch(name: string): string {
 /**
  * yakkun-map.json を新しいポケモンデータに同期する。
  * - 新データに存在するポケモンは既存URLを引き継ぎ、未登録なら null で追加
- * - 旧データにしかないエントリもURLごと保持する（リージョンフォーム等の削除防止）
- * - displayName が変更された場合、natNum + 名前の類似度で旧URLを引き継ぐ
+ * - displayName が変更された場合、natNum + 名前の類似度で旧URLを新エントリに引き継ぐ
+ * - 旧データにしかないエントリは削除する（natNum 一致で回収できなかった場合も含む）
  */
 export function syncYakkunMap(
   sorted: Record<string, OutputEntry>,
