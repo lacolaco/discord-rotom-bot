@@ -898,6 +898,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n25a",
+      "key": "n25a"
     }
   },
   "メガライチュウＸ": {
@@ -11817,6 +11821,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n351w",
+      "key": "n351w"
     }
   },
   "ポワルン(たいようのすがた)": {
@@ -11838,6 +11846,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n351f",
+      "key": "n351f"
     }
   },
   "ポワルン(ゆきぐものすがた)": {
@@ -11859,6 +11871,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n351i",
+      "key": "n351i"
     }
   },
   "カクレオン": {
@@ -13884,6 +13900,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n412d",
+      "key": "n412d"
     }
   },
   "ミノムッチ(すなちのミノ)": {
@@ -13906,6 +13926,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n412s",
+      "key": "n412s"
     }
   },
   "ミノマダム(くさきのミノ)": {
@@ -21998,8 +22022,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n666",
-      "key": "n666"
+      "url": "https://yakkun.com/ch/zukan/n666p",
+      "key": "n666p"
     }
   },
   "ビビヨン(ぐんとうのもよう)": {
@@ -22024,6 +22048,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666i",
+      "key": "n666i"
     }
   },
   "ビビヨン(こうやのもよう)": {
@@ -22048,6 +22076,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666j",
+      "key": "n666j"
     }
   },
   "ビビヨン(さじんのもよう)": {
@@ -22072,6 +22104,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666k",
+      "key": "n666k"
     }
   },
   "ビビヨン(サバンナのもよう)": {
@@ -22096,6 +22132,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666n",
+      "key": "n666n"
     }
   },
   "ビビヨン(ジャングルのもよう)": {
@@ -22120,6 +22160,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666q",
+      "key": "n666q"
     }
   },
   "ビビヨン(スコールのもよう)": {
@@ -22144,6 +22188,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666m",
+      "key": "n666m"
     }
   },
   "ビビヨン(せつげんのもよう)": {
@@ -22168,6 +22216,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666b",
+      "key": "n666b"
     }
   },
   "ビビヨン(たいがのもよう)": {
@@ -22192,6 +22244,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666l",
+      "key": "n666l"
     }
   },
   "ビビヨン(たいようのもよう)": {
@@ -22216,6 +22272,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666o",
+      "key": "n666o"
     }
   },
   "ビビヨン(たいりくのもよう)": {
@@ -22240,6 +22300,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666c",
+      "key": "n666c"
     }
   },
   "ビビヨン(ていえんのもよう)": {
@@ -22264,6 +22328,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666d",
+      "key": "n666d"
     }
   },
   "ビビヨン(ひょうせつのもよう)": {
@@ -22288,6 +22356,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666",
+      "key": "n666"
     }
   },
   "ビビヨン(ファンシーなもよう)": {
@@ -22312,6 +22384,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666r",
+      "key": "n666r"
     }
   },
   "ビビヨン(ボールのもよう)": {
@@ -22336,6 +22412,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666s",
+      "key": "n666s"
     }
   },
   "ビビヨン(マリンのもよう)": {
@@ -22360,6 +22440,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666h",
+      "key": "n666h"
     }
   },
   "ビビヨン(みやびなもよう)": {
@@ -22384,6 +22468,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666e",
+      "key": "n666e"
     }
   },
   "ビビヨン(モダンなもよう)": {
@@ -22408,6 +22496,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666g",
+      "key": "n666g"
     }
   },
   "ビビヨン(ゆきぐにのもよう)": {
@@ -22432,6 +22524,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n666a",
+      "key": "n666a"
     }
   },
   "シシコ": {
@@ -22877,6 +22973,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n678m",
+      "key": "n678m"
     }
   },
   "ヒトツキ": {
@@ -28914,8 +29014,8 @@
       "pokedex": ""
     },
     "yakkun": {
-      "url": "https://yakkun.com/ch/zukan/n869",
-      "key": "n869"
+      "url": "https://yakkun.com/ch/zukan/n869g",
+      "key": "n869g"
     }
   },
   "マホイップ(トリプルミックス)": {
@@ -28938,6 +29038,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869h",
+      "key": "n869h"
     }
   },
   "マホイップ(ミルキィバニラ)": {
@@ -28960,6 +29064,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869",
+      "key": "n869"
     }
   },
   "マホイップ(ミルキィまっちゃ)": {
@@ -28982,6 +29090,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869b",
+      "key": "n869b"
     }
   },
   "マホイップ(ミルキィミント)": {
@@ -29004,6 +29116,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869c",
+      "key": "n869c"
     }
   },
   "マホイップ(ミルキィルビー)": {
@@ -29026,6 +29142,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869a",
+      "key": "n869a"
     }
   },
   "マホイップ(ミルキィレモン)": {
@@ -29048,6 +29168,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869d",
+      "key": "n869d"
     }
   },
   "マホイップ(ルビーミックス)": {
@@ -29070,6 +29194,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n869f",
+      "key": "n869f"
     }
   },
   "タイレーツ": {
@@ -29380,6 +29508,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n877a",
+      "key": "n877a"
     }
   },
   "ゾウドウ": {
@@ -33379,6 +33511,10 @@
     "source": {
       "game": "Showdown",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n1025k",
+      "key": "n1025k"
     }
   },
   "ヤバソチャ(ボンサクのすがた)": {
