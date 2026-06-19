@@ -213,7 +213,6 @@ const FORME_SUFFIX_TO_JA: Record<string, string> = {
   'Defense': 'ディフェンスフォルム',
   'Speed': 'スピードフォルム',
   'Pirouette': 'ステップフォルム',
-  'Unbound': 'ときはなたれしフーパ',
   'School': 'むれたすがた',
   'Noice': 'ナイスフェイス',
   'Low-Key': 'ローなすがた',
@@ -234,6 +233,7 @@ const FORME_SUFFIX_TO_JA: Record<string, string> = {
 };
 
 const SPECIFIC_FORME_NAMES: Record<string, string> = {
+  'Hoopa-Unbound': 'ときはなたれしフーパ',
   'Kyurem-Black': 'ブラックキュレム',
   'Kyurem-White': 'ホワイトキュレム',
   'Necrozma-Dusk-Mane': 'たそがれのたてがみ',
@@ -369,7 +369,7 @@ export function supplementNonChampionsPokemon(
   }
 
   // natNum → @pkmn/dex species のインデックスを構築（英語名不一致時のフォールバック用）
-  const dexByNum = new Map<number, typeof dex.species extends { get(id: string): infer R } ? R : never>();
+  const dexByNum = new Map<number, ReturnType<typeof dex.species.get>>();
   for (const s of dex.species.all()) {
     if (!s.exists || s.forme) continue;
     if (s.isNonstandard && s.isNonstandard !== 'Past') continue;
