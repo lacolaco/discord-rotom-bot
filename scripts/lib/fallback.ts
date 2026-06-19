@@ -468,7 +468,10 @@ export function supplementPokemonFormes(
     'Three-Segment', 'Four',
     'Droopy', 'Stretchy',
   ]);
-  const EXCLUDED_BASE_SPECIES = new Set(['Arceus', 'Silvally', 'Genesect', 'Minior', 'Squawkabilly']);
+  const EXCLUDED_BASE_SPECIES = new Set([
+    'Arceus', 'Silvally', 'Genesect', 'Minior', 'Squawkabilly',
+    'Vivillon', 'Alcremie', 'Pikachu', 'Morpeko', 'Sinistcha',
+  ]);
 
   let formeCount = 0;
   let renameCount = 0;

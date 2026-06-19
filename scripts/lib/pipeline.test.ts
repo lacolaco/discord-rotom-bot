@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyDisplayNameOverrides, applyErrata, buildOutput, normalizeTypeOrdering, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
+import { applyDisplayNameOverrides, applyErrata, buildOutput, normalizeAgainstReference, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -184,37 +184,54 @@ describe('applyDisplayNameOverrides', () => {
   });
 });
 
-describe('normalizeTypeOrdering', () => {
-  it('参照データとタイプが逆順の場合に補正する', () => {
+describe('normalizeAgainstReference', () => {
+  const refEntry = (overrides: Partial<{ types: string[]; abilities: string[]; baseStats: { H: number; A: number; B: number; C: number; D: number; S: number } }> = {}) => ({
+    types: ['ノーマル'],
+    abilities: ['にげあし'],
+    baseStats: { H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 },
+    ...overrides,
+  });
+
+  it('参照データとタイプが異なる場合に補正する', () => {
     const pokemon = new Map([
       ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['むし', 'ひこう'] })],
     ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ひこう', 'むし'] } });
+    normalizeAgainstReference(pokemon, { 'テスト': refEntry({ types: ['ひこう', 'むし'] }) });
     expect(pokemon.get('テスト')!.types).toEqual(['ひこう', 'むし']);
   });
 
-  it('タイプが同一順の場合は変更しない', () => {
+  it('参照データと特性が異なる場合に補正する', () => {
     const pokemon = new Map([
-      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ほのお', 'ひこう'] })],
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, abilities: ['もうか', 'テレパシー'] })],
     ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ほのお', 'ひこう'] } });
-    expect(pokemon.get('テスト')!.types).toEqual(['ほのお', 'ひこう']);
+    normalizeAgainstReference(pokemon, { 'テスト': refEntry({ abilities: ['もうか'] }) });
+    expect(pokemon.get('テスト')!.abilities).toEqual(['もうか']);
+  });
+
+  it('参照データと種族値が異なる場合に補正する', () => {
+    const pokemon = new Map([
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, baseStats: { H: 100, A: 120, B: 50, C: 50, D: 50, S: 50 } })],
+    ]);
+    normalizeAgainstReference(pokemon, { 'テスト': refEntry({ baseStats: { H: 80, A: 100, B: 50, C: 50, D: 50, S: 50 } }) });
+    expect(pokemon.get('テスト')!.baseStats).toEqual({ H: 80, A: 100, B: 50, C: 50, D: 50, S: 50 });
   });
 
   it('参照データにないポケモンは変更しない', () => {
     const pokemon = new Map([
       ['新ポケモン', makePokemon({ displayName: '新ポケモン', natNum: 999, types: ['あく', 'ドラゴン'] })],
     ]);
-    normalizeTypeOrdering(pokemon, {});
+    normalizeAgainstReference(pokemon, {});
     expect(pokemon.get('新ポケモン')!.types).toEqual(['あく', 'ドラゴン']);
   });
 
-  it('単タイプのポケモンは変更しない', () => {
+  it('全フィールドが一致する場合は変更しない', () => {
     const pokemon = new Map([
-      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ノーマル'] })],
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })],
     ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ノーマル'] } });
+    normalizeAgainstReference(pokemon, { 'テスト': refEntry() });
     expect(pokemon.get('テスト')!.types).toEqual(['ノーマル']);
+    expect(pokemon.get('テスト')!.abilities).toEqual(['にげあし']);
+    expect(pokemon.get('テスト')!.baseStats).toEqual({ H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 });
   });
 });
 

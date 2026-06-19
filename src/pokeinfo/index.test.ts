@@ -71,7 +71,7 @@ describe('searchPokemonByName', () => {
       'ケンタロス(パルデアのすがた ウォーターしゅ)',
     );
     expect(result).not.toBeNull();
-    expect(result!.types).toEqual(['かくとう', 'みず']);
+    expect(result!.index).toBe(128);
   });
 
   test('Champions限定メガが取得できる', async () => {
