@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyDisplayNameOverrides, applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
+import { applyDisplayNameOverrides, applyErrata, buildOutput, normalizeTypeOrdering, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -181,6 +181,40 @@ describe('applyDisplayNameOverrides', () => {
     });
     expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
     expect(pokemon.has('ミミッキュ')).toBe(true);
+  });
+});
+
+describe('normalizeTypeOrdering', () => {
+  it('参照データとタイプが逆順の場合に補正する', () => {
+    const pokemon = new Map([
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['むし', 'ひこう'] })],
+    ]);
+    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ひこう', 'むし'] } });
+    expect(pokemon.get('テスト')!.types).toEqual(['ひこう', 'むし']);
+  });
+
+  it('タイプが同一順の場合は変更しない', () => {
+    const pokemon = new Map([
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ほのお', 'ひこう'] })],
+    ]);
+    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ほのお', 'ひこう'] } });
+    expect(pokemon.get('テスト')!.types).toEqual(['ほのお', 'ひこう']);
+  });
+
+  it('参照データにないポケモンは変更しない', () => {
+    const pokemon = new Map([
+      ['新ポケモン', makePokemon({ displayName: '新ポケモン', natNum: 999, types: ['あく', 'ドラゴン'] })],
+    ]);
+    normalizeTypeOrdering(pokemon, {});
+    expect(pokemon.get('新ポケモン')!.types).toEqual(['あく', 'ドラゴン']);
+  });
+
+  it('単タイプのポケモンは変更しない', () => {
+    const pokemon = new Map([
+      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ノーマル'] })],
+    ]);
+    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ノーマル'] } });
+    expect(pokemon.get('テスト')!.types).toEqual(['ノーマル']);
   });
 });
 

@@ -280,7 +280,7 @@ describe('supplementNonChampionsPokemon', () => {
     expect(bulbasaur!.abilities).toContain('ようりょくそ');
   });
 
-  it('champout にない特性は英語名のまま返す', () => {
+  it('champout にない特性も SUPPLEMENTAL_ABILITIES で翻訳される', () => {
     const pokemon = new Map<string, ChampoutPokemon>();
     const nameToNatNum = new Map<string, number>();
 
@@ -288,7 +288,7 @@ describe('supplementNonChampionsPokemon', () => {
 
     const meltan = pokemon.get('メルタン');
     expect(meltan).toBeDefined();
-    expect(meltan!.abilities).toContain('Magnet Pull');
+    expect(meltan!.abilities).toContain('じりょく');
   });
 
   it('champout の英語名が @pkmn/dex と不一致でも natNum で解決する', () => {

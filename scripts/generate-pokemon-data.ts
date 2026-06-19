@@ -7,7 +7,7 @@
  *
  * 使用方法: pnpm exec tsx scripts/generate-pokemon-data.ts
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseChampout } from './lib/champout-parser';
 import { supplementNonChampionsPokemon, supplementPokemonFormes } from './lib/fallback';
@@ -15,6 +15,7 @@ import {
   applyDisplayNameOverrides,
   applyErrata,
   buildOutput,
+  normalizeTypeOrdering,
   sortByNatNum,
   supplementChampionsExclusive,
   syncYakkunMap,
@@ -51,6 +52,11 @@ const errata: Record<string, Partial<{ types: string[]; abilities: string[]; bas
   readFileSync(ERRATA_PATH, 'utf-8'),
 );
 applyErrata(pokemon, errata);
+
+const existingData: Record<string, { types: string[] }> = existsSync(OUTPUT_PATH)
+  ? JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+  : {};
+normalizeTypeOrdering(pokemon, existingData);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),

@@ -30,6 +30,120 @@ interface TextDataFile {
   mSDataSet: Array<{ LabelName: string; OriginalText: string }>;
 }
 
+// Champions 未使用だが @pkmn/dex に存在する特性の日本語名。
+// champout の tokusei.json はChampions収録特性のみカバーするため、
+// 未収録特性はこのテーブルで補完する。
+const SUPPLEMENTAL_ABILITIES: Record<string, string> = {
+  'Air Lock': 'エアロック',
+  'Anger Shell': 'いかりのこうら',
+  'Arena Trap': 'ありじごく',
+  'As One (Glastrier)': 'じんばいったい(はくばじょうのすがた)',
+  'As One (Spectrier)': 'じんばいったい(こくばじょうのすがた)',
+  'Aura Break': 'オーラブレイク',
+  'Bad Dreams': 'ナイトメア',
+  'Ball Fetch': 'たまひろい',
+  'Battery': 'バッテリー',
+  'Beads of Ruin': 'わざわいのたま',
+  'Beast Boost': 'ビーストブースト',
+  'Chilling Neigh': 'しろのいななき',
+  'Color Change': 'へんしょく',
+  'Comatose': 'ぜったいねむり',
+  'Commander': 'しれいとう',
+  'Costar': 'きょうえん',
+  'Cotton Down': 'わたげ',
+  'Dancer': 'おどりこ',
+  'Dark Aura': 'ダークオーラ',
+  'Dauntless Shield': 'ふくつのたて',
+  'Dazzling': 'ビビッドボディ',
+  'Defeatist': 'よわき',
+  'Delta Stream': 'デルタストリーム',
+  'Desolate Land': 'おわりのだいち',
+  'Download': 'ダウンロード',
+  "Dragon's Maw": 'りゅうのあぎと',
+  'Emergency Exit': 'ききかいひ',
+  'Flare Boost': 'ねつぼうそう',
+  'Flower Gift': 'フラワーギフト',
+  'Full Metal Body': 'メタルプロテクト',
+  'Galvanize': 'エレキスキン',
+  'Gorilla Tactics': 'ごりむちゅう',
+  'Grass Pelt': 'くさのけがわ',
+  'Grassy Surge': 'グラスメイカー',
+  'Grim Neigh': 'くろのいななき',
+  'Guard Dog': 'ばんけん',
+  'Gulp Missile': 'うのミサイル',
+  'Hadron Engine': 'ハドロンエンジン',
+  'Honey Gather': 'みつあつめ',
+  'Ice Face': 'アイスフェイス',
+  'Ice Scales': 'こおりのりんぷん',
+  'Intrepid Sword': 'ふとうのけん',
+  'Iron Barbs': 'てつのトゲ',
+  'Libero': 'リベロ',
+  'Lingering Aroma': 'とれないにおい',
+  'Liquid Ooze': 'ヘドロえき',
+  'Magnet Pull': 'じりょく',
+  "Mind's Eye": 'しんがん',
+  'Misty Surge': 'ミストメイカー',
+  'Multitype': 'マルチタイプ',
+  'Mycelium Might': 'きんしのちから',
+  'Neuroforce': 'ブレインフォース',
+  'Neutralizing Gas': 'かがくへんかガス',
+  'Normalize': 'ノーマルスキン',
+  'Orichalcum Pulse': 'ひひいろのこどう',
+  'Pastel Veil': 'パステルベール',
+  'Perish Body': 'ほろびのボディ',
+  'Poison Puppeteer': 'どくくぐつ',
+  'Power Spot': 'パワースポット',
+  'Power of Alchemy': 'かがくのちから',
+  'Primordial Sea': 'はじまりのうみ',
+  'Prism Armor': 'プリズムアーマー',
+  'Propeller Tail': 'スクリューおびれ',
+  'Protosynthesis': 'こだいかっせい',
+  'Psychic Surge': 'サイコメイカー',
+  'Punk Rock': 'パンクロック',
+  'Quark Drive': 'クォークチャージ',
+  'RKS System': 'ARシステム',
+  'Rattled': 'びびり',
+  'Rocky Payload': 'いわはこび',
+  'Run Away': 'にげあし',
+  'Schooling': 'ぎょぐん',
+  'Seed Sower': 'こぼれダネ',
+  'Serene Grace': 'てんのめぐみ',
+  'Shadow Shield': 'ファントムガード',
+  'Shields Down': 'リミットシールド',
+  'Slow Start': 'スロースタート',
+  'Soul-Heart': 'ソウルハート',
+  'Stakeout': 'はりこみ',
+  'Steam Engine': 'じょうききかん',
+  'Steelworker': 'はがねつかい',
+  'Steely Spirit': 'はがねのせいしん',
+  'Storm Drain': 'よびみず',
+  'Sword of Ruin': 'わざわいのつるぎ',
+  'Tablets of Ruin': 'わざわいのおふだ',
+  'Tera Shell': 'テラスシェル',
+  'Tera Shift': 'テラスチェンジ',
+  'Teraform Zero': 'ゼロフォーミング',
+  'Teravolt': 'テラボルテージ',
+  'Thermal Exchange': 'ねつこうかん',
+  'Tinted Lens': 'いろめがね',
+  'Toxic Boost': 'どくぼうそう',
+  'Toxic Chain': 'どくのくさり',
+  'Transistor': 'トランジスタ',
+  'Triage': 'ヒーリングシフト',
+  'Truant': 'なまけ',
+  'Turboblaze': 'ターボブレイズ',
+  'Vessel of Ruin': 'わざわいのうつわ',
+  'Victory Star': 'しょうりのほし',
+  'Water Compaction': 'みずがため',
+  'Water Veil': 'みずのベール',
+  'Well-Baked Body': 'こんがりボディ',
+  'Wimp Out': 'にげごし',
+  'Wind Power': 'ふうりょくでんき',
+  'Wind Rider': 'かぜのり',
+  'Wonder Guard': 'ふしぎなまもり',
+  'Wonder Skin': 'ミラクルスキン',
+  'Zen Mode': 'ダルマモード',
+};
+
 let champoutAbilityMap: Map<string, string> | null = null;
 
 function loadChampoutAbilities(champoutBase: string): Map<string, string> {
@@ -49,15 +163,19 @@ let abilityEnToJaMap: Map<string, string> | null = null;
 /**
  * @pkmn/dex の全特性について英語名→日本語名のマッピングを構築する。
  * champout の tokusei.json をベースに、特性番号でマッチングする。
- * champout に含まれない特性（Champions未使用）は英語名のまま返す。
+ * champout に含まれない特性は SUPPLEMENTAL_ABILITIES テーブルで補完する。
  */
 function buildAbilityTranslation(champoutBase: string): Map<string, string> {
   if (abilityEnToJaMap) return abilityEnToJaMap;
   abilityEnToJaMap = new Map<string, string>();
 
+  // 補完テーブルを先にロード（champout が上書きする）
+  for (const [en, ja] of Object.entries(SUPPLEMENTAL_ABILITIES)) {
+    abilityEnToJaMap.set(en, ja);
+  }
+
   const champoutAbilities = loadChampoutAbilities(champoutBase);
 
-  // champout のラベル (TOKUSEI_NNN) から Index → 日本語名 のマップを作成
   const idToJa = new Map<number, string>();
   for (const [label, name] of champoutAbilities) {
     const num = parseInt(label.replace('TOKUSEI_', ''));

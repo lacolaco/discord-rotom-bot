@@ -180,6 +180,32 @@ export function syncYakkunMap(
   return synced;
 }
 
+/**
+ * 既存の data.generated.json のタイプ順序を参照し、新データのタイプ順序を合わせる。
+ * 旧データソース（towakey/pokedex）と新データソース（champout / @pkmn/dex）で
+ * type1/type2 の格納順が異なるケースがあるため、既存出力の順序を維持する。
+ */
+export function normalizeTypeOrdering(
+  pokemon: Map<string, ChampoutPokemon>,
+  referenceData: Record<string, { types: string[] }>,
+): void {
+  let count = 0;
+  for (const [name, poke] of pokemon) {
+    const ref = referenceData[name];
+    if (!ref) continue;
+    if (poke.types.length !== 2 || ref.types.length !== 2) continue;
+    if (
+      poke.types[0] === ref.types[1] && poke.types[1] === ref.types[0]
+    ) {
+      poke.types = [ref.types[0], ref.types[1]];
+      count++;
+    }
+  }
+  if (count > 0) {
+    console.log(`  Type ordering normalized: ${count} entries`);
+  }
+}
+
 export function applyDisplayNameOverrides(
   pokemon: Map<string, ChampoutPokemon>,
   nameToNatNum: Map<string, number>,
