@@ -1,4 +1,3 @@
-import displayNameAliases from './display-name-aliases.json';
 import pokemonData from './data.generated.json';
 
 export type Pokemon = {
@@ -18,14 +17,12 @@ export type Pokemon = {
 };
 
 const data = pokemonData as Record<string, Pokemon>;
-const aliases = displayNameAliases as Record<string, string>;
 const pokemonNames = Object.keys(pokemonData);
 
 export async function searchPokemonByName(
   name: string,
 ): Promise<Pokemon | null> {
-  const canonicalName = aliases[name];
-  return data[name] ?? (canonicalName ? data[canonicalName] : null) ?? null;
+  return data[name] ?? null;
 }
 
 export async function getAllPokemonNames(params: {

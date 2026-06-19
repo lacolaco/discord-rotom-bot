@@ -179,3 +179,25 @@ export function syncYakkunMap(
 
   return synced;
 }
+
+export function applyDisplayNameOverrides(
+  pokemon: Map<string, ChampoutPokemon>,
+  nameToNatNum: Map<string, number>,
+  overrides: Record<string, string>,
+): void {
+  let count = 0;
+  for (const [champoutName, outputName] of Object.entries(overrides)) {
+    const entry = pokemon.get(champoutName);
+    if (!entry) continue;
+    const natNum = nameToNatNum.get(champoutName);
+    pokemon.delete(champoutName);
+    nameToNatNum.delete(champoutName);
+    entry.displayName = outputName;
+    pokemon.set(outputName, entry);
+    if (natNum !== undefined) nameToNatNum.set(outputName, natNum);
+    count++;
+  }
+  if (count > 0) {
+    console.log(`  Display name overrides: ${count} entries`);
+  }
+}

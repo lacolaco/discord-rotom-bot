@@ -53,20 +53,20 @@ describe('searchPokemonByName', () => {
     expect(result!.index).toBe(952);
   });
 
-  test('旧表示名でエイリアス解決される', async () => {
+  test('旧データと同じ表示名で取得できる', async () => {
     const result = await searchPokemonByName('ロトム(ウォッシュロトム)');
     expect(result).not.toBeNull();
     expect(result!.index).toBe(479);
     expect(result!.types).toEqual(['でんき', 'みず']);
   });
 
-  test('旧ベースフォーム名でエイリアス解決される', async () => {
+  test('ベースフォームは種族名のみで取得できる', async () => {
     const result = await searchPokemonByName('ミミッキュ');
     expect(result).not.toBeNull();
     expect(result!.index).toBe(778);
   });
 
-  test('旧フォーム名でエイリアス解決される（中黒の有無）', async () => {
+  test('旧データと同じフォーム名表記で取得できる', async () => {
     const result = await searchPokemonByName(
       'ケンタロス(パルデアのすがた ウォーターしゅ)',
     );

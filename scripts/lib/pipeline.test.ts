@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
+import { applyDisplayNameOverrides, applyErrata, buildOutput, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -147,6 +147,40 @@ describe('supplementChampionsExclusive', () => {
     };
     supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
     expect(pokemon.get('メガヒードラン')!.types).toEqual(['ノーマル']);
+  });
+});
+
+describe('applyDisplayNameOverrides', () => {
+  it('champout名を旧表示名にリネームする', () => {
+    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
+    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
+    applyDisplayNameOverrides(pokemon, nameToNatNum, { 'ウォッシュロトム': 'ロトム(ウォッシュロトム)' });
+    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
+    expect(pokemon.has('ウォッシュロトム')).toBe(false);
+    expect(nameToNatNum.has('ロトム(ウォッシュロトム)')).toBe(true);
+    expect(nameToNatNum.has('ウォッシュロトム')).toBe(false);
+  });
+
+  it('存在しないエントリはスキップする', () => {
+    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
+    const nameToNatNum = new Map([['テスト', 1]]);
+    applyDisplayNameOverrides(pokemon, nameToNatNum, { '存在しない': '別名' });
+    expect(pokemon.size).toBe(1);
+    expect(pokemon.has('テスト')).toBe(true);
+  });
+
+  it('複数エントリを同時にリネームする', () => {
+    const pokemon = new Map([
+      ['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })],
+      ['ミミッキュ(ばけたすがた)', makePokemon({ displayName: 'ミミッキュ(ばけたすがた)', natNum: 778 })],
+    ]);
+    const nameToNatNum = new Map([['ウォッシュロトム', 479], ['ミミッキュ(ばけたすがた)', 778]]);
+    applyDisplayNameOverrides(pokemon, nameToNatNum, {
+      'ウォッシュロトム': 'ロトム(ウォッシュロトム)',
+      'ミミッキュ(ばけたすがた)': 'ミミッキュ',
+    });
+    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
+    expect(pokemon.has('ミミッキュ')).toBe(true);
   });
 });
 
