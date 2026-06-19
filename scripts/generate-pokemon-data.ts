@@ -15,8 +15,7 @@ import {
   applyDisplayNameOverrides,
   applyErrata,
   buildOutput,
-  filterToReference,
-  normalizeAgainstReference,
+  normalizeTypeOrdering,
   sortByNatNum,
   supplementChampionsExclusive,
   syncYakkunMap,
@@ -49,26 +48,15 @@ supplementChampionsExclusive(pokemon, nameToNatNum, exclusiveData);
 const overrides: Record<string, string> = JSON.parse(readFileSync(OVERRIDES_PATH, 'utf-8'));
 applyDisplayNameOverrides(pokemon, nameToNatNum, overrides);
 
-const existingData: Record<string, OutputEntry> = existsSync(OUTPUT_PATH)
-  ? JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
-  : {};
-
-// 移行用正規化: 既存データが旧パイプライン（towakey/pokedex）で生成されている場合のみ適用。
-// 旧パイプラインの source.game は "Scarlet_Violet" 等のゲーム名、
-// 新パイプラインは "Champions" / "Showdown"。
-// マージ後の再生成では既存データが新パイプライン形式のため自動的にスキップされる。
-const isPreMigration = Object.values(existingData).some(
-  (entry) => entry.source?.game && !['Champions', 'Showdown', ''].includes(entry.source.game),
-);
-if (isPreMigration) {
-  normalizeAgainstReference(pokemon, existingData);
-  filterToReference(pokemon, nameToNatNum, new Set(Object.keys(existingData)));
-}
-
 const errata: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>> = JSON.parse(
   readFileSync(ERRATA_PATH, 'utf-8'),
 );
 applyErrata(pokemon, errata);
+
+const existingData: Record<string, { types: string[] }> = existsSync(OUTPUT_PATH)
+  ? JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+  : {};
+normalizeTypeOrdering(pokemon, existingData);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),

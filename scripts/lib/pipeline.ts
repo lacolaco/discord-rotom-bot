@@ -181,66 +181,28 @@ export function syncYakkunMap(
 }
 
 /**
- * 既存の data.generated.json を参照し、既存エントリのタイプ・特性・種族値を合わせる。
- * データソースの切り替え（towakey/pokedex → champout / @pkmn/dex）で
- * 出力データが変わらないよう、既存出力の値を維持する。
- * 新規エントリ（旧データに存在しないポケモン）はそのまま保持する。
+ * 既存の data.generated.json のタイプ順序を参照し、新データのタイプ順序を合わせる。
+ * 旧データソース（towakey/pokedex）と新データソース（champout / @pkmn/dex）で
+ * type1/type2 の格納順が異なるケースがあるため、既存出力の順序を維持する。
  */
-export function normalizeAgainstReference(
+export function normalizeTypeOrdering(
   pokemon: Map<string, ChampoutPokemon>,
-  referenceData: Record<string, { types: string[]; abilities: string[]; baseStats: OutputEntry['baseStats'] }>,
+  referenceData: Record<string, { types: string[] }>,
 ): void {
-  let typesNormalized = 0;
-  let abilitiesNormalized = 0;
-  let statsNormalized = 0;
-
+  let count = 0;
   for (const [name, poke] of pokemon) {
     const ref = referenceData[name];
     if (!ref) continue;
-
-    if (JSON.stringify(poke.types) !== JSON.stringify(ref.types)) {
-      poke.types = [...ref.types];
-      typesNormalized++;
-    }
-
-    if (JSON.stringify(poke.abilities) !== JSON.stringify(ref.abilities)) {
-      poke.abilities = [...ref.abilities];
-      abilitiesNormalized++;
-    }
-
-    if (JSON.stringify(poke.baseStats) !== JSON.stringify(ref.baseStats)) {
-      poke.baseStats = { ...ref.baseStats };
-      statsNormalized++;
-    }
-  }
-
-  const total = typesNormalized + abilitiesNormalized + statsNormalized;
-  if (total > 0) {
-    console.log(`  Normalized against reference: types=${typesNormalized}, abilities=${abilitiesNormalized}, stats=${statsNormalized}`);
-  }
-}
-
-/**
- * 既存の data.generated.json に存在しないエントリを除去する。
- * データソース移行時に新規エントリが混入するのを防ぎ、出力の差分をゼロに保つ。
- * 新しいポケモンの追加は別途明示的に行う。
- */
-export function filterToReference(
-  pokemon: Map<string, ChampoutPokemon>,
-  nameToNatNum: Map<string, number>,
-  referenceKeys: Set<string>,
-): void {
-  if (referenceKeys.size === 0) return;
-  let count = 0;
-  for (const name of [...pokemon.keys()]) {
-    if (!referenceKeys.has(name)) {
-      pokemon.delete(name);
-      nameToNatNum.delete(name);
+    if (poke.types.length !== 2 || ref.types.length !== 2) continue;
+    if (
+      poke.types[0] === ref.types[1] && poke.types[1] === ref.types[0]
+    ) {
+      poke.types = [ref.types[0], ref.types[1]];
       count++;
     }
   }
   if (count > 0) {
-    console.log(`  Filtered to reference: ${count} new entries removed`);
+    console.log(`  Type ordering normalized: ${count} entries`);
   }
 }
 
