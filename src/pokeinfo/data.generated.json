@@ -13842,50 +13842,6 @@
       "key": "n412"
     }
   },
-  "ミノムッチ(ゴミのミノ)": {
-    "index": 412,
-    "types": [
-      "むし"
-    ],
-    "abilities": [
-      "だっぴ",
-      "ぼうじん"
-    ],
-    "baseStats": {
-      "H": 40,
-      "A": 29,
-      "B": 45,
-      "C": 29,
-      "D": 45,
-      "S": 36
-    },
-    "source": {
-      "game": "Showdown",
-      "pokedex": ""
-    }
-  },
-  "ミノムッチ(すなちのミノ)": {
-    "index": 412,
-    "types": [
-      "むし"
-    ],
-    "abilities": [
-      "だっぴ",
-      "ぼうじん"
-    ],
-    "baseStats": {
-      "H": 40,
-      "A": 29,
-      "B": 45,
-      "C": 29,
-      "D": 45,
-      "S": 36
-    },
-    "source": {
-      "game": "Showdown",
-      "pokedex": ""
-    }
-  },
   "ミノマダム(くさきのミノ)": {
     "index": 413,
     "types": [
@@ -22423,6 +22379,10 @@
     "source": {
       "game": "Champions",
       "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n678m",
+      "key": "n678m"
     }
   },
   "ヒトツキ": {
@@ -23920,7 +23880,7 @@
       "ドラゴン"
     ],
     "abilities": [
-      "Power Construct"
+      "スワームチェンジ"
     ],
     "baseStats": {
       "H": 216,

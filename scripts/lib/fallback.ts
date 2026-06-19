@@ -92,6 +92,7 @@ const SUPPLEMENTAL_ABILITIES: Record<string, string> = {
   'Pastel Veil': 'パステルベール',
   'Perish Body': 'ほろびのボディ',
   'Poison Puppeteer': 'どくくぐつ',
+  'Power Construct': 'スワームチェンジ',
   'Power Spot': 'パワースポット',
   'Power of Alchemy': 'かがくのちから',
   'Primordial Sea': 'はじまりのうみ',
@@ -471,6 +472,7 @@ export function supplementPokemonFormes(
   const EXCLUDED_BASE_SPECIES = new Set([
     'Arceus', 'Silvally', 'Genesect', 'Minior', 'Squawkabilly',
     'Vivillon', 'Alcremie', 'Pikachu', 'Morpeko', 'Sinistcha',
+    'Burmy',
   ]);
 
   let formeCount = 0;
