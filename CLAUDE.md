@@ -74,9 +74,9 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
   - `scripts/lib/fallback.ts`: Champions未収録ポケモンを `@pkmn/dex` (Showdown) からベースフォームのみ補完
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
 - **コスメティックフォーム除外**: `champout-parser.ts` の `filterCosmeticForms` で同一 no 内のベースフォームと種族値・タイプ・特性が完全一致するフォームを自動検出・除外
-- **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用
+- **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用。`types`（文字列配列）、`abilities`（文字列配列）、`baseStats`（`{ H, A, B, C, D, S }` の部分指定）を個別に指定可能。例: `{ "ポケモン名": { "types": ["みず", "ひこう"], "baseStats": { "A": 100 } } }`
 - **データ優先順位**: errata（最終補正） > champout（一次ソース、Champions実装分） > @pkmn/dex（フォールバック、未収録分のベースフォームのみ）
-- **フォールバック**: Champions に収録されていないポケモン（進化前、一部伝説等）のベースフォームを `@pkmn/dex` から補完。champout の `monsname_syn.json` に日本語名があるが `personal.json` にエントリがないものが対象。特性翻訳は champout の `tokusei.json` で解決し、未収録特性は英語名のまま
+- **フォールバック**: Champions に収録されていないポケモン（進化前、一部伝説等）のベースフォームを `@pkmn/dex` から補完。champout の `monsname_syn.json` に日本語名があるが `personal.json` にエントリがないものが対象。特性翻訳は champout の `tokusei.json` + `SUPPLEMENTAL_ABILITIES`（108件の英日テーブル）で解決
 - **champout データ構造**: `masterdata/personal.json`（種族値・タイプID・特性ID）、`rom-txt/jpn/monsname_syn.json`（日本語名）、`rom-txt/jpn/tokusei.json`（特性名）、`rom-txt/jpn/zkn_form_syn.json`（フォーム名）、`rom-txt/usa/monsname_syn.json`（英語名）
 - **一貫性チェーン**: ファイル名・型名・関数名・テスト構造・呼び出し側は一つのチェーン。1つを変更したら残り全てを同時に揃える。部分的なリネームは禁止
 - **出力フォーマット駆動設計**: UI変更時は出力フォーマットの構造要素を先に理解し、その機能を活かした設計にする。テキストを流し込むだけなら形式を変える意味がない
