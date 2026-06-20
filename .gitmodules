@@ -1,3 +1,6 @@
+[submodule "vendor/pokedex"]
+	path = vendor/pokedex
+	url = https://github.com/towakey/pokedex.git
 [submodule "vendor/champout"]
 	path = vendor/champout
 	url = https://github.com/projectpokemon/champout.git

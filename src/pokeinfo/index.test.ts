@@ -57,7 +57,7 @@ describe('searchPokemonByName', () => {
     const result = await searchPokemonByName('ロトム(ウォッシュロトム)');
     expect(result).not.toBeNull();
     expect(result!.index).toBe(479);
-    expect(result!.types).toEqual(['みず', 'でんき']);
+    expect(result!.types).toEqual(['でんき', 'みず']);
   });
 
   test('ベースフォームは種族名のみで取得できる', async () => {

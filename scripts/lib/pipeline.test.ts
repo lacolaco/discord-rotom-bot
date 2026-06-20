@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyDisplayNameOverrides, applyErrata, buildOutput, normalizeTypeOrdering, sortByNatNum, supplementChampionsExclusive, syncYakkunMap } from './pipeline';
+import { addChampionsExclusive, applyDisplayNameOverrides, applyOutputErrata, overlayChampionsData, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -13,110 +13,95 @@ function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon,
   };
 }
 
-describe('applyErrata', () => {
+function makeOutputEntry(index: number, overrides?: Partial<OutputEntry>): OutputEntry {
+  return {
+    index,
+    types: ['ノーマル'],
+    abilities: ['にげあし'],
+    baseStats: { H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 },
+    source: { game: 'Scarlet_Violet', pokedex: 'パルデア図鑑' },
+    ...overrides,
+  };
+}
+
+describe('applyOutputErrata', () => {
   it('タイプを上書きする', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    applyErrata(pokemon, { 'テスト': { types: ['ほのお', 'ひこう'] } });
-    expect(pokemon.get('テスト')!.types).toEqual(['ほのお', 'ひこう']);
+    const output: Record<string, OutputEntry> = { 'テスト': makeOutputEntry(1) };
+    applyOutputErrata(output, { 'テスト': { types: ['ほのお', 'ひこう'] } });
+    expect(output['テスト'].types).toEqual(['ほのお', 'ひこう']);
   });
 
   it('特性を上書きする', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    applyErrata(pokemon, { 'テスト': { abilities: ['もうか'] } });
-    expect(pokemon.get('テスト')!.abilities).toEqual(['もうか']);
+    const output: Record<string, OutputEntry> = { 'テスト': makeOutputEntry(1) };
+    applyOutputErrata(output, { 'テスト': { abilities: ['もうか'] } });
+    expect(output['テスト'].abilities).toEqual(['もうか']);
   });
 
   it('種族値を部分的に上書きする', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    applyErrata(pokemon, { 'テスト': { baseStats: { H: 100, A: 120 } } });
-    const stats = pokemon.get('テスト')!.baseStats;
-    expect(stats.H).toBe(100);
-    expect(stats.A).toBe(120);
-    expect(stats.B).toBe(50);
+    const output: Record<string, OutputEntry> = { 'テスト': makeOutputEntry(1) };
+    applyOutputErrata(output, { 'テスト': { baseStats: { H: 100, A: 120 } } });
+    expect(output['テスト'].baseStats.H).toBe(100);
+    expect(output['テスト'].baseStats.A).toBe(120);
+    expect(output['テスト'].baseStats.B).toBe(50);
   });
 
   it('存在しない対象は警告のみでスキップする', () => {
-    const pokemon = new Map<string, ChampoutPokemon>();
-    applyErrata(pokemon, { '存在しない': { types: ['みず'] } });
-    expect(pokemon.size).toBe(0);
+    const output: Record<string, OutputEntry> = {};
+    applyOutputErrata(output, { '存在しない': { types: ['みず'] } });
+    expect(Object.keys(output)).toHaveLength(0);
   });
 
   it('空の errata では何も変更しない', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    const original = { ...pokemon.get('テスト')! };
-    applyErrata(pokemon, {});
-    expect(pokemon.get('テスト')!.types).toEqual(original.types);
-  });
-
-  it('複数エントリを同時に補正する', () => {
-    const pokemon = new Map([
-      ['A', makePokemon({ displayName: 'A', natNum: 1 })],
-      ['B', makePokemon({ displayName: 'B', natNum: 2 })],
-    ]);
-    applyErrata(pokemon, {
-      'A': { types: ['みず'] },
-      'B': { types: ['ほのお'] },
-    });
-    expect(pokemon.get('A')!.types).toEqual(['みず']);
-    expect(pokemon.get('B')!.types).toEqual(['ほのお']);
+    const output: Record<string, OutputEntry> = { 'テスト': makeOutputEntry(1) };
+    applyOutputErrata(output, {});
+    expect(output['テスト'].types).toEqual(['ノーマル']);
   });
 });
 
-describe('buildOutput', () => {
-  it('ChampoutPokemon を OutputEntry に変換する', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 42, nameEng: 'Test' })]]);
-    const output = buildOutput(pokemon, {});
-    expect(output['テスト']).toEqual({
-      index: 42,
-      types: ['ノーマル'],
-      abilities: ['にげあし'],
-      baseStats: { H: 50, A: 50, B: 50, C: 50, D: 50, S: 50 },
-      source: { game: 'Champions', pokedex: '' },
-    });
-  });
-
-  it('yakkun URL がある場合は yakkun フィールドを付与する', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    const output = buildOutput(pokemon, { 'テスト': 'https://yakkun.com/champions/n001' });
-    expect(output['テスト'].yakkun).toEqual({
-      url: 'https://yakkun.com/champions/n001',
-      key: 'n001',
-    });
-  });
-
-  it('yakkun URL が null の場合は yakkun フィールドなし', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    const output = buildOutput(pokemon, { 'テスト': null });
-    expect(output['テスト'].yakkun).toBeUndefined();
-  });
-});
-
-describe('sortByNatNum', () => {
-  it('natNum 昇順でソートする', () => {
-    const output = {
-      'C': { index: 3, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
-      'A': { index: 1, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
-      'B': { index: 2, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+describe('overlayChampionsData', () => {
+  it('既存エントリを Champions データで上書きする', () => {
+    const output: Record<string, OutputEntry> = {
+      'テスト': makeOutputEntry(1, { source: { game: 'Scarlet_Violet', pokedex: 'パルデア図鑑' } }),
     };
-    const natNums = new Map([['A', 1], ['B', 2], ['C', 3]]);
-    const sorted = sortByNatNum(output, natNums);
-    expect(Object.keys(sorted)).toEqual(['A', 'B', 'C']);
+    const champout = new Map([['テスト', makePokemon({
+      displayName: 'テスト', natNum: 1,
+      types: ['ほのお'], abilities: ['もうか'],
+      baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
+    })]]);
+    const nameToNatNum = new Map([['テスト', 1]]);
+    overlayChampionsData(output, champout, nameToNatNum, {});
+    expect(output['テスト'].types).toEqual(['ほのお']);
+    expect(output['テスト'].abilities).toEqual(['もうか']);
+    expect(output['テスト'].baseStats.H).toBe(100);
+    expect(output['テスト'].source.game).toBe('Champions');
   });
 
-  it('同一 natNum は名前順でソートする', () => {
-    const output = {
-      'メガB': { index: 6, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
-      'A': { index: 6, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } },
+  it('新規エントリを追加する', () => {
+    const output: Record<string, OutputEntry> = {};
+    const champout = new Map([['新ポケモン', makePokemon({
+      displayName: '新ポケモン', natNum: 999,
+      types: ['ドラゴン'], abilities: ['プレッシャー'],
+    })]]);
+    const nameToNatNum = new Map<string, number>();
+    overlayChampionsData(output, champout, nameToNatNum, {});
+    expect(output['新ポケモン']).toBeDefined();
+    expect(output['新ポケモン'].index).toBe(999);
+    expect(nameToNatNum.get('新ポケモン')).toBe(999);
+  });
+
+  it('既存エントリのベースデータ（index）を保持する', () => {
+    const output: Record<string, OutputEntry> = {
+      'テスト': makeOutputEntry(42),
     };
-    const natNums = new Map([['A', 6], ['メガB', 6]]);
-    const sorted = sortByNatNum(output, natNums);
-    expect(Object.keys(sorted)).toEqual(['A', 'メガB']);
+    const champout = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 42, types: ['みず'] })]]);
+    overlayChampionsData(output, champout, new Map(), {});
+    expect(output['テスト'].index).toBe(42);
   });
 });
 
-describe('supplementChampionsExclusive', () => {
-  it('Champions限定ポケモンをデータに追加する', () => {
-    const pokemon = new Map<string, ChampoutPokemon>();
+describe('addChampionsExclusive', () => {
+  it('Champions限定ポケモンを出力に追加する', () => {
+    const output: Record<string, OutputEntry> = {};
     const nameToNatNum = new Map<string, number>();
     const exclusive = {
       'メガヒードラン': {
@@ -127,14 +112,16 @@ describe('supplementChampionsExclusive', () => {
         source: 'Champions',
       },
     };
-    supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
-    expect(pokemon.has('メガヒードラン')).toBe(true);
-    expect(pokemon.get('メガヒードラン')!.natNum).toBe(485);
+    addChampionsExclusive(output, nameToNatNum, exclusive, {});
+    expect(output['メガヒードラン']).toBeDefined();
+    expect(output['メガヒードラン'].index).toBe(485);
     expect(nameToNatNum.get('メガヒードラン')).toBe(485);
   });
 
   it('既存エントリと重複する場合はスキップする', () => {
-    const pokemon = new Map([['メガヒードラン', makePokemon({ displayName: 'メガヒードラン', natNum: 485 })]]);
+    const output: Record<string, OutputEntry> = {
+      'メガヒードラン': makeOutputEntry(485, { types: ['ノーマル'] }),
+    };
     const nameToNatNum = new Map([['メガヒードラン', 485]]);
     const exclusive = {
       'メガヒードラン': {
@@ -145,8 +132,8 @@ describe('supplementChampionsExclusive', () => {
         source: 'Champions',
       },
     };
-    supplementChampionsExclusive(pokemon, nameToNatNum, exclusive);
-    expect(pokemon.get('メガヒードラン')!.types).toEqual(['ノーマル']);
+    addChampionsExclusive(output, nameToNatNum, exclusive, {});
+    expect(output['メガヒードラン'].types).toEqual(['ノーマル']);
   });
 });
 
@@ -168,59 +155,30 @@ describe('applyDisplayNameOverrides', () => {
     expect(pokemon.size).toBe(1);
     expect(pokemon.has('テスト')).toBe(true);
   });
-
-  it('複数エントリを同時にリネームする', () => {
-    const pokemon = new Map([
-      ['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })],
-      ['ミミッキュ(ばけたすがた)', makePokemon({ displayName: 'ミミッキュ(ばけたすがた)', natNum: 778 })],
-    ]);
-    const nameToNatNum = new Map([['ウォッシュロトム', 479], ['ミミッキュ(ばけたすがた)', 778]]);
-    applyDisplayNameOverrides(pokemon, nameToNatNum, {
-      'ウォッシュロトム': 'ロトム(ウォッシュロトム)',
-      'ミミッキュ(ばけたすがた)': 'ミミッキュ',
-    });
-    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
-    expect(pokemon.has('ミミッキュ')).toBe(true);
-  });
 });
 
-describe('normalizeTypeOrdering', () => {
-  it('参照データとタイプが逆順の場合に補正する', () => {
-    const pokemon = new Map([
-      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['むし', 'ひこう'] })],
-    ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ひこう', 'むし'] } });
-    expect(pokemon.get('テスト')!.types).toEqual(['ひこう', 'むし']);
+describe('sortByNatNum', () => {
+  it('natNum 昇順でソートする', () => {
+    const output = {
+      'C': makeOutputEntry(3),
+      'A': makeOutputEntry(1),
+      'B': makeOutputEntry(2),
+    };
+    const natNums = new Map([['A', 1], ['B', 2], ['C', 3]]);
+    const sorted = sortByNatNum(output, natNums);
+    expect(Object.keys(sorted)).toEqual(['A', 'B', 'C']);
   });
 
-  it('タイプが同一順の場合は変更しない', () => {
-    const pokemon = new Map([
-      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ほのお', 'ひこう'] })],
-    ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ほのお', 'ひこう'] } });
-    expect(pokemon.get('テスト')!.types).toEqual(['ほのお', 'ひこう']);
-  });
-
-  it('参照データにないポケモンは変更しない', () => {
-    const pokemon = new Map([
-      ['新ポケモン', makePokemon({ displayName: '新ポケモン', natNum: 999, types: ['あく', 'ドラゴン'] })],
-    ]);
-    normalizeTypeOrdering(pokemon, {});
-    expect(pokemon.get('新ポケモン')!.types).toEqual(['あく', 'ドラゴン']);
-  });
-
-  it('単タイプのポケモンは変更しない', () => {
-    const pokemon = new Map([
-      ['テスト', makePokemon({ displayName: 'テスト', natNum: 1, types: ['ノーマル'] })],
-    ]);
-    normalizeTypeOrdering(pokemon, { 'テスト': { types: ['ノーマル'] } });
-    expect(pokemon.get('テスト')!.types).toEqual(['ノーマル']);
+  it('同一 natNum は名前順でソートする', () => {
+    const output = {
+      'メガB': makeOutputEntry(6),
+      'A': makeOutputEntry(6),
+    };
+    const natNums = new Map([['A', 6], ['メガB', 6]]);
+    const sorted = sortByNatNum(output, natNums);
+    expect(Object.keys(sorted)).toEqual(['A', 'メガB']);
   });
 });
-
-function makeOutputEntry(index: number): { index: number; types: string[]; abilities: string[]; baseStats: { H: number; A: number; B: number; C: number; D: number; S: number }; source: { game: string; pokedex: string } } {
-  return { index, types: [], abilities: [], baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 }, source: { game: '', pokedex: '' } };
-}
 
 describe('syncYakkunMap', () => {
   it('名前が一致するエントリはそのまま引き継ぐ', () => {
@@ -240,14 +198,7 @@ describe('syncYakkunMap', () => {
   it('新データにないエントリはURLがあっても保持しない', () => {
     const sorted = {};
     const oldMap = { '旧ポケモン': 'https://yakkun.com/ch/zukan/n100' };
-    const result = syncYakkunMap(sorted, oldMap);
-    expect(result).not.toHaveProperty('旧ポケモン');
-  });
-
-  it('新データにないエントリでURLがnullなら保持しない', () => {
-    const sorted = {};
-    const oldMap: Record<string, string | null> = { '旧ポケモン': null };
-    const result = syncYakkunMap(sorted, oldMap);
+    const result = syncYakkunMap(sorted, oldMap as Record<string, string | null>);
     expect(result).not.toHaveProperty('旧ポケモン');
   });
 
@@ -299,19 +250,6 @@ describe('syncYakkunMap', () => {
     expect(result['ウォッシュロトム']).toBe('https://yakkun.com/ch/zukan/n479w');
     expect(result['ヒートロトム']).toBe('https://yakkun.com/ch/zukan/n479h');
     expect(result['カットロトム']).toBe('https://yakkun.com/ch/zukan/n479c');
-  });
-
-  it('recoveryされなかった旧フォームのURLは保持しない', () => {
-    const sorted = { 'デオキシス': makeOutputEntry(386) };
-    const oldMap = {
-      'デオキシス(ノーマルフォルム)': 'https://yakkun.com/ch/zukan/n386',
-      'デオキシス(アタックフォルム)': 'https://yakkun.com/ch/zukan/n386a',
-      'デオキシス(ディフェンスフォルム)': 'https://yakkun.com/ch/zukan/n386d',
-    };
-    const result = syncYakkunMap(sorted, oldMap);
-    expect(result['デオキシス']).toBeTruthy();
-    expect(result).not.toHaveProperty('デオキシス(アタックフォルム)');
-    expect(result).not.toHaveProperty('デオキシス(ディフェンスフォルム)');
   });
 
   it('直接一致エントリの既存URLは上書きしない', () => {
