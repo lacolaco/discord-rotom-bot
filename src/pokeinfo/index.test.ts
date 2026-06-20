@@ -80,6 +80,13 @@ describe('searchPokemonByName', () => {
     expect(result!.index).toBe(485);
     expect(result!.types).toEqual(['ほのお', 'はがね']);
   });
+
+  test('Champions限定メガの特性が取得できる', async () => {
+    const result = await searchPokemonByName('メガムクホーク');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(398);
+    expect(result!.abilities).toContain('あまのじゃく');
+  });
 });
 
 describe('getAllPokemonNames', () => {
