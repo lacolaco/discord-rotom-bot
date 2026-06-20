@@ -72,10 +72,10 @@ describe('isCosmeticForm', () => {
     expect(isCosmeticForm(a, b)).toBe(false);
   });
 
-  it('タイプのみ異なる場合も true（ポワルン天候フォーム等）', () => {
+  it('タイプが異なれば false', () => {
     const a = makeEntry();
     const b = makeEntry({ id: '1', fo: '1', type1: '9' });
-    expect(isCosmeticForm(a, b)).toBe(true);
+    expect(isCosmeticForm(a, b)).toBe(false);
   });
 
   it('特性スロットが異なれば false', () => {
@@ -121,6 +121,15 @@ describe('filterCosmeticForms', () => {
     expect(result).toHaveLength(2);
     expect(result).toContainEqual(a);
     expect(result).toContainEqual(b);
+  });
+
+  it('COSMETIC_ONLY_NUMBERS のエントリはベースフォームのみ残す', () => {
+    const base = makeEntry({ id: '0', no: '351', fo: '0' });
+    const rain = makeEntry({ id: '1', no: '351', fo: '1', type1: '10' });
+    const sun = makeEntry({ id: '2', no: '351', fo: '2', type1: '9' });
+    const snow = makeEntry({ id: '3', no: '351', fo: '3', type1: '14' });
+    const result = filterCosmeticForms([base, rain, sun, snow]);
+    expect(result).toEqual([base]);
   });
 });
 

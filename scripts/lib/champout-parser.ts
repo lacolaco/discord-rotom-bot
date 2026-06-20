@@ -59,11 +59,16 @@ const TYPE_ID_TO_JA: Record<string, string> = {
 
 // --- Cosmetic form filtering ---
 
+// ベースフォームのみ残し、全フォーム違いを除外する図鑑番号
+const COSMETIC_ONLY_NUMBERS = new Set([
+  '351', // ポワルン — 天候フォーム
+]);
+
 /**
- * 同一 no 内でベースフォームと種族値・特性が一致するフォームを除外する。
- * champout の personal.json にはコスメティックフォーム（ビビヨン模様、トリミアンカット等）や
- * バトル中のみの変身フォーム（ポワルン天候フォーム等）も含まれているため、
- * 種族値と特性が同一のフォームを自動検出してフィルタする。タイプのみ異なるフォームも除外対象。
+ * 同一 no 内でベースフォームと種族値が完全一致するフォームを除外する。
+ * champout の personal.json にはコスメティックフォーム（ビビヨン模様、トリミアンカット等）も
+ * 含まれているため、同一種族値のフォームを自動検出してフィルタする。
+ * COSMETIC_ONLY_NUMBERS に含まれる図鑑番号はベースフォームのみ残す。
  */
 export function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
   const byNo = new Map<string, PersonalEntry[]>();
@@ -85,6 +90,7 @@ export function filterCosmeticForms(entries: PersonalEntry[]): PersonalEntry[] {
       continue;
     }
     result.push(base);
+    if (COSMETIC_ONLY_NUMBERS.has(base.no)) continue;
     for (const e of group) {
       if (e.fo === '0') continue;
       if (isCosmeticForm(base, e)) continue;
@@ -98,6 +104,7 @@ export function isCosmeticForm(a: PersonalEntry, b: PersonalEntry): boolean {
   return (
     a.hp === b.hp && a.atk === b.atk && a.def === b.def &&
     a.spatk === b.spatk && a.spdef === b.spdef && a.agi === b.agi &&
+    a.type1 === b.type1 && a.type2 === b.type2 &&
     a.toku0 === b.toku0 && a.toku1 === b.toku1 && a.toku2 === b.toku2
   );
 }
