@@ -180,6 +180,9 @@ export function parseChampout(champoutBase: string): {
       console.log(`  WARNING: unknown type ID ${entry.type1} for ${displayName}`);
       continue;
     }
+    if (entry.type2 !== entry.type1 && !type2) {
+      console.log(`  WARNING: unknown type2 ID ${entry.type2} for ${displayName}`);
+    }
     const types = type1 === type2 ? [type1] : type2 ? [type1, type2] : [type1];
 
     const abilities: string[] = [];

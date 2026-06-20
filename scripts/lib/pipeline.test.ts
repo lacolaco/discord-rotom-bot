@@ -153,6 +153,22 @@ describe('overlayChampionsData with natNum matching', () => {
     expect(output['ロトム(ウォッシュロトム)'].source.game).toBe('Champions');
     expect(output['ウォッシュロトム']).toBeUndefined();
   });
+
+  it('同一natNum・同一baseNameの複数フォームを順序ペアリングで上書きする', () => {
+    const output: Record<string, OutputEntry> = {
+      'パンプジン(ふつうのサイズ)': makeOutputEntry(711, { baseStats: { H: 65, A: 90, B: 122, C: 58, D: 75, S: 84 } }),
+      'パンプジン(ちいさいサイズ)': makeOutputEntry(711, { baseStats: { H: 55, A: 85, B: 122, C: 58, D: 75, S: 99 } }),
+    };
+    const champout = new Map([
+      ['パンプジン(ちゅうだましゅ)', makePokemon({ displayName: 'パンプジン(ちゅうだましゅ)', natNum: 711, baseStats: { H: 65, A: 90, B: 122, C: 58, D: 75, S: 84 } })],
+      ['パンプジン(こだましゅ)', makePokemon({ displayName: 'パンプジン(こだましゅ)', natNum: 711, baseStats: { H: 55, A: 85, B: 122, C: 58, D: 75, S: 99 } })],
+    ]);
+    overlayChampionsData(output, champout, new Map(), {});
+    expect(output['パンプジン(ふつうのサイズ)'].source.game).toBe('Champions');
+    expect(output['パンプジン(ちいさいサイズ)'].source.game).toBe('Champions');
+    expect(output['パンプジン(ちゅうだましゅ)']).toBeUndefined();
+    expect(output['パンプジン(こだましゅ)']).toBeUndefined();
+  });
 });
 
 describe('sortByNatNum', () => {
