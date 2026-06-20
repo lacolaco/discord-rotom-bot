@@ -69,12 +69,14 @@ console.log('\nPhase 3: Post-processing');
 let championsErrataData: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>> = {};
 try {
   championsErrataData = JSON.parse(readFileSync(CHAMPIONS_ERRATA_PATH, 'utf-8'));
-} catch {
-  // champions-errata.json is optional
+} catch (e: unknown) {
+  if (e instanceof Error && 'code' in e && (e as NodeJS.ErrnoException).code === 'ENOENT') {
+    // champions-errata.json is optional
+  } else {
+    throw e;
+  }
 }
-if (Object.keys(championsErrataData).length > 0) {
-  applyOutputErrata(output, championsErrataData);
-}
+applyOutputErrata(output, championsErrataData);
 
 const sorted = sortByNatNum(output, nameToNatNum);
 

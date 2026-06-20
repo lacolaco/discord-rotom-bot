@@ -10,7 +10,6 @@ import { resolve } from 'node:path';
 // --- Types ---
 
 export interface ChampoutPokemon {
-  displayName: string;
   natNum: number;
   nameEng: string;
   types: string[];
@@ -203,7 +202,6 @@ export function parseChampout(champoutBase: string): {
     }
 
     pokemon.set(displayName, {
-      displayName,
       natNum,
       nameEng,
       types,

@@ -1,5 +1,5 @@
 import type { ChampoutPokemon } from './champout-parser';
-import type { EntryInfo, GamePokedexEntry, StatsEntry } from './pokedex-parser';
+import type { EntryInfo, StatsEntry } from './pokedex-parser';
 
 interface OutputEntry {
   index: number;
@@ -11,6 +11,10 @@ interface OutputEntry {
 }
 
 export type { OutputEntry };
+
+function buildYakkunEntry(url: string): { url: string; key: string } {
+  return { url, key: url.split('/').pop()! };
+}
 
 // --- Pokedex base output ---
 
@@ -40,7 +44,7 @@ export function buildPokedexOutput(
       abilities: [s.ability1, s.ability2, s.dream_ability].filter((a) => a !== ''),
       baseStats: { H: s.hp, A: s.attack, B: s.defense, C: s.special_attack, D: s.special_defense, S: s.speed },
       source: { game, pokedex },
-      ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
+      ...(yakkunUrl ? { yakkun: buildYakkunEntry(yakkunUrl) } : {}),
     };
   }
 
@@ -167,7 +171,7 @@ export function overlayChampionsData(
           abilities: poke.abilities,
           baseStats: poke.baseStats,
           source: { game: 'Champions', pokedex: '' },
-          ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
+          ...(yakkunUrl ? { yakkun: buildYakkunEntry(yakkunUrl) } : {}),
         };
         nameToNatNum.set(displayName, poke.natNum);
         added++;
@@ -189,7 +193,7 @@ function applyOverlay(
   output[targetName].baseStats = poke.baseStats;
   output[targetName].source = { game: 'Champions', pokedex: '' };
   if (yakkunUrl && !output[targetName].yakkun) {
-    output[targetName].yakkun = { url: yakkunUrl, key: yakkunUrl.split('/').pop()! };
+    output[targetName].yakkun = buildYakkunEntry(yakkunUrl);
   }
 }
 
@@ -273,7 +277,7 @@ export function syncYakkunMap(
       if (!candidates || candidates.size === 0) continue;
 
       if (candidates.size === 1) {
-        const [oldName, orphanUrl] = [...candidates.entries()][0];
+        const [oldName, orphanUrl] = candidates.entries().next().value!;
         synced[name] = orphanUrl;
         candidates.delete(oldName);
         recoveredOldNames.add(oldName);

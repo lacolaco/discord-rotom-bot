@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
 import { applyOutputErrata, overlayChampionsData, resolveOverlayTarget, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
 
-function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
+function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'natNum'>): ChampoutPokemon {
   return {
     nameEng: '',
     types: ['ノーマル'],
@@ -64,7 +64,7 @@ describe('overlayChampionsData', () => {
       'テスト': makeOutputEntry(1, { source: { game: 'Scarlet_Violet', pokedex: 'パルデア図鑑' } }),
     };
     const champout = new Map([['テスト', makePokemon({
-      displayName: 'テスト', natNum: 1,
+      natNum: 1,
       types: ['ほのお'], abilities: ['もうか'],
       baseStats: { H: 100, A: 100, B: 100, C: 100, D: 100, S: 100 },
     })]]);
@@ -79,7 +79,7 @@ describe('overlayChampionsData', () => {
   it('新規エントリを追加する', () => {
     const output: Record<string, OutputEntry> = {};
     const champout = new Map([['新ポケモン', makePokemon({
-      displayName: '新ポケモン', natNum: 999,
+      natNum: 999,
       types: ['ドラゴン'], abilities: ['プレッシャー'],
     })]]);
     const nameToNatNum = new Map<string, number>();
@@ -93,7 +93,7 @@ describe('overlayChampionsData', () => {
     const output: Record<string, OutputEntry> = {
       'テスト': makeOutputEntry(42),
     };
-    const champout = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 42, types: ['みず'] })]]);
+    const champout = new Map([['テスト', makePokemon({ natNum: 42, types: ['みず'] })]]);
     overlayChampionsData(output, champout, new Map(), {});
     expect(output['テスト'].index).toBe(42);
   });
@@ -145,7 +145,7 @@ describe('overlayChampionsData with natNum matching', () => {
       'ロトム(ウォッシュロトム)': makeOutputEntry(479),
     };
     const champout = new Map([['ウォッシュロトム', makePokemon({
-      displayName: 'ウォッシュロトム', natNum: 479,
+      natNum: 479,
       types: ['でんき', 'みず'], abilities: ['ふゆう'],
     })]]);
     overlayChampionsData(output, champout, new Map(), {});
@@ -160,8 +160,8 @@ describe('overlayChampionsData with natNum matching', () => {
       'パンプジン(ちいさいサイズ)': makeOutputEntry(711, { baseStats: { H: 55, A: 85, B: 122, C: 58, D: 75, S: 99 } }),
     };
     const champout = new Map([
-      ['パンプジン(ちゅうだましゅ)', makePokemon({ displayName: 'パンプジン(ちゅうだましゅ)', natNum: 711, baseStats: { H: 65, A: 90, B: 122, C: 58, D: 75, S: 84 } })],
-      ['パンプジン(こだましゅ)', makePokemon({ displayName: 'パンプジン(こだましゅ)', natNum: 711, baseStats: { H: 55, A: 85, B: 122, C: 58, D: 75, S: 99 } })],
+      ['パンプジン(ちゅうだましゅ)', makePokemon({ natNum: 711, baseStats: { H: 65, A: 90, B: 122, C: 58, D: 75, S: 84 } })],
+      ['パンプジン(こだましゅ)', makePokemon({ natNum: 711, baseStats: { H: 55, A: 85, B: 122, C: 58, D: 75, S: 99 } })],
     ]);
     overlayChampionsData(output, champout, new Map(), {});
     expect(output['パンプジン(ふつうのサイズ)'].source.game).toBe('Champions');
