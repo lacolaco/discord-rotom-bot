@@ -69,7 +69,7 @@ overlayChampionsData(output, champoutData, nameToNatNum, yakkunMap);
 
 // --- Phase 3: Post-processing ---
 
-console.log('\nPhase 4: Post-processing');
+console.log('\nPhase 3: Post-processing');
 
 let championsErrataData: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>> = {};
 try {
