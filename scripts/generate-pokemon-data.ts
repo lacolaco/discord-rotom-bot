@@ -40,12 +40,12 @@ console.log('Phase 1: Pokedex base data');
 const { entryIdToInfo, nameToNatNum } = parseGlobalPokedex(POKEDEX_BASE);
 const statsMap = loadGameStats(POKEDEX_BASE);
 
-const pokedexErrata = JSON.parse(readFileSync(ERRATA_PATH, 'utf-8'));
-applyErrata(entryIdToInfo, statsMap, pokedexErrata);
-
 injectMissingForms(entryIdToInfo, statsMap, nameToNatNum, POKEDEX_BASE);
 supplementMissingStats(entryIdToInfo, statsMap, POKEDEX_BASE);
 supplementMissingTypes(entryIdToInfo, statsMap, POKEDEX_BASE);
+
+const pokedexErrata = JSON.parse(readFileSync(ERRATA_PATH, 'utf-8'));
+applyErrata(entryIdToInfo, statsMap, pokedexErrata);
 
 const { output, noStats } = buildPokedexOutput(entryIdToInfo, statsMap, yakkunMap);
 console.log(`  Pokedex base: ${Object.keys(output).length} entries`);

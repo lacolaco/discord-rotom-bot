@@ -72,10 +72,10 @@ describe('isCosmeticForm', () => {
     expect(isCosmeticForm(a, b)).toBe(false);
   });
 
-  it('タイプが異なれば false', () => {
+  it('タイプのみ異なる場合も true（ポワルン天候フォーム等）', () => {
     const a = makeEntry();
     const b = makeEntry({ id: '1', fo: '1', type1: '9' });
-    expect(isCosmeticForm(a, b)).toBe(false);
+    expect(isCosmeticForm(a, b)).toBe(true);
   });
 
   it('特性スロットが異なれば false', () => {

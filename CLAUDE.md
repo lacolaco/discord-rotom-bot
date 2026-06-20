@@ -74,7 +74,7 @@ pnpm register-commands    # Discordスラッシュコマンドを登録（環境
   - `scripts/lib/champout-parser.ts`: champout解析（masterdata/personal.json + rom-txt ローカライズデータ → ポケモンデータ）
   - `scripts/lib/fallback.ts`: pokedex にデータ不足があるエントリを `@pkmn/dex` (Showdown) から補完
 - **yakkun URL照合**: `src/pokeinfo/yakkun-map.json` (手動管理、null補完は `update-yakkun-map` スキルで実行)
-- **コスメティックフォーム除外**: `champout-parser.ts` の `filterCosmeticForms` で同一 no 内のベースフォームと種族値・タイプ・特性が完全一致するフォームを自動検出・除外
+- **コスメティックフォーム除外**: `champout-parser.ts` の `filterCosmeticForms` で同一 no 内のベースフォームと種族値・特性が一致するフォームを自動検出・除外（タイプのみ異なるフォームも除外対象：ポワルン天候フォーム等）
 - **正誤表（errata）**: `scripts/pokedex-errata.json` に外部データソースの既知の誤りに対する補正データを記載。パイプラインの末尾で適用。`types`（文字列配列）、`abilities`（文字列配列）、`baseStats`（`{ H, A, B, C, D, S }` の部分指定）を個別に指定可能。例: `{ "ポケモン名": { "types": ["みず", "ひこう"], "baseStats": { "A": 100 } } }`
 - **データ優先順位**: errata（最終補正） > champout（オーバーレイ、Champions実装分） > pokedex（ベース） > @pkmn/dex（フォールバック）
 - **フォールバック**: pokedex にデータ不足があるエントリ（stats欠損、type欠損、メガ/ゲンシフォーム未収録）を `@pkmn/dex` から補完

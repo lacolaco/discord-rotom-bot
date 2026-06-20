@@ -11766,69 +11766,6 @@
       "key": "n351"
     }
   },
-  "ポワルン(あまみずのすがた)": {
-    "index": 351,
-    "types": [
-      "みず"
-    ],
-    "abilities": [
-      "てんきや"
-    ],
-    "baseStats": {
-      "H": 70,
-      "A": 70,
-      "B": 70,
-      "C": 70,
-      "D": 70,
-      "S": 70
-    },
-    "source": {
-      "game": "Champions",
-      "pokedex": ""
-    }
-  },
-  "ポワルン(たいようのすがた)": {
-    "index": 351,
-    "types": [
-      "ほのお"
-    ],
-    "abilities": [
-      "てんきや"
-    ],
-    "baseStats": {
-      "H": 70,
-      "A": 70,
-      "B": 70,
-      "C": 70,
-      "D": 70,
-      "S": 70
-    },
-    "source": {
-      "game": "Champions",
-      "pokedex": ""
-    }
-  },
-  "ポワルン(ゆきぐものすがた)": {
-    "index": 351,
-    "types": [
-      "こおり"
-    ],
-    "abilities": [
-      "てんきや"
-    ],
-    "baseStats": {
-      "H": 70,
-      "A": 70,
-      "B": 70,
-      "C": 70,
-      "D": 70,
-      "S": 70
-    },
-    "source": {
-      "game": "Champions",
-      "pokedex": ""
-    }
-  },
   "カクレオン": {
     "index": 352,
     "types": [
