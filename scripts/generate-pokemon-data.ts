@@ -14,7 +14,6 @@ import { parseGlobalPokedex, loadGameStats } from './lib/pokedex-parser';
 import { applyErrata, injectMissingForms, supplementMissingStats, supplementMissingTypes } from './lib/fallback';
 import { parseChampout } from './lib/champout-parser';
 import {
-  addChampionsExclusive,
   applyDisplayNameOverrides,
   applyOutputErrata,
   buildPokedexOutput,
@@ -29,7 +28,6 @@ const POKEDEX_BASE = resolve(ROOT, 'vendor/pokedex/pokedex');
 const CHAMPOUT_BASE = resolve(ROOT, 'vendor/champout');
 const ERRATA_PATH = resolve(import.meta.dirname, 'pokedex-errata.json');
 const CHAMPIONS_ERRATA_PATH = resolve(import.meta.dirname, 'champions-errata.json');
-const EXCLUSIVE_PATH = resolve(import.meta.dirname, 'champions-exclusive.json');
 const OVERRIDES_PATH = resolve(import.meta.dirname, 'display-name-overrides.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
@@ -69,13 +67,7 @@ applyDisplayNameOverrides(champoutData, champoutNatNums, overrides);
 
 overlayChampionsData(output, champoutData, nameToNatNum, yakkunMap);
 
-// --- Phase 3: Champions exclusive ---
-
-const exclusiveData: Record<string, { index: number; types: string[]; abilities: string[]; baseStats: OutputEntry['baseStats']; source: string }> =
-  JSON.parse(readFileSync(EXCLUSIVE_PATH, 'utf-8'));
-addChampionsExclusive(output, nameToNatNum, exclusiveData, yakkunMap);
-
-// --- Phase 4: Post-processing ---
+// --- Phase 3: Post-processing ---
 
 console.log('\nPhase 4: Post-processing');
 

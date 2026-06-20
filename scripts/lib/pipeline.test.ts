@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { addChampionsExclusive, applyDisplayNameOverrides, applyOutputErrata, overlayChampionsData, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
+import { applyDisplayNameOverrides, applyOutputErrata, overlayChampionsData, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -96,44 +96,6 @@ describe('overlayChampionsData', () => {
     const champout = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 42, types: ['みず'] })]]);
     overlayChampionsData(output, champout, new Map(), {});
     expect(output['テスト'].index).toBe(42);
-  });
-});
-
-describe('addChampionsExclusive', () => {
-  it('Champions限定ポケモンを出力に追加する', () => {
-    const output: Record<string, OutputEntry> = {};
-    const nameToNatNum = new Map<string, number>();
-    const exclusive = {
-      'メガヒードラン': {
-        index: 485,
-        types: ['ほのお', 'はがね'],
-        abilities: ['もらいび'],
-        baseStats: { H: 91, A: 120, B: 106, C: 175, D: 141, S: 67 },
-        source: 'Champions',
-      },
-    };
-    addChampionsExclusive(output, nameToNatNum, exclusive, {});
-    expect(output['メガヒードラン']).toBeDefined();
-    expect(output['メガヒードラン'].index).toBe(485);
-    expect(nameToNatNum.get('メガヒードラン')).toBe(485);
-  });
-
-  it('既存エントリと重複する場合はスキップする', () => {
-    const output: Record<string, OutputEntry> = {
-      'メガヒードラン': makeOutputEntry(485, { types: ['ノーマル'] }),
-    };
-    const nameToNatNum = new Map([['メガヒードラン', 485]]);
-    const exclusive = {
-      'メガヒードラン': {
-        index: 485,
-        types: ['ほのお'],
-        abilities: ['もらいび'],
-        baseStats: { H: 0, A: 0, B: 0, C: 0, D: 0, S: 0 },
-        source: 'Champions',
-      },
-    };
-    addChampionsExclusive(output, nameToNatNum, exclusive, {});
-    expect(output['メガヒードラン'].types).toEqual(['ノーマル']);
   });
 });
 

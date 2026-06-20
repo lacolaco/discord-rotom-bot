@@ -108,32 +108,6 @@ export function overlayChampionsData(
   console.log(`  Champions overlay: ${overridden} overridden, ${added} added`);
 }
 
-export function addChampionsExclusive(
-  output: Record<string, OutputEntry>,
-  nameToNatNum: Map<string, number>,
-  exclusiveData: Record<string, { index: number; types: string[]; abilities: string[]; baseStats: OutputEntry['baseStats']; source: string }>,
-  yakkunMap: Record<string, string | null>,
-): void {
-  let count = 0;
-  for (const [displayName, data] of Object.entries(exclusiveData)) {
-    if (displayName in output) continue;
-    const yakkunUrl = yakkunMap[displayName];
-    output[displayName] = {
-      index: data.index,
-      types: data.types,
-      abilities: data.abilities,
-      baseStats: data.baseStats,
-      source: { game: data.source, pokedex: '' },
-      ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
-    };
-    nameToNatNum.set(displayName, data.index);
-    count++;
-  }
-  if (count > 0) {
-    console.log(`  Champions exclusive: ${count} entries`);
-  }
-}
-
 // --- Post-processing ---
 
 export function applyOutputErrata(
