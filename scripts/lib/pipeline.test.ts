@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChampoutPokemon } from './champout-parser';
-import { applyDisplayNameOverrides, applyOutputErrata, overlayChampionsData, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
+import { applyOutputErrata, overlayChampionsData, resolveOverlayTarget, sortByNatNum, syncYakkunMap, type OutputEntry } from './pipeline';
 
 function makePokemon(overrides: Partial<ChampoutPokemon> & Pick<ChampoutPokemon, 'displayName' | 'natNum'>): ChampoutPokemon {
   return {
@@ -99,23 +99,59 @@ describe('overlayChampionsData', () => {
   });
 });
 
-describe('applyDisplayNameOverrides', () => {
-  it('champout名を旧表示名にリネームする', () => {
-    const pokemon = new Map([['ウォッシュロトム', makePokemon({ displayName: 'ウォッシュロトム', natNum: 479 })]]);
-    const nameToNatNum = new Map([['ウォッシュロトム', 479]]);
-    applyDisplayNameOverrides(pokemon, nameToNatNum, { 'ウォッシュロトム': 'ロトム(ウォッシュロトム)' });
-    expect(pokemon.has('ロトム(ウォッシュロトム)')).toBe(true);
-    expect(pokemon.has('ウォッシュロトム')).toBe(false);
-    expect(nameToNatNum.has('ロトム(ウォッシュロトム)')).toBe(true);
-    expect(nameToNatNum.has('ウォッシュロトム')).toBe(false);
+describe('resolveOverlayTarget', () => {
+  it('正規化マッチ: ・とスペースの差異を解決する', () => {
+    const outputByNatNum = new Map([[128, ['ケンタロス(パルデアのすがた ウォーターしゅ)']]]);
+    const result = resolveOverlayTarget('ケンタロス(パルデアのすがた・ウォーターしゅ)', 128, outputByNatNum, new Set());
+    expect(result).toBe('ケンタロス(パルデアのすがた ウォーターしゅ)');
   });
 
-  it('存在しないエントリはスキップする', () => {
-    const pokemon = new Map([['テスト', makePokemon({ displayName: 'テスト', natNum: 1 })]]);
-    const nameToNatNum = new Map([['テスト', 1]]);
-    applyDisplayNameOverrides(pokemon, nameToNatNum, { '存在しない': '別名' });
-    expect(pokemon.size).toBe(1);
-    expect(pokemon.has('テスト')).toBe(true);
+  it('部分文字列マッチ: champout名がpokedex名の括弧内に含まれる', () => {
+    const outputByNatNum = new Map([[479, ['ロトム', 'ロトム(ウォッシュロトム)', 'ロトム(ヒートロトム)']]]);
+    const result = resolveOverlayTarget('ウォッシュロトム', 479, outputByNatNum, new Set());
+    expect(result).toBe('ロトム(ウォッシュロトム)');
+  });
+
+  it('コスメティックベース: champout baseName(form) → pokedex baseName', () => {
+    const outputByNatNum = new Map([[666, ['ビビヨン']]]);
+    const result = resolveOverlayTarget('ビビヨン(ひょうせつのもよう)', 666, outputByNatNum, new Set());
+    expect(result).toBe('ビビヨン');
+  });
+
+  it('同baseName唯一候補: 同じ図鑑番号・同じベース名で1つだけ未マッチ', () => {
+    const outputByNatNum = new Map([[710, ['バケッチャ(ふつうのサイズ)', 'バケッチャ(ちいさいサイズ)']]]);
+    const matched = new Set(['バケッチャ(ちいさいサイズ)']);
+    const result = resolveOverlayTarget('バケッチャ(おおだましゅ)', 710, outputByNatNum, matched);
+    expect(result).toBe('バケッチャ(ふつうのサイズ)');
+  });
+
+  it('natNumが一致しない場合はnull', () => {
+    const outputByNatNum = new Map([[1, ['テスト']]]);
+    const result = resolveOverlayTarget('別ポケモン', 999, outputByNatNum, new Set());
+    expect(result).toBeNull();
+  });
+
+  it('マッチ済みエントリはスキップされる', () => {
+    const outputByNatNum = new Map([[479, ['ロトム(ウォッシュロトム)']]]);
+    const matched = new Set(['ロトム(ウォッシュロトム)']);
+    const result = resolveOverlayTarget('ウォッシュロトム', 479, outputByNatNum, matched);
+    expect(result).toBeNull();
+  });
+});
+
+describe('overlayChampionsData with natNum matching', () => {
+  it('champout名がpokedex名と異なってもnatNumでマッチして上書きする', () => {
+    const output: Record<string, OutputEntry> = {
+      'ロトム(ウォッシュロトム)': makeOutputEntry(479),
+    };
+    const champout = new Map([['ウォッシュロトム', makePokemon({
+      displayName: 'ウォッシュロトム', natNum: 479,
+      types: ['でんき', 'みず'], abilities: ['ふゆう'],
+    })]]);
+    overlayChampionsData(output, champout, new Map(), {});
+    expect(output['ロトム(ウォッシュロトム)'].types).toEqual(['でんき', 'みず']);
+    expect(output['ロトム(ウォッシュロトム)'].source.game).toBe('Champions');
+    expect(output['ウォッシュロトム']).toBeUndefined();
   });
 });
 

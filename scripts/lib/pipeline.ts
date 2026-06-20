@@ -49,26 +49,48 @@ export function buildPokedexOutput(
 
 // --- Champions overlay ---
 
-export function applyDisplayNameOverrides(
-  pokemon: Map<string, ChampoutPokemon>,
-  nameToNatNum: Map<string, number>,
-  overrides: Record<string, string>,
-): void {
-  let count = 0;
-  for (const [champoutName, outputName] of Object.entries(overrides)) {
-    const entry = pokemon.get(champoutName);
-    if (!entry) continue;
-    const natNum = nameToNatNum.get(champoutName);
-    pokemon.delete(champoutName);
-    nameToNatNum.delete(champoutName);
-    entry.displayName = outputName;
-    pokemon.set(outputName, entry);
-    if (natNum !== undefined) nameToNatNum.set(outputName, natNum);
-    count++;
+function baseName(name: string): string {
+  const idx = name.indexOf('(');
+  return idx >= 0 ? name.slice(0, idx) : name;
+}
+
+function normalizeOverlayName(name: string): string {
+  return name.replace(/[・\s]/g, '');
+}
+
+export function resolveOverlayTarget(
+  champName: string,
+  natNum: number,
+  outputByNatNum: Map<number, string[]>,
+  matched: Set<string>,
+): string | null {
+  const candidates = outputByNatNum.get(natNum);
+  if (!candidates) return null;
+  const unmatched = candidates.filter((n) => !matched.has(n));
+  if (unmatched.length === 0) return null;
+
+  const normChamp = normalizeOverlayName(champName);
+  for (const outputName of unmatched) {
+    if (normalizeOverlayName(outputName) === normChamp) return outputName;
   }
-  if (count > 0) {
-    console.log(`  Display name overrides: ${count} entries`);
+
+  for (const outputName of unmatched) {
+    const parenContent = outputName.match(/\((.+)\)$/)?.[1];
+    if (parenContent && normalizeOverlayName(parenContent) === normChamp) return outputName;
   }
+
+  const champBase = baseName(champName);
+  if (champName.includes('(')) {
+    const sameBase = unmatched.filter((n) => n === champBase);
+    if (sameBase.length === 1) return sameBase[0];
+  }
+
+  const sameBase = unmatched.filter((n) => baseName(n) === champBase);
+  if (sameBase.length === 1) return sameBase[0];
+
+  if (unmatched.length === 1) return unmatched[0];
+
+  return null;
 }
 
 export function overlayChampionsData(
@@ -79,33 +101,96 @@ export function overlayChampionsData(
 ): void {
   let overridden = 0;
   let added = 0;
+  let renamed = 0;
 
+  const outputByNatNum = new Map<number, string[]>();
+  for (const [name, entry] of Object.entries(output)) {
+    const list = outputByNatNum.get(entry.index) ?? [];
+    list.push(name);
+    outputByNatNum.set(entry.index, list);
+  }
+
+  const matched = new Set<string>();
+
+  const deferred: [string, ChampoutPokemon][] = [];
   for (const [displayName, poke] of champoutData) {
-    const yakkunUrl = yakkunMap[displayName];
     if (displayName in output) {
-      output[displayName].types = poke.types;
-      output[displayName].abilities = poke.abilities;
-      output[displayName].baseStats = poke.baseStats;
-      output[displayName].source = { game: 'Champions', pokedex: '' };
-      if (yakkunUrl && !output[displayName].yakkun) {
-        output[displayName].yakkun = { url: yakkunUrl, key: yakkunUrl.split('/').pop()! };
-      }
+      applyOverlay(output, displayName, poke, yakkunMap[displayName]);
+      matched.add(displayName);
       overridden++;
     } else {
-      output[displayName] = {
-        index: poke.natNum,
-        types: poke.types,
-        abilities: poke.abilities,
-        baseStats: poke.baseStats,
-        source: { game: 'Champions', pokedex: '' },
-        ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
-      };
-      nameToNatNum.set(displayName, poke.natNum);
-      added++;
+      deferred.push([displayName, poke]);
     }
   }
 
-  console.log(`  Champions overlay: ${overridden} overridden, ${added} added`);
+  const stillDeferred: [string, ChampoutPokemon][] = [];
+  for (const [displayName, poke] of deferred) {
+    const target = resolveOverlayTarget(displayName, poke.natNum, outputByNatNum, matched);
+    if (target) {
+      applyOverlay(output, target, poke, yakkunMap[target]);
+      matched.add(target);
+      overridden++;
+      renamed++;
+    } else {
+      stillDeferred.push([displayName, poke]);
+    }
+  }
+
+  const groupedDeferred = new Map<string, [string, ChampoutPokemon][]>();
+  for (const item of stillDeferred) {
+    const key = `${item[1].natNum}:${baseName(item[0])}`;
+    const list = groupedDeferred.get(key) ?? [];
+    list.push(item);
+    groupedDeferred.set(key, list);
+  }
+
+  for (const [, group] of groupedDeferred) {
+    const natNum = group[0][1].natNum;
+    const base = baseName(group[0][0]);
+    const candidates = outputByNatNum.get(natNum);
+    const unmatchedOutputs = candidates?.filter((n) => !matched.has(n) && baseName(n) === base) ?? [];
+    if (unmatchedOutputs.length === group.length) {
+      for (let i = 0; i < group.length; i++) {
+        const [, poke] = group[i];
+        const target = unmatchedOutputs[i];
+        applyOverlay(output, target, poke, yakkunMap[target]);
+        matched.add(target);
+        overridden++;
+        renamed++;
+      }
+    } else {
+      for (const [displayName, poke] of group) {
+        const yakkunUrl = yakkunMap[displayName];
+        output[displayName] = {
+          index: poke.natNum,
+          types: poke.types,
+          abilities: poke.abilities,
+          baseStats: poke.baseStats,
+          source: { game: 'Champions', pokedex: '' },
+          ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
+        };
+        nameToNatNum.set(displayName, poke.natNum);
+        added++;
+      }
+    }
+  }
+
+  console.log(`  Champions overlay: ${overridden} overridden (${renamed} by natNum match), ${added} added`);
+}
+
+function applyOverlay(
+  output: Record<string, OutputEntry>,
+  targetName: string,
+  poke: ChampoutPokemon,
+  yakkunUrl: string | null | undefined,
+): void {
+  output[targetName].types = poke.types;
+  output[targetName].abilities = poke.abilities;
+  output[targetName].baseStats = poke.baseStats;
+  output[targetName].source = { game: 'Champions', pokedex: '' };
+  if (yakkunUrl && !output[targetName].yakkun) {
+    output[targetName].yakkun = { url: yakkunUrl, key: yakkunUrl.split('/').pop()! };
+  }
 }
 
 // --- Post-processing ---
