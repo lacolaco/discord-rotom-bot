@@ -16,12 +16,13 @@ export type Pokemon = {
   yakkun?: { url: string; key: string };
 };
 
+const data = pokemonData as Record<string, Pokemon>;
 const pokemonNames = Object.keys(pokemonData);
 
 export async function searchPokemonByName(
   name: string,
 ): Promise<Pokemon | null> {
-  return (pokemonData as Record<string, Pokemon>)[name] ?? null;
+  return data[name] ?? null;
 }
 
 export async function getAllPokemonNames(params: {
