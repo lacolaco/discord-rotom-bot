@@ -72,8 +72,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n3",
@@ -98,8 +98,8 @@
       "S": 80
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n3m",
@@ -176,8 +176,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n6x",
@@ -202,8 +202,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n6y",
@@ -229,8 +229,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n6",
@@ -307,8 +307,8 @@
       "S": 78
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n9",
@@ -332,8 +332,8 @@
       "S": 78
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n9m",
@@ -474,8 +474,8 @@
   "スピアー": {
     "index": 15,
     "types": [
-      "どく",
-      "むし"
+      "むし",
+      "どく"
     ],
     "abilities": [
       "むしのしらせ",
@@ -490,8 +490,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n15",
@@ -516,8 +516,8 @@
       "S": 145
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n15m",
@@ -600,8 +600,8 @@
       "S": 101
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n18",
@@ -626,8 +626,8 @@
       "S": 121
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n18m",
@@ -844,8 +844,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n24",
@@ -870,8 +870,8 @@
       "S": 90
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n25",
@@ -884,7 +884,7 @@
       "でんき"
     ],
     "abilities": [
-      "サーフテール"
+      "エレキメイカー"
     ],
     "baseStats": {
       "H": 60,
@@ -895,8 +895,8 @@
       "S": 110
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n26x",
@@ -909,7 +909,7 @@
       "でんき"
     ],
     "abilities": [
-      "サーフテール"
+      "ノーガード"
     ],
     "baseStats": {
       "H": 60,
@@ -920,8 +920,8 @@
       "S": 130
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n26y",
@@ -946,8 +946,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n26",
@@ -957,22 +957,23 @@
   "ライチュウ(アローラのすがた)": {
     "index": 26,
     "types": [
-      "でんき"
+      "でんき",
+      "エスパー"
     ],
     "abilities": [
       "サーフテール"
     ],
     "baseStats": {
       "H": 60,
-      "A": 90,
-      "B": 55,
-      "C": 90,
-      "D": 80,
+      "A": 85,
+      "B": 50,
+      "C": 95,
+      "D": 85,
       "S": 110
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n26a",
@@ -1295,8 +1296,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n36",
@@ -1310,9 +1311,7 @@
       "ひこう"
     ],
     "abilities": [
-      "メロメロボディ",
-      "マジックガード",
-      "てんねん"
+      "マジックミラー"
     ],
     "baseStats": {
       "H": 95,
@@ -1323,8 +1322,8 @@
       "S": 70
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n36m",
@@ -1401,8 +1400,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n38",
@@ -1412,7 +1411,8 @@
   "キュウコン(アローラのすがた)": {
     "index": 38,
     "types": [
-      "こおり"
+      "こおり",
+      "フェアリー"
     ],
     "abilities": [
       "ゆきがくれ",
@@ -1427,8 +1427,8 @@
       "S": 109
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n38a",
@@ -1618,8 +1618,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n45",
@@ -2165,8 +2165,8 @@
       "S": 95
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n59",
@@ -2193,8 +2193,8 @@
       "S": 90
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n59h",
@@ -2356,8 +2356,8 @@
       "S": 120
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n65",
@@ -2381,8 +2381,8 @@
       "S": 150
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n65m",
@@ -2462,8 +2462,8 @@
       "S": 55
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n68",
@@ -2543,8 +2543,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n71",
@@ -2558,8 +2558,7 @@
       "どく"
     ],
     "abilities": [
-      "ようりょくそ",
-      "くいしんぼう"
+      "とびだすなかみ"
     ],
     "baseStats": {
       "H": 80,
@@ -2570,8 +2569,8 @@
       "S": 70
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n71m",
@@ -2984,8 +2983,8 @@
       "S": 30
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n80m",
@@ -3012,8 +3011,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n80",
@@ -3040,8 +3039,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n80g",
@@ -3489,8 +3488,8 @@
   "ゲンガー": {
     "index": 94,
     "types": [
-      "どく",
-      "ゴースト"
+      "ゴースト",
+      "どく"
     ],
     "abilities": [
       "のろわれボディ"
@@ -3504,8 +3503,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n94",
@@ -3530,8 +3529,8 @@
       "S": 130
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n94m",
@@ -4239,8 +4238,8 @@
       "S": 90
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n115",
@@ -4264,8 +4263,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n115m",
@@ -4427,8 +4426,8 @@
       "S": 115
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n121",
@@ -4442,21 +4441,19 @@
       "エスパー"
     ],
     "abilities": [
-      "はっこう",
-      "しぜんかいふく",
-      "アナライズ"
+      "ちからもち"
     ],
     "baseStats": {
       "H": 60,
-      "A": 140,
+      "A": 100,
       "B": 105,
       "C": 130,
       "D": 105,
       "S": 120
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n121m",
@@ -4646,8 +4643,8 @@
       "S": 85
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n127",
@@ -4672,8 +4669,8 @@
       "S": 105
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n127m",
@@ -4699,8 +4696,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n128",
@@ -4710,8 +4707,8 @@
   "ケンタロス(パルデアのすがた ウォーターしゅ)": {
     "index": 128,
     "types": [
-      "ほのお",
-      "かくとう"
+      "かくとう",
+      "みず"
     ],
     "abilities": [
       "いかく",
@@ -4727,8 +4724,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n128c",
@@ -4754,8 +4751,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n128a",
@@ -4765,8 +4762,8 @@
   "ケンタロス(パルデアのすがた ブレイズしゅ)": {
     "index": 128,
     "types": [
-      "みず",
-      "かくとう"
+      "かくとう",
+      "ほのお"
     ],
     "abilities": [
       "いかく",
@@ -4782,8 +4779,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n128b",
@@ -4835,8 +4832,8 @@
       "S": 81
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n130",
@@ -4861,8 +4858,8 @@
       "S": 81
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n130m",
@@ -4915,8 +4912,8 @@
       "S": 48
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n132",
@@ -4968,8 +4965,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n134",
@@ -4994,8 +4991,8 @@
       "S": 130
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n135",
@@ -5020,8 +5017,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n136",
@@ -5170,8 +5167,8 @@
   "プテラ": {
     "index": 142,
     "types": [
-      "ひこう",
-      "いわ"
+      "いわ",
+      "ひこう"
     ],
     "abilities": [
       "いしあたま",
@@ -5187,8 +5184,8 @@
       "S": 130
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n142",
@@ -5213,8 +5210,8 @@
       "S": 150
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n142m",
@@ -5240,8 +5237,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n143",
@@ -5462,8 +5459,8 @@
   "カイリュー": {
     "index": 149,
     "types": [
-      "ひこう",
-      "ドラゴン"
+      "ドラゴン",
+      "ひこう"
     ],
     "abilities": [
       "せいしんりょく",
@@ -5478,8 +5475,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n149",
@@ -5493,7 +5490,6 @@
       "ひこう"
     ],
     "abilities": [
-      "せいしんりょく",
       "マルチスケイル"
     ],
     "baseStats": {
@@ -5505,8 +5501,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n149m",
@@ -5685,8 +5681,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n154",
@@ -5700,8 +5696,7 @@
       "フェアリー"
     ],
     "abilities": [
-      "しんりょく",
-      "リーフガード"
+      "メガソーラー"
     ],
     "baseStats": {
       "H": 80,
@@ -5712,8 +5707,8 @@
       "S": 80
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n154m",
@@ -5790,8 +5785,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n157",
@@ -5817,8 +5812,8 @@
       "S": 95
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n157h",
@@ -5895,8 +5890,8 @@
       "S": 78
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n160",
@@ -5910,8 +5905,7 @@
       "ドラゴン"
     ],
     "abilities": [
-      "げきりゅう",
-      "ちからずく"
+      "ドラゴンスキン"
     ],
     "baseStats": {
       "H": 85,
@@ -5922,8 +5916,8 @@
       "S": 78
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n160m",
@@ -6127,8 +6121,8 @@
   "アリアドス": {
     "index": 168,
     "types": [
-      "どく",
-      "むし"
+      "むし",
+      "どく"
     ],
     "abilities": [
       "むしのしらせ",
@@ -6144,8 +6138,8 @@
       "S": 40
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n168",
@@ -6497,8 +6491,8 @@
       "S": 55
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n181",
@@ -6523,8 +6517,8 @@
       "S": 45
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n181m",
@@ -6605,8 +6599,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n184",
@@ -6659,8 +6653,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n186",
@@ -6962,8 +6956,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n196",
@@ -6988,8 +6982,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n197",
@@ -7044,8 +7038,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n199",
@@ -7072,8 +7066,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n199g",
@@ -7229,8 +7223,8 @@
       "S": 40
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n205",
@@ -7295,8 +7289,8 @@
   "ハガネール": {
     "index": 208,
     "types": [
-      "じめん",
-      "はがね"
+      "はがね",
+      "じめん"
     ],
     "abilities": [
       "いしあたま",
@@ -7312,8 +7306,8 @@
       "S": 30
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n208",
@@ -7338,8 +7332,8 @@
       "S": 30
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n208m",
@@ -7420,8 +7414,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n211",
@@ -7476,8 +7470,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n212",
@@ -7502,8 +7496,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n212m",
@@ -7541,8 +7535,8 @@
   "ヘラクロス": {
     "index": 214,
     "types": [
-      "かくとう",
-      "むし"
+      "むし",
+      "かくとう"
     ],
     "abilities": [
       "むしのしらせ",
@@ -7558,8 +7552,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n214",
@@ -7579,13 +7573,13 @@
       "H": 80,
       "A": 185,
       "B": 115,
-      "C": 65,
+      "C": 40,
       "D": 105,
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n214m",
@@ -7980,8 +7974,8 @@
   "エアームド": {
     "index": 227,
     "types": [
-      "ひこう",
-      "はがね"
+      "はがね",
+      "ひこう"
     ],
     "abilities": [
       "するどいめ",
@@ -7997,8 +7991,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n227",
@@ -8012,9 +8006,7 @@
       "ひこう"
     ],
     "abilities": [
-      "するどいめ",
-      "がんじょう",
-      "くだけるよろい"
+      "すじがねいり"
     ],
     "baseStats": {
       "H": 65,
@@ -8025,8 +8017,8 @@
       "S": 110
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n227m",
@@ -8064,8 +8056,8 @@
   "ヘルガー": {
     "index": 229,
     "types": [
-      "ほのお",
-      "あく"
+      "あく",
+      "ほのお"
     ],
     "abilities": [
       "はやおき",
@@ -8081,8 +8073,8 @@
       "S": 95
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n229",
@@ -8107,8 +8099,8 @@
       "S": 115
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n229m",
@@ -8611,8 +8603,8 @@
       "S": 61
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n248",
@@ -8637,8 +8629,8 @@
       "S": 71
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n248m",
@@ -8793,8 +8785,8 @@
       "S": 120
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n254",
@@ -8819,8 +8811,8 @@
       "S": 145
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n254m",
@@ -8899,8 +8891,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n257",
@@ -8925,8 +8917,8 @@
       "S": 100
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n257m",
@@ -9004,8 +8996,8 @@
       "S": 70
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n260m",
@@ -9031,8 +9023,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n260",
@@ -9597,8 +9589,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n279",
@@ -9681,8 +9673,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n282",
@@ -9707,8 +9699,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n282m",
@@ -10238,8 +10230,8 @@
       "S": 20
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n302m",
@@ -10249,8 +10241,8 @@
   "ヤミラミ": {
     "index": 302,
     "types": [
-      "ゴースト",
-      "あく"
+      "あく",
+      "ゴースト"
     ],
     "abilities": [
       "するどいめ",
@@ -10266,8 +10258,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n302",
@@ -10294,8 +10286,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n303",
@@ -10320,8 +10312,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n303m",
@@ -10387,8 +10379,8 @@
   "ボスゴドラ": {
     "index": 306,
     "types": [
-      "いわ",
-      "はがね"
+      "はがね",
+      "いわ"
     ],
     "abilities": [
       "がんじょう",
@@ -10404,8 +10396,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n306",
@@ -10429,8 +10421,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n306m",
@@ -10483,8 +10475,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n308",
@@ -10509,8 +10501,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n308m",
@@ -10561,8 +10553,8 @@
       "S": 135
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n310m",
@@ -10588,8 +10580,8 @@
       "S": 105
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n310",
@@ -10830,8 +10822,8 @@
       "S": 95
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n319",
@@ -10856,8 +10848,8 @@
       "S": 105
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n319m",
@@ -10966,8 +10958,8 @@
       "S": 40
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n323",
@@ -10992,8 +10984,8 @@
       "S": 20
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n323m",
@@ -11019,8 +11011,8 @@
       "S": 20
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n324",
@@ -11270,8 +11262,8 @@
   "チルタリス": {
     "index": 334,
     "types": [
-      "ひこう",
-      "ドラゴン"
+      "ドラゴン",
+      "ひこう"
     ],
     "abilities": [
       "しぜんかいふく",
@@ -11286,8 +11278,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n334",
@@ -11312,8 +11304,8 @@
       "S": 80
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n334m",
@@ -11741,8 +11733,8 @@
       "S": 81
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n350",
@@ -11766,8 +11758,8 @@
       "S": 70
     },
     "source": {
-      "game": "UltraSun_UltraMoon",
-      "pokedex": "アローラ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n351",
@@ -11846,8 +11838,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n354",
@@ -11871,8 +11863,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n354m",
@@ -11968,16 +11960,16 @@
       "ふゆう"
     ],
     "baseStats": {
-      "H": 65,
+      "H": 75,
       "A": 50,
-      "B": 70,
+      "B": 80,
       "C": 95,
-      "D": 80,
+      "D": 90,
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n358",
@@ -12002,8 +11994,8 @@
       "S": 65
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n358m",
@@ -12029,8 +12021,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n359",
@@ -12054,8 +12046,8 @@
       "S": 115
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n359m",
@@ -12134,8 +12126,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n362",
@@ -12159,8 +12151,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n362m",
@@ -12560,8 +12552,8 @@
       "S": 110
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n376m",
@@ -12571,8 +12563,8 @@
   "メタグロス": {
     "index": 376,
     "types": [
-      "エスパー",
-      "はがね"
+      "はがね",
+      "エスパー"
     ],
     "abilities": [
       "クリアボディ",
@@ -12587,8 +12579,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n376",
@@ -13127,8 +13119,8 @@
       "S": 56
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n389",
@@ -13207,8 +13199,8 @@
       "S": 108
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n392",
@@ -13286,8 +13278,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n395",
@@ -13367,8 +13359,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n398",
@@ -13382,8 +13374,7 @@
       "ひこう"
     ],
     "abilities": [
-      "いかく",
-      "すてみ"
+      "あまのじゃく"
     ],
     "baseStats": {
       "H": 85,
@@ -13394,8 +13385,8 @@
       "S": 110
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n398m",
@@ -13582,8 +13573,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n405",
@@ -13638,8 +13629,8 @@
       "S": 90
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n407",
@@ -13690,8 +13681,8 @@
       "S": 58
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n409",
@@ -13744,8 +13735,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n411",
@@ -14253,8 +14244,8 @@
       "S": 105
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n428",
@@ -14279,8 +14270,8 @@
       "S": 135
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n428m",
@@ -14658,8 +14649,8 @@
       "S": 35
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n442",
@@ -14723,8 +14714,8 @@
   "ガブリアス": {
     "index": 445,
     "types": [
-      "じめん",
-      "ドラゴン"
+      "ドラゴン",
+      "じめん"
     ],
     "abilities": [
       "すながくれ",
@@ -14739,8 +14730,8 @@
       "S": 102
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n445",
@@ -14765,8 +14756,8 @@
       "S": 92
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n445m",
@@ -14845,8 +14836,8 @@
       "S": 112
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n448m",
@@ -14873,8 +14864,8 @@
       "S": 90
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n448",
@@ -14925,8 +14916,8 @@
       "S": 47
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n450",
@@ -15020,8 +15011,8 @@
   "ドクロッグ": {
     "index": 454,
     "types": [
-      "かくとう",
-      "どく"
+      "どく",
+      "かくとう"
     ],
     "abilities": [
       "きけんよち",
@@ -15037,8 +15028,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n454",
@@ -15197,8 +15188,8 @@
       "S": 30
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n460m",
@@ -15224,8 +15215,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n460",
@@ -15235,8 +15226,8 @@
   "マニューラ": {
     "index": 461,
     "types": [
-      "こおり",
-      "あく"
+      "あく",
+      "こおり"
     ],
     "abilities": [
       "プレッシャー",
@@ -15251,8 +15242,8 @@
       "S": 125
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n461",
@@ -15334,8 +15325,8 @@
       "S": 40
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n464",
@@ -15495,8 +15486,8 @@
       "S": 95
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n470",
@@ -15521,8 +15512,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n471",
@@ -15549,8 +15540,8 @@
       "S": 95
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n472",
@@ -15577,8 +15568,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n473",
@@ -15615,8 +15606,8 @@
   "エルレイド": {
     "index": 475,
     "types": [
-      "かくとう",
-      "エスパー"
+      "エスパー",
+      "かくとう"
     ],
     "abilities": [
       "ふくつのこころ",
@@ -15632,8 +15623,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n475",
@@ -15658,8 +15649,8 @@
       "S": 110
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n475m",
@@ -15727,8 +15718,7 @@
       "ゴースト"
     ],
     "abilities": [
-      "ゆきがくれ",
-      "のろわれボディ"
+      "ゆきふらし"
     ],
     "baseStats": {
       "H": 70,
@@ -15739,8 +15729,8 @@
       "S": 120
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n478m",
@@ -15766,8 +15756,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n478",
@@ -15792,8 +15782,8 @@
       "S": 91
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479",
@@ -15803,8 +15793,8 @@
   "ロトム(ウォッシュロトム)": {
     "index": 479,
     "types": [
-      "みず",
-      "でんき"
+      "でんき",
+      "みず"
     ],
     "abilities": [
       "ふゆう"
@@ -15818,8 +15808,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479w",
@@ -15844,8 +15834,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479c",
@@ -15870,8 +15860,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479s",
@@ -15881,8 +15871,8 @@
   "ロトム(ヒートロトム)": {
     "index": 479,
     "types": [
-      "ほのお",
-      "でんき"
+      "でんき",
+      "ほのお"
     ],
     "abilities": [
       "ふゆう"
@@ -15896,8 +15886,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479h",
@@ -15922,8 +15912,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n479f",
@@ -16538,8 +16528,8 @@
       "S": 113
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n497",
@@ -16607,7 +16597,7 @@
     ],
     "abilities": [
       "もうか",
-      "あついしぼう"
+      "すてみ"
     ],
     "baseStats": {
       "H": 110,
@@ -16618,8 +16608,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n500",
@@ -16633,8 +16623,7 @@
       "かくとう"
     ],
     "abilities": [
-      "もうか",
-      "すてみ"
+      "かたやぶり"
     ],
     "baseStats": {
       "H": 110,
@@ -16645,8 +16634,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n500m",
@@ -16723,8 +16712,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n503",
@@ -16734,7 +16723,8 @@
   "ダイケンキ(ヒスイのすがた)": {
     "index": 503,
     "types": [
-      "みず"
+      "みず",
+      "あく"
     ],
     "abilities": [
       "げきりゅう",
@@ -16749,8 +16739,8 @@
       "S": 85
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n503h",
@@ -16803,8 +16793,8 @@
       "S": 77
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n505",
@@ -16938,8 +16928,8 @@
       "S": 106
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n510",
@@ -16990,8 +16980,8 @@
       "S": 101
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n512",
@@ -17042,8 +17032,8 @@
       "S": 101
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n514",
@@ -17094,8 +17084,8 @@
       "S": 101
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n516",
@@ -17148,8 +17138,8 @@
       "S": 29
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n518",
@@ -17478,8 +17468,8 @@
       "S": 88
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n530",
@@ -17493,9 +17483,7 @@
       "はがね"
     ],
     "abilities": [
-      "すなかき",
-      "すなのちから",
-      "かたやぶり"
+      "かんつうドリル"
     ],
     "baseStats": {
       "H": 110,
@@ -17506,8 +17494,8 @@
       "S": 103
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n530m",
@@ -17533,8 +17521,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n531",
@@ -17559,8 +17547,8 @@
       "S": 50
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n531m",
@@ -17640,8 +17628,8 @@
       "S": 45
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n534",
@@ -17928,8 +17916,8 @@
   "ペンドラー": {
     "index": 545,
     "types": [
-      "どく",
-      "むし"
+      "むし",
+      "どく"
     ],
     "abilities": [
       "どくのトゲ",
@@ -17945,8 +17933,8 @@
       "S": 112
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n545",
@@ -17960,9 +17948,7 @@
       "どく"
     ],
     "abilities": [
-      "どくのトゲ",
-      "むしのしらせ",
-      "かそく"
+      "シェルアーマー"
     ],
     "baseStats": {
       "H": 60,
@@ -17973,8 +17959,8 @@
       "S": 62
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n545m",
@@ -18029,8 +18015,8 @@
       "S": 116
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n547",
@@ -18276,8 +18262,8 @@
       "S": 92
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n553",
@@ -18502,8 +18488,8 @@
   "ズルズキン": {
     "index": 560,
     "types": [
-      "かくとう",
-      "あく"
+      "あく",
+      "かくとう"
     ],
     "abilities": [
       "だっぴ",
@@ -18519,8 +18505,8 @@
       "S": 58
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n560",
@@ -18534,8 +18520,6 @@
       "かくとう"
     ],
     "abilities": [
-      "だっぴ",
-      "じしんかじょう",
       "いかく"
     ],
     "baseStats": {
@@ -18547,8 +18531,8 @@
       "S": 68
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n560m",
@@ -18650,8 +18634,8 @@
       "S": 30
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n563",
@@ -18812,8 +18796,8 @@
       "S": 75
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n569",
@@ -18888,8 +18872,8 @@
       "S": 105
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n571",
@@ -18914,8 +18898,8 @@
       "S": 110
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n571h",
@@ -19130,8 +19114,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n579",
@@ -19267,8 +19251,8 @@
       "S": 79
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n584",
@@ -19350,8 +19334,8 @@
       "S": 103
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n587",
@@ -19807,8 +19791,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n604",
@@ -19821,7 +19805,7 @@
       "でんき"
     ],
     "abilities": [
-      "ふゆう"
+      "うなぎのぼり"
     ],
     "baseStats": {
       "H": 85,
@@ -19832,8 +19816,8 @@
       "S": 80
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n604m",
@@ -19953,8 +19937,8 @@
   "シャンデラ": {
     "index": 609,
     "types": [
-      "ほのお",
-      "ゴースト"
+      "ゴースト",
+      "ほのお"
     ],
     "abilities": [
       "もらいび",
@@ -19970,8 +19954,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n609",
@@ -19985,8 +19969,6 @@
       "ほのお"
     ],
     "abilities": [
-      "もらいび",
-      "ほのおのからだ",
       "すりぬけ"
     ],
     "baseStats": {
@@ -19998,8 +19980,8 @@
       "S": 90
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n609m",
@@ -20133,8 +20115,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n614",
@@ -20223,8 +20205,8 @@
   "マッギョ": {
     "index": 618,
     "types": [
-      "でんき",
-      "じめん"
+      "じめん",
+      "でんき"
     ],
     "abilities": [
       "せいでんき",
@@ -20240,8 +20222,8 @@
       "S": 32
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n618",
@@ -20251,23 +20233,23 @@
   "マッギョ(ガラルのすがた)": {
     "index": 618,
     "types": [
-      "でんき",
-      "じめん"
+      "じめん",
+      "はがね"
     ],
     "abilities": [
       "ぎたい"
     ],
     "baseStats": {
       "H": 109,
-      "A": 66,
-      "B": 84,
-      "C": 81,
-      "D": 99,
+      "A": 81,
+      "B": 99,
+      "C": 66,
+      "D": 84,
       "S": 32
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n618g",
@@ -20403,8 +20385,8 @@
       "S": 55
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n623",
@@ -20418,9 +20400,7 @@
       "ゴースト"
     ],
     "abilities": [
-      "てつのこぶし",
-      "ぶきよう",
-      "ノーガード"
+      "ふかしのこぶし"
     ],
     "baseStats": {
       "H": 89,
@@ -20431,8 +20411,8 @@
       "S": 55
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n623m",
@@ -20772,8 +20752,8 @@
   "サザンドラ": {
     "index": 635,
     "types": [
-      "ドラゴン",
-      "あく"
+      "あく",
+      "ドラゴン"
     ],
     "abilities": [
       "ふゆう"
@@ -20787,8 +20767,8 @@
       "S": 98
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n635",
@@ -20825,8 +20805,8 @@
   "ウルガモス": {
     "index": 637,
     "types": [
-      "ほのお",
-      "むし"
+      "むし",
+      "ほのお"
     ],
     "abilities": [
       "ほのおのからだ",
@@ -20841,8 +20821,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n637",
@@ -21415,8 +21395,8 @@
       "S": 64
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n652",
@@ -21441,8 +21421,8 @@
       "S": 44
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n652m",
@@ -21520,8 +21500,8 @@
       "S": 104
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n655",
@@ -21546,8 +21526,8 @@
       "S": 134
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n655m",
@@ -21625,8 +21605,8 @@
       "S": 122
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n658",
@@ -21651,8 +21631,8 @@
       "S": 142
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n658m",
@@ -21706,8 +21686,8 @@
       "S": 78
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n660",
@@ -21787,8 +21767,8 @@
       "S": 126
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n663",
@@ -21851,8 +21831,8 @@
   "ビビヨン": {
     "index": 666,
     "types": [
-      "ひこう",
-      "むし"
+      "むし",
+      "ひこう"
     ],
     "abilities": [
       "りんぷん",
@@ -21868,8 +21848,8 @@
       "S": 89
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n666",
@@ -21907,8 +21887,8 @@
   "カエンジシ": {
     "index": 668,
     "types": [
-      "ノーマル",
-      "ほのお"
+      "ほのお",
+      "ノーマル"
     ],
     "abilities": [
       "とうそうしん",
@@ -21924,8 +21904,8 @@
       "S": 106
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n668",
@@ -21939,9 +21919,7 @@
       "ノーマル"
     ],
     "abilities": [
-      "とうそうしん",
-      "きんちょうかん",
-      "じしんかじょう"
+      "ほのおのたてがみ"
     ],
     "baseStats": {
       "H": 86,
@@ -21952,8 +21930,8 @@
       "S": 126
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n668m",
@@ -22023,15 +22001,15 @@
     ],
     "baseStats": {
       "H": 74,
-      "A": 85,
-      "B": 87,
-      "C": 155,
-      "D": 148,
-      "S": 102
+      "A": 65,
+      "B": 67,
+      "C": 125,
+      "D": 128,
+      "S": 92
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n670e",
@@ -22055,8 +22033,8 @@
       "S": 102
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n670m",
@@ -22081,8 +22059,8 @@
       "S": 75
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n671",
@@ -22188,8 +22166,8 @@
       "S": 58
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n675",
@@ -22213,8 +22191,8 @@
       "S": 102
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n676",
@@ -22267,8 +22245,8 @@
       "S": 104
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n678",
@@ -22294,12 +22272,37 @@
       "S": 104
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n678f",
       "key": "n678f"
+    }
+  },
+  "メガニャオニクス": {
+    "index": 678,
+    "types": [
+      "エスパー"
+    ],
+    "abilities": [
+      "トレース"
+    ],
+    "baseStats": {
+      "H": 74,
+      "A": 48,
+      "B": 76,
+      "C": 143,
+      "D": 101,
+      "S": 124
+    },
+    "source": {
+      "game": "Champions",
+      "pokedex": ""
+    },
+    "yakkun": {
+      "url": "https://yakkun.com/ch/zukan/n678m",
+      "key": "n678m"
     }
   },
   "ヒトツキ": {
@@ -22372,8 +22375,8 @@
       "S": 60
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n681",
@@ -22391,15 +22394,15 @@
     ],
     "baseStats": {
       "H": 60,
-      "A": 50,
-      "B": 140,
-      "C": 50,
-      "D": 140,
+      "A": 140,
+      "B": 50,
+      "C": 140,
+      "D": 50,
       "S": 60
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n681b",
@@ -22450,8 +22453,8 @@
       "S": 29
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n683",
@@ -22502,8 +22505,8 @@
       "S": 72
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n685",
@@ -22541,8 +22544,8 @@
   "カラマネロ": {
     "index": 687,
     "types": [
-      "エスパー",
-      "あく"
+      "あく",
+      "エスパー"
     ],
     "abilities": [
       "あまのじゃく",
@@ -22558,8 +22561,8 @@
       "S": 73
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n687",
@@ -22573,9 +22576,7 @@
       "エスパー"
     ],
     "abilities": [
-      "あまのじゃく",
-      "きゅうばん",
-      "すりぬけ"
+      "あまのじゃく"
     ],
     "baseStats": {
       "H": 86,
@@ -22586,8 +22587,8 @@
       "S": 88
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n687m",
@@ -22625,8 +22626,8 @@
   "ガメノデス": {
     "index": 689,
     "types": [
-      "みず",
-      "いわ"
+      "いわ",
+      "みず"
     ],
     "abilities": [
       "かたいツメ",
@@ -22642,8 +22643,8 @@
       "S": 68
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n689",
@@ -22657,9 +22658,7 @@
       "かくとう"
     ],
     "abilities": [
-      "かたいツメ",
-      "スナイパー",
-      "わるいてぐせ"
+      "かたいツメ"
     ],
     "baseStats": {
       "H": 72,
@@ -22670,8 +22669,8 @@
       "S": 88
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n689m",
@@ -22726,8 +22725,8 @@
       "S": 44
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n691",
@@ -22741,9 +22740,7 @@
       "ドラゴン"
     ],
     "abilities": [
-      "どくのトゲ",
-      "どくしゅ",
-      "てきおうりょく"
+      "さいせいりょく"
     ],
     "baseStats": {
       "H": 65,
@@ -22754,8 +22751,8 @@
       "S": 44
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n691m",
@@ -22804,8 +22801,8 @@
       "S": 59
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n693",
@@ -22843,8 +22840,8 @@
   "エレザード": {
     "index": 695,
     "types": [
-      "ノーマル",
-      "でんき"
+      "でんき",
+      "ノーマル"
     ],
     "abilities": [
       "かんそうはだ",
@@ -22860,8 +22857,8 @@
       "S": 109
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n695",
@@ -22914,8 +22911,8 @@
       "S": 71
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n697",
@@ -22952,8 +22949,8 @@
   "アマルルガ": {
     "index": 699,
     "types": [
-      "こおり",
-      "いわ"
+      "いわ",
+      "こおり"
     ],
     "abilities": [
       "フリーズスキン",
@@ -22968,8 +22965,8 @@
       "S": 58
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n699",
@@ -22994,8 +22991,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n700",
@@ -23009,9 +23006,7 @@
       "ひこう"
     ],
     "abilities": [
-      "じゅうなん",
-      "かるわざ",
-      "かたやぶり"
+      "ノーガード"
     ],
     "baseStats": {
       "H": 78,
@@ -23022,8 +23017,8 @@
       "S": 118
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n701m",
@@ -23050,8 +23045,8 @@
       "S": 118
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n701",
@@ -23078,8 +23073,8 @@
       "S": 101
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n702",
@@ -23214,8 +23209,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n706",
@@ -23225,8 +23220,8 @@
   "ヌメルゴン(ヒスイのすがた)": {
     "index": 706,
     "types": [
-      "ドラゴン",
-      "はがね"
+      "はがね",
+      "ドラゴン"
     ],
     "abilities": [
       "そうしょく",
@@ -23242,8 +23237,8 @@
       "S": 60
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n706h",
@@ -23269,8 +23264,8 @@
       "S": 75
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n707",
@@ -23308,8 +23303,8 @@
   "オーロット": {
     "index": 709,
     "types": [
-      "くさ",
-      "ゴースト"
+      "ゴースト",
+      "くさ"
     ],
     "abilities": [
       "しぜんかいふく",
@@ -23325,8 +23320,8 @@
       "S": 56
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n709",
@@ -23457,16 +23452,16 @@
       "ふみん"
     ],
     "baseStats": {
-      "H": 65,
-      "A": 90,
+      "H": 75,
+      "A": 95,
       "B": 122,
       "C": 58,
       "D": 75,
-      "S": 84
+      "S": 69
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n711l",
@@ -23485,16 +23480,16 @@
       "ふみん"
     ],
     "baseStats": {
-      "H": 65,
-      "A": 90,
+      "H": 55,
+      "A": 85,
       "B": 122,
       "C": 58,
       "D": 75,
-      "S": 84
+      "S": 99
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n711s",
@@ -23513,16 +23508,16 @@
       "ふみん"
     ],
     "baseStats": {
-      "H": 65,
-      "A": 90,
+      "H": 85,
+      "A": 100,
       "B": 122,
       "C": 58,
       "D": 75,
-      "S": 84
+      "S": 54
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n711k",
@@ -23549,8 +23544,8 @@
       "S": 84
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n711",
@@ -23603,8 +23598,8 @@
       "S": 28
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n713",
@@ -23631,8 +23626,8 @@
       "S": 38
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n713h",
@@ -23687,8 +23682,8 @@
       "S": 123
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n715",
@@ -24053,8 +24048,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n724",
@@ -24080,8 +24075,8 @@
       "S": 60
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n724h",
@@ -24159,8 +24154,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n727",
@@ -24238,8 +24233,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n730",
@@ -24322,8 +24317,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n733",
@@ -24491,8 +24486,8 @@
   "ケケンカニ": {
     "index": 740,
     "types": [
-      "こおり",
-      "かくとう"
+      "かくとう",
+      "こおり"
     ],
     "abilities": [
       "かいりきバサミ",
@@ -24508,8 +24503,8 @@
       "S": 43
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n740",
@@ -24523,9 +24518,7 @@
       "こおり"
     ],
     "abilities": [
-      "かいりきバサミ",
-      "てつのこぶし",
-      "いかりのつぼ"
+      "てつのこぶし"
     ],
     "baseStats": {
       "H": 97,
@@ -24536,8 +24529,8 @@
       "S": 33
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n740m",
@@ -24748,8 +24741,8 @@
       "S": 110
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n745d",
@@ -24775,8 +24768,8 @@
       "S": 112
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n745",
@@ -24802,8 +24795,8 @@
       "S": 82
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n745f",
@@ -24891,8 +24884,8 @@
   "ドヒドイデ": {
     "index": 748,
     "types": [
-      "みず",
-      "どく"
+      "どく",
+      "みず"
     ],
     "abilities": [
       "ひとでなし",
@@ -24908,8 +24901,8 @@
       "S": 35
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n748",
@@ -24962,8 +24955,8 @@
       "S": 35
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n750",
@@ -25016,8 +25009,8 @@
       "S": 42
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n752",
@@ -25162,8 +25155,8 @@
   "エンニュート": {
     "index": 758,
     "types": [
-      "ほのお",
-      "どく"
+      "どく",
+      "ほのお"
     ],
     "abilities": [
       "ふしょく",
@@ -25178,8 +25171,8 @@
       "S": 117
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n758",
@@ -25315,8 +25308,8 @@
       "S": 72
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n763",
@@ -25370,8 +25363,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n765",
@@ -25396,8 +25389,8 @@
       "S": 80
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n766",
@@ -25735,8 +25728,8 @@
       "S": 96
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n778",
@@ -25791,8 +25784,8 @@
       "S": 36
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n780",
@@ -25806,9 +25799,7 @@
       "ドラゴン"
     ],
     "abilities": [
-      "ぎゃくじょう",
-      "そうしょく",
-      "ノーてんき"
+      "ぎゃくじょう"
     ],
     "baseStats": {
       "H": 78,
@@ -25819,8 +25810,8 @@
       "S": 36
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n780m",
@@ -25911,8 +25902,8 @@
   "ジャラランガ": {
     "index": 784,
     "types": [
-      "かくとう",
-      "ドラゴン"
+      "ドラゴン",
+      "かくとう"
     ],
     "abilities": [
       "ぼうだん",
@@ -25928,8 +25919,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n784",
@@ -27071,8 +27062,8 @@
       "S": 67
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n823",
@@ -27562,8 +27553,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n841",
@@ -27590,8 +27581,8 @@
       "S": 30
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n842",
@@ -27644,8 +27635,8 @@
       "S": 71
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n844",
@@ -27966,8 +27957,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n855",
@@ -28048,8 +28039,8 @@
       "S": 29
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n858",
@@ -28132,8 +28123,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n861",
@@ -28267,8 +28258,8 @@
       "S": 70
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n866",
@@ -28293,8 +28284,8 @@
       "S": 30
     },
     "source": {
-      "game": "Sword_Shield",
-      "pokedex": "ガラル図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n867",
@@ -28345,8 +28336,8 @@
       "S": 64
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n869",
@@ -28371,8 +28362,8 @@
       "S": 75
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n870",
@@ -28385,7 +28376,6 @@
       "かくとう"
     ],
     "abilities": [
-      "カブトアーマー",
       "まけんき"
     ],
     "baseStats": {
@@ -28397,8 +28387,8 @@
       "S": 100
     },
     "source": {
-      "game": "LegendsZA",
-      "pokedex": "ミアレ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n870m",
@@ -28634,8 +28624,8 @@
       "S": 97
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n877",
@@ -28893,8 +28883,8 @@
   "ドラパルト": {
     "index": 887,
     "types": [
-      "ゴースト",
-      "ドラゴン"
+      "ドラゴン",
+      "ゴースト"
     ],
     "abilities": [
       "クリアボディ",
@@ -28910,8 +28900,8 @@
       "S": 142
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n887",
@@ -29347,8 +29337,8 @@
       "S": 65
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n899",
@@ -29375,8 +29365,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n900",
@@ -29455,8 +29445,8 @@
       "S": 78
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n902",
@@ -29483,8 +29473,8 @@
       "S": 78
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n902f",
@@ -29511,8 +29501,8 @@
       "S": 120
     },
     "source": {
-      "game": "LegendsArceus",
-      "pokedex": "ヒスイ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n903",
@@ -29522,8 +29512,8 @@
   "ハリーマン": {
     "index": 904,
     "types": [
-      "どく",
-      "あく"
+      "あく",
+      "どく"
     ],
     "abilities": [
       "どくのトゲ",
@@ -29539,8 +29529,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n904",
@@ -29671,8 +29661,8 @@
       "S": 123
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n908",
@@ -29750,8 +29740,8 @@
       "S": 66
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n911",
@@ -29829,8 +29819,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n914",
@@ -30152,8 +30142,8 @@
       "S": 111
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n946",
@@ -30394,8 +30384,8 @@
       "S": 35
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n965",
@@ -30447,8 +30437,8 @@
       "S": 75
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1004",
@@ -30474,8 +30464,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1005",
@@ -30528,8 +30518,8 @@
       "S": 45
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n941",
@@ -30865,8 +30855,8 @@
   "スコヴィラン": {
     "index": 952,
     "types": [
-      "ほのお",
-      "くさ"
+      "くさ",
+      "ほのお"
     ],
     "abilities": [
       "ようりょくそ",
@@ -30882,8 +30872,8 @@
       "S": 75
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n939",
@@ -30897,9 +30887,7 @@
       "ほのお"
     ],
     "abilities": [
-      "ようりょくそ",
-      "ふみん",
-      "ムラっけ"
+      "とびだすハバネロ"
     ],
     "baseStats": {
       "H": 65,
@@ -30910,8 +30898,8 @@
       "S": 75
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n939m",
@@ -31017,8 +31005,8 @@
       "S": 105
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n927",
@@ -31084,8 +31072,8 @@
   "デカヌチャン": {
     "index": 959,
     "types": [
-      "はがね",
-      "フェアリー"
+      "フェアリー",
+      "はがね"
     ],
     "abilities": [
       "かたやぶり",
@@ -31101,8 +31089,8 @@
       "S": 94
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1002",
@@ -31233,8 +31221,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n934",
@@ -31258,8 +31246,8 @@
       "S": 100
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n934f",
@@ -31365,8 +31353,8 @@
       "S": 65
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n944",
@@ -31403,8 +31391,8 @@
   "キラフロル": {
     "index": 970,
     "types": [
-      "どく",
-      "いわ"
+      "いわ",
+      "どく"
     ],
     "abilities": [
       "どくげしょう",
@@ -31419,8 +31407,8 @@
       "S": 86
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n967",
@@ -31434,8 +31422,7 @@
       "どく"
     ],
     "abilities": [
-      "どくげしょう",
-      "ふしょく"
+      "てきおうりょく"
     ],
     "baseStats": {
       "H": 83,
@@ -31446,8 +31433,8 @@
       "S": 101
     },
     "source": {
-      "game": "Showdown",
-      "pokedex": "Showdown"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n967m",
@@ -31498,8 +31485,8 @@
       "S": 68
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n925",
@@ -31689,8 +31676,8 @@
       "S": 90
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1010",
@@ -31745,8 +31732,8 @@
       "S": 60
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n928",
@@ -31800,8 +31787,8 @@
       "S": 50
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1008",
@@ -32281,8 +32268,8 @@
   "サーフゴー": {
     "index": 1000,
     "types": [
-      "ゴースト",
-      "はがね"
+      "はがね",
+      "ゴースト"
     ],
     "abilities": [
       "おうごんのからだ"
@@ -32296,8 +32283,8 @@
       "S": 84
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "パルデア図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n977",
@@ -32638,8 +32625,8 @@
       "S": 70
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "キタカミ図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1025",
@@ -32833,8 +32820,8 @@
   "ブリジュラス": {
     "index": 1018,
     "types": [
-      "ドラゴン",
-      "はがね"
+      "はがね",
+      "ドラゴン"
     ],
     "abilities": [
       "じきゅうりょく",
@@ -32850,8 +32837,8 @@
       "S": 85
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1023",
@@ -32878,8 +32865,8 @@
       "S": 44
     },
     "source": {
-      "game": "Scarlet_Violet",
-      "pokedex": "ブルーベリー図鑑"
+      "game": "Champions",
+      "pokedex": ""
     },
     "yakkun": {
       "url": "https://yakkun.com/ch/zukan/n1013",

@@ -22,7 +22,7 @@ describe('searchPokemonByName', () => {
     expect(result!.yakkun?.key).toBe('n6x');
   });
 
-  test('returns data for PokéAPI-supplemented pokemon', async () => {
+  test('returns data for Champions mega evolution', async () => {
     const result = await searchPokemonByName('メガジュカイン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['くさ', 'ドラゴン']);
@@ -30,27 +30,62 @@ describe('searchPokemonByName', () => {
     expect(result!.abilities).toContain('ひらいしん');
   });
 
-  test('returns data for Meltan (PokéAPI-supplemented)', async () => {
+  test('returns data for Showdown-fallback pokemon', async () => {
     const result = await searchPokemonByName('メルタン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['はがね']);
     expect(result!.baseStats.H).toBe(46);
   });
 
-  test('returns data for primal form (PokéAPI-supplemented)', async () => {
-    const result = await searchPokemonByName('ゲンシカイオーガ');
+  test('returns data for Showdown-fallback base form', async () => {
+    const result = await searchPokemonByName('カイオーガ');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['みず']);
-    expect(result!.baseStats.C).toBe(180);
+    expect(result!.baseStats.C).toBe(150);
   });
 
-  test('returns data for mega form injected from @pkmn/dex', async () => {
+  test('returns data for Champions mega form', async () => {
     const result = await searchPokemonByName('メガスコヴィラン');
     expect(result).not.toBeNull();
     expect(result!.types).toEqual(['くさ', 'ほのお']);
     expect(result!.baseStats.H).toBe(65);
     expect(result!.baseStats.A).toBe(138);
     expect(result!.index).toBe(952);
+  });
+
+  test('旧データと同じ表示名で取得できる', async () => {
+    const result = await searchPokemonByName('ロトム(ウォッシュロトム)');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(479);
+    expect(result!.types).toEqual(['でんき', 'みず']);
+  });
+
+  test('ベースフォームは種族名のみで取得できる', async () => {
+    const result = await searchPokemonByName('ミミッキュ');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(778);
+  });
+
+  test('旧データと同じフォーム名表記で取得できる', async () => {
+    const result = await searchPokemonByName(
+      'ケンタロス(パルデアのすがた ウォーターしゅ)',
+    );
+    expect(result).not.toBeNull();
+    expect(result!.types).toEqual(['かくとう', 'みず']);
+  });
+
+  test('Champions限定メガが取得できる', async () => {
+    const result = await searchPokemonByName('メガヒードラン');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(485);
+    expect(result!.types).toEqual(['ほのお', 'はがね']);
+  });
+
+  test('Champions限定メガの特性が取得できる', async () => {
+    const result = await searchPokemonByName('メガムクホーク');
+    expect(result).not.toBeNull();
+    expect(result!.index).toBe(398);
+    expect(result!.abilities).toContain('あまのじゃく');
   });
 });
 

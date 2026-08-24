@@ -1,139 +1,110 @@
 /**
  * data.generated.json 生成スクリプト
  *
- * vendor/pokedex (git submodule) と src/pokeinfo/yakkun-map.json から
- * ボットが使用するポケモンデータを生成する。
- * pokedex にstatsがないポケモンは PokéAPI から自動補完する。
+ * vendor/pokedex (towakey/pokedex) をベースデータとして使用し、
+ * vendor/champout (projectpokemon/champout) の最新データをオーバーレイする。
  *
- * 使用方法: npx tsx scripts/generate-pokemon-data.ts
+ * 優先順位: champout（最新） > pokedex（ベース） > @pkmn/dex（フォールバック）
+ *
+ * 使用方法: pnpm exec tsx scripts/generate-pokemon-data.ts
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { parseGlobalPokedex, loadGameStats, type EntryInfo, type StatsEntry } from './lib/pokedex-parser';
+import { parseGlobalPokedex, loadGameStats } from './lib/pokedex-parser';
 import { applyErrata, injectMissingForms, supplementMissingStats, supplementMissingTypes } from './lib/fallback';
+import { parseChampout } from './lib/champout-parser';
+import {
+  applyOutputErrata,
+  buildPokedexOutput,
+  overlayChampionsData,
+  sortByNatNum,
+  syncYakkunMap,
+  type OutputEntry,
+} from './lib/pipeline';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const POKEDEX_BASE = resolve(ROOT, 'vendor/pokedex/pokedex');
+const CHAMPOUT_BASE = resolve(ROOT, 'vendor/champout');
 const ERRATA_PATH = resolve(import.meta.dirname, 'pokedex-errata.json');
+const CHAMPIONS_ERRATA_PATH = resolve(import.meta.dirname, 'champions-errata.json');
 const YAKKUN_MAP_PATH = resolve(ROOT, 'src/pokeinfo/yakkun-map.json');
 const OUTPUT_PATH = resolve(ROOT, 'src/pokeinfo/data.generated.json');
-
-// --- Types ---
-
-interface OutputEntry {
-  index: number;
-  types: string[];
-  abilities: string[];
-  baseStats: { H: number; A: number; B: number; C: number; D: number; S: number };
-  source: { game: string; pokedex: string };
-  yakkun?: { url: string; key: string };
-}
-
-// --- Pipeline ---
-
-const { entryIdToInfo, nameToNatNum } = parseGlobalPokedex(POKEDEX_BASE);
-const statsMap = loadGameStats(POKEDEX_BASE);
-injectMissingForms(entryIdToInfo, statsMap, nameToNatNum, POKEDEX_BASE);
-supplementMissingStats(entryIdToInfo, statsMap, POKEDEX_BASE);
-supplementMissingTypes(entryIdToInfo, statsMap, POKEDEX_BASE);
-
-const errata = JSON.parse(readFileSync(ERRATA_PATH, 'utf-8'));
-applyErrata(entryIdToInfo, statsMap, errata);
 
 const yakkunMap: Record<string, string | null> = JSON.parse(
   readFileSync(YAKKUN_MAP_PATH, 'utf-8'),
 );
 
-const { output, noStats } = buildOutput(entryIdToInfo, statsMap, yakkunMap);
+// --- Phase 1: Pokedex base data ---
+
+console.log('Phase 1: Pokedex base data');
+const { entryIdToInfo, nameToNatNum } = parseGlobalPokedex(POKEDEX_BASE);
+const statsMap = loadGameStats(POKEDEX_BASE);
+
+injectMissingForms(entryIdToInfo, statsMap, nameToNatNum, POKEDEX_BASE);
+supplementMissingStats(entryIdToInfo, statsMap, POKEDEX_BASE);
+supplementMissingTypes(entryIdToInfo, statsMap, POKEDEX_BASE);
+
+const pokedexErrata = JSON.parse(readFileSync(ERRATA_PATH, 'utf-8'));
+applyErrata(entryIdToInfo, statsMap, pokedexErrata);
+
+const { output, noStats } = buildPokedexOutput(entryIdToInfo, statsMap, yakkunMap);
+console.log(`  Pokedex base: ${Object.keys(output).length} entries`);
+if (noStats.length > 0) {
+  console.log(`  Dropped (no stats): ${noStats.length}`);
+  for (const name of noStats) console.log(`    - ${name}`);
+}
+
+// --- Phase 2: Champions overlay ---
+
+console.log('\nPhase 2: Champions overlay');
+const { pokemon: champoutData } = parseChampout(CHAMPOUT_BASE);
+console.log(`  Champions data: ${champoutData.size} entries`);
+
+overlayChampionsData(output, champoutData, nameToNatNum, yakkunMap);
+
+// --- Phase 3: Post-processing ---
+
+console.log('\nPhase 3: Post-processing');
+
+let championsErrataData: Record<string, Partial<{ types: string[]; abilities: string[]; baseStats: Partial<OutputEntry['baseStats']> }>> = {};
+try {
+  championsErrataData = JSON.parse(readFileSync(CHAMPIONS_ERRATA_PATH, 'utf-8'));
+} catch (e: unknown) {
+  if (e instanceof Error && 'code' in e && (e as NodeJS.ErrnoException).code === 'ENOENT') {
+    // champions-errata.json is optional
+  } else {
+    throw e;
+  }
+}
+applyOutputErrata(output, championsErrataData);
+
 const sorted = sortByNatNum(output, nameToNatNum);
 
 writeGeneratedData(sorted);
-syncYakkunMap(sorted, yakkunMap);
-printSummary(sorted, noStats);
+const syncedYakkun = syncYakkunMap(sorted, yakkunMap);
+writeFileSync(YAKKUN_MAP_PATH, JSON.stringify(syncedYakkun, null, 2) + '\n', 'utf-8');
+printSummary(sorted);
 
 // --- Functions ---
-
-function buildOutput(
-  entries: Map<string, EntryInfo>,
-  stats: Map<string, StatsEntry>,
-  yakkun: Record<string, string | null>,
-): { output: Record<string, OutputEntry>; noStats: string[] } {
-  const output: Record<string, OutputEntry> = {};
-  const noStats: string[] = [];
-
-  for (const [entryId, info] of entries) {
-    const { displayName, natNum } = info;
-    const statsInfo = stats.get(entryId);
-
-    if (!statsInfo) {
-      if (!(displayName in output)) noStats.push(displayName);
-      continue;
-    }
-
-    const { stats: s, game, pokedex } = statsInfo;
-    const yakkunUrl = yakkun[displayName];
-
-    output[displayName] = {
-      index: natNum,
-      types: [s.type1, ...(s.type2 ? [s.type2] : [])],
-      abilities: [s.ability1, s.ability2, s.dream_ability].filter((a) => a !== ''),
-      baseStats: { H: s.hp, A: s.attack, B: s.defense, C: s.special_attack, D: s.special_defense, S: s.speed },
-      source: { game, pokedex },
-      ...(yakkunUrl ? { yakkun: { url: yakkunUrl, key: yakkunUrl.split('/').pop()! } } : {}),
-    };
-  }
-
-  return { output, noStats };
-}
-
-function sortByNatNum(
-  output: Record<string, OutputEntry>,
-  nameToNatNum: Map<string, number>,
-): Record<string, OutputEntry> {
-  const sorted: Record<string, OutputEntry> = {};
-  for (const [name, entry] of Object.entries(output).sort((a, b) => {
-    const numA = nameToNatNum.get(a[0]) ?? Infinity;
-    const numB = nameToNatNum.get(b[0]) ?? Infinity;
-    return numA !== numB ? numA - numB : a[0].localeCompare(b[0]);
-  })) {
-    sorted[name] = entry;
-  }
-  return sorted;
-}
 
 function writeGeneratedData(sorted: Record<string, OutputEntry>): void {
   writeFileSync(OUTPUT_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
 }
 
-function syncYakkunMap(
-  sorted: Record<string, OutputEntry>,
-  yakkunMap: Record<string, string | null>,
-): void {
-  const synced: Record<string, string | null> = {};
-  for (const name of Object.keys(sorted)) {
-    synced[name] = yakkunMap[name] ?? null;
-  }
-  writeFileSync(YAKKUN_MAP_PATH, JSON.stringify(synced, null, 2) + '\n', 'utf-8');
-}
-
-function printSummary(sorted: Record<string, OutputEntry>, noStats: string[]): void {
+function printSummary(sorted: Record<string, OutputEntry>): void {
   const total = Object.keys(sorted).length;
   const withYakkun = Object.values(sorted).filter((e) => e.yakkun).length;
 
-  console.log(`data.generated.json: ${total} entries`);
-  console.log(`  yakkun URL: ${withYakkun} resolved, ${total - withYakkun} pending`);
-
   const sourceDist = new Map<string, number>();
   for (const entry of Object.values(sorted)) {
-    sourceDist.set(entry.source.game, (sourceDist.get(entry.source.game) ?? 0) + 1);
+    const key = entry.source.game;
+    sourceDist.set(key, (sourceDist.get(key) ?? 0) + 1);
   }
+
+  console.log(`\ndata.generated.json: ${total} entries`);
+  console.log(`  yakkun URL: ${withYakkun} resolved, ${total - withYakkun} pending`);
   console.log(`  source distribution:`);
   for (const [game, count] of [...sourceDist.entries()].sort((a, b) => b[1] - a[1])) {
     console.log(`    ${game}: ${count}`);
-  }
-
-  if (noStats.length > 0) {
-    console.log(`\n  dropped (no stats): ${noStats.length}`);
-    for (const name of noStats) console.log(`    - ${name}`);
   }
 }
