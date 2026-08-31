@@ -131,7 +131,7 @@ jobs:
           fetch-depth: 1
       - name: Run Claude Code Review
         id: claude-review
-        uses: anthropics/claude-code-action@9d7150bc8a3dae8149739a88019d192b579ad90c # v1.0.193
+        uses: anthropics/claude-code-action@c81e3bc69d1b18badbb63ba39581218f02421678 # v1.0.201
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           allowed_bots: "*"
@@ -169,7 +169,7 @@ jobs:
       - code-review
     runs-on: ubuntu-latest
     steps:
-      - uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
+      - uses: re-actors/alls-green@b5b5b37504aa4183270bd3d855c52a67f212be35 # v1.3.0
         with:
           jobs: ${{ toJSON(needs) }}
           allowed-skips: renovate-review,code-review
